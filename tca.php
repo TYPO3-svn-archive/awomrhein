@@ -17,7 +17,7 @@ if (!defined ('TYPO3_MODE'))
   // General Configuration
   // Wizards and config drafts
   // TCA
-  //   tx_orgesab
+  //   tx_awomrhein
 
 
 
@@ -25,77 +25,9 @@ if (!defined ('TYPO3_MODE'))
   // 
   // Configuration by the extension manager
 
-$bool_LL = false;
-$confArr = unserialize($GLOBALS['TYPO3_CONF_VARS']['EXT']['extConf']['orgesab']);
+//$bool_LL = false;
+//$confArr = unserialize($GLOBALS['TYPO3_CONF_VARS']['EXT']['extConf']['awomrhein']);
 
-  // Localization support
-if (strtolower(substr($confArr['LLsupport'], 0, strlen('yes'))) == 'yes')
-{
-  $bool_LL = true;
-}
-  // Localization support
-
-  // Simplify the Organiser
-$bool_exclude_none    = true;
-$bool_exclude_default = true;
-switch ($confArr['TCA_simplify_organiser'])
-{
-  case('None excluded: Editor has access to all'):
-    $bool_exclude_none    = false;
-    $bool_exclude_default = false;
-    break;
-  case('All excluded: Administrator configures it'):
-      // All will be left true.
-    break;
-  case('Default (recommended)'):
-    $bool_exclude_default = false;
-  default:
-}
-  // Simplify the Organiser
-
-
-  // Simplify backend forms
-$bool_fegroup_control = true;
-if (strtolower(substr($confArr['TCA_simplify_fegroup_control'], 0, strlen('no'))) == 'no')
-{
-  $bool_fegroup_control = false;
-}
-$bool_time_control = true;
-if (strtolower(substr($confArr['TCA_simplify_time_control'], 0, strlen('no'))) == 'no')
-{
-  $bool_time_control = false;
-}
-  // Simplify backend forms
-
-  // Full wizard support
-$bool_full_wizardSupport_catTables = true;
-if (strtolower(substr($confArr['full_wizardSupport'], 0, strlen('no'))) == 'no')
-{
-  $bool_full_wizardSupport_catTables = false;
-}
-  // Full wizard support
-
-  // Store record configuration
-$bool_full_wizardSupport_allTables = true;
-switch($confArr['store_records']) 
-{
-  case('Multi grouped: record groups in different directories'):
-    $str_store_record_conf              = 'pid IN (###PAGE_TSCONFIG_IDLIST###)';
-    $bool_full_wizardSupport_allTables  = false;
-    break;
-  case('Clear presented: each record group in one directory at most'):
-    $str_store_record_conf              = 'pid IN (###PAGE_TSCONFIG_ID###)';
-    $bool_full_wizardSupport_allTables  = false;
-    break;
-  case('Easy 2: same as 1 but with storage pid'):
-    $str_marker_pid         = '###STORAGE_PID###';
-    $str_store_record_conf  = 'pid=###STORAGE_PID###';
-  case('Easy 1: all in the same directory'):
-  default:
-    $str_marker_pid         = '###CURRENT_PID###';
-    $str_store_record_conf  = 'pid=###CURRENT_PID###';
-}
-  // Store record configuration
   // Configuration by the extension manager
 
 
@@ -179,43 +111,42 @@ switch($confArr['store_records'])
 
   /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
   //
-  // tx_orgesab - without any localisation support
+  // tx_awomrhein - without any localisation support
 
-$TCA['tx_orgesab'] = array (
-  'ctrl' => $TCA['tx_orgesab']['ctrl'],
+$TCA['tx_awomrhein'] = array (
+  'ctrl' => $TCA['tx_awomrhein']['ctrl'],
   'interface' => array (
     'showRecordFieldList' => '
-        externalid, title,bookedup,bookingurl,eventbegin,eventend,spaceoftime,staff1,staff2,price1,price2,price3,tx_orgesab_cat,bodytext,skills,details,category
-      , tx_org_cal
-      , tx_orgesab_cat
+        externalid, title,bookedup,bookingurl,eventbegin,eventend,spaceoftime,staff1,staff2,price1,price2,price3,tx_awomrhein_cat,bodytext,skills,details,category
+      , tx_awomrhein_cat
       , location1,location2,location3,location4,location5
       , day1,day2,day3,day4,day5
       , hours1,hours2,hours3,hours4,hours5
       , hidden,fe_group
       , keywords,description'
   ),
-  'feInterface' => $TCA['tx_orgesab']['feInterface'],
+  'feInterface' => $TCA['tx_awomrhein']['feInterface'],
   'columns' => array (
     'externalid' => array (
       'exclude' => 0,
-      'label'   => 'LLL:EXT:orgesab/locallang_db.xml:tx_orgesab.externalid',
+      'label'   => 'LLL:EXT:awomrhein/locallang_db.xml:tx_awomrhein.externalid',
       'config'  => $conf_input_30_trimRequired,
     ),
     'title' => array (
       'exclude' => 0,
-      'label'   => 'LLL:EXT:orgesab/locallang_db.xml:tx_orgesab.title',
+      'label'   => 'LLL:EXT:awomrhein/locallang_db.xml:tx_awomrhein.title',
       'config'  => $conf_input_30_trimRequired,
     ),
     'bookedup' => array (
       'exclude' => $bool_exclude_none,
-      'label'   => 'LLL:EXT:orgesab/locallang_db.xml:tx_orgesab.bookedup',
+      'label'   => 'LLL:EXT:awomrhein/locallang_db.xml:tx_awomrhein.bookedup',
       'config' => array (
         'type' => 'check'
       )
     ),
     'bookingurl' => array (
       'exclude' => $bool_exclude_default,
-      'label'   => 'LLL:EXT:orgesab/locallang_db.xml:tx_orgesab.bookingurl',
+      'label'   => 'LLL:EXT:awomrhein/locallang_db.xml:tx_awomrhein.bookingurl',
       'config' => array (
         'type' => 'text',
         'cols' => '30',
@@ -235,56 +166,56 @@ $TCA['tx_orgesab'] = array (
     ),
     'eventbegin' => array (
       'exclude' => 0,
-      'label'   => 'LLL:EXT:orgesab/locallang_db.xml:tx_orgesab.eventbegin',
+      'label'   => 'LLL:EXT:awomrhein/locallang_db.xml:tx_awomrhein.eventbegin',
       'config'  => $conf_datetime,
     ),
     'eventend' => array (
       'exclude' => 0,
-      'label'   => 'LLL:EXT:orgesab/locallang_db.xml:tx_orgesab.eventend',
+      'label'   => 'LLL:EXT:awomrhein/locallang_db.xml:tx_awomrhein.eventend',
       'config'  => $conf_datetimeend,
     ),
     'spaceoftime' => array (
       'exclude' => 0,
-      'label'   => 'LLL:EXT:orgesab/locallang_db.xml:tx_orgesab.spaceoftime',
+      'label'   => 'LLL:EXT:awomrhein/locallang_db.xml:tx_awomrhein.spaceoftime',
       'config'  => $conf_input_30_trim,
     ),
     'staff1' => array (
       'exclude' => 0,
-      'label'   => 'LLL:EXT:orgesab/locallang_db.xml:tx_orgesab.staff1',
+      'label'   => 'LLL:EXT:awomrhein/locallang_db.xml:tx_awomrhein.staff1',
       'config'  => $conf_input_30_trim,
     ),
     'staff2' => array (
       'exclude' => 0,
-      'label'   => 'LLL:EXT:orgesab/locallang_db.xml:tx_orgesab.staff2',
+      'label'   => 'LLL:EXT:awomrhein/locallang_db.xml:tx_awomrhein.staff2',
       'config'  => $conf_input_30_trim,
     ),
     'price1' => array (
       'exclude' => 0,
-      'label'   => 'LLL:EXT:orgesab/locallang_db.xml:tx_orgesab.price1',
+      'label'   => 'LLL:EXT:awomrhein/locallang_db.xml:tx_awomrhein.price1',
       'config'  => $conf_input_30_trim,
     ),
     'price2' => array (
       'exclude' => 0,
-      'label'   => 'LLL:EXT:orgesab/locallang_db.xml:tx_orgesab.price2',
+      'label'   => 'LLL:EXT:awomrhein/locallang_db.xml:tx_awomrhein.price2',
       'config'  => $conf_input_30_trim,
     ),
     'price3' => array (
       'exclude' => 0,
-      'label'   => 'LLL:EXT:orgesab/locallang_db.xml:tx_orgesab.price3',
+      'label'   => 'LLL:EXT:awomrhein/locallang_db.xml:tx_awomrhein.price3',
       'config'  => $conf_input_30_trim,
     ),
-    'tx_orgesab_cat' => array (
+    'tx_awomrhein_cat' => array (
       'exclude'   => $bool_exclude_default,
-      'label'     => 'LLL:EXTorgesablocallang_db.xml:tx_orgesab.tx_orgesab_cat',
+      'label'     => 'LLL:EXTawomrheinlocallang_db.xml:tx_awomrhein.tx_awomrhein_cat',
       'config'    => array (
         'type'                => 'select',
         'size'                => 10,
         'minitems'            => 0,
         'maxitems'            => 99,
-        'MM'                  => 'tx_orgesab_mm_tx_orgesab_cat',
-        'foreign_table'       => 'tx_orgesab_cat',
-//        'foreign_table_where' => 'AND tx_orgesab_cat.' . $str_store_record_conf . ' AND tx_orgesab_cat.deleted = 0 AND tx_orgesab_cat.hidden = 0 ORDER BY tx_orgesab_cat.title',
-        'foreign_table_where' => 'AND  tx_orgesab_cat.deleted = 0 AND tx_orgesab_cat.hidden = 0 ORDER BY tx_orgesab_cat.title',
+        'MM'                  => 'tx_awomrhein_mm_tx_awomrhein_cat',
+        'foreign_table'       => 'tx_awomrhein_cat',
+//        'foreign_table_where' => 'AND tx_awomrhein_cat.' . $str_store_record_conf . ' AND tx_awomrhein_cat.deleted = 0 AND tx_awomrhein_cat.hidden = 0 ORDER BY tx_awomrhein_cat.title',
+        'foreign_table_where' => 'AND  tx_awomrhein_cat.deleted = 0 AND tx_awomrhein_cat.hidden = 0 ORDER BY tx_awomrhein_cat.title',
         'form_type'           => 'user',
         'userFunc'            => 'tx_cpstcatree->getTree',
         'treeView'            => 1,
@@ -296,10 +227,10 @@ $TCA['tx_orgesab'] = array (
           '_VERTICAL' => 0,
           'add' => array (
             'type'   => 'script',
-            'title'  => 'LLL:EXTorgesablocallang_db.xml:wizard.tx_orgesab_cat.add',
+            'title'  => 'LLL:EXTawomrheinlocallang_db.xml:wizard.tx_awomrhein_cat.add',
             'icon'   => 'add.gif',
             'params' => array (
-              'table'    => 'tx_orgesab_cat',
+              'table'    => 'tx_awomrhein_cat',
               'pid'      => $str_marker_pid,
               'setValue' => 'prepend'
             ),
@@ -307,17 +238,17 @@ $TCA['tx_orgesab'] = array (
           ),
           'list' => array (
             'type'   => 'script',
-            'title'  => 'LLL:EXTorgesablocallang_db.xml:wizard.tx_orgesab_cat.list',
+            'title'  => 'LLL:EXTawomrheinlocallang_db.xml:wizard.tx_awomrhein_cat.list',
             'icon'   => 'list.gif',
             'params' => array (
-              'table' => 'tx_orgesab_cat',
+              'table' => 'tx_awomrhein_cat',
               'pid'   => $str_marker_pid,
             ),
             'script' => 'wizard_list.php',
           ),
           'edit' => array (
             'type'                      => 'popup',
-            'title'                     => 'LLL:EXTorgesablocallang_db.xml:wizard.tx_orgesab_cat.edit',
+            'title'                     => 'LLL:EXTawomrheinlocallang_db.xml:wizard.tx_awomrhein_cat.edit',
             'script'                    => 'wizard_edit.php',
             'popup_onlyOpenIfSelected'  => 1,
             'icon'                      => 'edit2.gif',
@@ -328,133 +259,87 @@ $TCA['tx_orgesab'] = array (
     ),
     'bodytext' => array (
       'exclude' => $bool_exclude_default,
-      'label'   => 'LLL:EXT:orgesab/locallang_db.xml:tx_orgesab.bodytext',
+      'label'   => 'LLL:EXT:awomrhein/locallang_db.xml:tx_awomrhein.bodytext',
       'config'  => $conf_text_rte,
     ),
     'skills' => array (
       'exclude' => $bool_exclude_default,
-      'label'   => 'LLL:EXT:orgesab/locallang_db.xml:tx_orgesab.skills',
+      'label'   => 'LLL:EXT:awomrhein/locallang_db.xml:tx_awomrhein.skills',
       'config'  => $conf_text_50_10,
     ),
     'details' => array (
       'exclude' => 0,
-      'label'   => 'LLL:EXT:orgesab/locallang_db.xml:tx_orgesab.details',
+      'label'   => 'LLL:EXT:awomrhein/locallang_db.xml:tx_awomrhein.details',
       'config'  => $conf_text_50_10,
     ),
     'category' => array (
       'exclude' => 0,
-      'label'   => 'LLL:EXT:orgesab/locallang_db.xml:tx_orgesab.category',
+      'label'   => 'LLL:EXT:awomrhein/locallang_db.xml:tx_awomrhein.category',
       'config'  => $conf_input_80_trim,
-    ),
-    'tx_org_cal' => array (
-      'exclude' => $bool_exclude_default,
-      'label'   => 'LLL:EXT:orgesab/locallang_db.xml:tx_orgesab.tx_org_cal',
-      'config'  => array (
-        'type'                => 'select', 
-        'size'                => $size_calendar,
-        'minitems'            => 0,
-        'maxitems'            => 999,
-        'MM'                  => 'tx_orgesab_mm_tx_org_cal',
-        'foreign_table'       => 'tx_org_cal',
-        'foreign_table_where' => 'AND tx_org_cal.' . $str_store_record_conf . ' ORDER BY tx_org_cal.datetime DESC, title',
-        'wizards' => array(
-          '_PADDING'  => 2,
-          '_VERTICAL' => 0,
-          'add' => array(
-            'type'   => 'script',
-            'title'  => 'LLL:EXT:orgesab/locallang_db.xml:wizard.tx_org_cal.add',
-            'icon'   => 'add.gif',
-            'params' => array(
-              'table'    => 'tx_org_cal',
-              'pid'      => $str_marker_pid,
-              'setValue' => 'prepend'
-            ),
-            'script' => 'wizard_add.php',
-          ),
-          'list' => array(
-            'type'   => 'script',
-            'title'  => 'LLL:EXT:orgesab/locallang_db.xml:wizard.tx_org_cal.list',
-            'icon'   => 'list.gif',
-            'params' => array(
-              'table' => 'tx_org_cal',
-              'pid'   => $str_marker_pid,
-            ),
-            'script' => 'wizard_list.php',
-          ),
-          'edit' => array(
-            'type'                      => 'popup',
-            'title'                     => 'LLL:EXT:orgesab/locallang_db.xml:wizard.tx_org_cal.edit',
-            'script'                    => 'wizard_edit.php',
-            'popup_onlyOpenIfSelected'  => 1,
-            'icon'                      => 'edit2.gif',
-            'JSopenParams'              => $JSopenParams,
-          ),
-        ),
-      ),
     ),
     'price1' => array (
       'exclude' => 0,
-      'label'   => 'LLL:EXT:orgesab/locallang_db.xml:tx_orgesab.price1',
+      'label'   => 'LLL:EXT:awomrhein/locallang_db.xml:tx_awomrhein.price1',
       'config'  => $conf_input_80_trim,
     ),
     'price2' => array (
       'exclude' => 0,
-      'label'   => 'LLL:EXT:orgesab/locallang_db.xml:tx_orgesab.price2',
+      'label'   => 'LLL:EXT:awomrhein/locallang_db.xml:tx_awomrhein.price2',
       'config'  => $conf_input_80_trim,
     ),
     'price3' => array (
       'exclude' => 0,
-      'label'   => 'LLL:EXT:orgesab/locallang_db.xml:tx_orgesab.price3',
+      'label'   => 'LLL:EXT:awomrhein/locallang_db.xml:tx_awomrhein.price3',
       'config'  => $conf_input_80_trim,
     ),
     'day1' => array (
       'exclude' => 0,
-      'label'   => 'LLL:EXT:orgesab/locallang_db.xml:tx_orgesab.day1',
+      'label'   => 'LLL:EXT:awomrhein/locallang_db.xml:tx_awomrhein.day1',
       'config'  => $conf_input_80_trim,
     ),
     'day2' => array (
       'exclude' => 0,
-      'label'   => 'LLL:EXT:orgesab/locallang_db.xml:tx_orgesab.day2',
+      'label'   => 'LLL:EXT:awomrhein/locallang_db.xml:tx_awomrhein.day2',
       'config'  => $conf_input_80_trim,
     ),
     'day3' => array (
       'exclude' => 0,
-      'label'   => 'LLL:EXT:orgesab/locallang_db.xml:tx_orgesab.day3',
+      'label'   => 'LLL:EXT:awomrhein/locallang_db.xml:tx_awomrhein.day3',
       'config'  => $conf_input_80_trim,
     ),
     'day4' => array (
       'exclude' => 0,
-      'label'   => 'LLL:EXT:orgesab/locallang_db.xml:tx_orgesab.day4',
+      'label'   => 'LLL:EXT:awomrhein/locallang_db.xml:tx_awomrhein.day4',
       'config'  => $conf_input_80_trim,
     ),
     'day5' => array (
       'exclude' => 0,
-      'label'   => 'LLL:EXT:orgesab/locallang_db.xml:tx_orgesab.day5',
+      'label'   => 'LLL:EXT:awomrhein/locallang_db.xml:tx_awomrhein.day5',
       'config'  => $conf_input_80_trim,
     ),
     'hours1' => array (
       'exclude' => 0,
-      'label'   => 'LLL:EXT:orgesab/locallang_db.xml:tx_orgesab.hours1',
+      'label'   => 'LLL:EXT:awomrhein/locallang_db.xml:tx_awomrhein.hours1',
       'config'  => $conf_input_80_trim,
     ),
     'hours2' => array (
       'exclude' => 0,
-      'label'   => 'LLL:EXT:orgesab/locallang_db.xml:tx_orgesab.hours2',
+      'label'   => 'LLL:EXT:awomrhein/locallang_db.xml:tx_awomrhein.hours2',
       'config'  => $conf_input_80_trim,
     ),
     'hours3' => array (
       'exclude' => 0,
-      'label'   => 'LLL:EXT:orgesab/locallang_db.xml:tx_orgesab.hours3',
+      'label'   => 'LLL:EXT:awomrhein/locallang_db.xml:tx_awomrhein.hours3',
       'config'  => $conf_input_80_trim,
     ),
     'hours4' => array (
       'exclude' => 0,
-      'label'   => 'LLL:EXT:orgesab/locallang_db.xml:tx_orgesab.hours4',
+      'label'   => 'LLL:EXT:awomrhein/locallang_db.xml:tx_awomrhein.hours4',
       'config'  => $conf_input_80_trim,
     ),
     'hours5' => array (
       'exclude' => 0,
-      'label'   => 'LLL:EXT:orgesab/locallang_db.xml:tx_orgesab.hours5',
+      'label'   => 'LLL:EXT:awomrhein/locallang_db.xml:tx_awomrhein.hours5',
       'config'  => $conf_input_80_trim,
     ),
     'hidden'    => $conf_hidden,
@@ -477,7 +362,7 @@ $TCA['tx_orgesab'] = array (
     '0' =>  array
     (
       'showitem' => '
-            --div--;LLL:EXT:orgesab/locallang_db.xml:tx_orgesab.div_event
+            --div--;LLL:EXT:awomrhein/locallang_db.xml:tx_awomrhein.div_event
           , externalid
           , title 
           , bookedup
@@ -490,35 +375,33 @@ $TCA['tx_orgesab'] = array (
           , price1
           , price2
           , price3
-          , tx_orgesab_cat
+          , tx_awomrhein_cat
           , details
           , category
           , bodytext;;;richtext[]:rte_transform[mode=ts];
           , skills
-          , --div--;LLL:EXT:orgesab/locallang_db.xml:tx_orgesab.div_calendar
-          , tx_org_cal
-          , --div--;LLL:EXT:orgesab/locallang_db.xml:tx_orgesab.div_location
+          , --div--;LLL:EXT:awomrhein/locallang_db.xml:tx_awomrhein.div_location
           , location1
           , location2
           , location3
           , location4
           , location5
-          , --div--;LLL:EXT:orgesab/locallang_db.xml:tx_orgesab.div_days
+          , --div--;LLL:EXT:awomrhein/locallang_db.xml:tx_awomrhein.div_days
           , day1
           , day2
           , day3
           , day4
           , day5
-          , --div--;LLL:EXT:orgesab/locallang_db.xml:tx_orgesab.div_hours
+          , --div--;LLL:EXT:awomrhein/locallang_db.xml:tx_awomrhein.div_hours
           , hours1
           , hours2
           , hours3
           , hours4
           , hours5
-          , --div--;LLL:EXT:orgesab/locallang_db.xml:tx_orgesab.div_control
+          , --div--;LLL:EXT:awomrhein/locallang_db.xml:tx_awomrhein.div_control
           , hidden
           ,fe_group
-          , --div--;LLL:EXT:orgesab/locallang_db.xml:tx_orgesab.div_seo
+          , --div--;LLL:EXT:awomrhein/locallang_db.xml:tx_awomrhein.div_seo
           , keywords
           , description' 
         ,
@@ -526,23 +409,16 @@ $TCA['tx_orgesab'] = array (
   ),
   'palettes' => array ( )
 );
-if( ! $bool_full_wizardSupport_allTables )
-{
-  unset( $TCA['tx_orgesab']['columns']['tx_org_cal']['config']['wizards']['add']      );
-  unset( $TCA['tx_orgesab']['columns']['tx_org_cal']['config']['wizards']['list']     );
-  unset( $TCA['tx_orgesab']['columns']['tx_orgesab_cat']['config']['wizards']['add']  );
-  unset( $TCA['tx_orgesab']['columns']['tx_orgesab_cat']['config']['wizards']['list'] );
-}
-  // tx_orgesab - without any localisation support
+  // tx_awomrhein - without any localisation support
 
 
 
   /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
   // 
-  // tx_orgesab_cat
+  // tx_awomrhein_cat
   
-$TCA['tx_orgesab_cat'] = array (
-  'ctrl' => $TCA['tx_orgesab_cat']['ctrl'],
+$TCA['tx_awomrhein_cat'] = array (
+  'ctrl' => $TCA['tx_awomrhein_cat']['ctrl'],
   'interface' => array (
     'showRecordFieldList' => '
         title
@@ -552,12 +428,12 @@ $TCA['tx_orgesab_cat'] = array (
   'columns' => array (
     'title' => array (
       'exclude' => 0,
-      'label'   => 'LLL:EXT:orgesab/locallang_db.xml:tx_orgesab_cat.title',
+      'label'   => 'LLL:EXT:awomrhein/locallang_db.xml:tx_awomrhein_cat.title',
       'config'  => $conf_input_30_trimRequired,
     ),
     'uid_parent' => array (
       'exclude'   => 0,
-      'label'   => 'LLL:EXT:orgesab/locallang_db.xml:tx_orgesab_cat.uid_parent',
+      'label'   => 'LLL:EXT:awomrhein/locallang_db.xml:tx_awomrhein_cat.uid_parent',
       'config'    => array (
         'type'          => 'select',
         'size'          => 1,
@@ -566,7 +442,7 @@ $TCA['tx_orgesab_cat'] = array (
         'trueMaxItems'  => 1,
         'form_type'     => 'user',
         'userFunc'      => 'tx_cpstcatree->getTree',
-        'foreign_table' => 'tx_orgesab_cat',
+        'foreign_table' => 'tx_awomrhein_cat',
         'treeView'      => 1,
         'expandable'    => 1,
         'expandFirst'   => 0,
@@ -587,4 +463,4 @@ $TCA['tx_orgesab_cat'] = array (
   ),
   'palettes' => array ( ),
 );
-  // tx_orgesab_cat
+  // tx_awomrhein_cat

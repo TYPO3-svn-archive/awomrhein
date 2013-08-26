@@ -1,24 +1,24 @@
-  // plugin.orgesab
+  // plugin.awomrhein
   // plugin.tx_browser_pi1
 
 
 
-  // plugin.orgesab
-plugin.orgesab {
+  // plugin.awomrhein
+plugin.awomrhein {
 
-  # cat=organiser esab - pages/enable/101;             type=int+;    label= Org +ESAB page uid:Uid of the page, which dispülays the Org +ESAB data. This page contains usually the TYPO3 Browser plugin/Flexform.
-  pages.orgesab = 
+  # cat=organiser esab - pages/enable/101;             type=int+;    label= AWO Mittelrhein page uid:Uid of the page, which dispülays the AWO Mittelrhein data. This page contains usually the TYPO3 Browser plugin/Flexform.
+  pages.awomrhein = 
 
   # cat=organiser esab - typo3 browser/enable/101;     type=string;  label= Alias for show Uid:Alias for the showUid, which is used by the TYPO3 Browser.
-  typo3browser.showUid = orgesabUid
+  typo3browser.showUid = awomrheinUid
 
 }
-  // plugin.orgesab
+  // plugin.awomrhein
 
 
 
   // plugin.tx_browser_pi1
 plugin.tx_browser_pi1 {
-  jQuery.plugin.jstree.tablefield_01 = tx_orgesab_cat.title
+  jQuery.plugin.jstree.tablefield_01 = tx_awomrhein_cat.title
 }
   // plugin.tx_browser_pi1

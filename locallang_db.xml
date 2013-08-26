@@ -2,126 +2,116 @@
 <T3locallang>
   <meta type="array">
     <type>database</type>
-    <description>Language labels for database tables/fields belonging to extension 'orgesab'</description>
+    <description>Language labels for database tables/fields belonging to extension 'awomrhein'</description>
   </meta>
   <data type="array">
     <languageKey index="default" type="array">
       <label index="dummy.language">default</label>
-      <label index="filter_phrase.tx_orgesab.eventbegin">Month</label>
-      <label index="filter_phrase.tx_orgesab_cat">Category</label>
-      <label index="tca_phrase.esab">ESAB</label>
+      <label index="filter_phrase.tx_awomrhein.eventbegin">Month</label>
+      <label index="filter_phrase.tx_awomrhein_cat">Category</label>
 
-      <label index="tx_org_cal.tx_orgesab">ESAB</label>
-      <label index="tx_org_cal.type.tx_orgesab">Take it from the ESAB table</label>
+      <label index="tx_awomrhein">AWO Mittelrhein</label>
 
-      <label index="tx_orgesab">ESAB</label>
+      <label index="tx_awomrhein.div_calendar">Calendar</label>
+      <label index="tx_awomrhein.div_control">Controlling</label>
+      <label index="tx_awomrhein.div_days">Days</label>
+      <label index="tx_awomrhein.div_event">Event</label>
+      <label index="tx_awomrhein.div_hours">Hours</label>
+      <label index="tx_awomrhein.div_location">Locations</label>
+      <label index="tx_awomrhein.div_seo">Search Engines</label>
 
-      <label index="tx_orgesab.div_calendar">Calendar</label>
-      <label index="tx_orgesab.div_control">Controlling</label>
-      <label index="tx_orgesab.div_days">Days</label>
-      <label index="tx_orgesab.div_event">Event</label>
-      <label index="tx_orgesab.div_hours">Hours</label>
-      <label index="tx_orgesab.div_location">Locations</label>
-      <label index="tx_orgesab.div_seo">Search Engines</label>
-
-      <label index="tx_orgesab.bodytext">Bodytext</label>
-      <label index="tx_orgesab.bookedup">Booked up</label>
-      <label index="tx_orgesab.bookingurl">Booking URL</label>
-      <label index="tx_orgesab.category">Category 2nd level</label>
-      <label index="tx_orgesab.day1">Day 1</label>
-      <label index="tx_orgesab.day2">Day 2</label>
-      <label index="tx_orgesab.day3">Day 3</label>
-      <label index="tx_orgesab.day4">Day 4</label>
-      <label index="tx_orgesab.day5">Day 5</label>
-      <label index="tx_orgesab.details">Details</label>
-      <label index="tx_orgesab.eventbegin">Begin</label>
-      <label index="tx_orgesab.eventend">End</label>
-      <label index="tx_orgesab.externalid">ID in the booking system</label>
-      <label index="tx_orgesab.hours1">Hours 1</label>
-      <label index="tx_orgesab.hours2">Hours 2</label>
-      <label index="tx_orgesab.hours3">Hours 3</label>
-      <label index="tx_orgesab.hours4">Hours 4</label>
-      <label index="tx_orgesab.hours5">Hours 5</label>
-      <label index="tx_orgesab.location1">Location 1</label>
-      <label index="tx_orgesab.location2">Location 2</label>
-      <label index="tx_orgesab.location3">Location 3</label>
-      <label index="tx_orgesab.location4">Location 4</label>
-      <label index="tx_orgesab.location5">Location 5</label>
-      <label index="tx_orgesab.price1">Price members</label>
-      <label index="tx_orgesab.price2">Price others</label>
-      <label index="tx_orgesab.price3">Price 3</label>
-      <label index="tx_orgesab.skills">Skills</label>
-      <label index="tx_orgesab.spaceoftime">Space of time</label>
-      <label index="tx_orgesab.staff1">Course instructor 1</label>
-      <label index="tx_orgesab.staff2">Course instructor 2</label>
-      <label index="tx_orgesab.title">Title of the ESAB event</label>
-      <label index="tx_orgesab.tx_org_cal">Calendar</label>
+      <label index="tx_awomrhein.bodytext">Bodytext</label>
+      <label index="tx_awomrhein.bookedup">Booked up</label>
+      <label index="tx_awomrhein.bookingurl">Booking URL</label>
+      <label index="tx_awomrhein.category">Category 2nd level</label>
+      <label index="tx_awomrhein.day1">Day 1</label>
+      <label index="tx_awomrhein.day2">Day 2</label>
+      <label index="tx_awomrhein.day3">Day 3</label>
+      <label index="tx_awomrhein.day4">Day 4</label>
+      <label index="tx_awomrhein.day5">Day 5</label>
+      <label index="tx_awomrhein.details">Details</label>
+      <label index="tx_awomrhein.eventbegin">Begin</label>
+      <label index="tx_awomrhein.eventend">End</label>
+      <label index="tx_awomrhein.externalid">ID in the booking system</label>
+      <label index="tx_awomrhein.hours1">Hours 1</label>
+      <label index="tx_awomrhein.hours2">Hours 2</label>
+      <label index="tx_awomrhein.hours3">Hours 3</label>
+      <label index="tx_awomrhein.hours4">Hours 4</label>
+      <label index="tx_awomrhein.hours5">Hours 5</label>
+      <label index="tx_awomrhein.location1">Location 1</label>
+      <label index="tx_awomrhein.location2">Location 2</label>
+      <label index="tx_awomrhein.location3">Location 3</label>
+      <label index="tx_awomrhein.location4">Location 4</label>
+      <label index="tx_awomrhein.location5">Location 5</label>
+      <label index="tx_awomrhein.price1">Price members</label>
+      <label index="tx_awomrhein.price2">Price others</label>
+      <label index="tx_awomrhein.price3">Price 3</label>
+      <label index="tx_awomrhein.skills">Skills</label>
+      <label index="tx_awomrhein.spaceoftime">Space of time</label>
+      <label index="tx_awomrhein.staff1">Course instructor 1</label>
+      <label index="tx_awomrhein.staff2">Course instructor 2</label>
+      <label index="tx_awomrhein.title">Title of the AWO Mittelrhein event</label>
       
-      <label index="tx_orgesab_cat">ESAB category</label>
-      <label index="tx_orgesab_cat.title">Label of the ESAB category</label>
+      <label index="tx_awomrhein_cat">AWO Mittelrhein category</label>
+      <label index="tx_awomrhein_cat.title">Label of the AWO Mittelrhein category</label>
 
-      <label index="wizard.tx_orgesab.add">Add a new ESAB</label>
-      <label index="wizard.tx_orgesab.edit">Edit the selected ESAB</label>
-      <label index="wizard.tx_orgesab.list">Display the ESAB table</label>
+      <label index="wizard.tx_awomrhein.add">Add a new AWO Mittelrhein</label>
+      <label index="wizard.tx_awomrhein.edit">Edit the selected AWO Mittelrhein</label>
+      <label index="wizard.tx_awomrhein.list">Display the AWO Mittelrhein table</label>
     </languageKey>
     <languageKey index="de" type="array">
       <label index="dummy.language">de</label>
-      <label index="filter_phrase.tx_orgesab.eventbegin">Monat</label>
-      <label index="filter_phrase.tx_orgesab_cat">Bereich</label>
-      <label index="tca_phrase.esab">ESAB</label>
+      <label index="filter_phrase.tx_awomrhein.eventbegin">Monat</label>
+      <label index="filter_phrase.tx_awomrhein_cat">Bereich</label>
 
-      <label index="tx_org_cal.tx_orgesab">ESAB</label>
-      <label index="tx_org_cal.type.tx_orgesab">Aus der ESAB-Tabelle</label>
+      <label index="tx_awomrhein">AWO Mittelrhein</label>
 
-      <label index="tx_orgesab">ESAB</label>
-
-      <label index="tx_orgesab.div_calendar">Kalender</label>
-      <label index="tx_orgesab.div_control">Steuerung</label>
-      <label index="tx_orgesab.div_days">Tage</label>
-      <label index="tx_orgesab.div_event">Veranstaltung</label>
-      <label index="tx_orgesab.div_hours">Stunden</label>
-      <label index="tx_orgesab.div_location">Veranstaltungsorte</label>
-      <label index="tx_orgesab.div_seo">Suchmaschinen</label>
+      <label index="tx_awomrhein.div_calendar">Kalender</label>
+      <label index="tx_awomrhein.div_control">Steuerung</label>
+      <label index="tx_awomrhein.div_days">Tage</label>
+      <label index="tx_awomrhein.div_event">Veranstaltung</label>
+      <label index="tx_awomrhein.div_hours">Stunden</label>
+      <label index="tx_awomrhein.div_location">Veranstaltungsorte</label>
+      <label index="tx_awomrhein.div_seo">Suchmaschinen</label>
       
-      <label index="tx_orgesab.bodytext">Text</label>
-      <label index="tx_orgesab.bookedup">Ausgebucht</label>
-      <label index="tx_orgesab.bookingurl">Buchungs-URL</label>
-      <label index="tx_orgesab.category">Kategorie 2. Ebene</label>
-      <label index="tx_orgesab.day1">Tag 1</label>
-      <label index="tx_orgesab.day2">Tag 2</label>
-      <label index="tx_orgesab.day3">Tag 3</label>
-      <label index="tx_orgesab.day4">Tag 4</label>
-      <label index="tx_orgesab.day5">Tag 5</label>
-      <label index="tx_orgesab.details">Details</label>
-      <label index="tx_orgesab.eventbegin">Beginn</label>
-      <label index="tx_orgesab.eventend">Ende</label>
-      <label index="tx_orgesab.externalid">ID im Buchungssystem</label>
-      <label index="tx_orgesab.hours1">Stunden 1</label>
-      <label index="tx_orgesab.hours2">Stunden 2</label>
-      <label index="tx_orgesab.hours3">Stunden 3</label>
-      <label index="tx_orgesab.hours4">Stunden 4</label>
-      <label index="tx_orgesab.hours5">Stunden 5</label>
-      <label index="tx_orgesab.location1">Veranstaltungsort 1</label>
-      <label index="tx_orgesab.location2">Veranstaltungsort 2</label>
-      <label index="tx_orgesab.location3">Veranstaltungsort 3</label>
-      <label index="tx_orgesab.location4">Veranstaltungsort 4</label>
-      <label index="tx_orgesab.location5">Veranstaltungsort 5</label>
-      <label index="tx_orgesab.price1">Preis Mitglieder</label>
-      <label index="tx_orgesab.price2">Preis Andere</label>
-      <label index="tx_orgesab.price3">Preis 3</label>
-      <label index="tx_orgesab.skills">Themen</label>
-      <label index="tx_orgesab.spaceoftime">Zeitraum</label>
-      <label index="tx_orgesab.staff1">Kursleiter 1</label>
-      <label index="tx_orgesab.staff2">Kursleiter 2</label>
-      <label index="tx_orgesab.title">Bezeichnung der ESAB-Veranstaltung</label>
-      <label index="tx_orgesab.tx_org_cal">Kalendar</label>
+      <label index="tx_awomrhein.bodytext">Text</label>
+      <label index="tx_awomrhein.bookedup">Ausgebucht</label>
+      <label index="tx_awomrhein.bookingurl">Buchungs-URL</label>
+      <label index="tx_awomrhein.category">Kategorie 2. Ebene</label>
+      <label index="tx_awomrhein.day1">Tag 1</label>
+      <label index="tx_awomrhein.day2">Tag 2</label>
+      <label index="tx_awomrhein.day3">Tag 3</label>
+      <label index="tx_awomrhein.day4">Tag 4</label>
+      <label index="tx_awomrhein.day5">Tag 5</label>
+      <label index="tx_awomrhein.details">Details</label>
+      <label index="tx_awomrhein.eventbegin">Beginn</label>
+      <label index="tx_awomrhein.eventend">Ende</label>
+      <label index="tx_awomrhein.externalid">ID im Buchungssystem</label>
+      <label index="tx_awomrhein.hours1">Stunden 1</label>
+      <label index="tx_awomrhein.hours2">Stunden 2</label>
+      <label index="tx_awomrhein.hours3">Stunden 3</label>
+      <label index="tx_awomrhein.hours4">Stunden 4</label>
+      <label index="tx_awomrhein.hours5">Stunden 5</label>
+      <label index="tx_awomrhein.location1">Veranstaltungsort 1</label>
+      <label index="tx_awomrhein.location2">Veranstaltungsort 2</label>
+      <label index="tx_awomrhein.location3">Veranstaltungsort 3</label>
+      <label index="tx_awomrhein.location4">Veranstaltungsort 4</label>
+      <label index="tx_awomrhein.location5">Veranstaltungsort 5</label>
+      <label index="tx_awomrhein.price1">Preis Mitglieder</label>
+      <label index="tx_awomrhein.price2">Preis Andere</label>
+      <label index="tx_awomrhein.price3">Preis 3</label>
+      <label index="tx_awomrhein.skills">Themen</label>
+      <label index="tx_awomrhein.spaceoftime">Zeitraum</label>
+      <label index="tx_awomrhein.staff1">Kursleiter 1</label>
+      <label index="tx_awomrhein.staff2">Kursleiter 2</label>
+      <label index="tx_awomrhein.title">Bezeichnung der AWO Mittelrhein-Veranstaltung</label>
       
-      <label index="tx_orgesab_cat">ESAB-Kategorie</label>
-      <label index="tx_orgesab_cat.title">Bezeichnung der ESAB-Kategorie</label>
+      <label index="tx_awomrhein_cat">AWO Mittelrhein-Kategorie</label>
+      <label index="tx_awomrhein_cat.title">Bezeichnung der AWO Mittelrhein-Kategorie</label>
 
-      <label index="wizard.tx_orgesab.add"><![CDATA[Neue Produktion / neues Stück hinzufügen]]></label>
-      <label index="wizard.tx_orgesab.edit"><![CDATA[Ausgewählte Produktion / ausgewähltes Stück bearbeiten]]></label>
-      <label index="wizard.tx_orgesab.list"><![CDATA[Tabelle mit Produktionen / Stücken anzeigen]]></label>
+      <label index="wizard.tx_awomrhein.add"><![CDATA[Neue Produktion / neues Stück hinzufügen]]></label>
+      <label index="wizard.tx_awomrhein.edit"><![CDATA[Ausgewählte Produktion / ausgewähltes Stück bearbeiten]]></label>
+      <label index="wizard.tx_awomrhein.list"><![CDATA[Tabelle mit Produktionen / Stücken anzeigen]]></label>
     </languageKey>
   </data>
 </T3locallang>

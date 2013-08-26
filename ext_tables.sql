@@ -1,19 +1,16 @@
 # INDEX
 # 
-# tx_orgesab
-# tx_orgesab_cat
+# tx_awomrhein
+# tx_awomrhein_cat
 #
-# tx_orgesab_mm_tx_orgesab_cat
-# tx_orgesab_mm_tx_org_cal
-#
-# tx_org_cal
+# tx_awomrhein_mm_tx_awomrhein_cat
 
 
 
 #
-# Table structure for table 'tx_orgesab'
+# Table structure for table 'tx_awomrhein'
 #
-CREATE TABLE tx_orgesab (
+CREATE TABLE tx_awomrhein (
   uid int(11) unsigned DEFAULT '0' NOT NULL auto_increment,
   pid int(11) unsigned DEFAULT '0' NOT NULL,
   tstamp int(11) unsigned DEFAULT '0' NOT NULL,
@@ -56,7 +53,7 @@ CREATE TABLE tx_orgesab (
   staff1 text,
   staff2 text,
   title tinytext,
-  tx_orgesab_cat text,
+  tx_awomrhein_cat text,
   tx_org_cal tinytext,
   
   PRIMARY KEY (uid),
@@ -64,9 +61,9 @@ CREATE TABLE tx_orgesab (
 );
 
 #
-# tx_orgesab_cat
+# tx_awomrhein_cat
 #
-CREATE TABLE tx_orgesab_cat (
+CREATE TABLE tx_awomrhein_cat (
   uid int(11) unsigned DEFAULT '0' NOT NULL auto_increment,
   pid int(11) unsigned DEFAULT '0' NOT NULL,
   tstamp int(11) unsigned DEFAULT '0' NOT NULL,
@@ -82,9 +79,9 @@ CREATE TABLE tx_orgesab_cat (
 );
 
 #
-# tx_orgesab_mm_tx_orgesab_cat
+# tx_awomrhein_mm_tx_awomrhein_cat
 #
-CREATE TABLE tx_orgesab_mm_tx_orgesab_cat (
+CREATE TABLE tx_awomrhein_mm_tx_awomrhein_cat (
   uid_local int(11) unsigned DEFAULT '0' NOT NULL,
   uid_foreign int(11) unsigned DEFAULT '0' NOT NULL,
   tablenames varchar(30) DEFAULT '' NOT NULL,
@@ -92,24 +89,4 @@ CREATE TABLE tx_orgesab_mm_tx_orgesab_cat (
   sorting_foreign int(11) unsigned DEFAULT '0' NOT NULL,
   KEY uid_local (uid_local),
   KEY uid_foreign (uid_foreign)
-);
-
-#
-# tx_orgesab_mm_tx_org_cal
-#
-CREATE TABLE tx_orgesab_mm_tx_org_cal (
-  uid_local int(11) unsigned DEFAULT '0' NOT NULL,
-  uid_foreign int(11) unsigned DEFAULT '0' NOT NULL,
-  tablenames varchar(30) DEFAULT '' NOT NULL,
-  sorting         int(11) unsigned DEFAULT '0' NOT NULL,
-  sorting_foreign int(11) unsigned DEFAULT '0' NOT NULL,
-  KEY uid_local (uid_local),
-  KEY uid_foreign (uid_foreign)
-);
-
-#
-# tx_org_cal
-#
-CREATE TABLE tx_org_cal (
-  tx_orgesab tinytext
 );

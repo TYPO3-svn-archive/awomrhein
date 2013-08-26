@@ -19,7 +19,7 @@
   //    esabUid
 
   // page
-[globalVar = GP:tx_browser_pi1|{$plugin.orgesab.typo3browser.showUid} > 0]
+[globalVar = GP:tx_browser_pi1|{$plugin.awomrhein.typo3browser.showUid} > 0]
   page {
     config {
       noPageTitle = 2
@@ -57,11 +57,11 @@
   // plugin.tx_linkhandler
 
 plugin.tx_linkhandler {
-  tx_orgesab {
+  tx_awomrhein {
     forceLink        = 0
     useCacheHash     = 1
     parameter        = {$plugin.org.pages.esab}
-    additionalParams = &tx_browser_pi1[{$plugin.orgesab.typo3browser.showUid}]={field:uid}
+    additionalParams = &tx_browser_pi1[{$plugin.awomrhein.typo3browser.showUid}]={field:uid}
     additionalParams {
       insertData = 1
     } 
@@ -75,7 +75,7 @@ plugin.tx_linkhandler {
   // page
 
 page {
-  //includeCSS.orgesab = EXT:orgesab/res/html/orgesab.css
+  //includeCSS.awomrhein = EXT:awomrhein/res/html/awomrhein.css
   config.headerComment (
           TYPO3-Programmierung: die-netzmacher.de
   )
