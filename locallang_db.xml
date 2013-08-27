@@ -18,8 +18,8 @@
 
       <label index="tx_awomrhein.div_address">Address</label>
       <label index="tx_awomrhein.div_attendance">Attendance</label>
-      <label index="tx_awomrhein.div_facility">Facility</label>
       <label index="tx_awomrhein.div_control">Controlling</label>
+      <label index="tx_awomrhein.div_facility">Facility</label>
       <label index="tx_awomrhein.div_seo">Search Engines</label>
 
       <label index="tx_awomrhein.address1">Address 1</label> 
@@ -81,8 +81,8 @@
 
       <label index="tx_awomrhein.div_address">Adresse</label>
       <label index="tx_awomrhein.div_attendance">Dienstleistungen</label>
-      <label index="tx_awomrhein.div_facility">Einrichtung</label>
       <label index="tx_awomrhein.div_control">Steuerung</label>
+      <label index="tx_awomrhein.div_facility">Einrichtung</label>
       <label index="tx_awomrhein.div_seo">Suchmaschinen</label>
       
       <label index="tx_awomrhein.address1">Straße</label> 

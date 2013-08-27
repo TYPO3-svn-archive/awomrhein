@@ -557,7 +557,7 @@ $TCA['tx_awomrhein'] = array (
           , tx_awomrhein_cat
           , tx_awomrhein_certified
           , tx_awomrhein_corporation
-            --div--;LLL:EXT:awomrhein/locallang_db.xml:tx_awomrhein.div_address
+          , --div--;LLL:EXT:awomrhein/locallang_db.xml:tx_awomrhein.div_address
           , address1
           , address2
           , zip
@@ -568,7 +568,7 @@ $TCA['tx_awomrhein'] = array (
           , url
           , lon
           , lat
-            --div--;LLL:EXT:awomrhein/locallang_db.xml:tx_awomrhein.div_attendance
+          , --div--;LLL:EXT:awomrhein/locallang_db.xml:tx_awomrhein.div_attendance
           , tx_awomrhein_attendance
           , attendance2
           , attendance3
