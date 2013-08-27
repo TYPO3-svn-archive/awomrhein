@@ -1,10 +1,16 @@
 # INDEX
 # 
 # tx_awomrhein
+# tx_awomrhein_attendance
 # tx_awomrhein_cat
+# tx_awomrhein_certificate
+# tx_awomrhein_corporation
 # tx_awomrhein_responsible
 #
+# tx_awomrhein_mm_tx_awomrhein_attendance
 # tx_awomrhein_mm_tx_awomrhein_cat
+# tx_awomrhein_mm_tx_awomrhein_certificate
+# tx_awomrhein_mm_tx_awomrhein_corporation
 # tx_awomrhein_mm_tx_awomrhein_responsible
 
 
@@ -55,8 +61,29 @@ CREATE TABLE tx_awomrhein (
   staff1 text,
   staff2 text,
   title tinytext,
+  tx_awomrhein_attendance text,
   tx_awomrhein_cat text,
-  tx_org_cal tinytext,
+  tx_awomrhein_certificate text,
+  tx_awomrhein_corporation text,
+  tx_awomrhein_responsible text,
+  
+  PRIMARY KEY (uid),
+  KEY parent (pid)
+);
+
+#
+# tx_awomrhein_attendance
+#
+CREATE TABLE tx_awomrhein_attendance (
+  uid int(11) unsigned DEFAULT '0' NOT NULL auto_increment,
+  pid int(11) unsigned DEFAULT '0' NOT NULL,
+  tstamp int(11) unsigned DEFAULT '0' NOT NULL,
+  crdate int(11) unsigned DEFAULT '0' NOT NULL,
+  cruser_id int(11) unsigned DEFAULT '0' NOT NULL,
+  deleted tinyint(4) unsigned DEFAULT '0' NOT NULL,
+  title tinytext,
+  uid_parent int(11) DEFAULT '0' NOT NULL,
+  hidden tinyint(4) DEFAULT '0' NOT NULL,
   
   PRIMARY KEY (uid),
   KEY parent (pid)
@@ -66,6 +93,42 @@ CREATE TABLE tx_awomrhein (
 # tx_awomrhein_cat
 #
 CREATE TABLE tx_awomrhein_cat (
+  uid int(11) unsigned DEFAULT '0' NOT NULL auto_increment,
+  pid int(11) unsigned DEFAULT '0' NOT NULL,
+  tstamp int(11) unsigned DEFAULT '0' NOT NULL,
+  crdate int(11) unsigned DEFAULT '0' NOT NULL,
+  cruser_id int(11) unsigned DEFAULT '0' NOT NULL,
+  deleted tinyint(4) unsigned DEFAULT '0' NOT NULL,
+  title tinytext,
+  uid_parent int(11) DEFAULT '0' NOT NULL,
+  hidden tinyint(4) DEFAULT '0' NOT NULL,
+  
+  PRIMARY KEY (uid),
+  KEY parent (pid)
+);
+
+#
+# tx_awomrhein_certificate
+#
+CREATE TABLE tx_awomrhein_certificate (
+  uid int(11) unsigned DEFAULT '0' NOT NULL auto_increment,
+  pid int(11) unsigned DEFAULT '0' NOT NULL,
+  tstamp int(11) unsigned DEFAULT '0' NOT NULL,
+  crdate int(11) unsigned DEFAULT '0' NOT NULL,
+  cruser_id int(11) unsigned DEFAULT '0' NOT NULL,
+  deleted tinyint(4) unsigned DEFAULT '0' NOT NULL,
+  title tinytext,
+  uid_parent int(11) DEFAULT '0' NOT NULL,
+  hidden tinyint(4) DEFAULT '0' NOT NULL,
+  
+  PRIMARY KEY (uid),
+  KEY parent (pid)
+);
+
+#
+# tx_awomrhein_corporation
+#
+CREATE TABLE tx_awomrhein_corporation (
   uid int(11) unsigned DEFAULT '0' NOT NULL auto_increment,
   pid int(11) unsigned DEFAULT '0' NOT NULL,
   tstamp int(11) unsigned DEFAULT '0' NOT NULL,
@@ -99,9 +162,48 @@ CREATE TABLE tx_awomrhein_responsible (
 );
 
 #
+# tx_awomrhein_mm_tx_awomrhein_attendance
+#
+CREATE TABLE tx_awomrhein_mm_tx_awomrhein_attendance (
+  uid_local int(11) unsigned DEFAULT '0' NOT NULL,
+  uid_foreign int(11) unsigned DEFAULT '0' NOT NULL,
+  tablenames varchar(30) DEFAULT '' NOT NULL,
+  sorting         int(11) unsigned DEFAULT '0' NOT NULL,
+  sorting_foreign int(11) unsigned DEFAULT '0' NOT NULL,
+  KEY uid_local (uid_local),
+  KEY uid_foreign (uid_foreign)
+);
+
+#
 # tx_awomrhein_mm_tx_awomrhein_cat
 #
 CREATE TABLE tx_awomrhein_mm_tx_awomrhein_cat (
+  uid_local int(11) unsigned DEFAULT '0' NOT NULL,
+  uid_foreign int(11) unsigned DEFAULT '0' NOT NULL,
+  tablenames varchar(30) DEFAULT '' NOT NULL,
+  sorting         int(11) unsigned DEFAULT '0' NOT NULL,
+  sorting_foreign int(11) unsigned DEFAULT '0' NOT NULL,
+  KEY uid_local (uid_local),
+  KEY uid_foreign (uid_foreign)
+);
+
+#
+# tx_awomrhein_mm_tx_awomrhein_certificate
+#
+CREATE TABLE tx_awomrhein_mm_tx_awomrhein_certificate (
+  uid_local int(11) unsigned DEFAULT '0' NOT NULL,
+  uid_foreign int(11) unsigned DEFAULT '0' NOT NULL,
+  tablenames varchar(30) DEFAULT '' NOT NULL,
+  sorting         int(11) unsigned DEFAULT '0' NOT NULL,
+  sorting_foreign int(11) unsigned DEFAULT '0' NOT NULL,
+  KEY uid_local (uid_local),
+  KEY uid_foreign (uid_foreign)
+);
+
+#
+# tx_awomrhein_mm_tx_awomrhein_corporation
+#
+CREATE TABLE tx_awomrhein_mm_tx_awomrhein_corporation (
   uid_local int(11) unsigned DEFAULT '0' NOT NULL,
   uid_foreign int(11) unsigned DEFAULT '0' NOT NULL,
   tablenames varchar(30) DEFAULT '' NOT NULL,
