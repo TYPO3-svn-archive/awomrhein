@@ -119,6 +119,7 @@ $TCA['tx_awomrhein'] = array (
     'showRecordFieldList' => '
         externalid, title,bookedup,bookingurl,eventbegin,eventend,spaceoftime,staff1,staff2,price1,price2,price3,tx_awomrhein_cat,bodytext,skills,details,category
       , tx_awomrhein_cat
+      , tx_awomrhein_responsible
       , location1,location2,location3,location4,location5
       , day1,day2,day3,day4,day5
       , hours1,hours2,hours3,hours4,hours5
@@ -257,6 +258,59 @@ $TCA['tx_awomrhein'] = array (
         ),
       ),
     ),
+    'tx_awomrhein_responsible' => array (
+      'exclude'   => $bool_exclude_default,
+      'label'     => 'LLL:EXTawomrheinlocallang_db.xml:tx_awomrhein.tx_awomrhein_responsible',
+      'config'    => array (
+        'type'                => 'select',
+        'size'                => 10,
+        'minitems'            => 0,
+        'maxitems'            => 99,
+        'MM'                  => 'tx_awomrhein_mm_tx_awomrhein_responsible',
+        'foreign_table'       => 'tx_awomrhein_responsible',
+//        'foreign_table_where' => 'AND tx_awomrhein_responsible.' . $str_store_record_conf . ' AND tx_awomrhein_responsible.deleted = 0 AND tx_awomrhein_responsible.hidden = 0 ORDER BY tx_awomrhein_responsible.title',
+        'foreign_table_where' => 'AND  tx_awomrhein_responsible.deleted = 0 AND tx_awomrhein_responsible.hidden = 0 ORDER BY tx_awomrhein_responsible.title',
+        'form_type'           => 'user',
+        'userFunc'            => 'tx_cpstcatree->getTree',
+        'treeView'            => 1,
+        'expandable'          => 1,
+        'expandFirst'         => 0,
+        'expandAll'           => 0,
+        'wizards' => array (
+          '_PADDING'  => 2,
+          '_VERTICAL' => 0,
+          'add' => array (
+            'type'   => 'script',
+            'title'  => 'LLL:EXTawomrheinlocallang_db.xml:wizard.tx_awomrhein_responsible.add',
+            'icon'   => 'add.gif',
+            'params' => array (
+              'table'    => 'tx_awomrhein_responsible',
+              'pid'      => $str_marker_pid,
+              'setValue' => 'prepend'
+            ),
+            'script' => 'wizard_add.php',
+          ),
+          'list' => array (
+            'type'   => 'script',
+            'title'  => 'LLL:EXTawomrheinlocallang_db.xml:wizard.tx_awomrhein_responsible.list',
+            'icon'   => 'list.gif',
+            'params' => array (
+              'table' => 'tx_awomrhein_responsible',
+              'pid'   => $str_marker_pid,
+            ),
+            'script' => 'wizard_list.php',
+          ),
+          'edit' => array (
+            'type'                      => 'popup',
+            'title'                     => 'LLL:EXTawomrheinlocallang_db.xml:wizard.tx_awomrhein_responsible.edit',
+            'script'                    => 'wizard_edit.php',
+            'popup_onlyOpenIfSelected'  => 1,
+            'icon'                      => 'edit2.gif',
+            'JSopenParams'              => $JSopenParams,
+          ),
+        ),
+      ),
+    ),
     'bodytext' => array (
       'exclude' => $bool_exclude_default,
       'label'   => 'LLL:EXT:awomrhein/locallang_db.xml:tx_awomrhein.bodytext',
@@ -376,6 +430,7 @@ $TCA['tx_awomrhein'] = array (
           , price2
           , price3
           , tx_awomrhein_cat
+          , tx_awomrhein_responsible
           , details
           , category
           , bodytext;;;richtext[]:rte_transform[mode=ts];
@@ -464,3 +519,57 @@ $TCA['tx_awomrhein_cat'] = array (
   'palettes' => array ( ),
 );
   // tx_awomrhein_cat
+
+
+
+  /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+  // 
+  // tx_awomrhein_responsible
+  
+$TCA['tx_awomrhein_responsible'] = array (
+  'ctrl' => $TCA['tx_awomrhein_responsible']['ctrl'],
+  'interface' => array (
+    'showRecordFieldList' => '
+        title
+      , uid_parent
+      , hidden',
+  ),
+  'columns' => array (
+    'title' => array (
+      'exclude' => 0,
+      'label'   => 'LLL:EXT:awomrhein/locallang_db.xml:tx_awomrhein_responsible.title',
+      'config'  => $conf_input_30_trimRequired,
+    ),
+    'uid_parent' => array (
+      'exclude'   => 0,
+      'label'   => 'LLL:EXT:awomrhein/locallang_db.xml:tx_awomrhein_responsible.uid_parent',
+      'config'    => array (
+        'type'          => 'select',
+        'size'          => 1,
+        'minitems'      => 0,
+        'maxitems'      => 2,
+        'trueMaxItems'  => 1,
+        'form_type'     => 'user',
+        'userFunc'      => 'tx_cpstcatree->getTree',
+        'foreign_table' => 'tx_awomrhein_responsible',
+        'treeView'      => 1,
+        'expandable'    => 1,
+        'expandFirst'   => 0,
+        'expandAll'     => 0,
+      ),
+    ),
+    'hidden'    => $conf_hidden,
+  ),
+  'types' => array
+  (
+    '0' => array 
+    (
+      'showitem' => '
+          title
+        , uid_parent
+        , hidden'
+    ),
+  ),
+  'palettes' => array ( ),
+);
+  // tx_awomrhein_responsible

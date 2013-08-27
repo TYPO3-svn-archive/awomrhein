@@ -9,6 +9,7 @@
       <label index="dummy.language">default</label>
       <label index="filter_phrase.tx_awomrhein.eventbegin">Month</label>
       <label index="filter_phrase.tx_awomrhein_cat">Category</label>
+      <label index="filter_phrase.tx_awomrhein_responsible">Responsible</label>
 
       <label index="tx_awomrhein">AWO Mittelrhein</label>
 
@@ -54,6 +55,9 @@
       
       <label index="tx_awomrhein_cat">AWO Mittelrhein category</label>
       <label index="tx_awomrhein_cat.title">Label of the AWO Mittelrhein category</label>
+
+      <label index="tx_awomrhein_responsible">Responsibles</label>
+      <label index="tx_awomrhein_responsible.title">Label of the responsible</label>
 
       <label index="wizard.tx_awomrhein.add">Add a new AWO Mittelrhein</label>
       <label index="wizard.tx_awomrhein.edit">Edit the selected AWO Mittelrhein</label>
