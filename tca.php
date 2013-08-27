@@ -127,7 +127,7 @@ $TCA['tx_awomrhein'] = array (
       , attendance7
       , city
       , description
-      , e-mail
+      , email
       , facility
       , fax
       , hidden
@@ -198,9 +198,9 @@ $TCA['tx_awomrhein'] = array (
       'exclude'   => $bool_exclude_default,
       'config'    => $conf_text_50_10,
     ),
-    'e-mail' => array (
+    'email' => array (
       'exclude' => $bool_exclude_default,
-      'label'   => 'LLL:EXT:awomrhein/locallang_db.xml:tx_awomrhein.e-mail',
+      'label'   => 'LLL:EXT:awomrhein/locallang_db.xml:tx_awomrhein.email',
       'config' => array (
         'type' => 'text',
         'cols' => '80',
@@ -564,7 +564,7 @@ $TCA['tx_awomrhein'] = array (
           , city
           , fax
           , phone
-          , e-mail
+          , email
           , url
           , lon
           , lat

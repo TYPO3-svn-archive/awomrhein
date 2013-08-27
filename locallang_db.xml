@@ -32,7 +32,7 @@
       <label index="tx_awomrhein.attendance7">Attendance 7</label> 
       <label index="tx_awomrhein.city">City</label> 
       <label index="tx_awomrhein.description">Description</label> 
-      <label index="tx_awomrhein.e-mail">E-mail</label> 
+      <label index="tx_awomrhein.email">E-mail</label> 
       <label index="tx_awomrhein.facility">Facility</label> 
       <label index="tx_awomrhein.fax">Fax</label> 
       <label index="tx_awomrhein.hidden">Disabled</label> 
@@ -95,7 +95,7 @@
       <label index="tx_awomrhein.attendance7">Dienstleistung 7</label> 
       <label index="tx_awomrhein.city">Stadt</label> 
       <label index="tx_awomrhein.description">Beschreibung</label> 
-      <label index="tx_awomrhein.e-mail">E-Mail</label> 
+      <label index="tx_awomrhein.email">E-Mail</label> 
       <label index="tx_awomrhein.facility">Einrichtung</label> 
       <label index="tx_awomrhein.fax">Fax</label> 
       <label index="tx_awomrhein.hidden">Deaktiviert</label> 

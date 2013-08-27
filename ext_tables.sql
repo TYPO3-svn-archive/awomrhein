@@ -36,7 +36,7 @@ CREATE TABLE tx_awomrhein (
   attendance7 tinytext,
   city tinytext,
   description tinytext,
-  e-mail tinytext,
+  email tinytext,
   facility tinytext,
   fax tinytext,
   hidden tinyint(4) unsigned DEFAULT '0' NOT NULL,
