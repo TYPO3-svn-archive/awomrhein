@@ -143,7 +143,7 @@ t3lib_SpriteManager::addTcaTypeIcon('pages', 'contains-awomrhein',
   // 
   // TCA tables
 
-  // esab ///////////////////////////////////////////////////////////////////
+  // awomrhein ///////////////////////////////////////////////////////////////////
 $TCA['tx_awomrhein'] = array (
   'ctrl' => array (
     'title'             => 'LLL:EXT:awomrhein/locallang_db.xml:tx_awomrhein',
@@ -187,7 +187,29 @@ $TCA['tx_awomrhein_cat'] = array (
     'treeParentField'   => 'uid_parent',
   ),
 );
-  // esab ///////////////////////////////////////////////////////////////////
+
+$TCA['tx_awomrhein_responsible'] = array (
+  'ctrl' => array (
+    'title'             => 'LLL:EXT:awomrhein/locallang_db.xml:tx_awomrhein_responsible',
+    'label'             => 'title',
+    'tstamp'            => 'tstamp',
+    'crdate'            => 'crdate',
+    'cruser_id'         => 'cruser_id',
+    'default_sortby'    => 'ORDER BY title',
+    'delete'            => 'deleted',
+    'enablecolumns'     => array (
+      'disabled'  => 'hidden',
+    ),
+    'readOnly'          => $confArr['databaseReadonly'],
+    'dividers2tabs'     => true,
+    'hideAtCopy'        => false,
+    'dynamicConfigFile' => t3lib_extMgm::extPath($_EXTKEY).'tca.php',
+    'thumbnail'         => 'image',
+    'iconfile'          => t3lib_extMgm::extRelPath($_EXTKEY).'ext_icon/awomrhein.gif',
+    'treeParentField'   => 'uid_parent',
+  ),
+);
+  // awomrhein ///////////////////////////////////////////////////////////////////
 
   // TCA tables //////////////////////////////////////////////////////////////
 
