@@ -66,7 +66,8 @@
     <languageKey index="de" type="array">
       <label index="dummy.language">de</label>
       <label index="filter_phrase.tx_awomrhein.eventbegin">Monat</label>
-      <label index="filter_phrase.tx_awomrhein_cat">Bereich</label>
+      <label index="filter_phrase.tx_awomrhein_cat">Kategorie</label>
+      <label index="filter_phrase.tx_awomrhein_responsible">Träger</label>
 
       <label index="tx_awomrhein">AWO Mittelrhein</label>
 
@@ -110,8 +111,11 @@
       <label index="tx_awomrhein.staff2">Kursleiter 2</label>
       <label index="tx_awomrhein.title">Bezeichnung der AWO Mittelrhein-Veranstaltung</label>
       
-      <label index="tx_awomrhein_cat">AWO Mittelrhein-Kategorie</label>
-      <label index="tx_awomrhein_cat.title">Bezeichnung der AWO Mittelrhein-Kategorie</label>
+      <label index="tx_awomrhein_cat">AWO Mittelrhein: Kategorie</label>
+      <label index="tx_awomrhein_cat.title">Kategorie</label>
+
+      <label index="tx_awomrhein_responsible">AWO Mittelrhein: Träger</label>
+      <label index="tx_awomrhein_responsible.title">Träger</label>
 
       <label index="wizard.tx_awomrhein.add"><![CDATA[Neue Produktion / neues Stück hinzufügen]]></label>
       <label index="wizard.tx_awomrhein.edit"><![CDATA[Ausgewählte Produktion / ausgewähltes Stück bearbeiten]]></label>
