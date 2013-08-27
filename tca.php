@@ -117,44 +117,94 @@ $TCA['tx_awomrhein'] = array (
   'ctrl' => $TCA['tx_awomrhein']['ctrl'],
   'interface' => array (
     'showRecordFieldList' => '
-        externalid, title,bookedup,bookingurl,eventbegin,eventend,spaceoftime,staff1,staff2,price1,price2,price3,bodytext,skills,details,category
+        address1
+      , address2
+      , attendance2
+      , attendance3
+      , attendance4
+      , attendance5
+      , attendance6
+      , attendance7
+      , city
+      , description
+      , e-mail
+      , facility
+      , fax
+      , hidden
+      , keywords
+      , lat
+      , lon
+      , phone
+      , status
       , tx_awomrhein_attendance
       , tx_awomrhein_cat
-      , tx_awomrhein_certificate
+      , tx_awomrhein_certified
       , tx_awomrhein_corporation
       , tx_awomrhein_responsible
-      , location1,location2,location3,location4,location5
-      , day1,day2,day3,day4,day5
-      , hours1,hours2,hours3,hours4,hours5
-      , hidden,fe_group
-      , keywords,description'
+      , url
+      , zip
+      '
   ),
   'feInterface' => $TCA['tx_awomrhein']['feInterface'],
   'columns' => array (
-    'externalid' => array (
+    'address1' => array (
       'exclude' => 0,
-      'label'   => 'LLL:EXT:awomrhein/locallang_db.xml:tx_awomrhein.externalid',
-      'config'  => $conf_input_30_trimRequired,
+      'label'   => 'LLL:EXT:awomrhein/locallang_db.xml:tx_awomrhein.address1',
+      'config'  => $conf_input_30_trim,
     ),
-    'title' => array (
+    'address2' => array (
       'exclude' => 0,
-      'label'   => 'LLL:EXT:awomrhein/locallang_db.xml:tx_awomrhein.title',
-      'config'  => $conf_input_30_trimRequired,
+      'label'   => 'LLL:EXT:awomrhein/locallang_db.xml:tx_awomrhein.address2',
+      'config'  => $conf_input_30_trim,
     ),
-    'bookedup' => array (
-      'exclude' => $bool_exclude_none,
-      'label'   => 'LLL:EXT:awomrhein/locallang_db.xml:tx_awomrhein.bookedup',
-      'config' => array (
-        'type' => 'check'
-      )
+    'attendance2' => array (
+      'exclude' => 0,
+      'label'   => 'LLL:EXT:awomrhein/locallang_db.xml:tx_awomrhein.attendance2',
+      'config'  => $conf_input_30_trim,
     ),
-    'bookingurl' => array (
+    'attendance3' => array (
+      'exclude' => 0,
+      'label'   => 'LLL:EXT:awomrhein/locallang_db.xml:tx_awomrhein.attendance3',
+      'config'  => $conf_input_30_trim,
+    ),
+    'attendance4' => array (
+      'exclude' => 0,
+      'label'   => 'LLL:EXT:awomrhein/locallang_db.xml:tx_awomrhein.attendance4',
+      'config'  => $conf_input_30_trim,
+    ),
+    'attendance5' => array (
+      'exclude' => 0,
+      'label'   => 'LLL:EXT:awomrhein/locallang_db.xml:tx_awomrhein.attendance5',
+      'config'  => $conf_input_30_trim,
+    ),
+    'attendance6' => array (
+      'exclude' => 0,
+      'label'   => 'LLL:EXT:awomrhein/locallang_db.xml:tx_awomrhein.attendance6',
+      'config'  => $conf_input_30_trim,
+    ),
+    'attendance7' => array (
+      'exclude' => 0,
+      'label'   => 'LLL:EXT:awomrhein/locallang_db.xml:tx_awomrhein.attendance7',
+      'config'  => $conf_input_30_trim,
+    ),
+    'city' => array (
+      'exclude' => 0,
+      'label'   => 'LLL:EXT:awomrhein/locallang_db.xml:tx_awomrhein.city',
+      'config'  => $conf_input_30_trim,
+    ),
+    'description' => array (
+      'label'     => 'LLL:EXT:org/locallang_db.xml:tca_phrase.description',
+      'l10n_mode' => 'prefixLangTitle',
+      'exclude'   => $bool_exclude_default,
+      'config'    => $conf_text_50_10,
+    ),
+    'e-mail' => array (
       'exclude' => $bool_exclude_default,
-      'label'   => 'LLL:EXT:awomrhein/locallang_db.xml:tx_awomrhein.bookingurl',
+      'label'   => 'LLL:EXT:awomrhein/locallang_db.xml:tx_awomrhein.e-mail',
       'config' => array (
         'type' => 'text',
-        'cols' => '30',
-        'rows' => '3',
+        'cols' => '80',
+        'rows' => '1',
         'wizards' => array(
           '_PADDING' => 2,
           'link' => array(
@@ -168,45 +218,42 @@ $TCA['tx_awomrhein'] = array (
         'softref' => 'typolink[linkList]'
       )
     ),
-    'eventbegin' => array (
+    'facility' => array (
       'exclude' => 0,
-      'label'   => 'LLL:EXT:awomrhein/locallang_db.xml:tx_awomrhein.eventbegin',
+      'label'   => 'LLL:EXT:awomrhein/locallang_db.xml:tx_awomrhein.facility',
+      'config'  => $conf_input_30_trimRequired,
+    ),
+    'fax' => array (
+      'exclude' => 0,
+      'label'   => 'LLL:EXT:awomrhein/locallang_db.xml:tx_awomrhein.fax',
+      'config'  => $conf_input_30_trim,
+    ),
+    'hidden'    => $conf_hidden,
+    'keywords'  => array (
+      'label'     => 'LLL:EXT:org/locallang_db.xml:tca_phrase.keywords',
+      'l10n_mode' => 'prefixLangTitle',
+      'exclude'   => $bool_exclude_default,
+      'config'    => $conf_input_80_trim,
+    ),
+    'lat' => array (
+      'exclude' => 0,
+      'label'   => 'LLL:EXT:awomrhein/locallang_db.xml:tx_awomrhein.lat',
+      'config'  => $conf_input_30_trim,
+    ),
+    'lon' => array (
+      'exclude' => 0,
+      'label'   => 'LLL:EXT:awomrhein/locallang_db.xml:tx_awomrhein.lon',
+      'config'  => $conf_input_30_trim,
+    ),
+    'phone' => array (
+      'exclude' => 0,
+      'label'   => 'LLL:EXT:awomrhein/locallang_db.xml:tx_awomrhein.phone',
+      'config'  => $conf_input_30_trim,
+    ),
+    'status' => array (
+      'exclude' => 0,
+      'label'   => 'LLL:EXT:awomrhein/locallang_db.xml:tx_awomrhein.status',
       'config'  => $conf_datetime,
-    ),
-    'eventend' => array (
-      'exclude' => 0,
-      'label'   => 'LLL:EXT:awomrhein/locallang_db.xml:tx_awomrhein.eventend',
-      'config'  => $conf_datetimeend,
-    ),
-    'spaceoftime' => array (
-      'exclude' => 0,
-      'label'   => 'LLL:EXT:awomrhein/locallang_db.xml:tx_awomrhein.spaceoftime',
-      'config'  => $conf_input_30_trim,
-    ),
-    'staff1' => array (
-      'exclude' => 0,
-      'label'   => 'LLL:EXT:awomrhein/locallang_db.xml:tx_awomrhein.staff1',
-      'config'  => $conf_input_30_trim,
-    ),
-    'staff2' => array (
-      'exclude' => 0,
-      'label'   => 'LLL:EXT:awomrhein/locallang_db.xml:tx_awomrhein.staff2',
-      'config'  => $conf_input_30_trim,
-    ),
-    'price1' => array (
-      'exclude' => 0,
-      'label'   => 'LLL:EXT:awomrhein/locallang_db.xml:tx_awomrhein.price1',
-      'config'  => $conf_input_30_trim,
-    ),
-    'price2' => array (
-      'exclude' => 0,
-      'label'   => 'LLL:EXT:awomrhein/locallang_db.xml:tx_awomrhein.price2',
-      'config'  => $conf_input_30_trim,
-    ),
-    'price3' => array (
-      'exclude' => 0,
-      'label'   => 'LLL:EXT:awomrhein/locallang_db.xml:tx_awomrhein.price3',
-      'config'  => $conf_input_30_trim,
     ),
     'tx_awomrhein_attendance' => array (
       'exclude'   => $bool_exclude_default,
@@ -473,104 +520,30 @@ $TCA['tx_awomrhein'] = array (
         ),
       ),
     ),
-    'bodytext' => array (
+    'url' => array (
       'exclude' => $bool_exclude_default,
-      'label'   => 'LLL:EXT:awomrhein/locallang_db.xml:tx_awomrhein.bodytext',
-      'config'  => $conf_text_rte,
+      'label'   => 'LLL:EXT:awomrhein/locallang_db.xml:tx_awomrhein.url',
+      'config' => array (
+        'type' => 'text',
+        'cols' => '80',
+        'rows' => '1',
+        'wizards' => array(
+          '_PADDING' => 2,
+          'link' => array(
+            'type' => 'popup',
+            'title' => 'Link',
+            'icon' => 'link_popup.gif',
+            'script' => 'browse_links.php?mode=wizard',
+            'JSopenParams' => 'height=300,width=500,status=0,menubar=0,scrollbars=1'
+          )
+        ),
+        'softref' => 'typolink[linkList]'
+      )
     ),
-    'skills' => array (
-      'exclude' => $bool_exclude_default,
-      'label'   => 'LLL:EXT:awomrhein/locallang_db.xml:tx_awomrhein.skills',
-      'config'  => $conf_text_50_10,
-    ),
-    'details' => array (
+    'zip' => array (
       'exclude' => 0,
-      'label'   => 'LLL:EXT:awomrhein/locallang_db.xml:tx_awomrhein.details',
-      'config'  => $conf_text_50_10,
-    ),
-    'category' => array (
-      'exclude' => 0,
-      'label'   => 'LLL:EXT:awomrhein/locallang_db.xml:tx_awomrhein.category',
-      'config'  => $conf_input_80_trim,
-    ),
-    'price1' => array (
-      'exclude' => 0,
-      'label'   => 'LLL:EXT:awomrhein/locallang_db.xml:tx_awomrhein.price1',
-      'config'  => $conf_input_80_trim,
-    ),
-    'price2' => array (
-      'exclude' => 0,
-      'label'   => 'LLL:EXT:awomrhein/locallang_db.xml:tx_awomrhein.price2',
-      'config'  => $conf_input_80_trim,
-    ),
-    'price3' => array (
-      'exclude' => 0,
-      'label'   => 'LLL:EXT:awomrhein/locallang_db.xml:tx_awomrhein.price3',
-      'config'  => $conf_input_80_trim,
-    ),
-    'day1' => array (
-      'exclude' => 0,
-      'label'   => 'LLL:EXT:awomrhein/locallang_db.xml:tx_awomrhein.day1',
-      'config'  => $conf_input_80_trim,
-    ),
-    'day2' => array (
-      'exclude' => 0,
-      'label'   => 'LLL:EXT:awomrhein/locallang_db.xml:tx_awomrhein.day2',
-      'config'  => $conf_input_80_trim,
-    ),
-    'day3' => array (
-      'exclude' => 0,
-      'label'   => 'LLL:EXT:awomrhein/locallang_db.xml:tx_awomrhein.day3',
-      'config'  => $conf_input_80_trim,
-    ),
-    'day4' => array (
-      'exclude' => 0,
-      'label'   => 'LLL:EXT:awomrhein/locallang_db.xml:tx_awomrhein.day4',
-      'config'  => $conf_input_80_trim,
-    ),
-    'day5' => array (
-      'exclude' => 0,
-      'label'   => 'LLL:EXT:awomrhein/locallang_db.xml:tx_awomrhein.day5',
-      'config'  => $conf_input_80_trim,
-    ),
-    'hours1' => array (
-      'exclude' => 0,
-      'label'   => 'LLL:EXT:awomrhein/locallang_db.xml:tx_awomrhein.hours1',
-      'config'  => $conf_input_80_trim,
-    ),
-    'hours2' => array (
-      'exclude' => 0,
-      'label'   => 'LLL:EXT:awomrhein/locallang_db.xml:tx_awomrhein.hours2',
-      'config'  => $conf_input_80_trim,
-    ),
-    'hours3' => array (
-      'exclude' => 0,
-      'label'   => 'LLL:EXT:awomrhein/locallang_db.xml:tx_awomrhein.hours3',
-      'config'  => $conf_input_80_trim,
-    ),
-    'hours4' => array (
-      'exclude' => 0,
-      'label'   => 'LLL:EXT:awomrhein/locallang_db.xml:tx_awomrhein.hours4',
-      'config'  => $conf_input_80_trim,
-    ),
-    'hours5' => array (
-      'exclude' => 0,
-      'label'   => 'LLL:EXT:awomrhein/locallang_db.xml:tx_awomrhein.hours5',
-      'config'  => $conf_input_80_trim,
-    ),
-    'hidden'    => $conf_hidden,
-    'fe_group'  => $conf_fegroup,
-    'keywords'  => array (
-      'label'     => 'LLL:EXT:org/locallang_db.xml:tca_phrase.keywords',
-      'l10n_mode' => 'prefixLangTitle',
-      'exclude'   => $bool_exclude_default,
-      'config'    => $conf_input_80_trim,
-    ),
-    'description' => array (
-      'label'     => 'LLL:EXT:org/locallang_db.xml:tca_phrase.description',
-      'l10n_mode' => 'prefixLangTitle',
-      'exclude'   => $bool_exclude_default,
-      'config'    => $conf_text_50_10,
+      'label'   => 'LLL:EXT:awomrhein/locallang_db.xml:tx_awomrhein.zip',
+      'config'  => $conf_input_30_trim,
     ),
   ),
   'types' =>  array 
@@ -578,49 +551,34 @@ $TCA['tx_awomrhein'] = array (
     '0' =>  array
     (
       'showitem' => '
-            --div--;LLL:EXT:awomrhein/locallang_db.xml:tx_awomrhein.div_event
-          , externalid
-          , title 
-          , bookedup
-          , bookingurl
-          , eventbegin
-          , eventend
-          , spaceoftime
-          , staff1
-          , staff2
-          , price1
-          , price2
-          , price3
-          , tx_awomrhein_attendance
-          , tx_awomrhein_cat
-          , tx_awomrhein_certificate
-          , tx_awomrhein_corporation
+            --div--;LLL:EXT:awomrhein/locallang_db.xml:tx_awomrhein.div_facility
+          , facility
           , tx_awomrhein_responsible
-          , details
-          , category
-          , bodytext;;;richtext[]:rte_transform[mode=ts];
-          , skills
-          , --div--;LLL:EXT:awomrhein/locallang_db.xml:tx_awomrhein.div_location
-          , location1
-          , location2
-          , location3
-          , location4
-          , location5
-          , --div--;LLL:EXT:awomrhein/locallang_db.xml:tx_awomrhein.div_days
-          , day1
-          , day2
-          , day3
-          , day4
-          , day5
-          , --div--;LLL:EXT:awomrhein/locallang_db.xml:tx_awomrhein.div_hours
-          , hours1
-          , hours2
-          , hours3
-          , hours4
-          , hours5
+          , tx_awomrhein_cat
+          , tx_awomrhein_certified
+          , tx_awomrhein_corporation
+            --div--;LLL:EXT:awomrhein/locallang_db.xml:tx_awomrhein.div_address
+          , address1
+          , address2
+          , zip
+          , city
+          , fax
+          , phone
+          , e-mail
+          , url
+          , lon
+          , lat
+            --div--;LLL:EXT:awomrhein/locallang_db.xml:tx_awomrhein.div_attendance
+          , tx_awomrhein_attendance
+          , attendance2
+          , attendance3
+          , attendance4
+          , attendance5
+          , attendance6
+          , attendance7
+          , status
           , --div--;LLL:EXT:awomrhein/locallang_db.xml:tx_awomrhein.div_control
           , hidden
-          ,fe_group
           , --div--;LLL:EXT:awomrhein/locallang_db.xml:tx_awomrhein.div_seo
           , keywords
           , description' 
