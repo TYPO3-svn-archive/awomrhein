@@ -14,7 +14,7 @@
       <label index="filter_phrase.tx_awomrhein_corporation">Corporation</label>
       <label index="filter_phrase.tx_awomrhein_responsible">Responsible</label>
 
-      <label index="tx_awomrhein">AWO Mittelrhein</label>
+      <label index="tx_awomrhein">AWO Mittelrhein: Facility</label>
 
       <label index="tx_awomrhein.div_calendar">Calendar</label>
       <label index="tx_awomrhein.div_control">Controlling</label>
@@ -84,7 +84,7 @@
       <label index="filter_phrase.tx_awomrhein_corporation">Unternehmensform</label>
       <label index="filter_phrase.tx_awomrhein_responsible">Träger</label>
 
-      <label index="tx_awomrhein">AWO Mittelrhein</label>
+      <label index="tx_awomrhein">AWO Mittelrhein: Einrichtung</label>
 
       <label index="tx_awomrhein.div_calendar">Kalender</label>
       <label index="tx_awomrhein.div_control">Steuerung</label>
