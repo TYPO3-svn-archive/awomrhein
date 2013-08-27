@@ -558,8 +558,8 @@ $TCA['tx_awomrhein'] = array (
           , tx_awomrhein_certified
           , tx_awomrhein_corporation
           , --div--;LLL:EXT:awomrhein/locallang_db.xml:tx_awomrhein.div_address
-          , address1
           , address2
+          , address1
           , zip
           , city
           , fax
