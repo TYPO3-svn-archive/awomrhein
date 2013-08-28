@@ -181,6 +181,7 @@ plugin.tx_browser_pi1 {
               <div class="filter">
                 ###TX_AWOMRHEIN_CAT.TITLE###
                 ###TX_AWOMRHEIN.ZIP###
+                ###TX_AWOMRHEIN_RESPONSIBLE.TITLE###
               </div>
 )
             }
