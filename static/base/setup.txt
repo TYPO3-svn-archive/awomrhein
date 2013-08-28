@@ -6,7 +6,6 @@
 
   // SEO - Search Engine Optimisation
   //    page
-  // plugin.tx_linkhandler
   // page
 
 
@@ -15,8 +14,6 @@
   ////////////////////////////////////////////////////////////////////////////////
   //
   // SEO - Search Engine Optimisation
-
-  //    esabUid
 
   // page
 [globalVar = GP:tx_browser_pi1|{$plugin.awomrhein.typo3browser.showUid} > 0]
@@ -49,24 +46,6 @@
 [global]
   // page
   // SEO - Search Engine Optimisation
-
-
-
-  ////////////////////////////////////////////////////////////////////////////////
-  //
-  // plugin.tx_linkhandler
-
-plugin.tx_linkhandler {
-  tx_awomrhein {
-    forceLink        = 0
-    useCacheHash     = 1
-    parameter        = {$plugin.org.pages.esab}
-    additionalParams = &tx_browser_pi1[{$plugin.awomrhein.typo3browser.showUid}]={field:uid}
-    additionalParams {
-      insertData = 1
-    } 
-  }
-}
 
 
 
