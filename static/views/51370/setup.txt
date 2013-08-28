@@ -116,6 +116,18 @@ plugin.tx_browser_pi1 {
         }
         filter {
           tx_awomrhein {
+            city < plugin.tx_browser_pi1.displayList.master_templates.selectbox
+            city {
+              count_hits = 0
+              first_item {
+                cObject {
+                  20 {
+                    data = LLL:EXT:awomrhein/locallang_db.xml:filter_phrase.tx_awomrhein.city
+                  }
+                }
+              }
+              wrap = <span class="selectbox">|</span>
+            }
             zip < plugin.tx_browser_pi1.displayList.master_templates.selectbox
             zip {
               count_hits = 0
@@ -179,8 +191,8 @@ plugin.tx_browser_pi1 {
             filter {
               value (
               <div class="filter">
-                ###TX_AWOMRHEIN_CAT.TITLE###
-                ###TX_AWOMRHEIN.ZIP###
+                ###TX_AWOMRHEIN_CAT.TITLE###<br />
+                ###TX_AWOMRHEIN.ZIP### ###TX_AWOMRHEIN.CITY###<br />
                 ###TX_AWOMRHEIN_RESPONSIBLE.TITLE###
               </div>
 )
