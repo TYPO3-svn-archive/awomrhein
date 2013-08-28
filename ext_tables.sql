@@ -140,7 +140,6 @@ CREATE TABLE tx_awomrhein_responsible (
   cruser_id int(11) unsigned DEFAULT '0' NOT NULL,
   deleted tinyint(4) unsigned DEFAULT '0' NOT NULL,
   title tinytext,
-  uid_parent int(11) DEFAULT '0' NOT NULL,
   hidden tinyint(4) DEFAULT '0' NOT NULL,
   
   PRIMARY KEY (uid),
