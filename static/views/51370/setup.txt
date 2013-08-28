@@ -31,7 +31,7 @@ plugin.tx_browser_pi1 {
         //andWhere = tx_awomrhein.eventBegin > UNIX_TIMESTAMP() 
         //csvLinkToSingleView = tx_awomrhein.facility
         tx_awomrhein {
-            // facility, zip, city
+            // facility, zip, city, responsible, details
           facility = COA
           facility {
               // facility, zip, city
@@ -61,7 +61,7 @@ plugin.tx_browser_pi1 {
                 useCacheHash = 1
               }
             }
-              // zip, city, responsible
+              // zip, city, responsible, details
             20 = COA
             20 {
               wrap = <p class="zip_city">|</p>
@@ -85,6 +85,31 @@ plugin.tx_browser_pi1 {
                 field       = tx_awomrhein_responsible.title
                 required    = 1
                 noTrimWrap  = |(|) |
+              }
+                // details
+              40 = TEXT
+              40 {
+                value = Details &raquo;
+                typolink {
+                  parameter = {$plugin.awomrhein.pages.awomrhein} - linktosingle
+                  additionalParams {
+                      // parameter, value
+                    cObject = COA
+                    cObject {
+                        // parameter
+                      10 = TEXT
+                      10 {
+                        value = &tx_browser_pi1[{$plugin.awomrhein.typo3browser.showUid}]=
+                      }
+                        // value
+                      20 = TEXT
+                      20 {
+                        field = tx_awomrhein.uid
+                      }
+                    }
+                  }
+                  useCacheHash = 1
+                }
               }
             }
           }
