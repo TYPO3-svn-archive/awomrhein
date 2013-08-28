@@ -26,6 +26,7 @@ plugin.tx_browser_pi1 {
             tx_awomrhein.facility
           , tx_awomrhein.city
           , tx_awomrhein.zip
+          , tx_awomrhein_responsible.title
         )
         //andWhere = tx_awomrhein.eventBegin > UNIX_TIMESTAMP() 
         //csvLinkToSingleView = tx_awomrhein.facility
@@ -60,7 +61,7 @@ plugin.tx_browser_pi1 {
                 useCacheHash = 1
               }
             }
-              // zip, city
+              // zip, city, responsible
             20 = COA
             20 {
               wrap = <p class="zip_city">|</p>
@@ -68,12 +69,22 @@ plugin.tx_browser_pi1 {
               10 = TEXT
               10 {
                 field       = tx_awomrhein.zip
+                required    = 1
                 noTrimWrap  = || |
               }
                 // city
               20 = TEXT
               20 {
-                field = tx_awomrhein.city
+                field       = tx_awomrhein.city
+                required    = 1
+                noTrimWrap  = || |
+              }
+                // responsible
+              30 = TEXT
+              30 {
+                field       = tx_awomrhein_responsible.title
+                required    = 1
+                noTrimWrap  = |(|) |
               }
             }
           }
