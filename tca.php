@@ -265,7 +265,7 @@ $TCA['tx_awomrhein'] = array (
             'icon'   => 'add.gif',
             'params' => array (
               'table'    => 'tx_awomrhein_attendance',
-              'pid'      => $str_marker_pid,
+//              'pid'      => $str_marker_pid,
               'setValue' => 'prepend'
             ),
             'script' => 'wizard_add.php',
@@ -276,7 +276,7 @@ $TCA['tx_awomrhein'] = array (
             'icon'   => 'list.gif',
             'params' => array (
               'table' => 'tx_awomrhein_attendance',
-              'pid'   => $str_marker_pid,
+//              'pid'   => $str_marker_pid,
             ),
             'script' => 'wizard_list.php',
           ),
@@ -318,7 +318,7 @@ $TCA['tx_awomrhein'] = array (
             'icon'   => 'add.gif',
             'params' => array (
               'table'    => 'tx_awomrhein_cat',
-              'pid'      => $str_marker_pid,
+//              'pid'      => $str_marker_pid,
               'setValue' => 'prepend'
             ),
             'script' => 'wizard_add.php',
@@ -329,7 +329,7 @@ $TCA['tx_awomrhein'] = array (
             'icon'   => 'list.gif',
             'params' => array (
               'table' => 'tx_awomrhein_cat',
-              'pid'   => $str_marker_pid,
+//              'pid'   => $str_marker_pid,
             ),
             'script' => 'wizard_list.php',
           ),
@@ -371,7 +371,7 @@ $TCA['tx_awomrhein'] = array (
             'icon'   => 'add.gif',
             'params' => array (
               'table'    => 'tx_awomrhein_certificate',
-              'pid'      => $str_marker_pid,
+//              'pid'      => $str_marker_pid,
               'setValue' => 'prepend'
             ),
             'script' => 'wizard_add.php',
@@ -382,7 +382,7 @@ $TCA['tx_awomrhein'] = array (
             'icon'   => 'list.gif',
             'params' => array (
               'table' => 'tx_awomrhein_certificate',
-              'pid'   => $str_marker_pid,
+//              'pid'   => $str_marker_pid,
             ),
             'script' => 'wizard_list.php',
           ),
@@ -424,7 +424,7 @@ $TCA['tx_awomrhein'] = array (
             'icon'   => 'add.gif',
             'params' => array (
               'table'    => 'tx_awomrhein_corporation',
-              'pid'      => $str_marker_pid,
+//              'pid'      => $str_marker_pid,
               'setValue' => 'prepend'
             ),
             'script' => 'wizard_add.php',
@@ -435,7 +435,7 @@ $TCA['tx_awomrhein'] = array (
             'icon'   => 'list.gif',
             'params' => array (
               'table' => 'tx_awomrhein_corporation',
-              'pid'   => $str_marker_pid,
+//              'pid'   => $str_marker_pid,
             ),
             'script' => 'wizard_list.php',
           ),
@@ -460,7 +460,6 @@ $TCA['tx_awomrhein'] = array (
         'maxitems'            => 1,
         'MM'                  => 'tx_awomrhein_mm_tx_awomrhein_responsible',
         'foreign_table'       => 'tx_awomrhein_responsible',
-//        'foreign_table_where' => 'AND tx_awomrhein_responsible.' . $str_store_record_conf . ' AND tx_awomrhein_responsible.deleted = 0 AND tx_awomrhein_responsible.hidden = 0 ORDER BY tx_awomrhein_responsible.title',
         'foreign_table_where' => 'AND  tx_awomrhein_responsible.deleted = 0 AND tx_awomrhein_responsible.hidden = 0 ORDER BY tx_awomrhein_responsible.title',
         'wizards' => array (
           '_PADDING'  => 2,
@@ -471,7 +470,7 @@ $TCA['tx_awomrhein'] = array (
             'icon'   => 'add.gif',
             'params' => array (
               'table'    => 'tx_awomrhein_responsible',
-              'pid'      => $str_marker_pid,
+//              'pid'      => $str_marker_pid,
               'setValue' => 'prepend'
             ),
             'script' => 'wizard_add.php',
@@ -482,7 +481,7 @@ $TCA['tx_awomrhein'] = array (
             'icon'   => 'list.gif',
             'params' => array (
               'table' => 'tx_awomrhein_responsible',
-              'pid'   => $str_marker_pid,
+//              'pid'   => $str_marker_pid,
             ),
             'script' => 'wizard_list.php',
           ),
