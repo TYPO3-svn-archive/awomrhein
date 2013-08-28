@@ -80,26 +80,9 @@ if (!defined ('TYPO3_MODE'))
     'rows' => '10',
   );
   
-  $conf_text_rte = array (
-    'type' => 'text',
-    'cols' => '30',
-    'rows' => '5',
-    'wizards' => array(
-      '_PADDING' => 2,
-      'RTE' => array(
-        'notNewRecords' => 1,
-        'RTEonly'       => 1,
-        'type'          => 'script',
-        'title'         => 'Full screen Rich Text Editing|Formatteret redigering i hele vinduet',
-        'icon'          => 'wizard_rte2.gif',
-        'script'        => 'wizard_rte.php',
-      ),
-    ),
-  );
-
   $conf_hidden = array (
     'exclude' => $bool_exclude_default,
-    'label'   => 'LLL:EXT:lang/locallang_general.xml:LGL.hidden',
+    'label'   => 'LLL:EXT:awomrhein/locallang_db.xml:tx_awomrhein.hidden',
     'config'  => array (
       'type'    => 'check',
       'default' => '0'
@@ -193,7 +176,7 @@ $TCA['tx_awomrhein'] = array (
       'config'  => $conf_input_30_trim,
     ),
     'description' => array (
-      'label'     => 'LLL:EXT:org/locallang_db.xml:tca_phrase.description',
+      'label'     => 'LLL:EXT:awomrhein/locallang_db.xml:tca_phrase.description',
       'l10n_mode' => 'prefixLangTitle',
       'exclude'   => $bool_exclude_default,
       'config'    => $conf_text_50_10,
@@ -230,7 +213,7 @@ $TCA['tx_awomrhein'] = array (
     ),
     'hidden'    => $conf_hidden,
     'keywords'  => array (
-      'label'     => 'LLL:EXT:org/locallang_db.xml:tca_phrase.keywords',
+      'label'     => 'LLL:EXT:awomrhein/locallang_db.xml:tca_phrase.keywords',
       'l10n_mode' => 'prefixLangTitle',
       'exclude'   => $bool_exclude_default,
       'config'    => $conf_input_80_trim,
