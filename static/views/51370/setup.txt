@@ -38,7 +38,7 @@ plugin.tx_browser_pi1 {
               wrap      = <h2 class="facility">|</h2>
               required  = 1
               //value     = ###TX_AWOMRHEIN.FACILITY###
-              value     = tx_awomrhein.facility
+              field     = tx_awomrhein.facility
               typolink {
                 parameter         = {$plugin.awomrhein.pages.awomrhein} - linktosingle
                 //additionalParams  = &tx_browser_pi1[{$plugin.awomrhein.typo3browser.showUid}]=###TX_AWOMRHEIN.UID###
@@ -46,20 +46,11 @@ plugin.tx_browser_pi1 {
                   cObject = COA
                   cObject {
                     10 = TEXT
-                    10.value = &tx_browser_pi1[{$plugin.awomrhein.typo3browser.showUid}]=###TX_AWOMRHEIN.UID###
+                    10.value = &tx_browser_pi1[{$plugin.awomrhein.typo3browser.showUid}]=
+                    20 = TEXT
+                    20.field = tx_awomrhein.uid
                   }
                 }
-                useCacheHash      = 1
-              }
-            }
-            20 = COA
-            20 {
-              wrap      = <h2 class="facility">|</h2>
-              required  = 1
-              value     = ###TX_AWOMRHEIN.FACILITY###
-              typolink {
-                parameter         = {$plugin.awomrhein.pages.awomrhein} - linktosingle
-                additionalParams  = &tx_browser_pi1[{$plugin.awomrhein.typo3browser.showUid}]=###TX_AWOMRHEIN.UID###
                 useCacheHash      = 1
               }
             }
