@@ -6,7 +6,7 @@
   // plugin.awomrhein
 plugin.awomrhein {
 
-  # cat=AWO Mittelrhein - pages/enable/101;             type=int+;    label= AWO Mittelrhein page uid:Uid of the page, which dispülays the AWO Mittelrhein data. This page contains usually the TYPO3 Browser plugin/Flexform.
+  # cat=AWO Mittelrhein - pages/enable/101;             type=int+;    label= AWO Mittelrhein page uid:Uid of the page, which displays the AWO Mittelrhein data. This page contains usually the TYPO3 Browser plugin/Flexform.
   pages.awomrhein = 
 
   # cat=AWO Mittelrhein - typo3 browser/enable/101;     type=string;  label= Alias for show Uid:Alias for the showUid, which is used by the TYPO3 Browser.
