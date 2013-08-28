@@ -47,7 +47,7 @@ CREATE TABLE tx_awomrhein (
   status int(11) unsigned DEFAULT '0' NOT NULL,
   tx_awomrhein_attendance tinytext,
   tx_awomrhein_cat tinytext,
-  tx_awomrhein_certified tinytext,
+  tx_awomrhein_certificate tinytext,
   tx_awomrhein_corporation tinytext,
   tx_awomrhein_responsible tinytext,
   url tinytext,

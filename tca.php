@@ -138,7 +138,7 @@ $TCA['tx_awomrhein'] = array (
       , status
       , tx_awomrhein_attendance
       , tx_awomrhein_cat
-      , tx_awomrhein_certified
+      , tx_awomrhein_certificate
       , tx_awomrhein_corporation
       , tx_awomrhein_responsible
       , url
@@ -555,7 +555,7 @@ $TCA['tx_awomrhein'] = array (
           , facility
           , tx_awomrhein_responsible
           , tx_awomrhein_cat
-          , tx_awomrhein_certified
+          , tx_awomrhein_certificate
           , tx_awomrhein_corporation
           , --div--;LLL:EXT:awomrhein/locallang_db.xml:tx_awomrhein.div_address
           , address2
