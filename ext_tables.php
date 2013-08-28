@@ -184,7 +184,6 @@ $TCA['tx_awomrhein_attendance'] = array (
     'hideAtCopy'        => false,
     'dynamicConfigFile' => t3lib_extMgm::extPath($_EXTKEY).'tca.php',
     'iconfile'          => t3lib_extMgm::extRelPath($_EXTKEY).'ext_icon/awomrhein.gif',
-    'treeParentField'   => 'uid_parent',
   ),
 );
 
@@ -226,7 +225,6 @@ $TCA['tx_awomrhein_certificate'] = array (
     'hideAtCopy'        => false,
     'dynamicConfigFile' => t3lib_extMgm::extPath($_EXTKEY).'tca.php',
     'iconfile'          => t3lib_extMgm::extRelPath($_EXTKEY).'ext_icon/awomrhein.gif',
-    'treeParentField'   => 'uid_parent',
   ),
 );
 
@@ -247,7 +245,6 @@ $TCA['tx_awomrhein_corporation'] = array (
     'hideAtCopy'        => false,
     'dynamicConfigFile' => t3lib_extMgm::extPath($_EXTKEY).'tca.php',
     'iconfile'          => t3lib_extMgm::extRelPath($_EXTKEY).'ext_icon/awomrhein.gif',
-    'treeParentField'   => 'uid_parent',
   ),
 );
 

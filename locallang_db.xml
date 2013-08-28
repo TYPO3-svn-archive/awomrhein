@@ -51,7 +51,6 @@
       
       <label index="tx_awomrhein_attendance">AWO Mittelrhein: Attendance</label>
       <label index="tx_awomrhein_attendance.title">Attendance</label>
-      <label index="tx_awomrhein_attendance.uid_parent">Parent</label>
 
       <label index="tx_awomrhein_cat">AWO Mittelrhein: Category</label>
       <label index="tx_awomrhein_cat.title">Category</label>
@@ -59,15 +58,12 @@
 
       <label index="tx_awomrhein_certificate">AWO Mittelrhein: Certificate</label>
       <label index="tx_awomrhein_certificate.title">Certificate</label>
-      <label index="tx_awomrhein_certificate.uid_parent">Parent</label>
 
       <label index="tx_awomrhein_corporation">AWO Mittelrhein: Corporation</label>
       <label index="tx_awomrhein_corporation.title">Corporation</label>
-      <label index="tx_awomrhein_corporation.uid_parent">Parent</label>
 
       <label index="tx_awomrhein_responsible">AWO Mittelrhein: Responsible</label>
       <label index="tx_awomrhein_responsible.title">Responsible</label>
-      <label index="tx_awomrhein_responsible.uid_parent">Parent</label>
 
       <label index="wizard.tx_awomrhein.add">Add a new record</label>
       <label index="wizard.tx_awomrhein.edit">Edit the selected record</label>
@@ -119,7 +115,6 @@
       
       <label index="tx_awomrhein_attendance">AWO Mittelrhein: Dienstleistung</label>
       <label index="tx_awomrhein_attendance.title">Dienstleistung</label>
-      <label index="tx_awomrhein_attendance.uid_parent">Übergeordneter Datensatz</label>
 
       <label index="tx_awomrhein_cat">AWO Mittelrhein: Kategorie</label>
       <label index="tx_awomrhein_cat.title">Kategorie</label>
@@ -127,15 +122,12 @@
 
       <label index="tx_awomrhein_certificate">AWO Mittelrhein: Zertifikat</label>
       <label index="tx_awomrhein_certificate.title">Zertifikat</label>
-      <label index="tx_awomrhein_certificate.uid_parent">Übergeordneter Datensatz</label>
 
       <label index="tx_awomrhein_corporation">AWO Mittelrhein: Unternehmensform</label>
       <label index="tx_awomrhein_corporation.title">Unternehmensform</label>
-      <label index="tx_awomrhein_corporation.uid_parent">Übergeordneter Datensatz</label>
 
       <label index="tx_awomrhein_responsible">AWO Mittelrhein: Träger</label>
       <label index="tx_awomrhein_responsible.title">Träger</label>
-      <label index="tx_awomrhein_responsible.uid_parent">Übergeordneter Datensatz</label>
 
       <label index="wizard.tx_awomrhein.add"><![CDATA[Neuen Datensatz hinzufügen]]></label>
       <label index="wizard.tx_awomrhein.edit"><![CDATA[Ausgewählten Datensatz bearbeiten]]></label>
