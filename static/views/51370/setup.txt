@@ -119,7 +119,7 @@ plugin.tx_browser_pi1 {
             city < plugin.tx_browser_pi1.displayList.master_templates.selectbox
             city {
               size        = 10
-              count_hits  = 0
+              //count_hits  = 0
               first_item {
                 cObject {
                   20 {
@@ -132,7 +132,7 @@ plugin.tx_browser_pi1 {
             zip < plugin.tx_browser_pi1.displayList.master_templates.selectbox
             zip {
               size        = 10
-              count_hits = 0
+              //count_hits = 0
               first_item {
                 cObject {
                   20 {
@@ -146,12 +146,7 @@ plugin.tx_browser_pi1 {
           tx_awomrhein_attendance {
             title < plugin.tx_browser_pi1.displayList.master_templates.selectbox
             title {
-              count_hits = 0
-              treeview {
-                enabled {
-                  value = 1
-                }
-              }
+              //count_hits = 0
               first_item {
                 cObject {
                   20 {
@@ -166,7 +161,7 @@ plugin.tx_browser_pi1 {
             //title < plugin.tx_browser_pi1.displayList.master_templates.selectbox
             title < plugin.tx_browser_pi1.displayList.master_templates.treeview
             title {
-              count_hits = 0
+              //count_hits = 0
               treeview {
                 enabled {
                   value = 1
@@ -186,12 +181,7 @@ plugin.tx_browser_pi1 {
           tx_awomrhein_responsible {
             title < plugin.tx_browser_pi1.displayList.master_templates.selectbox
             title {
-              count_hits = 0
-              treeview {
-                enabled {
-                  value = 1
-                }
-              }
+              //count_hits = 0
               first_item {
                 cObject {
                   20 {
@@ -213,10 +203,10 @@ plugin.tx_browser_pi1 {
               value (
               <div class="filter">
                 ###TX_AWOMRHEIN_CAT.TITLE###
-                ###TX_AWOMRHEIN_ATTENDANCE.TITLE###
                 <div class="selectbox">
                   ###TX_AWOMRHEIN.ZIP### ###TX_AWOMRHEIN.CITY###
                 </div>
+                ###TX_AWOMRHEIN_ATTENDANCE.TITLE###
                 ###TX_AWOMRHEIN_RESPONSIBLE.TITLE###
               </div>
 )
