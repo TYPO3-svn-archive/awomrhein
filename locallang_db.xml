@@ -7,7 +7,7 @@
   <data type="array">
     <languageKey index="default" type="array">
       <label index="dummy.language">default</label>
-      <label index="filter_phrase.tx_awomrhein.eventbegin">Month</label>
+      <label index="filter_phrase.tx_awomrhein.zip">ZIP code</label>
       <label index="filter_phrase.tx_awomrhein_attendance">Attendance</label>
       <label index="filter_phrase.tx_awomrhein_cat">Category</label>
       <label index="filter_phrase.tx_awomrhein_certificate">Certificate</label>
@@ -71,7 +71,7 @@
     </languageKey>
     <languageKey index="de" type="array">
       <label index="dummy.language">de</label>
-      <label index="filter_phrase.tx_awomrhein.eventbegin">Monat</label>
+      <label index="filter_phrase.tx_awomrhein.zip">PLZ</label>
       <label index="filter_phrase.tx_awomrhein_attendance">Dienstleistung</label>
       <label index="filter_phrase.tx_awomrhein_cat">Kategorie</label>
       <label index="filter_phrase.tx_awomrhein_certificate">Zertifikat</label>

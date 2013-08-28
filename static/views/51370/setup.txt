@@ -41,6 +41,20 @@ plugin.tx_browser_pi1 {
           }
         }
         filter {
+          tx_awomrhein {
+            zip < plugin.tx_browser_pi1.displayList.master_templates.selectbox
+            zip {
+              count_hits = 0
+              first_item {
+                cObject {
+                  20 {
+                    data = LLL:EXT:awomrhein/locallang_db.xml:filter_phrase.tx_awomrhein_zip
+                  }
+                }
+              }
+              wrap = <span class="selectbox">|</span>
+            }
+          }
           tx_awomrhein_cat {
             //title < plugin.tx_browser_pi1.displayList.master_templates.selectbox
             title < plugin.tx_browser_pi1.displayList.master_templates.treeview
@@ -73,6 +87,7 @@ plugin.tx_browser_pi1 {
               value (
               <div class="filter">
                 ###TX_AWOMRHEIN_CAT.TITLE###
+                ###TX_AWOMRHEIN.ZIP###
               </div>
 )
             }
