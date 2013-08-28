@@ -141,6 +141,25 @@ plugin.tx_browser_pi1 {
               wrap = <span class="selectbox">|</span>
             }
           }
+          tx_awomrhein_attendance {
+            title < plugin.tx_browser_pi1.displayList.master_templates.selectbox
+            title {
+              count_hits = 0
+              treeview {
+                enabled {
+                  value = 1
+                }
+              }
+              first_item {
+                cObject {
+                  20 {
+                    data = LLL:EXT:awomrhein/locallang_db.xml:filter_phrase.tx_awomrhein_attendance
+                  }
+                }
+              }
+              wrap = <div class="selectbox">|</div>
+            }
+          }
           tx_awomrhein_cat {
             //title < plugin.tx_browser_pi1.displayList.master_templates.selectbox
             title < plugin.tx_browser_pi1.displayList.master_templates.treeview
@@ -178,7 +197,7 @@ plugin.tx_browser_pi1 {
                   }
                 }
               }
-              wrap = <span class="selectbox">|</span>
+              wrap = <div class="selectbox">|</div>
             }
           }
         }
@@ -191,8 +210,11 @@ plugin.tx_browser_pi1 {
             filter {
               value (
               <div class="filter">
-                ###TX_AWOMRHEIN_CAT.TITLE###<br />
-                ###TX_AWOMRHEIN.ZIP### ###TX_AWOMRHEIN.CITY###<br />
+                ###TX_AWOMRHEIN_CAT.TITLE###
+                ###TX_AWOMRHEIN_ATTENDANCE.TITLE###
+                <div class="selectbox">
+                  ###TX_AWOMRHEIN.ZIP### ###TX_AWOMRHEIN.CITY###
+                </div>
                 ###TX_AWOMRHEIN_RESPONSIBLE.TITLE###
               </div>
 )

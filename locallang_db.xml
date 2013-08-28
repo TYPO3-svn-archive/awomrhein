@@ -7,12 +7,13 @@
   <data type="array">
     <languageKey index="default" type="array">
       <label index="dummy.language">default</label>
-      <label index="filter_phrase.tx_awomrhein.zip">ZIP code</label>
-      <label index="filter_phrase.tx_awomrhein_attendance">Attendance</label>
-      <label index="filter_phrase.tx_awomrhein_cat">Category</label>
-      <label index="filter_phrase.tx_awomrhein_certificate">Certificate</label>
-      <label index="filter_phrase.tx_awomrhein_corporation">Corporation</label>
-      <label index="filter_phrase.tx_awomrhein_responsible">Responsible</label>
+      <label index="filter_phrase.tx_awomrhein.city">All locations</label>
+      <label index="filter_phrase.tx_awomrhein.zip">All ZIP codes</label>
+      <label index="filter_phrase.tx_awomrhein_attendance">All attendance</label>
+      <label index="filter_phrase.tx_awomrhein_cat">All categories</label>
+      <label index="filter_phrase.tx_awomrhein_certificate">All certificates</label>
+      <label index="filter_phrase.tx_awomrhein_corporation">All corporations</label>
+      <label index="filter_phrase.tx_awomrhein_responsible">All responsibles</label>
 
       <label index="tx_awomrhein">AWO Mittelrhein: Facility</label>
 
@@ -71,12 +72,13 @@
     </languageKey>
     <languageKey index="de" type="array">
       <label index="dummy.language">de</label>
-      <label index="filter_phrase.tx_awomrhein.zip">PLZ</label>
-      <label index="filter_phrase.tx_awomrhein_attendance">Dienstleistung</label>
-      <label index="filter_phrase.tx_awomrhein_cat">Kategorie</label>
-      <label index="filter_phrase.tx_awomrhein_certificate">Zertifikat</label>
-      <label index="filter_phrase.tx_awomrhein_corporation">Unternehmensform</label>
-      <label index="filter_phrase.tx_awomrhein_responsible">Träger</label>
+      <label index="filter_phrase.tx_awomrhein.city">Alle Orte</label>
+      <label index="filter_phrase.tx_awomrhein.zip">Alle PLZ</label>
+      <label index="filter_phrase.tx_awomrhein_attendance">Alle Dienstleistungen</label>
+      <label index="filter_phrase.tx_awomrhein_cat">Alle Kategorien</label>
+      <label index="filter_phrase.tx_awomrhein_certificate">Alle Zertifikate</label>
+      <label index="filter_phrase.tx_awomrhein_corporation">Alle Unternehmensformen</label>
+      <label index="filter_phrase.tx_awomrhein_responsible">Alle Träger</label>
 
       <label index="tx_awomrhein">AWO Mittelrhein: Einrichtung</label>
 
