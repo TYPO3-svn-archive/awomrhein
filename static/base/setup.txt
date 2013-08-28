@@ -27,7 +27,7 @@
         data = register:browser_htmlTitleTag
         ifEmpty {
           field = title
-          noTrimWrap  = |Organiser esab: ||
+          //noTrimWrap  = |Organiser esab: ||
         }
         wrap = <title>|</title>
       }
