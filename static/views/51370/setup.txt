@@ -105,15 +105,15 @@ plugin.tx_browser_pi1 {
         marker {
           my_listview_page = TEXT
           my_listview_page {
-            value = Alle Aus- und Fortbildungen &raquo;
+            value = Alle Einrichtungen der AWO Mittelrhein &raquo;
             typolink {
               parameter = {$plugin.awomrhein.pages.awomrhein}
-              title     = Alle Aus- und Fortbildungen der Europäischen Sportakademie (ESAB)
+              title     = Alle Einrichtungen der AWO Mittelrhein
             }
           }
         }
         select (
-          tx_awomrhein.*,
+          tx_awomrhein.facility,
           tx_awomrhein_cat.title
         )
         //andWhere = tx_awomrhein.eventBegin > UNIX_TIMESTAMP() 
