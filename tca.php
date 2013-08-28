@@ -483,6 +483,7 @@ $TCA['tx_awomrhein'] = array (
             'params' => array (
               'table' => 'tx_awomrhein_responsible',
               'pid'   => $str_marker_pid,
+              'pid'   => null,
             ),
             'script' => 'wizard_list.php',
           ),
