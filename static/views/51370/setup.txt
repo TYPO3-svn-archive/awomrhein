@@ -150,6 +150,25 @@ plugin.tx_browser_pi1 {
               wrap = <div class="category_menu category_menu_treeview">|</div>
             }
           }
+          tx_awomrhein_responsible {
+            title < plugin.tx_browser_pi1.displayList.master_templates.selectbox
+            title {
+              count_hits = 0
+              treeview {
+                enabled {
+                  value = 1
+                }
+              }
+              first_item {
+                cObject {
+                  20 {
+                    data = LLL:EXT:awomrhein/locallang_db.xml:filter_phrase.tx_awomrhein_responsible
+                  }
+                }
+              }
+              wrap = <span class="selectbox">|</span>
+            }
+          }
         }
           // marker and subparts will replaced in the HTML template before data handling
           // #43981, 121214, dwildt
