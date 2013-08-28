@@ -118,7 +118,8 @@ plugin.tx_browser_pi1 {
           tx_awomrhein {
             city < plugin.tx_browser_pi1.displayList.master_templates.selectbox
             city {
-              count_hits = 0
+              size        = 10
+              count_hits  = 0
               first_item {
                 cObject {
                   20 {
@@ -130,6 +131,7 @@ plugin.tx_browser_pi1 {
             }
             zip < plugin.tx_browser_pi1.displayList.master_templates.selectbox
             zip {
+              size        = 10
               count_hits = 0
               first_item {
                 cObject {
