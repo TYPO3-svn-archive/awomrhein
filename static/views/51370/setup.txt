@@ -24,7 +24,6 @@ plugin.tx_browser_pi1 {
         showUid = {$plugin.awomrhein.typo3browser.showUid}
         select (
             tx_awomrhein.facility
-          , tx_awomrhein_cat.title
         )
         //andWhere = tx_awomrhein.eventBegin > UNIX_TIMESTAMP() 
         csvLinkToSingleView = tx_awomrhein.facility
@@ -43,8 +42,8 @@ plugin.tx_browser_pi1 {
         }
         filter {
           tx_awomrhein_cat {
-            title < plugin.tx_browser_pi1.displayList.master_templates.selectbox
-            //title < plugin.tx_browser_pi1.displayList.master_templates.treeview
+            //title < plugin.tx_browser_pi1.displayList.master_templates.selectbox
+            title < plugin.tx_browser_pi1.displayList.master_templates.treeview
             title {
               count_hits = 0
               treeview {
@@ -59,8 +58,8 @@ plugin.tx_browser_pi1 {
                   }
                 }
               }
-              wrap = <span class="selectbox">|</span>
-              //wrap = <div class="category_menu category_menu_treeview">|</div>
+              //wrap = <span class="selectbox">|</span>
+              wrap = <div class="category_menu category_menu_treeview">|</div>
             }
           }
         }
