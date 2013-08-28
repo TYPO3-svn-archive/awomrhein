@@ -176,7 +176,7 @@ $TCA['tx_awomrhein'] = array (
       'config'  => $conf_input_30_trim,
     ),
     'description' => array (
-      'label'     => 'LLL:EXT:awomrhein/locallang_db.xml:tca_phrase.description',
+      'label'     => 'LLL:EXT:awomrhein/locallang_db.xml:tx_awomrhein.description',
       'l10n_mode' => 'prefixLangTitle',
       'exclude'   => $bool_exclude_default,
       'config'    => $conf_text_50_10,
@@ -213,7 +213,7 @@ $TCA['tx_awomrhein'] = array (
     ),
     'hidden'    => $conf_hidden,
     'keywords'  => array (
-      'label'     => 'LLL:EXT:awomrhein/locallang_db.xml:tca_phrase.keywords',
+      'label'     => 'LLL:EXT:awomrhein/locallang_db.xml:tx_awomrhein.keywords',
       'l10n_mode' => 'prefixLangTitle',
       'exclude'   => $bool_exclude_default,
       'config'    => $conf_input_80_trim,
