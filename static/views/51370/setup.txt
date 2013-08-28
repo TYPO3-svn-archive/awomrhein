@@ -303,7 +303,7 @@ plugin.tx_browser_pi1 {
                 value       = Adresse
                 wrap        = <h2>|</h2>
               }
-                // address2, address1
+                // address2, address1, zip, city
               20 = COA
               20 {
                 wrap = <p class="address">|</p>
@@ -320,10 +320,6 @@ plugin.tx_browser_pi1 {
                   field       = tx_awomrhein.address1
                   required    = 1
                 }
-              }
-                // zip, city
-              30 = COA
-              30 {
                   // zip
                 10 = TEXT
                 10 {
