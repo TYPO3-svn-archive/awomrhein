@@ -319,17 +319,18 @@ plugin.tx_browser_pi1 {
                 20 {
                   field       = tx_awomrhein.address1
                   required    = 1
+                  wrap        = |<br />
                 }
                   // zip
-                10 = TEXT
-                10 {
+                30 = TEXT
+                30 {
                   field       = tx_awomrhein.zip
                   required    = 1
                   noTrimWrap  = || |
                 }
                   // city
-                20 = TEXT
-                20 {
+                40 = TEXT
+                40 {
                   field       = tx_awomrhein.city
                 }
               }
