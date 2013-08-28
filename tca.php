@@ -462,6 +462,9 @@ $TCA['tx_awomrhein'] = array (
         'MM'                  => 'tx_awomrhein_mm_tx_awomrhein_responsible',
         'foreign_table'       => 'tx_awomrhein_responsible',
         'foreign_table_where' => 'AND  tx_awomrhein_responsible.deleted = 0 AND tx_awomrhein_responsible.hidden = 0 ORDER BY tx_awomrhein_responsible.title',
+        'items' => array (
+          array( null, null ),
+        ),
         'wizards' => array (
           '_PADDING'  => 2,
           '_VERTICAL' => 0,
@@ -483,7 +486,6 @@ $TCA['tx_awomrhein'] = array (
             'params' => array (
               'table' => 'tx_awomrhein_responsible',
               'pid'   => $str_marker_pid,
-              'pid'   => null,
             ),
             'script' => 'wizard_list.php',
           ),
