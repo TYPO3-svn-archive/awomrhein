@@ -164,6 +164,28 @@ $TCA['tx_awomrhein'] = array (
     'hideAtCopy'        => false,
     'dynamicConfigFile' => t3lib_extMgm::extPath($_EXTKEY).'tca.php',
     'iconfile'          => t3lib_extMgm::extRelPath($_EXTKEY).'ext_icon/awomrhein.gif',
+    'tx_browser'  => array (
+      'geoupdate' => array (
+        'address' => array (
+          'country'     => null,  
+          'areaLevel1'  => null,  
+          'areaLevel2'  => null,  
+          'location'    => array (
+            'zip'   => 'zip',  
+            'city'  => 'city',  
+          ),
+          'street'  => array (
+            'name'    => 'address1',  
+            'number'  => null,  
+          ),
+        ),
+        'geodata' => array (
+          'lat'     => 'lat',  
+          'lon'     => 'lon',  
+        ),
+        'update'  => true,  
+      ),
+    ),
   ),
 );
 
