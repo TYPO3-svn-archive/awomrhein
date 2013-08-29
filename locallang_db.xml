@@ -42,6 +42,7 @@
       <label index="tx_awomrhein.lon">Longitude</label> 
       <label index="tx_awomrhein.phone">Phone</label> 
       <label index="tx_awomrhein.status">Status</label> 
+      <label index="tx_awomrhein.tstamp_latlon">Timestamp of latitude and longitude</label> 
       <label index="tx_awomrhein.tx_awomrhein_attendance">Attendance</label> 
       <label index="tx_awomrhein.tx_awomrhein_cat">Category</label> 
       <label index="tx_awomrhein.tx_awomrhein_certificate">Certified</label> 
@@ -107,6 +108,7 @@
       <label index="tx_awomrhein.lon">Längengrad</label> 
       <label index="tx_awomrhein.phone">Telefon</label> 
       <label index="tx_awomrhein.status">Stand</label> 
+      <label index="tx_awomrhein.tstamp_latlon">Zeitstempel Breiten- und Längengrad</label> 
       <label index="tx_awomrhein.tx_awomrhein_attendance">Dienstleistung</label> 
       <label index="tx_awomrhein.tx_awomrhein_cat">Kategorie</label> 
       <label index="tx_awomrhein.tx_awomrhein_certificate">Zertifikat</label> 
