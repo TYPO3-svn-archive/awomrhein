@@ -120,7 +120,6 @@ $TCA['tx_awomrhein'] = array (
       , lon
       , phone
       , status
-      , tstamp_geoupdate
       , tx_awomrhein_attendance
       , tx_awomrhein_cat
       , tx_awomrhein_certificate
@@ -238,11 +237,6 @@ $TCA['tx_awomrhein'] = array (
     'status' => array (
       'exclude' => 0,
       'label'   => 'LLL:EXT:awomrhein/locallang_db.xml:tx_awomrhein.status',
-      'config'  => $conf_datetime,
-    ),
-    'tstamp_geoupdate' => array (
-      'exclude' => 0,
-      'label'   => 'LLL:EXT:awomrhein/locallang_db.xml:tx_awomrhein.tstamp_geoupdate',
       'config'  => $conf_datetime,
     ),
     'tx_awomrhein_attendance' => array (
@@ -538,7 +532,6 @@ $TCA['tx_awomrhein'] = array (
           , url
           , lon
           , lat
-          , tstamp_geoupdate
           , --div--;LLL:EXT:awomrhein/locallang_db.xml:tx_awomrhein.div_attendance
           , tx_awomrhein_attendance
           , attendance2
