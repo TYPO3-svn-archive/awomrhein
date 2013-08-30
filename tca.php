@@ -114,6 +114,8 @@ $TCA['tx_awomrhein'] = array (
       , email
       , facility
       , fax
+      , geoupdateprompt
+      , geoupdateforbidden
       , hidden
       , keywords
       , lat
@@ -186,9 +188,8 @@ $TCA['tx_awomrhein'] = array (
       'exclude' => $bool_exclude_default,
       'label'   => 'LLL:EXT:awomrhein/locallang_db.xml:tx_awomrhein.email',
       'config' => array (
-        'type' => 'text',
-        'cols' => '80',
-        'rows' => '1',
+        'type' => 'input',
+        'size' => '80',
         'wizards' => array(
           '_PADDING' => 2,
           'link' => array(
@@ -211,6 +212,19 @@ $TCA['tx_awomrhein'] = array (
       'exclude' => 0,
       'label'   => 'LLL:EXT:awomrhein/locallang_db.xml:tx_awomrhein.fax',
       'config'  => $conf_input_30_trim,
+    ),
+    'geoupdateprompt'     => array(
+      'exclude' => 0,
+      'label'   => 'LLL:EXT:awomrhein/locallang_db.xml:tx_awomrhein.geoupdateprompt',
+      'config'    => $conf_text_50_10,
+    ),
+    'geoupdateforbidden'     => array(
+      'exclude' => 0,
+      'label'   => 'LLL:EXT:awomrhein/locallang_db.xml:tx_awomrhein.geoupdateforbidden',
+      'config'  => array (
+        'type'    => 'check',
+        'default' => '0'
+      )
     ),
     'hidden'    => $conf_hidden,
     'keywords'  => array (
@@ -488,9 +502,8 @@ $TCA['tx_awomrhein'] = array (
       'exclude' => $bool_exclude_default,
       'label'   => 'LLL:EXT:awomrhein/locallang_db.xml:tx_awomrhein.url',
       'config' => array (
-        'type' => 'text',
-        'cols' => '80',
-        'rows' => '1',
+        'type' => 'input',
+        'size' => '80',
         'wizards' => array(
           '_PADDING' => 2,
           'link' => array(
@@ -530,6 +543,8 @@ $TCA['tx_awomrhein'] = array (
           , phone
           , email
           , url
+          , geoupdateprompt
+          , geoupdateforbidden
           , lon
           , lat
           , --div--;LLL:EXT:awomrhein/locallang_db.xml:tx_awomrhein.div_attendance

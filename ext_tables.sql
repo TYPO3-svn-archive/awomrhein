@@ -39,6 +39,8 @@ CREATE TABLE tx_awomrhein (
   email tinytext,
   facility tinytext,
   fax tinytext,
+  geoupdateprompt tinyint(4) unsigned DEFAULT '0' NOT NULL,
+  geoupdateforbidden tinyint(4) unsigned DEFAULT '0' NOT NULL,
   hidden tinyint(4) unsigned DEFAULT '0' NOT NULL,
   keywords tinytext,
   lat text NOT NULL,
