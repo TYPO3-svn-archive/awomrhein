@@ -180,8 +180,8 @@ $TCA['tx_awomrhein'] = array (
           ),
         ),
         'api' => array (
-          'prompt'    => 'lat',  
-          'forbidden' => 'lon',  
+          'prompt'    => 'geoupdateprompt',  
+          'forbidden' => 'geoupdateforbidden',  
         ),
         'geodata' => array (
           'lat'     => 'lat',  
