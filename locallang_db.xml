@@ -37,7 +37,7 @@
       <label index="tx_awomrhein.facility">Facility</label> 
       <label index="tx_awomrhein.fax">Fax</label> 
       <label index="tx_awomrhein.geoupdateprompt">Geoupdate prompt</label> 
-      <label index="tx_awomrhein.geoupdateforbidden">Latitude and longitude won't overriden</label> 
+      <label index="tx_awomrhein.geoupdateforbidden">Latitude and longitude should not updated automatically</label> 
       <label index="tx_awomrhein.hidden">Disabled</label> 
       <label index="tx_awomrhein.keywords">Keywords for search engines (from three to five separated by comma)</label> 
       <label index="tx_awomrhein.lat">Latitude</label> 
@@ -104,7 +104,7 @@
       <label index="tx_awomrhein.facility">Einrichtung</label> 
       <label index="tx_awomrhein.fax">Fax</label> 
       <label index="tx_awomrhein.geoupdateprompt">Geoupdate-Meldungen</label> 
-      <label index="tx_awomrhein.geoupdateforbidden">Breiten- und Längengrad werden nicht aktualisiert</label> 
+      <label index="tx_awomrhein.geoupdateforbidden">Breiten- und Längengrad nicht automatisch aktualisieren</label> 
       <label index="tx_awomrhein.hidden">Deaktiviert</label> 
       <label index="tx_awomrhein.keywords">Stichworte für Suchmaschinen (drei bis fünf, mit Komma trennen)</label> 
       <label index="tx_awomrhein.lat">Breitengrad</label> 
