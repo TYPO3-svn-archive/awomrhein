@@ -14,6 +14,11 @@
 
 plugin.tx_browser_pi1 {
   map {
+    aliases {
+      showUid {
+        marker = awomrheinUid
+      }
+    }
     enabled = Map
     icon {
       listNum {

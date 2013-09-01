@@ -13,6 +13,7 @@
 
 plugin.tx_browser_pi1 {
   map {
+    aliases >
     enabled = 1
     icon >
     field {
