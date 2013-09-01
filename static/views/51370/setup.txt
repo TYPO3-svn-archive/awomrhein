@@ -345,17 +345,6 @@ plugin.tx_browser_pi1 {
                   }
                 }
               }
-              snippets {
-                jss {
-                  dynamic {
-                    oxMapConfigWms >
-                    oxMapConfigWms = TEXT
-                    oxMapConfigWms {
-                      value = 'OSM'
-                    }
-                  }
-                }
-              }
               variables {
                 system {
                   categoryIconMap {
