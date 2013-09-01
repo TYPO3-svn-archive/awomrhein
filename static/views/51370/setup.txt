@@ -337,6 +337,10 @@ plugin.tx_browser_pi1 {
                       }
                     }
                   }
+                  provider = TEXT
+                  provider {
+                    value = Open Street Map
+                  }
                 }
               }
               variables {
