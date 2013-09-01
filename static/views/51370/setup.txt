@@ -21,6 +21,39 @@ plugin.tx_browser_pi1 {
       51370 = AWO Mittelrhein: Einrichtungen
       51370 {
         name    = AWO Mittelrhein: Einrichtungen
+        navigation {
+          map < plugin.tx_browser_pi1.navigation.map
+          map {
+            marker {
+              addToCData {
+                system {
+                  mapLinkToSingle {
+                    10 {
+                      30 {
+                        10 {
+//                          wrap = ,&tx_browser_pi1[headquartersUid]=|
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+              variables {
+                system {
+                  categoryIconMap {
+                    20 {
+                      stdWrap {
+//                        listNum = 1
+                      }
+                    }
+                  }
+                  description >
+                  description < plugin.tx_browser_pi1.displayList.master_templates.map.descriptionWiLinkToSingle
+                }
+              }
+            }
+          }
+        }
         showUid = {$plugin.awomrhein.typo3browser.showUid}
         select (
             tx_awomrhein.facility
@@ -285,8 +318,8 @@ plugin.tx_browser_pi1 {
                       }
                     }
                   }
-                  description >
-                  description < plugin.tx_browser_pi1.displayList.master_templates.map.descriptionWiLinkToSingle
+//                  description >
+//                  description < plugin.tx_browser_pi1.displayList.master_templates.map.descriptionWiLinkToSingle
                 }
               }
             }
