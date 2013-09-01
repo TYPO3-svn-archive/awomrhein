@@ -345,7 +345,7 @@ plugin.tx_browser_pi1 {
                     oxMapConfigWms >
                     oxMapConfigWms = TEXT
                     oxMapConfigWms {
-                      value = Open Street Map
+                      value = OSM
                     }
                   }
                 }
