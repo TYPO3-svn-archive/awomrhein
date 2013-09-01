@@ -20,6 +20,7 @@ plugin.tx_browser_pi1 {
       51370 = AWO Mittelrhein: Einrichtungen
       51370 {
         name    = AWO Mittelrhein: Einrichtungen
+        marker < plugin.tx_browser_pi1.marker
         marker {
           my_search {
             value = Send!
