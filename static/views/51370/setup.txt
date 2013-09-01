@@ -376,7 +376,7 @@ plugin.tx_browser_pi1 {
                   field       = tx_awomrhein.email
                   typolink {
                     parameter {
-                        // parameter, value
+                        // url, target, class, title
                       cObject = COA
                       cObject {
                           // url
@@ -411,13 +411,13 @@ plugin.tx_browser_pi1 {
                   noTrimWrap  = |<span class="email">E-Mail: |</span><br />|
                   //wrap        = <span class="email">|</span><br />
                 }
-                  // fax
+                  // url
                 40 = TEXT
                 40 {
                   field = tx_awomrhein.url
                   typolink {
                     parameter {
-                        // parameter, value
+                        // url, target, class, title
                       cObject = COA
                       cObject {
                           // value
