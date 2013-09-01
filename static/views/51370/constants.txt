@@ -16,12 +16,14 @@ plugin.tx_browser_pi1 {
   map {
     enabled = 1
     field {
-      linktoSingle  = tx_awomrhein.uid
-      latitude      = tx_awomrhein.lat
-      longitude     = tx_awomrhein.lon
-      description   = tx_awomrhein.facility
-      category      = tx_awomrhein_cat.title
-      categoryIcon  = tx_awomrhein_cat.icons
+      linktoSingle    = tx_awomrhein.uid
+      latitude        = tx_awomrhein.lat
+      longitude       = tx_awomrhein.lon
+      description     = tx_awomrhein.facility
+      category        = tx_awomrhein_cat.title
+      categoryIcon    = tx_awomrhein_cat.icons
+      categoryOffsetX = tx_awomrhein_cat.icon_offset_x
+      categoryOffsetY = tx_awomrhein_cat.icon_offset_y
     }
     path {
       categoryIcon  = uploads/tx_aworhein/

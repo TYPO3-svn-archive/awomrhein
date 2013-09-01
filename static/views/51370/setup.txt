@@ -27,8 +27,13 @@ plugin.tx_browser_pi1 {
           , tx_awomrhein.city
           , tx_awomrhein.description
           , tx_awomrhein.keywords
+          , tx_awomrhein.lat
+          , tx_awomrhein.lon
           , tx_awomrhein.zip
-          , tx_awomrhein_responsible.title
+          , tx_awomrhein_cat.title
+          , tx_awomrhein_cat.icons
+          , tx_awomrhein_cat.icon_offset_x
+          , tx_awomrhein_cat.icon_offset_y
         )
         //andWhere = tx_awomrhein.eventBegin > UNIX_TIMESTAMP() 
         //csvLinkToSingleView = tx_awomrhein.facility
