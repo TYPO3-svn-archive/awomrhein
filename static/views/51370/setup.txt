@@ -295,15 +295,6 @@ plugin.tx_browser_pi1 {
             </div> <!-- /listview -->
 )
             }
-            listview >
-            listview = TEXT
-            listview {
-              value (
-            <div id="c###TT_CONTENT.UID###-listview-###MODE###" class="###VIEW###view ###VIEW###view-content ###VIEW###view-###MODE### ###VIEW###view-content-###MODE###">
-              ###MAP###
-            </div> <!-- /listview -->
-)
-            }
           }
         }
       }
