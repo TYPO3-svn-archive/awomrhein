@@ -57,7 +57,9 @@
 
       <label index="tx_awomrhein_cat">AWO Mittelrhein: Category</label>
       <label index="tx_awomrhein_cat.title">Category</label>
-      <label index="tx_awomrhein_attendance.uid_parent">Parent</label>
+      <label index="tx_awomrhein_cat.icons">Icons (1st: default. 2nd: big size)</label>
+      <label index="tx_awomrhein_cat.icon_offset_x">X-offset of the icon in a map</label>
+      <label index="tx_awomrhein_cat.icon_offset_y">Y-offset of the icon in a map</label>
 
       <label index="tx_awomrhein_certificate">AWO Mittelrhein: Certificate</label>
       <label index="tx_awomrhein_certificate.title">Certificate</label>
@@ -124,7 +126,9 @@
 
       <label index="tx_awomrhein_cat">AWO Mittelrhein: Kategorie</label>
       <label index="tx_awomrhein_cat.title">Kategorie</label>
-      <label index="tx_awomrhein_cat.uid_parent">Übergeordneter Datensatz</label>
+      <label index="tx_awomrhein_cat.icons">Piktogramm (1.: Standard. 2.: Gro<![CDATA[ß]]>es Format)</label>
+      <label index="tx_awomrhein_cat.icon_offset_x">X-Offset des Piktogramms in einer Karte</label>
+      <label index="tx_awomrhein_cat.icon_offset_y">Y-Offset des Piktogramms in einer Karte</label>
 
       <label index="tx_awomrhein_certificate">AWO Mittelrhein: Zertifikat</label>
       <label index="tx_awomrhein_certificate.title">Zertifikat</label>

@@ -230,7 +230,6 @@ $TCA['tx_awomrhein_cat'] = array (
     'hideAtCopy'        => false,
     'dynamicConfigFile' => t3lib_extMgm::extPath($_EXTKEY).'tca.php',
     'iconfile'          => t3lib_extMgm::extRelPath($_EXTKEY).'ext_icon/awomrhein.gif',
-    'treeParentField'   => 'uid_parent',
   ),
 );
 
