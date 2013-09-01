@@ -213,7 +213,8 @@ $TCA['tx_awomrhein'] = array (
           )
         ),
         'softref' => 'typolink[linkList]'
-      )
+      ),
+      'config'  => $conf_input_80_trim,
     ),
     'facility' => array (
       'exclude' => 0,
@@ -527,7 +528,8 @@ $TCA['tx_awomrhein'] = array (
           )
         ),
         'softref' => 'typolink[linkList]'
-      )
+      ),
+      'config'  => $conf_input_80_trim,
     ),
     'zip' => array (
       'exclude' => 0,
