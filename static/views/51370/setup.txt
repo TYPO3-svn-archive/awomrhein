@@ -337,9 +337,16 @@ plugin.tx_browser_pi1 {
                       }
                     }
                   }
-                  provider = TEXT
-                  provider {
-                    value = Open Street Map
+                }
+              }
+              snippets {
+                jss {
+                  dynamic {
+                    oxMapConfigWm >
+                    oxMapConfigWm = TEXT
+                    oxMapConfigWm {
+                      value = Open Street Map
+                    }
                   }
                 }
               }
