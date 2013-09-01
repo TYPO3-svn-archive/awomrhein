@@ -372,7 +372,11 @@ plugin.tx_browser_pi1 {
                   // email
                 30 = TEXT
                 30 {
-                  field       = tx_awomrhein.email
+                  typolink {
+                    parameter.field = tx_awomrhein.email
+                  }
+
+                  //field       = tx_awomrhein.email
                   required    = 1
                   noTrimWrap  = |<span class="email">E-Mail: |</span><br />|
                 }
