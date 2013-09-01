@@ -389,12 +389,26 @@ plugin.tx_browser_pi1 {
                   }
                   required    = 1
                   //noTrimWrap  = |<span class="email">E-Mail: |</span><br />|
-                  wrap        = |<span class="email">|</span><br />|
+                  wrap        = <span class="email">|</span><br />
                 }
                   // fax
                 40 = TEXT
                 40 {
-                  field       = tx_awomrhein.url
+                  field = tx_awomrhein.url
+                  typolink {
+                    parameter {
+                        // parameter, value
+                      cObject = COA
+                      cObject {
+                          // value
+                        20 = TEXT
+                        20 {
+                          field = tx_awomrhein.url
+                        }
+                      }
+                    }
+                    useCacheHash = 1
+                  }
                   required    = 1
                   noTrimWrap  = |<span class="email">Website: |</span><br />|
                 }
