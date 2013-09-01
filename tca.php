@@ -57,6 +57,18 @@ if (!defined ('TYPO3_MODE'))
   $conf_datetimeend = $conf_datetime;
   unset($conf_datetimeend['default']);
 
+  $conf_file_image = array (
+    'type'          => 'group',
+    'internal_type' => 'file',
+    'allowed'       => $GLOBALS['TYPO3_CONF_VARS']['GFX']['imagefile_ext'],
+    'max_size'      => $GLOBALS['TYPO3_CONF_VARS']['BE']['maxFileSize'],
+    'uploadfolder'  => 'uploads/tx_awomrhein',
+    'show_thumbs'   => 1,
+    'size'          => 3,
+    'minitems'      => 0,
+    'maxitems'      => 20,
+  );
+
   $conf_input_30_trim = array (
     'type' => 'input',
     'size' => '30',
