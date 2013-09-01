@@ -73,14 +73,14 @@ plugin.tx_seodynamictag {
   }
 
   database {
-    table = tx_org_news
+    table = tx_awomrhein
     var.1 = tx_browser_pi1[awomrheinUid]
     field {
-      author        =  
+      author        = NULL 
       description   = description
       keywords      = keywords 
       title         = facility 
-      short         = See TypoScript > setup.txt
+      short         = description
     }
   }
 
