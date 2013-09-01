@@ -632,9 +632,12 @@ $TCA['tx_awomrhein_cat'] = array (
   'ctrl' => $TCA['tx_awomrhein_cat']['ctrl'],
   'interface' => array (
     'showRecordFieldList' => '
-        title
-      , uid_parent
-      , hidden',
+        hidden
+      , icons
+      , icon_offset_x
+      , icon_offset_y
+      , title
+      , uid_parent',
   ),
   'columns' => array (
     'title' => array (
@@ -642,34 +645,42 @@ $TCA['tx_awomrhein_cat'] = array (
       'label'   => 'LLL:EXT:awomrhein/locallang_db.xml:tx_awomrhein_cat.title',
       'config'  => $conf_input_30_trimRequired,
     ),
-    'uid_parent' => array (
-      'exclude'   => 0,
-      'label'   => 'LLL:EXT:awomrhein/locallang_db.xml:tx_awomrhein_cat.uid_parent',
+    'icons' => array (
+      'exclude'   => $bool_exclude_default,
+      'label'   => 'LLL:EXT:org/locallang_db.xml:tx_awomrhein_cat.icons',
+      'config'    => $conf_file_image,
+    ),
+    'icon_offset_x' => array (
+      'exclude' => 0,
+      'label'   => 'LLL:EXT:org/locallang_db.xml:tx_awomrhein_cat.icon_offset_x',
       'config'    => array (
-        'type'          => 'select',
-        'size'          => 1,
-        'minitems'      => 0,
-        'maxitems'      => 2,
-        'trueMaxItems'  => 1,
-        'form_type'     => 'user',
-        'userFunc'      => 'tx_cpstcatree->getTree',
-        'foreign_table' => 'tx_awomrhein_cat',
-        'treeView'      => 1,
-        'expandable'    => 1,
-        'expandFirst'   => 0,
-        'expandAll'     => 0,
+        'type'     => 'input',
+        'size'     => '3',
+        'max'      => '3',
+        'eval'     => 'int',
+        'default'  => '0',
+      ),
+    ),
+    'icon_offset_y' => array (
+      'exclude' => 0,
+      'label'   => 'LLL:EXT:org/locallang_db.xml:tx_awomrhein_cat.icon_offset_y',
+      'config'    => array (
+        'type'     => 'input',
+        'size'     => '3',
+        'max'      => '3',
+        'eval'     => 'int',
+        'default'  => '0',
       ),
     ),
     'hidden'    => $conf_hidden,
   ),
   'types' => array
   (
-    '0' => array 
-    (
-      'showitem' => '
-          title
-        , uid_parent
-        , hidden'
+    '0' => array ('showitem' =>  
+      '--div--;LLL:EXT:org/locallang_db.xml:tx_awomrhein_cat.div_cat,' . 
+        'title,icons,icon_offset_x,icon_offset_y,'.
+      '--div--;LLL:EXT:org/locallang_db.xml:tx_awomrhein_cat.div_control,' . 
+        'hidden'
     ),
   ),
   'palettes' => array ( ),
