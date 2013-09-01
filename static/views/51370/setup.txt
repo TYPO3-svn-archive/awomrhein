@@ -49,6 +49,33 @@ plugin.tx_browser_pi1 {
                   }
                   description >
                   description < plugin.tx_browser_pi1.displayList.master_templates.map.descriptionWiLinkToSingle
+                  description {
+                    10 >
+                    10 = COA
+                    10 {
+                      10 = TEXT
+                      10 {
+                        required    = 1
+                        field       = {$plugin.tx_browser_pi1.map.marker.field.description}
+                        noTrimWrap  = || <br />|
+                      }
+                      20 = COA
+                      20 {
+                        10 = TEXT
+                        10 {
+                          required    = 1
+                          field       = tx_awomrhein.zip
+                          noTrimWrap  = || |
+                        }
+                        20 = TEXT
+                        20 {
+                          required    = 1
+                          field       = tx_awomrhein.city
+                        }
+                        wrap = | <br />
+                      }
+                    }
+                  }
                 }
               }
             }
