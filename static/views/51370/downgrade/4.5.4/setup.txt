@@ -30,6 +30,8 @@ plugin.tx_browser_pi1 {
                         field = {$plugin.tx_browser_pi1.map.field.description}
                       }
                     }
+                      // v4.6
+                    mapLinkToSingle.10.30.10.wrap = ,&tx_browser_pi1[awomrheinUid]=|
                   }
                 }
               }
