@@ -337,8 +337,10 @@ plugin.tx_browser_pi1 {
                   description < plugin.tx_browser_pi1.displayList.master_templates.map.descriptionWiLinkToSingle
                   description {
                     10 >
+                      // facility, address
                     10 = COA
                     10 {
+                        // facility
                       10 = TEXT
                       10 {
                         required    = 1
@@ -346,20 +348,32 @@ plugin.tx_browser_pi1 {
                         field       = {$plugin.tx_browser_pi1.map.marker.field.description}
                         noTrimWrap  = |<strong>|</strong><br />|
                       }
+                        // address
                       20 = COA
                       20 {
+                          // street
                         10 = TEXT
                         10 {
                           required    = 1
-                          field       = tx_awomrhein.zip
-                          noTrimWrap  = || |
+                          field       = tx_awomrhein.address1
+                          wrap = | <br />
                         }
-                        20 = TEXT
+                          // zip, city
+                        20 = COA
                         20 {
-                          required    = 1
-                          field       = tx_awomrhein.city
+                          10 = TEXT
+                          10 {
+                            required    = 1
+                            field       = tx_awomrhein.zip
+                            noTrimWrap  = || |
+                          }
+                          20 = TEXT
+                          20 {
+                            required    = 1
+                            field       = tx_awomrhein.city
+                          }
+                          wrap = | <br />
                         }
-                        wrap = | <br />
                       }
                     }
                   }
