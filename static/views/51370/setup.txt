@@ -388,7 +388,8 @@ plugin.tx_browser_pi1 {
                     useCacheHash = 1
                   }
                   required    = 1
-                  noTrimWrap  = |<span class="email">E-Mail: |</span><br />|
+                  //noTrimWrap  = |<span class="email">E-Mail: |</span><br />|
+                  wrap        = |<span class="email">|</span><br />|
                 }
                   // fax
                 40 = TEXT
