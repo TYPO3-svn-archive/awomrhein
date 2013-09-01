@@ -1,5 +1,4 @@
 
-
   ////////////////////////////////////////
   //
   // INDEX
@@ -21,6 +20,15 @@ plugin.tx_browser_pi1 {
       51370 = AWO Mittelrhein: Einrichtungen
       51370 {
         name    = AWO Mittelrhein: Einrichtungen
+        marker {
+          my_search {
+            value = Send!
+            lang {
+              de = Senden!
+              en = Send!
+            }
+          }
+        }
         navigation {
           map < plugin.tx_browser_pi1.navigation.map
           map {
@@ -58,8 +66,6 @@ plugin.tx_browser_pi1 {
                         required    = 1
                           // v4.6
                         field       = {$plugin.tx_browser_pi1.map.marker.field.description}
-                          // v4.5
-                        field       = {$plugin.tx_browser_pi1.map.field.description}
                         noTrimWrap  = || <br />|
                       }
                       20 = COA
