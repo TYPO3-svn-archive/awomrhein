@@ -373,10 +373,20 @@ plugin.tx_browser_pi1 {
                 30 = TEXT
                 30 {
                   typolink {
-                    parameter.field = tx_awomrhein.email
+                    parameter {
+                        // parameter, value
+                      cObject = COA
+                      cObject {
+                          // value
+                        20 = TEXT
+                        20 {
+                          field = tx_awomrhein.email
+                        }
+                      }
+                    }
+                    useCacheHash = 1
                   }
-
-                  //field       = tx_awomrhein.email
+                  field       = tx_awomrhein.email
                   required    = 1
                   noTrimWrap  = |<span class="email">E-Mail: |</span><br />|
                 }
