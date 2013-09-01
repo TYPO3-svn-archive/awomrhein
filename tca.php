@@ -647,12 +647,12 @@ $TCA['tx_awomrhein_cat'] = array (
     ),
     'icons' => array (
       'exclude'   => $bool_exclude_default,
-      'label'   => 'LLL:EXT:org/locallang_db.xml:tx_awomrhein_cat.icons',
+      'label'   => 'LLL:EXT:awomrhein/locallang_db.xml:tx_awomrhein_cat.icons',
       'config'    => $conf_file_image,
     ),
     'icon_offset_x' => array (
       'exclude' => 0,
-      'label'   => 'LLL:EXT:org/locallang_db.xml:tx_awomrhein_cat.icon_offset_x',
+      'label'   => 'LLL:EXT:awomrhein/locallang_db.xml:tx_awomrhein_cat.icon_offset_x',
       'config'    => array (
         'type'     => 'input',
         'size'     => '3',
@@ -663,7 +663,7 @@ $TCA['tx_awomrhein_cat'] = array (
     ),
     'icon_offset_y' => array (
       'exclude' => 0,
-      'label'   => 'LLL:EXT:org/locallang_db.xml:tx_awomrhein_cat.icon_offset_y',
+      'label'   => 'LLL:EXT:awomrhein/locallang_db.xml:tx_awomrhein_cat.icon_offset_y',
       'config'    => array (
         'type'     => 'input',
         'size'     => '3',
@@ -677,9 +677,9 @@ $TCA['tx_awomrhein_cat'] = array (
   'types' => array
   (
     '0' => array ('showitem' =>  
-      '--div--;LLL:EXT:org/locallang_db.xml:tx_awomrhein_cat.div_cat,' . 
+      '--div--;LLL:EXT:awomrhein/locallang_db.xml:tx_awomrhein_cat.div_cat,' . 
         'title,icons,icon_offset_x,icon_offset_y,'.
-      '--div--;LLL:EXT:org/locallang_db.xml:tx_awomrhein_cat.div_control,' . 
+      '--div--;LLL:EXT:awomrhein/locallang_db.xml:tx_awomrhein_cat.div_control,' . 
         'hidden'
     ),
   ),
