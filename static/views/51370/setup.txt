@@ -259,6 +259,39 @@ plugin.tx_browser_pi1 {
             }
           }
         }
+        navigation {
+          map < plugin.tx_browser_pi1.navigation.map
+          map {
+            marker {
+              addToCData {
+                system {
+                  mapLinkToSingle {
+                    10 {
+                      30 {
+                        10 {
+//                          wrap = ,&tx_browser_pi1[headquartersUid]=|
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+              variables {
+                system {
+                  categoryIconMap {
+                    20 {
+                      stdWrap {
+//                        listNum = 1
+                      }
+                    }
+                  }
+                  description >
+                  description < plugin.tx_browser_pi1.displayList.master_templates.map.descriptionWiLinkToSingle
+                }
+              }
+            }
+          }
+        }
         select (
             tx_awomrhein.address1
           , tx_awomrhein.address2
