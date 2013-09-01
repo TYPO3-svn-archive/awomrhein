@@ -401,6 +401,7 @@ plugin.tx_browser_pi1 {
                         40 = TEXT
                         40 {
                           field = E-Mail senden
+                          wrap  = "|"
                         }
                       }
                     }
@@ -441,6 +442,7 @@ plugin.tx_browser_pi1 {
                         40 = TEXT
                         40 {
                           field = tx_awomrhein.facility
+                          wrap  = "|"
                         }
                       }
                     }
