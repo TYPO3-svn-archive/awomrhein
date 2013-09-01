@@ -378,10 +378,28 @@ plugin.tx_browser_pi1 {
                         // parameter, value
                       cObject = COA
                       cObject {
-                          // value
+                          // url
+                        10 = TEXT
+                        10 {
+                          field       = tx_awomrhein.email
+                          noTrimWrap  = || |
+                        }
+                          // target
                         20 = TEXT
                         20 {
-                          field = tx_awomrhein.email
+                          value       = _blank
+                          noTrimWrap  = || |
+                        }
+                          // class
+                        30 = TEXT
+                        30 {
+                          value       = external-link
+                          noTrimWrap  = || |
+                        }
+                          // title
+                        40 = TEXT
+                        40 {
+                          field = tx_awomrhein.facility
                         }
                       }
                     }
