@@ -48,13 +48,6 @@ plugin.tx_browser_pi1 {
               }
               variables {
                 system {
-                  categoryIconMap {
-                    20 {
-                      stdWrap {
-//                        listNum = 1
-                      }
-                    }
-                  }
                   description >
                   description < plugin.tx_browser_pi1.displayList.master_templates.map.descriptionWiLinkToSingle
                   description {
@@ -66,7 +59,7 @@ plugin.tx_browser_pi1 {
                         required    = 1
                           // v4.6
                         field       = {$plugin.tx_browser_pi1.map.marker.field.description}
-                        noTrimWrap  = || <br />|
+                        noTrimWrap  = |<strong>|</strong><br />|
                       }
                       20 = COA
                       20 {
@@ -334,28 +327,41 @@ plugin.tx_browser_pi1 {
             marker {
               addToCData {
                 system {
-                  mapLinkToSingle {
-                    10 {
-                      30 {
-                        10 {
-//                          wrap = ,&tx_browser_pi1[headquartersUid]=|
-                        }
-                      }
-                    }
-                  }
+                  mapLinkToSingle >
                 }
               }
               variables {
                 system {
-                  categoryIconMap {
-                    20 {
-                      stdWrap {
-//                        listNum = 1
+                  description >
+                  description < plugin.tx_browser_pi1.displayList.master_templates.map.descriptionWiLinkToSingle
+                  description {
+                    10 >
+                    10 = COA
+                    10 {
+                      10 = TEXT
+                      10 {
+                        required    = 1
+                          // v4.6
+                        field       = {$plugin.tx_browser_pi1.map.marker.field.description}
+                        noTrimWrap  = |<strong>|</strong><br />|
+                      }
+                      20 = COA
+                      20 {
+                        10 = TEXT
+                        10 {
+                          required    = 1
+                          field       = tx_awomrhein.zip
+                          noTrimWrap  = || |
+                        }
+                        20 = TEXT
+                        20 {
+                          required    = 1
+                          field       = tx_awomrhein.city
+                        }
+                        wrap = | <br />
                       }
                     }
                   }
-//                  description >
-//                  description < plugin.tx_browser_pi1.displayList.master_templates.map.descriptionWiLinkToSingle
                 }
               }
             }
