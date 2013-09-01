@@ -15,6 +15,12 @@
 plugin.tx_browser_pi1 {
   map {
     enabled = Map
+    icon {
+      listNum {
+        categoryIconMap       = 1
+        categoryIconMapSingle = 1
+      }
+    }
     marker {
       field {
         linktoSingle    = tx_awomrhein.uid
@@ -29,9 +35,6 @@ plugin.tx_browser_pi1 {
     }
     path {
       categoryIcon  = uploads/tx_awomrhein/
-    }
-    position {
-      categoryIconMap = 1
     }
     width = 700
   }

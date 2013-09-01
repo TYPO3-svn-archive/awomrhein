@@ -15,6 +15,7 @@
 plugin.tx_browser_pi1 {
   map {
     enabled = 1
+    icon >
     field {
       linktoSingle    = tx_awomrhein.uid
       latitude        = tx_awomrhein.lat
@@ -25,5 +26,10 @@ plugin.tx_browser_pi1 {
       categoryOffsetX = tx_awomrhein_cat.icon_offset_x
       categoryOffsetY = tx_awomrhein_cat.icon_offset_y
     }
+    marker >
+    position {
+      categoryIconMap = 1
+    }
+  }
 }
   // plugin.tx_browser_pi1
