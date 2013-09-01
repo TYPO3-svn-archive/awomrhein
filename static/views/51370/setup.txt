@@ -388,7 +388,7 @@ plugin.tx_browser_pi1 {
                           // target
                         20 = TEXT
                         20 {
-                          value       = _blank
+                          value       = -
                           noTrimWrap  = || |
                         }
                           // class
