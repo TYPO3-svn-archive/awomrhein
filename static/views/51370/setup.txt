@@ -386,7 +386,7 @@ plugin.tx_browser_pi1 {
                     }
                     useCacheHash = 1
                   }
-                  field       = tx_awomrhein.email
+                  //field       = tx_awomrhein.email
                   required    = 1
                   noTrimWrap  = |<span class="email">E-Mail: |</span><br />|
                 }
