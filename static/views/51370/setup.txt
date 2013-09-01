@@ -439,9 +439,17 @@ plugin.tx_browser_pi1 {
                           noTrimWrap  = || |
                         }
                           // title
-                        40 = TEXT
+                        40 = COA
                         40 {
-                          field = tx_awomrhein.facility
+                          10 = TEXT
+                          10 {
+                            value       = Website: 
+                            noTrimWrap  = || |
+                          }
+                          20 = TEXT
+                          20 {
+                            field = tx_awomrhein.facility
+                          }
                           wrap  = "|"
                         }
                       }
