@@ -88,7 +88,7 @@ switch(true) {
   case($llStatic == 'de'):
       // German
     t3lib_extMgm::addStaticFile($_EXTKEY,'static/views/51370/',                 'AWO Mittelrhein' );
-    t3lib_extMgm::addStaticFile($_EXTKEY,'static/views/51370/downgrade/4.5.4/', 'AWO Mittelrhein: +Browser < v4.6' );
+    t3lib_extMgm::addStaticFile($_EXTKEY,'static/views/51370/downgrade/4.5.4/', 'AWO Mittelrhein: +Browser v4.5' );
 //    switch( true )
 //    {
 //      case( $typo3Version < 4007000 ):
@@ -102,7 +102,7 @@ switch(true) {
   default:
       // English
     t3lib_extMgm::addStaticFile($_EXTKEY,'static/views/51370/',                 'AWO Mittelrhein' );
-    t3lib_extMgm::addStaticFile($_EXTKEY,'static/views/51370/downgrade/4.5.4/', 'AWO Mittelrhein: +Browser < v4.6' );
+    t3lib_extMgm::addStaticFile($_EXTKEY,'static/views/51370/downgrade/4.5.4/', 'AWO Mittelrhein: +Browser v4.5' );
 //    switch( true )
 //    {
 //      case( $typo3Version < 4007000 ):
