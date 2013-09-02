@@ -88,8 +88,8 @@ plugin.tx_browser_pi1 {
         select (
             tx_awomrhein.facility
           , tx_awomrhein.city
-          , tx_awomrhein.description
-          , tx_awomrhein.keywords
+          , tx_awomrhein.seodescription
+          , tx_awomrhein.seokeywords
           , tx_awomrhein.lat
           , tx_awomrhein.lon
           , tx_awomrhein.zip

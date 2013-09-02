@@ -147,8 +147,8 @@ $TCA['tx_awomrhein'] = array (
 
       , hidden
 
-      , keywords
-      , description
+      , seokeywords
+      , seodescription
       '
   ),
   'feInterface' => $TCA['tx_awomrhein']['feInterface'],
@@ -213,8 +213,8 @@ $TCA['tx_awomrhein'] = array (
       'label'   => 'LLL:EXT:awomrhein/locallang_db.xml:tx_awomrhein.country',
       'config'  => $conf_input_30_trim,
     ),
-    'description' => array (
-      'label'     => 'LLL:EXT:awomrhein/locallang_db.xml:tx_awomrhein.description',
+    'seodescription' => array (
+      'label'     => 'LLL:EXT:awomrhein/locallang_db.xml:tx_awomrhein.seodescription',
       'l10n_mode' => 'prefixLangTitle',
       'exclude'   => $bool_exclude_default,
       'config'    => $conf_text_50_10,
@@ -263,8 +263,8 @@ $TCA['tx_awomrhein'] = array (
       )
     ),
     'hidden'    => $conf_hidden,
-    'keywords'  => array (
-      'label'     => 'LLL:EXT:awomrhein/locallang_db.xml:tx_awomrhein.keywords',
+    'seokeywords'  => array (
+      'label'     => 'LLL:EXT:awomrhein/locallang_db.xml:tx_awomrhein.seokeywords',
       'l10n_mode' => 'prefixLangTitle',
       'exclude'   => $bool_exclude_default,
       'config'    => $conf_input_80_trim,
@@ -600,8 +600,8 @@ $TCA['tx_awomrhein'] = array (
           , --div--;LLL:EXT:awomrhein/locallang_db.xml:tx_awomrhein.div_control
           , hidden
           , --div--;LLL:EXT:awomrhein/locallang_db.xml:tx_awomrhein.div_seo
-          , keywords
-          , description' 
+          , seokeywords
+          , seodescription' 
         ,
     ),
   ),

@@ -77,10 +77,10 @@ plugin.tx_seodynamictag {
     var.1 = tx_browser_pi1[awomrheinUid]
     field {
       author        = NULL 
-      description   = description
-      keywords      = keywords 
+      description   = seodescription
+      keywords      = seokeywords 
       title         = facility 
-      short         = description
+      short         = seodescription
     }
   }
 

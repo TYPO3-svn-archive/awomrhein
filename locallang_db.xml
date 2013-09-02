@@ -24,7 +24,7 @@
       <label index="tx_awomrhein.div_facility">Facility</label>
       <label index="tx_awomrhein.div_seo">Search Engines</label>
 
-      <label index="tx_awomrhein.address1">Address 1</label> 
+      <label index="tx_awomrhein.address1">Street</label> 
       <label index="tx_awomrhein.address2">Address 2</label> 
       <label index="tx_awomrhein.areaLevel1">Administrative area level 1</label> 
       <label index="tx_awomrhein.areaLevel2">Administrative area level 2</label> 
@@ -36,14 +36,14 @@
       <label index="tx_awomrhein.attendance7">Attendance 7</label> 
       <label index="tx_awomrhein.city">City</label> 
       <label index="tx_awomrhein.country">Country</label> 
-      <label index="tx_awomrhein.description">Description for search engines (upto 200 letters)</label> 
+      <label index="tx_awomrhein.seodescription">Description for search engines (upto 200 letters)</label> 
       <label index="tx_awomrhein.email">E-mail</label> 
       <label index="tx_awomrhein.facility">Facility</label> 
       <label index="tx_awomrhein.fax">Fax</label> 
       <label index="tx_awomrhein.geoupdateprompt">Geoupdate prompt</label> 
       <label index="tx_awomrhein.geoupdateforbidden">Latitude and longitude should not updated automatically</label> 
       <label index="tx_awomrhein.hidden">Disabled</label> 
-      <label index="tx_awomrhein.keywords">Keywords for search engines (from three to five separated by comma)</label> 
+      <label index="tx_awomrhein.seokeywords">Keywords for search engines (from three to five separated by comma)</label> 
       <label index="tx_awomrhein.lat">Latitude</label> 
       <label index="tx_awomrhein.lon">Longitude</label> 
       <label index="tx_awomrhein.phone">Phone</label> 
@@ -111,14 +111,14 @@
       <label index="tx_awomrhein.attendance7">Dienstleistung 7</label> 
       <label index="tx_awomrhein.city">Ort</label> 
       <label index="tx_awomrhein.country">Land</label> 
-      <label index="tx_awomrhein.description">Beschreibung für Suchmaschinen (bis etwa 200 Zeichen)</label> 
+      <label index="tx_awomrhein.seodescription">Beschreibung für Suchmaschinen (bis etwa 200 Zeichen)</label> 
       <label index="tx_awomrhein.email">E-Mail</label> 
       <label index="tx_awomrhein.facility">Einrichtung</label> 
       <label index="tx_awomrhein.fax">Fax</label> 
       <label index="tx_awomrhein.geoupdateprompt">Geoupdate-Meldungen</label> 
       <label index="tx_awomrhein.geoupdateforbidden">Breiten- und Längengrad nicht automatisch aktualisieren</label> 
       <label index="tx_awomrhein.hidden">Deaktiviert</label> 
-      <label index="tx_awomrhein.keywords">Stichworte für Suchmaschinen (drei bis fünf, mit Komma trennen)</label> 
+      <label index="tx_awomrhein.seokeywords">Stichworte für Suchmaschinen (drei bis fünf, mit Komma trennen)</label> 
       <label index="tx_awomrhein.lat">Breitengrad</label> 
       <label index="tx_awomrhein.lon">Längengrad</label> 
       <label index="tx_awomrhein.phone">Telefon</label> 
