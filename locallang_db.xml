@@ -100,7 +100,7 @@
       <label index="tx_awomrhein.div_seo">Suchmaschinen</label>
       
       <label index="tx_awomrhein.address1">Straße</label> 
-      <label index="tx_awomrhein.address2">Zusatz</label> 
+      <label index="tx_awomrhein.address2">Adresszusatz</label> 
       <label index="tx_awomrhein.areaLevel1">Bundesland</label> 
       <label index="tx_awomrhein.areaLevel2">Landkreis / Bezirk</label> 
       <label index="tx_awomrhein.attendance2">Dienstleistung 2</label> 
