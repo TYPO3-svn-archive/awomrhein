@@ -131,8 +131,8 @@ $TCA['tx_awomrhein'] = array (
       , lon
       , lat
 
-      , fax
       , phone
+      , fax
       , email
       , url
 
@@ -584,8 +584,8 @@ $TCA['tx_awomrhein'] = array (
           , lon
           , lat
           , --div--;LLL:EXT:awomrhein/locallang_db.xml:tx_awomrhein.div_contact
-          , fax
           , phone
+          , fax
           , email
           , url
           , --div--;LLL:EXT:awomrhein/locallang_db.xml:tx_awomrhein.div_attendance
