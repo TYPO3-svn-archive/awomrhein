@@ -346,12 +346,6 @@ $TCA['tx_awomrhein'] = array (
         'MM'                  => 'tx_awomrhein_mm_tx_awomrhein_cat',
         'foreign_table'       => 'tx_awomrhein_cat',
         'foreign_table_where' => 'AND  tx_awomrhein_cat.deleted = 0 AND tx_awomrhein_cat.hidden = 0 ORDER BY tx_awomrhein_cat.title',
-        'form_type'           => 'user',
-        'userFunc'            => 'tx_cpstcatree->getTree',
-        'treeView'            => 1,
-        'expandable'          => 1,
-        'expandFirst'         => 0,
-        'expandAll'           => 0,
         'wizards' => array (
           '_PADDING'  => 2,
           '_VERTICAL' => 0,
