@@ -28,6 +28,8 @@ CREATE TABLE tx_awomrhein (
 
   address1 tinytext,
   address2 tinytext,
+  areaLevel1 tinytext,
+  areaLevel2 tinytext,
   attendance2 tinytext,
   attendance3 tinytext,
   attendance4 tinytext,
@@ -35,6 +37,7 @@ CREATE TABLE tx_awomrhein (
   attendance6 tinytext,
   attendance7 tinytext,
   city tinytext,
+  country tinytext,
   description tinytext,
   email tinytext,
   facility tinytext,

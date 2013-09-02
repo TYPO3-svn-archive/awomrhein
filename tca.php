@@ -113,34 +113,42 @@ $TCA['tx_awomrhein'] = array (
   'ctrl' => $TCA['tx_awomrhein']['ctrl'],
   'interface' => array (
     'showRecordFieldList' => '
-        address1
+        facility
+      , tx_awomrhein_responsible
+      , tx_awomrhein_cat
+      , tx_awomrhein_certificate
+      , tx_awomrhein_corporation
+
       , address2
+      , address1
+      , zip
+      , city
+      , areaLevel2
+      , areaLevel1
+      , country
+      , geoupdateprompt
+      , geoupdateforbidden
+      , lon
+      , lat
+
+      , fax
+      , phone
+      , email
+      , url
+
+      , tx_awomrhein_attendance
       , attendance2
       , attendance3
       , attendance4
       , attendance5
       , attendance6
       , attendance7
-      , city
-      , description
-      , email
-      , facility
-      , fax
-      , geoupdateprompt
-      , geoupdateforbidden
-      , hidden
-      , keywords
-      , lat
-      , lon
-      , phone
       , status
-      , tx_awomrhein_attendance
-      , tx_awomrhein_cat
-      , tx_awomrhein_certificate
-      , tx_awomrhein_corporation
-      , tx_awomrhein_responsible
-      , url
-      , zip
+
+      , hidden
+
+      , keywords
+      , description
       '
   ),
   'feInterface' => $TCA['tx_awomrhein']['feInterface'],
@@ -153,6 +161,16 @@ $TCA['tx_awomrhein'] = array (
     'address2' => array (
       'exclude' => 0,
       'label'   => 'LLL:EXT:awomrhein/locallang_db.xml:tx_awomrhein.address2',
+      'config'  => $conf_input_30_trim,
+    ),
+    'areaLevel1' => array (
+      'exclude' => 0,
+      'label'   => 'LLL:EXT:awomrhein/locallang_db.xml:tx_awomrhein.areaLevel1',
+      'config'  => $conf_input_30_trim,
+    ),
+    'areaLevel2' => array (
+      'exclude' => 0,
+      'label'   => 'LLL:EXT:awomrhein/locallang_db.xml:tx_awomrhein.areaLevel2',
       'config'  => $conf_input_30_trim,
     ),
     'attendance2' => array (
@@ -188,6 +206,11 @@ $TCA['tx_awomrhein'] = array (
     'city' => array (
       'exclude' => 0,
       'label'   => 'LLL:EXT:awomrhein/locallang_db.xml:tx_awomrhein.city',
+      'config'  => $conf_input_30_trim,
+    ),
+    'country' => array (
+      'exclude' => 0,
+      'label'   => 'LLL:EXT:awomrhein/locallang_db.xml:tx_awomrhein.country',
       'config'  => $conf_input_30_trim,
     ),
     'description' => array (
@@ -553,14 +576,18 @@ $TCA['tx_awomrhein'] = array (
           , address1
           , zip
           , city
-          , fax
-          , phone
-          , email
-          , url
+          , areaLevel2
+          , areaLevel1
+          , country
           , geoupdateprompt
           , geoupdateforbidden
           , lon
           , lat
+          , --div--;LLL:EXT:awomrhein/locallang_db.xml:tx_awomrhein.div_contact
+          , fax
+          , phone
+          , email
+          , url
           , --div--;LLL:EXT:awomrhein/locallang_db.xml:tx_awomrhein.div_attendance
           , tx_awomrhein_attendance
           , attendance2

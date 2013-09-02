@@ -25,6 +25,8 @@
 
       <label index="tx_awomrhein.address1">Address 1</label> 
       <label index="tx_awomrhein.address2">Address 2</label> 
+      <label index="tx_awomrhein.areaLevel1">Administrative area level 1</label> 
+      <label index="tx_awomrhein.areaLevel2">Administrative area level 2</label> 
       <label index="tx_awomrhein.attendance2">Attendance 2</label> 
       <label index="tx_awomrhein.attendance3">Attendance 3</label> 
       <label index="tx_awomrhein.attendance4">Attendance 4</label> 
@@ -32,6 +34,7 @@
       <label index="tx_awomrhein.attendance6">Attendance 6</label> 
       <label index="tx_awomrhein.attendance7">Attendance 7</label> 
       <label index="tx_awomrhein.city">City</label> 
+      <label index="tx_awomrhein.country">Country</label> 
       <label index="tx_awomrhein.description">Description for search engines (upto 200 letters)</label> 
       <label index="tx_awomrhein.email">E-mail</label> 
       <label index="tx_awomrhein.facility">Facility</label> 
@@ -96,6 +99,8 @@
       
       <label index="tx_awomrhein.address1">Straße</label> 
       <label index="tx_awomrhein.address2">Zusatz</label> 
+      <label index="tx_awomrhein.areaLevel1">Bundesland</label> 
+      <label index="tx_awomrhein.areaLevel2">Landkreis / Bezirk</label> 
       <label index="tx_awomrhein.attendance2">Dienstleistung 2</label> 
       <label index="tx_awomrhein.attendance3">Dienstleistung 3</label> 
       <label index="tx_awomrhein.attendance4">Dienstleistung 4</label> 
@@ -103,6 +108,7 @@
       <label index="tx_awomrhein.attendance6">Dienstleistung 6</label> 
       <label index="tx_awomrhein.attendance7">Dienstleistung 7</label> 
       <label index="tx_awomrhein.city">Ort</label> 
+      <label index="tx_awomrhein.country">Land</label> 
       <label index="tx_awomrhein.description">Beschreibung für Suchmaschinen (bis etwa 200 Zeichen)</label> 
       <label index="tx_awomrhein.email">E-Mail</label> 
       <label index="tx_awomrhein.facility">Einrichtung</label> 
