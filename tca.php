@@ -213,12 +213,6 @@ $TCA['tx_awomrhein'] = array (
       'label'   => 'LLL:EXT:awomrhein/locallang_db.xml:tx_awomrhein.country',
       'config'  => $conf_input_30_trim,
     ),
-    'seodescription' => array (
-      'label'     => 'LLL:EXT:awomrhein/locallang_db.xml:tx_awomrhein.seodescription',
-      'l10n_mode' => 'prefixLangTitle',
-      'exclude'   => $bool_exclude_default,
-      'config'    => $conf_text_50_10,
-    ),
     'email' => array (
       'exclude' => $bool_exclude_default,
       'label'   => 'LLL:EXT:awomrhein/locallang_db.xml:tx_awomrhein.email',
@@ -263,12 +257,6 @@ $TCA['tx_awomrhein'] = array (
       )
     ),
     'hidden'    => $conf_hidden,
-    'seokeywords'  => array (
-      'label'     => 'LLL:EXT:awomrhein/locallang_db.xml:tx_awomrhein.seokeywords',
-      'l10n_mode' => 'prefixLangTitle',
-      'exclude'   => $bool_exclude_default,
-      'config'    => $conf_input_80_trim,
-    ),
     'lat' => array (
       'exclude' => 0,
       'label'   => 'LLL:EXT:awomrhein/locallang_db.xml:tx_awomrhein.lat',
@@ -283,6 +271,18 @@ $TCA['tx_awomrhein'] = array (
       'exclude' => 0,
       'label'   => 'LLL:EXT:awomrhein/locallang_db.xml:tx_awomrhein.phone',
       'config'  => $conf_input_30_trim,
+    ),
+    'seodescription' => array (
+      'label'     => 'LLL:EXT:awomrhein/locallang_db.xml:tx_awomrhein.seodescription',
+      'l10n_mode' => 'prefixLangTitle',
+      'exclude'   => $bool_exclude_default,
+      'config'    => $conf_text_50_10,
+    ),
+    'seokeywords'  => array (
+      'label'     => 'LLL:EXT:awomrhein/locallang_db.xml:tx_awomrhein.seokeywords',
+      'l10n_mode' => 'prefixLangTitle',
+      'exclude'   => $bool_exclude_default,
+      'config'    => $conf_input_80_trim,
     ),
     'status' => array (
       'exclude' => 0,
