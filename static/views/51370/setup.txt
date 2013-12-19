@@ -294,10 +294,13 @@ plugin.tx_browser_pi1 {
               value (
             <div id="c###TT_CONTENT.UID###-listview-###MODE###" class="###VIEW###view ###VIEW###view-content ###VIEW###view-###MODE### ###VIEW###view-content-###MODE###">
               <!-- ###LISTBODY### begin --><!-- ###LISTBODYITEM### begin -->
-              <div class="sbmFloatRight">
-                ###SOCIALMEDIA_BOOKMARKS###
-              </div>
+              <div class="record01###TX_AWOMRHEIN.CRDATE###">
+                ###TX_AWOMRHEIN.DELETED###
+                <div class="sbmFloatRight">
+                  ###SOCIALMEDIA_BOOKMARKS###
+                </div>
                 ###TX_AWOMRHEIN.FACILITY###
+              </div>
               <div class="cleaner">&nbsp;</div><!-- ###LISTBODYITEM### end -->
               ###MAP###
               <!-- ###LISTBODY### end -->
