@@ -5,6 +5,7 @@
 
   // plugin.awomrhein 
   // plugin.tx_browser_pi1
+  // plugin.tx_radialsearch_pi1
   // plugin.tx_seodynamictag_pi1
 
 
@@ -68,8 +69,32 @@ plugin.tx_browser_pi1 {
   navigation {
     showUid = awomrheinUid
   }
+  radialsearch {
+    lat = tx_awomrhein.lat
+    lon = tx_awomrhein.lon
+  }
 }
   // plugin.tx_browser_pi1
+
+
+
+  ////////////////////////////////////////
+  //
+  // plugin.tx_radialsearch_pi1
+
+plugin.tx_radialsearch_pi1 {
+  css {
+    jquery {
+      path = 
+    }
+  }
+  distance {
+    dec_point     = ,
+    thousands_sep = .
+  }
+
+}
+  // plugin.tx_radialsearch_pi1
 
 
 

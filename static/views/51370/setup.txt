@@ -93,6 +93,8 @@ plugin.tx_browser_pi1 {
           , tx_awomrhein.lat
           , tx_awomrhein.lon
           , tx_awomrhein.zip
+          , tx_awomrhein.crdate
+          , tx_awomrhein.deleted
           , tx_awomrhein_cat.title
           , tx_awomrhein_cat.icons
           , tx_awomrhein_cat.icon_offset_x
@@ -101,6 +103,10 @@ plugin.tx_browser_pi1 {
         //andWhere = tx_awomrhein.eventBegin > UNIX_TIMESTAMP() 
         //csvLinkToSingleView = tx_awomrhein.facility
         tx_awomrhein {
+            // placeholder: radialsearch HTML class depending on radius
+          crdate < plugin.tx_radialsearch.masterTemplates.htmlClass
+            // placeholder: radialsearch linear distance
+          deleted < plugin.tx_radialsearch.masterTemplates.linearDistanceString
             // facility, zip, city, responsible, details
           facility = COA
           facility {
@@ -185,6 +191,7 @@ plugin.tx_browser_pi1 {
           }
         }
         filter {
+          radialsearch < plugin.tx_browser_pi1.displayList.master_templates.radialsearch
           tx_awomrhein {
             city < plugin.tx_browser_pi1.displayList.master_templates.selectbox
             city {
@@ -271,6 +278,7 @@ plugin.tx_browser_pi1 {
               value (
               <div class="filter">
                 ###TX_AWOMRHEIN_CAT.TITLE###
+                ###RADIALSEARCH###
                 <div class="selectbox">
                   ###TX_AWOMRHEIN.ZIP### ###TX_AWOMRHEIN.CITY###
                 </div>
