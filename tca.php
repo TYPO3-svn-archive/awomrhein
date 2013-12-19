@@ -952,7 +952,7 @@ $TCA['tx_awomrhein_pathcategory'] = array (
   'interface' => array (
     'showRecordFieldList' =>  
       'type,' . 
-      'title,title_lang_ol,' . 
+      'title,' . 
       'icons,icon_offset_x,icon_offset_y,' .
       'tx_awomrhein,' .
       'tx_awomrhein_path,' .
@@ -963,11 +963,6 @@ $TCA['tx_awomrhein_pathcategory'] = array (
       'exclude' => 0,
       'label'   => 'LLL:EXT:awomrhein/locallang_db.xml:tx_awomrhein_pathcategory.title',
       'config'  => $conf_input_30_trimRequired,
-    ),
-    'title_lang_ol' => array (
-      'exclude' => 0,
-      'label'   => 'LLL:EXT:awomrhein/locallang_db.xml:tca_phrase.lang_ol',
-      'config'  => $conf_input_30_trim,
     ),
     'icons' => array (
       'exclude'   => $bool_exclude_default,
@@ -1124,7 +1119,7 @@ $TCA['tx_awomrhein_pathcategory'] = array (
     ),
   ),
   'palettes' => array (
-    '1'               => array ('showitem' => 'title_lang_ol'),
+    '1'               => array ('showitem' => ''),
     'icons'      => array (
       'showitem'        =>  
           'icons;LLL:EXT:awomrhein/locallang_db.xml:tca_phrase.files,' 
