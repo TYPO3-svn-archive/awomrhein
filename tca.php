@@ -103,6 +103,11 @@ if (!defined ('TYPO3_MODE'))
     'maxitems'      => 20,
   );
 
+  $conf_input_30 = array (
+    'type' => 'input',
+    'size' => '30',
+  );
+
   $conf_input_30_trim = array (
     'type' => 'input',
     'size' => '30',
