@@ -40,6 +40,11 @@ plugin.tx_browser_pi1 {
     controlling {
       enabled = Map
     }
+    design {
+      path {
+        categoryIcon  = uploads/tx_awomrhein/
+      }
+    }
     icon {
       listNum {
         categoryIconMap       = 1
@@ -56,9 +61,6 @@ plugin.tx_browser_pi1 {
         categoryIcon    = tx_awomrhein_cat.icons
         categoryOffsetX = tx_awomrhein_cat.icon_offset_x
         categoryOffsetY = tx_awomrhein_cat.icon_offset_y
-      }
-      path {
-        categoryIcon  = uploads/tx_awomrhein/
       }
     }
     width = 700
