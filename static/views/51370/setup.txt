@@ -193,8 +193,8 @@ plugin.tx_browser_pi1 {
         filter {
           radialsearch < plugin.tx_browser_pi1.displayList.master_templates.radialsearch
           tx_awomrhein {
-            city < plugin.tx_browser_pi1.displayList.master_templates.selectbox
-            city {
+            XXXcity < plugin.tx_browser_pi1.displayList.master_templates.selectbox
+            XXXcity {
               size        = 10
               //count_hits  = 0
               first_item {
@@ -206,8 +206,8 @@ plugin.tx_browser_pi1 {
               }
               wrap = <span class="selectbox">|</span>
             }
-            zip < plugin.tx_browser_pi1.displayList.master_templates.selectbox
-            zip {
+            XXXzip < plugin.tx_browser_pi1.displayList.master_templates.selectbox
+            XXXzip {
               size        = 10
               //count_hits = 0
               first_item {
