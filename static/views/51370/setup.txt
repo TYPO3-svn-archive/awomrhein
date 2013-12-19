@@ -306,7 +306,7 @@ temp.route {
       }
     }
     imgList {
-      field = tx_awomrhein_pathcategory.icons
+      field = tx_awomrhein_pathcat.icons
     }
     imgPath = {$plugin.tx_route.path.uploadfolder}
     1 {
@@ -714,11 +714,11 @@ temp.route {
       tx_awomrhein_path.address_end         AS 'tx_awomrhein_path.address_end',
       tx_awomrhein_path.url                 AS 'tx_awomrhein_path.url',
       tx_awomrhein_path.uid                 AS 'tx_awomrhein_path.uid',
-      tx_awomrhein_pathcategory.title           AS 'tx_awomrhein_pathcategory.title',
-      tx_awomrhein_pathcategory.icons           AS 'tx_awomrhein_pathcategory.icons',
-      tx_awomrhein_pathcategory.icon_offset_x   AS 'tx_awomrhein_pathcategory.icon_offset_x',
-      tx_awomrhein_pathcategory.icon_offset_y   AS 'tx_awomrhein_pathcategory.icon_offset_y',
-      tx_awomrhein_pathcategory.uid             AS 'tx_awomrhein_pathcategory.uid',
+      tx_awomrhein_pathcat.title            AS 'tx_awomrhein_pathcat.title',
+      tx_awomrhein_pathcat.icons            AS 'tx_awomrhein_pathcat.icons',
+      tx_awomrhein_pathcat.icon_offset_x    AS 'tx_awomrhein_pathcat.icon_offset_x',
+      tx_awomrhein_pathcat.icon_offset_y    AS 'tx_awomrhein_pathcat.icon_offset_y',
+      tx_awomrhein_pathcat.uid              AS 'tx_awomrhein_pathcat.uid',
       tx_awomrhein.facility                 AS 'tx_awomrhein.facility',
       tx_awomrhein.lat                      AS 'tx_awomrhein.lat',
       tx_awomrhein.lon               AS 'tx_awomrhein.lon',
@@ -729,14 +729,14 @@ temp.route {
       tx_awomrhein_cat.icon_offset_x AS 'tx_awomrhein_cat.icon_offset_x',
       tx_awomrhein_cat.icon_offset_y AS 'tx_awomrhein_cat.icon_offset_y',
       tx_awomrhein_cat.uid           AS 'tx_awomrhein_cat.uid',
-      CONCAT( tx_awomrhein_path.uid, '.', tx_awomrhein_pathcategory.uid ) AS 'PATH:tx_awomrhein_path->tx_awomrhein_pathcategory->listOf.uid',
+      CONCAT( tx_awomrhein_path.uid, '.', tx_awomrhein_pathcat.uid ) AS 'PATH:tx_awomrhein_path->tx_awomrhein_pathcat->listOf.uid',
       CONCAT( tx_awomrhein_path.uid, '.', tx_awomrhein.uid, '.', tx_awomrhein_cat.uid ) AS 'MARKER:tx_awomrhein_path->tx_awomrhein->tx_awomrhein_cat->listOf.uid'
     )
     select {
       deal_as_table {
         0 {
-          statement = CONCAT( tx_awomrhein_path.uid, '.', tx_awomrhein_pathcategory.uid )
-          alias     = PATH:tx_awomrhein_path->tx_awomrhein_pathcategory->listOf.uid
+          statement = CONCAT( tx_awomrhein_path.uid, '.', tx_awomrhein_pathcat.uid )
+          alias     = PATH:tx_awomrhein_path->tx_awomrhein_pathcat->listOf.uid
         }
         1 {
           statement = CONCAT( tx_awomrhein_path.uid, '.', tx_awomrhein.uid, '.', tx_awomrhein_cat.uid )
@@ -777,8 +777,8 @@ temp.route {
       1 {
         type  = LEFT JOIN
         table = tx_awomrhein_cat
-        alias = tx_awomrhein_pathcategory
-        on    = tx_awomrhein_pathcategory.uid = tx_awomrhein_path_mm_cat.uid_foreign
+        alias = tx_awomrhein_pathcat
+        on    = tx_awomrhein_pathcat.uid = tx_awomrhein_path_mm_cat.uid_foreign
       }
       2 {
         type  = LEFT JOIN
@@ -808,7 +808,7 @@ temp.route {
     aliases {
       tables {
         tx_awomrhein_path           = tx_awomrhein_path
-        tx_awomrhein_pathcategory   = tx_awomrhein_pathcategory
+        tx_awomrhein_pathcat   = tx_awomrhein_pathcat
         tx_awomrhein_path_mm_cat    = tx_awomrhein_path_mm_tx_awomrhein_cat
         tx_awomrhein_path_mm_marker = tx_awomrhein_path_mm_tx_awomrhein
         tx_awomrhein                = tx_awomrhein
