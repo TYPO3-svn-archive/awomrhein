@@ -72,7 +72,7 @@ plugin.tx_browser_pi1 {
             marker  = tx_awomrhein
           }
           cat {
-            path    = tx_awomrhein_pathcategory
+            path    = tx_awomrhein_path
             marker  = tx_awomrhein_cat
           }
         }
@@ -119,7 +119,7 @@ plugin.tx_browser_pi1 {
           lineWidth     = tx_awomrhein_path.line_width
         }
         pathCategory {
-          title = tx_awomrhein_pathcategory.title
+          title = tx_awomrhein_cat.title
         }
         marker {
           title = tx_awomrhein.facility
