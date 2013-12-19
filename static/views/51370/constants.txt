@@ -64,6 +64,71 @@ plugin.tx_browser_pi1 {
         categoryOffsetY = tx_awomrhein_cat.icon_offset_y
       }
     }
+    path {
+      mapper {
+        tables {
+          local {
+            path    = tx_awomrhein_path
+            marker  = tx_awomrhein
+          }
+          cat {
+            path    = tx_awomrhein_pathcategory
+            marker  = tx_awomrhein_cat
+          }
+        }
+        fields {
+          local {
+            title {
+              path    = title
+              marker  = title
+            }
+            lat {
+              path    = icon_lat
+              marker  = lat
+            }
+            lon {
+              path    = icon_lon
+              marker  = lon
+            }
+          }
+          cat {
+            title {
+              path    = title
+              marker  = facility
+            }
+            icons {
+              path    = icons
+              marker  = icons
+            }
+            iconOffsetX {
+              path    = icon_offset_x
+              marker  = icon_offset_x
+            }
+            iconOffsetY {
+              path    = icon_offset_y
+              marker  = icon_offset_y
+            }
+          }
+        }
+      }
+      table {
+        path {
+          title         = tx_awomrhein_path.title
+          geodata       = tx_awomrhein_path.geodata
+          color         = tx_awomrhein_path.color
+          lineWidth     = tx_awomrhein_path.line_width
+        }
+        pathCategory {
+          title = tx_awomrhein_pathcategory.title
+        }
+        marker {
+          title = tx_awomrhein.facility
+        }
+        markerCategory {
+          title = tx_awomrhein_cat.title
+        }
+      }
+    }
     width = 700
   }
   navigation {

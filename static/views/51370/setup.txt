@@ -3,307 +3,1060 @@
   //
   // INDEX
 
+  // temp.route: route linkToSingle
+  // temp.route: route_image_47
+  // temp.route: route_image_simple_47
+  // temp.route: route_cat_image_47
+  // temp.route: marker_image_47
+  // temp.route: marker_image_simple_47
+  // temp.route: marker_cat_image_47
+  // temp.route: navigation
+  // temp.route: sql
+  // config
   // plugin.tx_browser_pi1
-  //    views
-  //      51370: AWO Mittelrhein: Einrichtungen
+  // page
 
 
 
   ////////////////////////////////////////
   //
+  // temp.route: route linkToSingle
+
+temp.route {
+    // link to the single view of a route
+  route_linkToSingle = COA
+  route_linkToSingle {
+      // URL: page id, page type, parameters
+    10 = COA
+    10 {
+        // Page uid
+      10 = TEXT
+      10 {
+        data = page:uid
+      }
+        // Page type
+      20 = TEXT
+      20 {
+        value = 0
+        wrap  = ,|
+      }
+        // Parameter
+      30 = COA
+      30 {
+          // ,&tx_browser_pi1[showuid]=
+        10 = TEXT
+        10 {
+          if {
+            isTrue {
+              field = {$plugin.tx_browser_pi1.map.path.mapper.tables.local.path}.uid
+            }
+          }
+          field = {$plugin.tx_browser_pi1.map.path.mapper.tables.local.path}.uid
+          wrap  = ,&tx_browser_pi1[{$plugin.tx_browser_pi1.map.aliases.showUid.path}]=|
+        }
+      }
+    }
+      // target
+    20 = TEXT
+    20 {
+        // [STRING] - (default). Examples: -, _self, _blank, _top
+      value = -
+      noTrimWrap = | | |
+    }
+      // class
+    30 = TEXT
+    30 {
+        // [STRING] - (default)
+      value = -
+      noTrimWrap = | | |
+    }
+      // title
+    40 = TEXT
+    40 {
+      if {
+        isTrue {
+          field =
+        }
+      }
+        // [STRING]
+      field =
+      wrap  = "|"
+    }
+  }
+}
+  // temp.route: route linkToSingle
+
+
+
+  ////////////////////////////////////////
+  //
+  // temp.route: route_image_47
+
+temp.route {
+    // tt_content.image.20 version TYPO3 4.7
+  route_image_47 < tt_content.image.20
+  route_image_47 {
+    imgList {
+      field = tx_awomrhein_path.image
+    }
+    imgPath = {$plugin.tx_route.path.uploadfolder}
+    1 {
+      file {
+        width {
+          field = tx_awomrhein_path.imagewidth
+        }
+        height {
+          field = tx_awomrhein_path.imageheight
+        }
+      }
+      altText {
+        field             = tx_awomrhein_path.imageseo
+        htmlSpecialChars  = 1
+      }
+      titleText {
+        field             = tx_awomrhein_path.imageseo
+        htmlSpecialChars  = 1
+      }
+      imageLinkWrap {
+        ifEmpty {
+          typolink.parameter.field = tx_awomrhein_path.image_link
+        }
+        typolink {
+          parameter {
+            field = tx_awomrhein_path.image_link
+          }
+          additionalParams  = &tx_browser_pi1[{$plugin.tx_browser_pi1.map.aliases.showUid.path}]=###tx_awomrhein_path.UID###
+          useCacheHash      = 1
+          title             = TEXT
+          title {
+            field = tx_awomrhein_path.title
+          }
+        }
+        enable = 1
+        enable {
+          field = tx_awomrhein_path.image_zoom
+          ifEmpty {
+            typolink {
+              parameter {
+                field = tx_awomrhein_path.image_link
+              }
+            }
+          }
+        }
+      }
+    }
+    textPos.field           = tx_awomrhein_path.imageorient
+    equalH.field            = tx_awomrhein_path.imageheight
+    image_compression.field = tx_awomrhein_path.image_compression
+    image_effects.field     = tx_awomrhein_path.image_effects
+    noRows.field            = tx_awomrhein_path.image_norows
+    cols.field              = tx_awomrhein_path.imagecols
+    border.field            = tx_awomrhein_path.image_frames
+    caption.1.1.field       = tx_awomrhein_path.imagecaption
+    captionAlign.field      = tx_awomrhein_path.imagecaption_position
+    layout {
+      1 {
+        value = <div class="csc-textpic csc-textpic-right csc-textpic-above###CLASSES###">###IMAGES###<div class="csc-textpic-clear"><!-- --></div>###TEXT###</div><div class="csc-textpic-clear"><!-- --></div>
+      }
+      2 {
+        value = <div class="csc-textpic csc-textpic-left csc-textpic-above###CLASSES###">###IMAGES###<div class="csc-textpic-clear"><!-- --></div>###TEXT###</div><div class="csc-textpic-clear"><!-- --></div>
+      }
+      key {
+        field = tx_awomrhein_path.imageorient
+      }
+    }
+    stdWrap {
+      //prefixComment >
+    }
+      // #43936
+    rendering {
+      singleNoCaption {
+        allStdWrap {
+          innerWrap {
+            cObject {
+              key {
+                field = tx_awomrhein_path.imageorient
+              }
+            }
+          }
+        }
+        fallbackRendering {
+          10 {
+            if {
+              isTrue {
+                field = tx_awomrhein_path.imagecaption
+              }
+            }
+          }
+          20 {
+            if {
+              isTrue {
+                field = tx_awomrhein_path.imagecaption
+              }
+            }
+          }
+          30 {
+            if {
+              isTrue {
+                field = tx_awomrhein_path.imagecaption
+              }
+            }
+          }
+          40 {
+            if {
+              isFalse {
+                field = tx_awomrhein_path.imagecaption
+              }
+            }
+          }
+        }
+      }
+      noCaption {
+        fallbackRendering {
+          if {
+            isTrue {
+              field = tx_awomrhein_path.imagecaption
+            }
+          }
+        }
+      }
+      singleCaption {
+        fallbackRendering {
+          if {
+            isTrue {
+              field = tx_awomrhein_path.imagecaption
+            }
+          }
+        }
+      }
+      splitCaption {
+        fallbackRendering {
+          if {
+            isTrue {
+              field = tx_awomrhein_path.imagecaption
+            }
+          }
+        }
+      }
+      globalCaption {
+        fallbackRendering {
+          if {
+            isTrue {
+              field = tx_awomrhein_path.imagecaption
+            }
+          }
+        }
+      }
+    }
+  }
+}
+  // temp.route: route_image_47
+
+
+
+  ////////////////////////////////////////
+  //
+  // temp.route: route_image_simple_47
+
+temp.route {
+    // tt_content.image.20 version TYPO3 4.7
+  route_image_simple_47 < temp.route.route_image_47
+  route_image_simple_47 {
+    1 {
+      file {
+        width   >
+        height  >
+        width   = {$plugin.tx_route.images.map.maxWidth}
+        height  = {$plugin.tx_route.images.map.maxHeight}
+      }
+      imageLinkWrap >
+    }
+    equalH >
+    caption >
+    textPos = {$plugin.tx_route.images.map.position} 
+    layout {
+      key >
+      key = {$plugin.tx_route.images.map.position} 
+    }
+    maxWInText  = {$plugin.tx_route.images.map.maxWidth}
+    imgMax      = 1
+    imgStart    = 0
+  }
+}
+  // temp.route: route_image_simple_47
+
+
+
+  ////////////////////////////////////////
+  //
+  // temp.route: route_cat_image_47
+
+temp.route {
+    // tt_content.image.20 version TYPO3 4.7
+  route_cat_image_47 < tt_content.image.20
+  route_cat_image_47 {
+      // Display one image only
+    imgMax    = 1
+    imgStart  = {$plugin.tx_browser_pi1.map.icon.listNum.categoryIconText}
+    layout {
+      key >
+      key = default
+      default {
+        value = ###IMAGES###
+      }
+    }
+    imgList {
+      field = tx_awomrhein_pathcategory.icons
+    }
+    imgPath = {$plugin.tx_route.path.uploadfolder}
+    1 {
+      file {
+        width   >
+        width   = {$plugin.tx_route.images.list.maxWidth} 
+        height  >
+        height  = {$plugin.tx_route.images.list.maxHeight} 
+        width   >
+        height  >
+      }
+      altText {
+        field             = tx_awomrhein_path.title
+        htmlSpecialChars  = 1
+      }
+      titleText {
+        field             = tx_awomrhein_path.title
+        htmlSpecialChars  = 1
+      }
+      imageLinkWrap >
+      imageLinkWrap = 1
+      imageLinkWrap {
+        enable = 1
+        typolink {
+          parameter {
+              // URL: page id, page type, parameters
+            cObject < temp.route.route_linkToSingle
+          }
+          useCacheHash  = 1
+        }
+      }
+    }
+  }
+}
+  // temp.route: route_cat_image_47
+
+
+
+  ////////////////////////////////////////
+  //
+  // temp.route: marker_image_47
+
+temp.route {
+    // tt_content.image.20 version TYPO3 4.7
+  marker_image_47 < tt_content.image.20
+  marker_image_47 {
+    imgList {
+      field = tx_awomrhein.image
+    }
+    imgPath = {$plugin.tx_route.path.uploadfolder}
+    1 {
+      file {
+        width {
+          field = tx_awomrhein.imagewidth
+        }
+        height {
+          field = tx_awomrhein.imageheight
+        }
+      }
+      altText {
+        field             = tx_awomrhein.imageseo
+        htmlSpecialChars  = 1
+      }
+      titleText {
+        field             = tx_awomrhein.imageseo
+        htmlSpecialChars  = 1
+      }
+      imageLinkWrap {
+        ifEmpty {
+          typolink.parameter.field = tx_awomrhein.image_link
+        }
+        typolink {
+          parameter {
+            field = tx_awomrhein.image_link
+          }
+          additionalParams  = &tx_browser_pi1[{$plugin.tx_browser_pi1.map.aliases.showUid.marker}]=###tx_awomrhein_path.UID###
+          useCacheHash      = 1
+          title             = TEXT
+          title {
+            field = tx_awomrhein.title
+          }
+        }
+        enable = 1
+        enable {
+          field = tx_awomrhein.image_zoom
+          ifEmpty {
+            typolink {
+              parameter {
+                field = tx_awomrhein.image_link
+              }
+            }
+          }
+        }
+      }
+    }
+    textPos.field           = tx_awomrhein.imageorient
+    equalH.field            = tx_awomrhein.imageheight
+    image_compression.field = tx_awomrhein.image_compression
+    image_effects.field     = tx_awomrhein.image_effects
+    noRows.field            = tx_awomrhein.image_norows
+    cols.field              = tx_awomrhein.imagecols
+    border.field            = tx_awomrhein.image_frames
+    caption.1.1.field       = tx_awomrhein.imagecaption
+    captionAlign.field      = tx_awomrhein.imagecaption_position
+    layout {
+      1 {
+        value = <div class="csc-textpic csc-textpic-right csc-textpic-above###CLASSES###">###IMAGES###<div class="csc-textpic-clear"><!-- --></div>###TEXT###</div><div class="csc-textpic-clear"><!-- --></div>
+      }
+      2 {
+        value = <div class="csc-textpic csc-textpic-left csc-textpic-above###CLASSES###">###IMAGES###<div class="csc-textpic-clear"><!-- --></div>###TEXT###</div><div class="csc-textpic-clear"><!-- --></div>
+      }
+      key {
+        field = tx_awomrhein.imageorient
+      }
+    }
+    stdWrap {
+      //prefixComment >
+    }
+      // #43936
+    rendering {
+      singleNoCaption {
+        allStdWrap {
+          innerWrap {
+            cObject {
+              key {
+                field = tx_awomrhein.imageorient
+              }
+            }
+          }
+        }
+        fallbackRendering {
+          10 {
+            if {
+              isTrue {
+                field = tx_awomrhein.imagecaption
+              }
+            }
+          }
+          20 {
+            if {
+              isTrue {
+                field = tx_awomrhein.imagecaption
+              }
+            }
+          }
+          30 {
+            if {
+              isTrue {
+                field = tx_awomrhein.imagecaption
+              }
+            }
+          }
+          40 {
+            if {
+              isFalse {
+                field = tx_awomrhein.imagecaption
+              }
+            }
+          }
+        }
+      }
+      noCaption {
+        fallbackRendering {
+          if {
+            isTrue {
+              field = tx_awomrhein.imagecaption
+            }
+          }
+        }
+      }
+      singleCaption {
+        fallbackRendering {
+          if {
+            isTrue {
+              field = tx_awomrhein.imagecaption
+            }
+          }
+        }
+      }
+      splitCaption {
+        fallbackRendering {
+          if {
+            isTrue {
+              field = tx_awomrhein.imagecaption
+            }
+          }
+        }
+      }
+      globalCaption {
+        fallbackRendering {
+          if {
+            isTrue {
+              field = tx_awomrhein.imagecaption
+            }
+          }
+        }
+      }
+    }
+  }
+}
+  // temp.route: marker_image_47
+
+
+
+  ////////////////////////////////////////
+  //
+  // temp.route: marker_image_simple_47
+
+temp.route {
+    // tt_content.image.20 version TYPO3 4.7
+  marker_image_simple_47 < temp.route.marker_image_47
+  marker_image_simple_47 {
+    1 {
+      file {
+        width   >
+        height  >
+        width   = {$plugin.tx_route.images.map.maxWidth}
+        height  = {$plugin.tx_route.images.map.maxHeight}
+      }
+      imageLinkWrap >
+    }
+    equalH >
+    caption >
+    textPos = {$plugin.tx_route.images.map.position} 
+    layout {
+      key >
+      key = {$plugin.tx_route.images.map.position} 
+    }
+    maxWInText  = {$plugin.tx_route.images.map.maxWidth}
+    imgMax      = 1
+    imgStart    = 0
+  }
+}
+  // temp.route: marker_cat_image_47
+
+
+
+  ////////////////////////////////////////
+  //
+  // temp.route: marker_cat_image_47
+
+temp.route {
+    // tt_content.image.20 version TYPO3 4.7
+  marker_cat_image_47 < tt_content.image.20
+  marker_cat_image_47 {
+      // Display one image only
+    imgMax    = 1
+    imgStart  = {$plugin.tx_browser_pi1.map.icon.listNum.categoryIconText}
+    layout {
+      key >
+      key = default
+      default {
+        value = ###IMAGES###
+      }
+    }
+    imgList {
+      field = tx_awomrhein_cat.icons
+    }
+    imgPath = {$plugin.tx_route.path.uploadfolder}
+    1 {
+      file {
+        width   >
+        width   = {$plugin.tx_route.images.list.maxWidth} 
+        height  >
+        height  = {$plugin.tx_route.images.list.maxHeight} 
+        width   >
+        height  >
+      }
+      altText {
+        field             = tx_awomrhein.title
+        htmlSpecialChars  = 1
+      }
+      titleText {
+        field             = tx_awomrhein.title
+        htmlSpecialChars  = 1
+      }
+      imageLinkWrap >
+      imageLinkWrap = 1
+      imageLinkWrap {
+        enable = 1
+        typolink {
+          parameter {
+              // URL: page id, page type, parameters
+            cObject < temp.route.route_linkToSingle
+          }
+          useCacheHash  = 1
+        }
+      }
+    }
+  }
+}
+  // temp.route: marker_cat_image_47
+
+
+
+  ////////////////////////////////////////
+  //
+  // temp.route: navigation
+
+temp.route {
+  navigation {
+    map < plugin.tx_browser_pi1.navigation.map
+    map {
+      marker {
+        snippets {
+          jss {
+            dynamic {
+              oxMapConfigModules {
+                10 {
+                  value = {$plugin.tx_browser_pi1.map.openlayers.modules.routes.default}
+                }
+                20 {
+                  value = {$plugin.tx_browser_pi1.map.openlayers.modules.routes.debugging}
+                }
+              }
+            }
+          }
+        }
+        variables {
+          system {
+            description >
+              // type == route, type != route
+            description = COA
+            description {
+                // type == route
+              10 = COA
+              10 {
+                  // if type == route
+                if =
+                if {
+                  value = route
+                  equals {
+                    field = type
+                  }
+                }
+                10 < temp.route.route_image_simple_47
+                10 {
+                  text < plugin.tx_browser_pi1.displayList.master_templates.map.descriptionWiLinkToSingle
+                }
+              }
+                // type != route
+              20 = COA
+              20 {
+                  // if type != route
+                if =
+                if {
+                  value = route
+                  equals {
+                    field = type
+                  }
+                  negate = 1
+                }
+                10 < temp.route.marker_image_simple_47
+                10 {
+                  text < plugin.tx_browser_pi1.displayList.master_templates.map.descriptionWiLinkToSingle
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+  // temp.route: navigation
+
+
+
+  ////////////////////////////////////////
+  //
+  // temp.route: sql
+
+temp.route {
+  sql {
+    select (
+      tx_awomrhein_path.title               AS 'tx_awomrhein_path.title',
+      tx_awomrhein_path.short               AS 'tx_awomrhein_path.short',
+      tx_awomrhein_path.bodytext            AS 'tx_awomrhein_path.bodytext',
+      tx_awomrhein_path.geodata             AS 'tx_awomrhein_path.geodata',
+      tx_awomrhein_path.icon_lat            AS 'tx_awomrhein_path.icon_lat',
+      tx_awomrhein_path.icon_lon            AS 'tx_awomrhein_path.icon_lon',
+      tx_awomrhein_path.color               AS 'tx_awomrhein_path.color',
+      tx_awomrhein_path.line_width          AS 'tx_awomrhein_path.line_width',
+      tx_awomrhein_path.list_title          AS 'tx_awomrhein_path.list_title',
+      tx_awomrhein_path.list_short          AS 'tx_awomrhein_path.list_short',
+      tx_awomrhein_path.map_title           AS 'tx_awomrhein_path.map_title',
+      tx_awomrhein_path.map_short           AS 'tx_awomrhein_path.map_short',
+      tx_awomrhein_path.image               AS 'tx_awomrhein_path.image',
+      tx_awomrhein_path.imagecaption        AS 'tx_awomrhein_path.imagecaption',
+      tx_awomrhein_path.imageseo            AS 'tx_awomrhein_path.imageseo',
+      tx_awomrhein_path.imageheight         AS 'tx_awomrhein_path.imageheight',
+      tx_awomrhein_path.imagewidth          AS 'tx_awomrhein_path.imagewidth',
+      tx_awomrhein_path.imageorient         AS 'tx_awomrhein_path.imageorient',
+      tx_awomrhein_path.imagecaption        AS 'tx_awomrhein_path.imagecaption',
+      tx_awomrhein_path.imagecols           AS 'tx_awomrhein_path.imagecols',
+      tx_awomrhein_path.imageborder         AS 'tx_awomrhein_path.imageborder',
+      tx_awomrhein_path.imagecaption_position AS 'tx_awomrhein_path.imagecaption_position',
+      tx_awomrhein_path.image_link          AS 'tx_awomrhein_path.image_link',
+      tx_awomrhein_path.image_zoom          AS 'tx_awomrhein_path.image_zoom',
+      tx_awomrhein_path.image_noRows        AS 'tx_awomrhein_path.image_noRows',
+      tx_awomrhein_path.image_effects       AS 'tx_awomrhein_path.image_effects',
+      tx_awomrhein_path.image_compression   AS 'tx_awomrhein_path.image_compression',
+      tx_awomrhein_path.image_frames        AS 'tx_awomrhein_path.image_frames',
+      tx_awomrhein_path.address_start       AS 'tx_awomrhein_path.address_start',
+      tx_awomrhein_path.address_end         AS 'tx_awomrhein_path.address_end',
+      tx_awomrhein_path.url                 AS 'tx_awomrhein_path.url',
+      tx_awomrhein_path.uid                 AS 'tx_awomrhein_path.uid',
+      tx_awomrhein_pathcategory.title           AS 'tx_awomrhein_pathcategory.title',
+      tx_awomrhein_pathcategory.icons           AS 'tx_awomrhein_pathcategory.icons',
+      tx_awomrhein_pathcategory.icon_offset_x   AS 'tx_awomrhein_pathcategory.icon_offset_x',
+      tx_awomrhein_pathcategory.icon_offset_y   AS 'tx_awomrhein_pathcategory.icon_offset_y',
+      tx_awomrhein_pathcategory.uid             AS 'tx_awomrhein_pathcategory.uid',
+      tx_awomrhein.title             AS 'tx_awomrhein.title',
+      tx_awomrhein.bodytext          AS 'tx_awomrhein.bodytext',
+      tx_awomrhein.lat               AS 'tx_awomrhein.lat',
+      tx_awomrhein.lon               AS 'tx_awomrhein.lon',
+      tx_awomrhein.image             AS 'tx_awomrhein.image',
+      tx_awomrhein.url               AS 'tx_awomrhein.url',
+      tx_awomrhein.uid               AS 'tx_awomrhein.uid',
+      tx_awomrhein_cat.title         AS 'tx_awomrhein_cat.title',
+      tx_awomrhein_cat.icons         AS 'tx_awomrhein_cat.icons',
+      tx_awomrhein_cat.icon_offset_x AS 'tx_awomrhein_cat.icon_offset_x',
+      tx_awomrhein_cat.icon_offset_y AS 'tx_awomrhein_cat.icon_offset_y',
+      tx_awomrhein_cat.uid           AS 'tx_awomrhein_cat.uid',
+      CONCAT( tx_awomrhein_path.uid, '.', tx_awomrhein_pathcategory.uid ) AS 'PATH:tx_awomrhein_path->tx_awomrhein_pathcategory->listOf.uid',
+      CONCAT( tx_awomrhein_path.uid, '.', tx_awomrhein.uid, '.', tx_awomrhein_cat.uid ) AS 'MARKER:tx_awomrhein_path->tx_awomrhein->tx_awomrhein_cat->listOf.uid'
+    )
+    select {
+      deal_as_table {
+        0 {
+          statement = CONCAT( tx_awomrhein_path.uid, '.', tx_awomrhein_pathcategory.uid )
+          alias     = PATH:tx_awomrhein_path->tx_awomrhein_pathcategory->listOf.uid
+        }
+        1 {
+          statement = CONCAT( tx_awomrhein_path.uid, '.', tx_awomrhein.uid, '.', tx_awomrhein_cat.uid )
+          alias     = MARKER:tx_awomrhein_path->tx_awomrhein->tx_awomrhein_cat->listOf.uid
+        }
+      }
+    }
+    from {
+      table = tx_awomrhein_path
+      alias = tx_awomrhein_path
+    }
+      // ###PID_LIST###, tx_awomrhein_path.uid if tx_awomrhein_path.uid is set
+    andWhere = COA
+    andWhere {
+      10 = TEXT
+      10 {
+        value = tx_awomrhein_path.pid IN (###PID_LIST###)
+      }
+      20 = TEXT
+      20 {
+        if {
+          isTrue {
+            data = GP:tx_browser_pi1|{$plugin.tx_browser_pi1.map.aliases.showUid.path}
+          }
+        }
+        value       = AND tx_awomrhein_path.uid = {GP:tx_browser_pi1|{$plugin.tx_browser_pi1.map.aliases.showUid.path}}
+        insertData  = 1
+        noTrimWrap  = | | |
+      }
+    }
+    joins {
+      0 {
+        type  = LEFT JOIN
+        table = tx_awomrhein_path_mm_tx_awomrhein_pathcategory
+        alias = tx_awomrhein_path_mm_cat
+        on    = tx_awomrhein_path.uid = tx_awomrhein_path_mm_cat.uid_local
+      }
+      1 {
+        type  = LEFT JOIN
+        table = tx_awomrhein_pathcategory
+        alias = tx_awomrhein_pathcategory
+        on    = tx_awomrhein_pathcategory.uid = tx_awomrhein_path_mm_cat.uid_foreign
+      }
+      2 {
+        type  = LEFT JOIN
+        table = tx_awomrhein_path_mm_tx_awomrhein
+        alias = tx_awomrhein_path_mm_marker
+        on    = tx_awomrhein_path.uid = tx_awomrhein_path_mm_marker.uid_local
+      }
+      3 {
+        type  = LEFT JOIN
+        table = tx_awomrhein
+        alias = tx_awomrhein
+        on    = tx_awomrhein.uid = tx_awomrhein_path_mm_marker.uid_foreign
+      }
+      4 {
+        type  = LEFT JOIN
+        table = tx_awomrhein_mm_tx_awomrhein_pathcategory
+        alias = tx_awomrhein_mm_cat
+        on    = tx_awomrhein.uid = tx_awomrhein_mm_cat.uid_local
+      }
+      5 {
+        type  = LEFT JOIN
+        table = tx_awomrhein_pathcategory
+        alias = tx_awomrhein_cat
+        on    = tx_awomrhein_cat.uid = tx_awomrhein_mm_cat.uid_foreign
+      }
+    }
+    aliases {
+      tables {
+        tx_awomrhein_path           = tx_awomrhein_path
+        tx_awomrhein_pathcategory       = tx_awomrhein_pathcategory
+        tx_awomrhein_path_mm_cat    = tx_awomrhein_path_mm_tx_awomrhein_pathcategory
+        tx_awomrhein_path_mm_marker = tx_awomrhein_path_mm_tx_awomrhein
+        tx_awomrhein         = tx_awomrhein
+        tx_awomrhein_cat     = tx_awomrhein_cat
+        tx_awomrhein_mm_cat  = tx_awomrhein_mm_tx_awomrhein_pathcategory
+      }
+      fields {
+        uid = tx_awomrhein_path.uid
+        pid = tx_awomrhein_path.pid
+      }
+    }
+    orderBy = tx_awomrhein_path.title, tx_awomrhein_path_mm_marker.sorting, tx_awomrhein_cat.title
+  }
+}
+  // temp.route: sql
+
+
+
+  ////////////////////////////////////////////////////////////////////////////////
+  //
+  // config
+
+config {
+  sys_language_uid      = 0
+  sys_language_mode     = strict
+  sys_language_overlay  = 0
+}
+  // config
+
+
+
+  ////////////////////////////////////////////////////////////////////////////////
+  //
   // plugin.tx_browser_pi1
 
 plugin.tx_browser_pi1 {
-  
+
+  general_stdWrap >
+
+  marker {
+    my_backbutton = TEXT
+    my_backbutton {
+      value = &laquo; Back
+      lang {
+        de = &laquo; Zur&uuml;ck
+        en = &laquo; Back
+      }
+      wrap = <a class="tx_route-backbutton" href="javascript:history.back()">|</a>
+    }
+  }
+
   views {
     list {
-      51370 = AWO Mittelrhein: Einrichtungen
+      51370 = Route (map only)
       51370 {
-        name    = AWO Mittelrhein: Einrichtungen
-        marker < plugin.tx_browser_pi1.marker
-        marker {
-          my_search {
-            value = Send!
-            lang {
-              de = Senden!
-              en = Send!
-            }
-          }
-        }
         navigation {
-          map < plugin.tx_browser_pi1.navigation.map
+          map < temp.route.navigation.map
           map {
-            marker {
-              addToCData {
-                system {
-                  mapLinkToSingle {
-                    10 {
-                      30 {
-                        10 {
-//                          wrap = ,&tx_browser_pi1[headquartersUid]=|
-                        }
-                      }
-                    }
-                  }
-                }
-              }
-              variables {
-                system {
-                  description >
-                  description < plugin.tx_browser_pi1.displayList.master_templates.map.descriptionWiLinkToSingle
-                  description {
-                    10 >
-                    10 = COA
-                    10 {
-                      10 = TEXT
-                      10 {
-                        required    = 1
-                          // v4.6
-                        field       = {$plugin.tx_browser_pi1.map.marker.field.description}
-                        noTrimWrap  = |<strong>|</strong><br />|
-                      }
-                      20 = COA
-                      20 {
-                        10 = TEXT
-                        10 {
-                          required    = 1
-                          field       = tx_awomrhein.zip
-                          noTrimWrap  = || |
-                        }
-                        20 = TEXT
-                        20 {
-                          required    = 1
-                          field       = tx_awomrhein.city
-                        }
-                        wrap = | <br />
-                      }
-                    }
-                  }
-                }
-              }
-            }
+            enabled = Map +Routes
           }
         }
-        showUid = {$plugin.awomrhein.typo3browser.showUid}
-        select (
-            tx_awomrhein.facility
-          , tx_awomrhein.city
-          , tx_awomrhein.seodescription
-          , tx_awomrhein.seokeywords
-          , tx_awomrhein.lat
-          , tx_awomrhein.lon
-          , tx_awomrhein.zip
-          , tx_awomrhein.crdate
-          , tx_awomrhein.deleted
-          , tx_awomrhein_cat.title
-          , tx_awomrhein_cat.icons
-          , tx_awomrhein_cat.icon_offset_x
-          , tx_awomrhein_cat.icon_offset_y
-        )
-        //andWhere = tx_awomrhein.eventBegin > UNIX_TIMESTAMP() 
-        //csvLinkToSingleView = tx_awomrhein.facility
-        tx_awomrhein {
-            // placeholder: radialsearch HTML class depending on radius
-          crdate < plugin.tx_radialsearch.masterTemplates.htmlClass
-            // placeholder: radialsearch linear distance
-          deleted < plugin.tx_radialsearch.masterTemplates.linearDistanceString
-            // facility, zip, city, responsible, details
-          facility = COA
-          facility {
-              // facility
-            10 = TEXT
-            10 {
-              wrap      = <h2 class="facility">|</h2>
-              required  = 1
-              field     = tx_awomrhein.facility
-              typolink {
-                parameter = {$plugin.awomrhein.pages.awomrhein} - linktosingle
-                additionalParams {
-                    // parameter, value
-                  cObject = COA
-                  cObject {
-                      // parameter
-                    10 = TEXT
-                    10 {
-                      value = &tx_browser_pi1[{$plugin.awomrhein.typo3browser.showUid}]=
-                    }
-                      // value
-                    20 = TEXT
-                    20 {
-                      field = tx_awomrhein.uid
-                    }
-                  }
-                }
-                useCacheHash = 1
-              }
-            }
-              // zip, city, responsible, details
-            20 = COA
-            20 {
-              wrap = <p class="zip_city">|</p>
-                // zip
-              10 = TEXT
-              10 {
-                field       = tx_awomrhein.zip
-                required    = 1
-                noTrimWrap  = || |
-              }
-                // city
-              20 = TEXT
-              20 {
-                field       = tx_awomrhein.city
-                required    = 1
-                noTrimWrap  = || |
-              }
-                // responsible
-              30 = TEXT
-              30 {
-                field       = tx_awomrhein_responsible.title
-                required    = 1
-                noTrimWrap  = |(|) |
-              }
-                // details
-              40 = TEXT
-              40 {
-                value = Details &raquo;
-                typolink {
-                  parameter = {$plugin.awomrhein.pages.awomrhein} - linktosingle
-                  additionalParams {
-                      // parameter, value
-                    cObject = COA
-                    cObject {
-                        // parameter
-                      10 = TEXT
-                      10 {
-                        value = &tx_browser_pi1[{$plugin.awomrhein.typo3browser.showUid}]=
-                      }
-                        // value
-                      20 = TEXT
-                      20 {
-                        field = tx_awomrhein.uid
-                      }
-                    }
-                  }
-                  useCacheHash = 1
-                }
-              }
-            }
-          }
-        }
-        filter {
-          radialsearch < plugin.tx_browser_pi1.displayList.master_templates.radialsearch
-          tx_awomrhein {
-            XXXcity < plugin.tx_browser_pi1.displayList.master_templates.selectbox
-            XXXcity {
-              size        = 10
-              //count_hits  = 0
-              first_item {
-                cObject {
-                  20 {
-                    data = LLL:EXT:awomrhein/locallang_db.xml:filter_phrase.tx_awomrhein.city
-                  }
-                }
-              }
-              wrap = <span class="selectbox">|</span>
-            }
-            XXXzip < plugin.tx_browser_pi1.displayList.master_templates.selectbox
-            XXXzip {
-              size        = 10
-              //count_hits = 0
-              first_item {
-                cObject {
-                  20 {
-                    data = LLL:EXT:awomrhein/locallang_db.xml:filter_phrase.tx_awomrhein.zip
-                  }
-                }
-              }
-              wrap = <span class="selectbox">|</span>
-            }
-          }
-          tx_awomrhein_attendance {
-            title < plugin.tx_browser_pi1.displayList.master_templates.selectbox
-            title {
-              //count_hits = 0
-              first_item {
-                cObject {
-                  20 {
-                    data = LLL:EXT:awomrhein/locallang_db.xml:filter_phrase.tx_awomrhein_attendance
-                  }
-                }
-              }
-              wrap = <div class="selectbox">|</div>
-            }
-          }
-          tx_awomrhein_cat {
-            title < plugin.tx_browser_pi1.displayList.master_templates.selectbox
-            title {
-              //count_hits = 0
-              treeview {
-                enabled {
-                  value = 1
-                }
-              }
-              first_item {
-                cObject {
-                  20 {
-                    data = LLL:EXT:awomrhein/locallang_db.xml:filter_phrase.tx_awomrhein_cat
-                  }
-                }
-              }
-              wrap = <div class="selectbox">|</div>
-            }
-          }
-          tx_awomrhein_responsible {
-            title < plugin.tx_browser_pi1.displayList.master_templates.selectbox
-            title {
-              //count_hits = 0
-              first_item {
-                cObject {
-                  20 {
-                    data = LLL:EXT:awomrhein/locallang_db.xml:filter_phrase.tx_awomrhein_responsible
-                  }
-                }
-              }
-              wrap = <div class="selectbox">|</div>
-            }
-          }
-        }
-          // marker and subparts will replaced in the HTML template before data handling
-          // #43981, 121214, dwildt
+        showUid   = {$plugin.tx_browser_pi1.map.aliases.showUid.path}
+        name      = Route (map only)
+        select    < temp.route.sql.select
+        from      < temp.route.sql.from
+        andWhere  < temp.route.sql.andWhere
+        joins     < temp.route.sql.joins
+        aliases   < temp.route.sql.aliases
+        orderBy   < temp.route.sql.orderBy
         htmlSnippets =
         htmlSnippets {
-          marker {
-            filter = TEXT
-            filter {
+          subparts {
+            listview = TEXT
+            listview {
               value (
-              <div class="filter">
-                ###TX_AWOMRHEIN_CAT.TITLE###
-                ###RADIALSEARCH###
-                <div class="selectbox">
-                  ###TX_AWOMRHEIN.ZIP### ###TX_AWOMRHEIN.CITY###
-                </div>
-                ###TX_AWOMRHEIN_ATTENDANCE.TITLE###
-                ###TX_AWOMRHEIN_RESPONSIBLE.TITLE###
-              </div>
+                <div id="c###TT_CONTENT.UID###-listview-###MODE###" class="###VIEW###view ###VIEW###view-content ###VIEW###view-###MODE### ###VIEW###view-content-###MODE###">
+                  <!-- ###LISTBODY### begin -->
+                  ###MAP###
+                    <!-- ###LISTBODYITEM### begin -->
+                    <!-- ###LISTBODYITEM### end -->
+                <!-- ###LISTBODY### end -->
+                </div> <!-- /listview -->
 )
             }
           }
+        }
+      }
+      51371 = Route (text only)
+      51371 {
+        navigation {
+          map < temp.route.navigation.map
+          map {
+            enabled = disabled
+          }
+        }
+        showUid   = {$plugin.tx_browser_pi1.map.aliases.showUid.path}
+        name      = Route (text only)
+        select    < temp.route.sql.select
+        from      < temp.route.sql.from
+        andWhere  < temp.route.sql.andWhere
+        joins     < temp.route.sql.joins
+        aliases   < temp.route.sql.aliases
+        orderBy   = tx_awomrhein_path.list_title, tx_awomrhein_path.title, tx_awomrhein_path_mm_marker.sorting, tx_awomrhein_cat.title
+        csvLinkToSingleView = tx_awomrhein_path.title
+        tx_awomrhein_path {
+            // image, title, cat image, short, link to single view
+          title = COA
+          title {
+              // route image
+            20 < temp.route.route_image_47
+            20 {
+                // Display one image only
+              imgMax    = 1
+                // Display the first image
+              imgStart  = 0
+              1 {
+                file {
+                  width   >
+                  width   = {$plugin.tx_route.images.list.maxWidth} 
+                  height  >
+                  height  = {$plugin.tx_route.images.list.maxHeight} 
+                }
+                imageLinkWrap >
+                imageLinkWrap = 1
+                imageLinkWrap {
+                  enable = 1
+                  typolink {
+                    parameter {
+                        // URL: page id, page type, parameters
+                      cObject < temp.route.route_linkToSingle
+                    }
+                    useCacheHash  = 1
+                  }
+                }
+              }
+              maxWInText  = {$plugin.tx_route.images.list.maxWidth}
+              //equalH      >
+              //equalH      = {$plugin.tx_route.images.list.maxHeight}
+              textPos >
+              textPos = {$plugin.tx_route.images.list.position} 
+              layout {
+                key >
+                key = {$plugin.tx_route.images.list.position} 
+              }
+                // title, cat image, short, link to single view
+              text = COA
+              text {
+                  // title
+                30 = TEXT
+                30 {
+                  field = tx_awomrhein_path.title
+                  override {
+                    field = tx_awomrhein_path.list_title
+                  }
+                  wrap = <h2>|</h2>
+                }
+                  // cat image, short, link to single view
+                40 = COA
+                40 {
+                    // route cat image
+                  10 < temp.route.route_cat_image_47
+                    // short, link to single view
+                  20 = COA
+                  20 {
+                      // route list_short or short, if list_short is empty
+                    10 = TEXT
+                    10 {
+                      field     = tx_awomrhein_path.short
+                      override {
+                        field = tx_awomrhein_path.list_short
+                      }
+                      noTrimWrap = || |
+                    }
+                      // link to single view
+                    20 = TEXT
+                    20 {
+                      value = In detail &raquo;
+                        // de, en
+                      lang {
+                        de = Details &raquo;
+                        en = In detail &raquo;
+                      }
+                      typolink {
+                        parameter {
+                            // URL: page id, page type, parameters
+                          cObject < temp.route.route_linkToSingle
+                        }
+                        useCacheHash = 1
+                      }
+                    }
+                    wrap = <p>|</p>
+                  }
+                  wrap = <div class="tx_route-cat-icon">|</div>
+                }
+              }
+            }
+          }
+        }
+        htmlSnippets =
+        htmlSnippets {
+          subparts {
+            listview = TEXT
+            listview {
+              value (
+                <div id="c###TT_CONTENT.UID###-listview-###MODE###" class="###VIEW###view ###VIEW###view-content ###VIEW###view-###MODE### ###VIEW###view-content-###MODE###">
+                  <!-- ###LISTBODY### begin --><!-- ###LISTBODYITEM### begin -->
+                  <div class="sbmFloatRight">
+                    ###SOCIALMEDIA_BOOKMARKS###
+                  </div>
+                  ###tx_awomrhein_path.TITLE###
+                  <!-- ###LISTBODYITEM### end --><!-- ###LISTBODY### end -->
+                </div> <!-- /listview -->
+)
+            }
+          }
+        }
+      }
+      51372 = Marker (single only)
+      51372 {
+        navigation {
+          map < plugin.tx_browser_pi1.navigation.map
+        }
+        name    = Marker (single only)
+        showUid = {$plugin.tx_browser_pi1.map.aliases.showUid.marker}
+        select (
+          tx_awomrhein.title
+        )
+        htmlSnippets =
+        htmlSnippets {
           subparts {
             listview = TEXT
             listview {
               value (
             <div id="c###TT_CONTENT.UID###-listview-###MODE###" class="###VIEW###view ###VIEW###view-content ###VIEW###view-###MODE### ###VIEW###view-content-###MODE###">
+              <p>
+                Marker don't have any list view.<br />
+                Please use view.list.51370 for routes (map only).<br />
+                Please use view.list.51371 for routes (text only).
+              </p>
+              <p>
+                Markierungen haben keine Listen-Ansicht.<br />
+                Bitte benutze view.list.51370 f&uuml;r Routen (nur Karte).<br />
+                Bitte benutze view.list.51372 f&uuml;r Routen (nur Text).
+              </p>
               <!-- ###LISTBODY### begin --><!-- ###LISTBODYITEM### begin -->
-              <div class="record01###TX_AWOMRHEIN.CRDATE###">
-                ###TX_AWOMRHEIN.DELETED###
-                <div class="sbmFloatRight">
-                  ###SOCIALMEDIA_BOOKMARKS###
-                </div>
-                ###TX_AWOMRHEIN.FACILITY###
-              </div>
-              <div class="cleaner">&nbsp;</div><!-- ###LISTBODYITEM### end -->
-              ###MAP###
-              <!-- ###LISTBODY### end -->
+              <div class="cleaner">&nbsp;</div><!-- ###LISTBODYITEM### end --><!-- ###LISTBODY### end -->
             </div> <!-- /listview -->
 )
             }
@@ -312,389 +1065,212 @@ plugin.tx_browser_pi1 {
       }
     }
     single {
-      51370 = AWO Mittelrhein: Einrichtungen
+      51370 = Route (map only)
       51370 {
-        name    = AWO Mittelrhein: Einrichtungen
-        showUid = {$plugin.awomrhein.typo3browser.showUid}
-        marker < plugin.tx_browser_pi1.marker
-        marker {
-          my_back_button = TEXT
-          my_back_button {
-            value = Back
-            lang {
-              de = Zur&uuml;ck
-            }
-            noTrimWrap = |<a href="javascript:history.back()">&laquo; |</a>|
+        navigation {
+          map < temp.route.navigation.map
+          map {
+            enabled = disabled
           }
-          my_listview_page = TEXT
-          my_listview_page {
-            value = Alle Einrichtungen der AWO Mittelrhein &raquo;
-            typolink {
-              parameter = {$plugin.awomrhein.pages.awomrhein}
-              title     = Alle Einrichtungen der AWO Mittelrhein
+        }
+        select = tx_awomrhein_path.title 
+        tx_awomrhein_path {
+            // table.field.uid: title
+          title = TEXT
+          title {
+            value = Please don't use the view 51370 in the single view. 51370 is for the list view only!
+            lang {
+              de = Bitte verwende die Ansicht 51370 nicht in der Detailansicht. 51370 ist nur f&uuml;r die Listenansicht konfiguriert.
+              en = Please don't use the view 51370 in the single view. 51370 is for the list view only!
+            }
+            wrap = <p>|</p>
+          }
+        }
+        htmlSnippets =
+        htmlSnippets {
+          subparts {
+            singleview = TEXT
+            singleview {
+              value (
+<!-- ###AREA_FOR_AJAX_LIST_01### begin -->
+        <div id="c###TT_CONTENT.UID###-singleview-###MODE###" class="singleview singleview-###MODE###">
+          <div class="ui-widget ui-corner-all">
+            <!-- ###SINGLEBODY### begin -->
+            <!-- ###SINGLEBODYROW### begin -->
+              ###tx_awomrhein_path.TITLE###
+            <!-- ###SINGLEBODYROW### end -->
+  <!-- ###AREA_FOR_AJAX_LIST_01### end -->
+            <!-- ###BACKBUTTON### begin -->
+              <p class="tx_route-backbutton">
+              ###MY_BACKBUTTON###
+            </p>
+            <!-- ###BACKBUTTON### end -->
+  <!-- ###AREA_FOR_AJAX_LIST_02### begin -->
+            <!-- ###SINGLEBODY### end -->
+          </div>
+        </div>
+<!-- ###AREA_FOR_AJAX_LIST_02### end -->
+)
             }
           }
         }
+      }
+      51371 = Route (text only)
+      51371 {
         navigation {
-          map < plugin.tx_browser_pi1.navigation.map
+          map < temp.route.navigation.map
           map {
-            marker {
-              addToCData {
-                system {
-                  mapLinkToSingle >
+            enabled = disabled
+          }
+        }
+        showUid   = {$plugin.tx_browser_pi1.map.aliases.showUid.path}
+        name      = Route (text only)
+        select    < temp.route.sql.select
+        from      < temp.route.sql.from
+        andWhere  < temp.route.sql.andWhere
+        joins     < temp.route.sql.joins
+        aliases   < temp.route.sql.aliases
+        orderBy   = tx_awomrhein_path.list_title, tx_awomrhein_path.title, tx_awomrhein_path_mm_marker.sorting, tx_awomrhein_cat.title
+        tx_awomrhein_path {
+            // image, title, cat image, short, bodytext, address start, address end, url
+          title = COA
+          title {
+              // image, title, cat image, short, bodytext, address start, address end, url
+            20 < temp.route.route_image_47
+            20 {
+                // title, cat image, short, bodytext, address start, address end, url
+              text = COA
+              text {
+                  // title
+                30 = TEXT
+                30 {
+                  field = tx_awomrhein_path.title
+                  wrap = <h1>|</h1>
                 }
-              }
-              variables {
-                system {
-                  description >
-                  description < plugin.tx_browser_pi1.displayList.master_templates.map.descriptionWiLinkToSingle
-                  description {
-                    10 >
-                      // facility, address
+                  // cat image, short, bodytext, address start, address end, url
+                40 = COA
+                40 {
+                    // route cat image
+                  10 < temp.route.route_cat_image_47
+                  10 {
+                    1 {
+                      imageLinkWrap >
+                    }
+                  }
+                    // route short, route bodytext
+                  20 = COA
+                  20 {
+                      // route short
+                    10 = TEXT
+                    10 {
+                      field     = tx_awomrhein_path.short
+                      required  = 1
+                      stdWrap {
+                        parseFunc < lib.parseFunc_RTE
+                      }
+                    }
+                      // route bodytext
+                    20 = TEXT
+                    20 {
+                      field     = tx_awomrhein_path.bodytext
+                      required  = 1
+                      stdWrap {
+                        parseFunc < lib.parseFunc_RTE
+                      }
+                    }
+                  }
+                    // address start, address end
+                  30 = COA
+                  30 {
+                      // address start
                     10 = COA
                     10 {
-                        // facility
+                      if {
+                        isTrue {
+                          field = tx_awomrhein_path.address_start
+                        }
+                      }
+                        // header
                       10 = TEXT
                       10 {
-                        required    = 1
-                          // v4.6
-                        field       = {$plugin.tx_browser_pi1.map.marker.field.description}
-                        noTrimWrap  = |<strong>|</strong><br />|
+                        value = Starting point
+                        lang {
+                          de = Startpunkt
+                          en = Starting point
+                        }
+                        wrap = <h2>|</h2>
                       }
-                        // address
-                      20 = COA
+                        // content
+                      20 = TEXT
                       20 {
-                          // street
-                        10 = TEXT
-                        10 {
-                          required    = 1
-                          field       = tx_awomrhein.address1
-                          wrap = | <br />
+                        field     = tx_awomrhein_path.address_start
+                        stdWrap {
+                          parseFunc < lib.parseFunc_RTE
                         }
-                          // zip, city
-                        20 = COA
-                        20 {
-                          10 = TEXT
-                          10 {
-                            required    = 1
-                            field       = tx_awomrhein.zip
-                            noTrimWrap  = || |
-                          }
-                          20 = TEXT
-                          20 {
-                            required    = 1
-                            field       = tx_awomrhein.city
-                          }
-                          wrap = | <br />
+                      }
+                    }
+                      // address end
+                    20 = COA
+                    20 {
+                      if {
+                        isTrue {
+                          field = tx_awomrhein_path.address_end
+                        }
+                      }
+                        // header
+                      10 = TEXT
+                      10 {
+                        value = Destination
+                        lang {
+                          de = Ziel
+                          en = Destination
+                        }
+                        wrap = <h2>|</h2>
+                      }
+                        // content
+                      20 = TEXT
+                      20 {
+                        field = tx_awomrhein_path.address_end
+                        stdWrap {
+                          parseFunc < lib.parseFunc_RTE
                         }
                       }
                     }
                   }
+                    // url
+                  40 = COA
+                  40 {
+                    if {
+                      isTrue {
+                        field = tx_awomrhein_path.url
+                      }
+                    }
+                      // header
+                    10 = TEXT
+                    10 {
+                      value = Details
+                      lang {
+                        de = Weitere Informationen
+                        en = Details
+                      }
+                      wrap = <h2>|</h2>
+                    }
+                      // content
+                    20 = TEXT
+                    20 {
+                      typolink {
+                        parameter {
+                          data = field:tx_awomrhein_path.url
+                        }
+                      }
+                    }
+                  }
+                  wrap = <div class="tx_route-cat-icon">|</div>
                 }
               }
             }
           }
         }
-        select (
-            tx_awomrhein.address1
-          , tx_awomrhein.address2
-          , tx_awomrhein.attendance2
-          , tx_awomrhein.attendance3
-          , tx_awomrhein.attendance4
-          , tx_awomrhein.attendance5
-          , tx_awomrhein.attendance6
-          , tx_awomrhein.attendance7
-          , tx_awomrhein.city
-          , tx_awomrhein.email
-          , tx_awomrhein.facility
-          , tx_awomrhein.fax
-          , tx_awomrhein.lat
-          , tx_awomrhein.lon
-          , tx_awomrhein.phone
-          , tx_awomrhein.status
-          , tx_awomrhein.url
-          , tx_awomrhein.zip
-          , tx_awomrhein_attendance.title
-          , tx_awomrhein_cat.title
-          , tx_awomrhein_cat.icons
-          , tx_awomrhein_cat.icon_offset_x
-          , tx_awomrhein_cat.icon_offset_y
-          , tx_awomrhein_certificate.title
-          , tx_awomrhein_corporation.title
-          , tx_awomrhein_responsible.title
-        )
-        //andWhere = tx_awomrhein.eventBegin > UNIX_TIMESTAMP() 
-        tx_awomrhein {
-            // facility, zip, city, responsible, details
-          facility = COA
-          facility {
-              // facility
-            10 = TEXT
-            10 {
-              wrap      = <h1 class="facility">|</h1>
-              required  = 1
-              field     = tx_awomrhein.facility
-            }
-              // address
-            20 = COA
-            20 {
-              wrap = <div class="address">|</div>
-                // label
-              10 = TEXT
-              10 {
-                value       = Adresse
-                wrap        = <h2>|</h2>
-              }
-                // address2, address1, zip, city
-              20 = COA
-              20 {
-                wrap = <p class="address">|</p>
-                  // address2
-                10 = TEXT
-                10 {
-                  field       = tx_awomrhein.address2
-                  required    = 1
-                  wrap        = |<br />
-                }
-                  // address1
-                20 = TEXT
-                20 {
-                  field       = tx_awomrhein.address1
-                  required    = 1
-                  wrap        = |<br />
-                }
-                  // zip
-                30 = TEXT
-                30 {
-                  field       = tx_awomrhein.zip
-                  required    = 1
-                  noTrimWrap  = || |
-                }
-                  // city
-                40 = TEXT
-                40 {
-                  field       = tx_awomrhein.city
-                }
-              }
-            }
-              // contact
-            30 = COA
-            30 {
-              wrap = <div class="contact">|</div>
-                // label
-              10 = TEXT
-              10 {
-                value       = Kontakt
-                wrap        = <h2>|</h2>
-              }
-                // phone, fax, email, url
-              20 = COA
-              20 {
-                wrap = <p class="contact">|</p>
-                  // phone
-                10 = TEXT
-                10 {
-                  field       = tx_awomrhein.phone
-                  required    = 1
-                  noTrimWrap  = |<span class="phone">Tel: |</span><br />|
-                }
-                  // fax
-                20 = TEXT
-                20 {
-                  field       = tx_awomrhein.fax
-                  required    = 1
-                  noTrimWrap  = |<span class="fax">Fax: |</span><br />|
-                }
-                  // email
-                30 = TEXT
-                30 {
-                  //value = E-Mail senden ...
-                  field       = tx_awomrhein.email
-                  typolink {
-                    parameter {
-                        // url, target, class, title
-                      cObject = COA
-                      cObject {
-                          // url
-                        10 = TEXT
-                        10 {
-                          field       = tx_awomrhein.email
-                          noTrimWrap  = || |
-                        }
-                          // target
-                        20 = TEXT
-                        20 {
-                          value       = -
-                          noTrimWrap  = || |
-                        }
-                          // class
-                        30 = TEXT
-                        30 {
-                          value       = e-mail
-                          noTrimWrap  = || |
-                        }
-                          // title
-                        40 = TEXT
-                        40 {
-                          value = E-Mail senden
-                          wrap  = "|"
-                        }
-                      }
-                    }
-                    useCacheHash = 1
-                  }
-                  required    = 1
-                  noTrimWrap  = |<span class="email">E-Mail: |</span><br />|
-                  //wrap        = <span class="email">|</span><br />
-                }
-                  // url
-                40 = TEXT
-                40 {
-                  field = tx_awomrhein.url
-                  typolink {
-                    parameter {
-                        // url, target, class, title
-                      cObject = COA
-                      cObject {
-                          // value
-                        10 = TEXT
-                        10 {
-                          field       = tx_awomrhein.url
-                          noTrimWrap  = || |
-                        }
-                          // target
-                        20 = TEXT
-                        20 {
-                          value       = _blank
-                          noTrimWrap  = || |
-                        }
-                          // class
-                        30 = TEXT
-                        30 {
-                          value       = external-link
-                          noTrimWrap  = || |
-                        }
-                          // title
-                        40 = COA
-                        40 {
-                          10 = TEXT
-                          10 {
-                            value       = Website: 
-                            noTrimWrap  = || |
-                          }
-                          20 = TEXT
-                          20 {
-                            field = tx_awomrhein.facility
-                          }
-                          wrap  = "|"
-                        }
-                      }
-                    }
-                    useCacheHash = 1
-                  }
-                  required    = 1
-                  noTrimWrap  = |<span class="email">Website: |</span><br />|
-                }
-              }
-            }
-              // cat, attendance
-            40 = COA
-            40 {
-              wrap = <div class="attendance">|</div>
-                // label
-              10 = TEXT
-              10 {
-                value = Dienstleistungen
-                wrap  = <h2>|</h2>
-              }
-                // phone, fax, email, url
-              20 = COA
-              20 {
-                wrap = <ul class="attendance">|</ul>
-                  // tx_awomrhein_cat.title
-                10 = TEXT
-                10 {
-                  field     = tx_awomrhein_cat.title
-                  required  = 1
-                  wrap      = <li>|</li>
-                }
-                  // tx_awomrhein_attendance.title
-                20 = TEXT
-                20 {
-                  field     = tx_awomrhein_attendance.title
-                  required  = 1
-                  wrap      = <li>|</li>
-                }
-                  // tx_awomrhein.attendance2
-                25 = TEXT
-                25 {
-                  field     = tx_awomrhein.attendance2
-                  required  = 1
-                  wrap      = <li>|</li>
-                }
-                  // tx_awomrhein.attendance3
-                30 = TEXT
-                30 {
-                  field     = tx_awomrhein.attendance3
-                  required  = 1
-                  wrap      = <li>|</li>
-                }
-                  // tx_awomrhein.attendance4
-                40 = TEXT
-                40 {
-                  field     = tx_awomrhein.attendance4
-                  required  = 1
-                  wrap      = <li>|</li>
-                }
-                  // tx_awomrhein.attendance5
-                50 = TEXT
-                50 {
-                  field     = tx_awomrhein.attendance5
-                  required  = 1
-                  wrap      = <li>|</li>
-                }
-                  // tx_awomrhein.attendance6
-                60 = TEXT
-                60 {
-                  field     = tx_awomrhein.attendance6
-                  required  = 1
-                  wrap      = <li>|</li>
-                }
-                  // tx_awomrhein.attendance7
-                70 = TEXT
-                70 {
-                  field     = tx_awomrhein.attendance7
-                  required  = 1
-                  wrap      = <li>|</li>
-                }
-              }
-            }
-              // responsible
-            50 = COA
-            50 {
-                // label
-              10 = TEXT
-              10 {
-                if {
-                  isTrue {
-                    field = tx_awomrhein_responsible.title
-                  }
-                }
-                value = Träger
-                wrap  = <h2>|</h2>
-              }
-              wrap = <p class="responsible">|</p>
-                // responsible
-              20 = TEXT
-              20 {
-                field       = tx_awomrhein_responsible.title
-                required    = 1
-              }
-            }
-          }
-        }
-          // marker and subparts will replaced in the HTML template before data handling
-          // #43981, 121214, dwildt
         htmlSnippets =
         htmlSnippets {
           subparts {
@@ -705,22 +1281,384 @@ plugin.tx_browser_pi1 {
         <div id="c###TT_CONTENT.UID###-singleview-###MODE###" class="singleview singleview-###MODE###">
           ###RECORD_BROWSER###
           <div class="ui-widget ui-corner-all">
-            <div class="ui-widget-content ui-corner-all">
-              <!-- ###SINGLEBODY### begin --><!-- ###SINGLEBODYROW### begin -->
-              <div class="socialbookmarks">
-                ###SOCIALMEDIA_BOOKMARKS###
-              </div>
-              ###TX_AWOMRHEIN.FACILITY###
-              <!-- ###SINGLEBODYROW### end --><!-- ###SINGLEBODY### end -->
-              ###MAP###
+            <!-- ###SINGLEBODY### begin -->
+            <div class="ui-widget-content ui-corner-bottom">
+              <!-- ###SINGLEBODYROW### begin -->
+                <div class="sbmFloatRight">
+                  ###SOCIALMEDIA_BOOKMARKS###
+                </div>
+                ###tx_awomrhein_path.TITLE###
+              <!-- ###SINGLEBODYROW### end -->
             </div>
-<!-- ###AREA_FOR_AJAX_LIST_01### end -->
+  <!-- ###AREA_FOR_AJAX_LIST_01### end -->
             <!-- ###BACKBUTTON### begin -->
-            <p class="backbutton">
-              ###MY_BACK_BUTTON### | ###MY_LISTVIEW_PAGE###
+            <p class="tx_route-backbutton">
+              ###MY_BACKBUTTON###
             </p>
-          <!-- ###BACKBUTTON### end -->
-<!-- ###AREA_FOR_AJAX_LIST_02### begin -->
+            <!-- ###BACKBUTTON### end -->
+  <!-- ###AREA_FOR_AJAX_LIST_02### begin -->
+            <!-- ###SINGLEBODY### end -->
+          </div>
+        </div>
+<!-- ###AREA_FOR_AJAX_LIST_02### end -->
+)
+            }
+          }
+        }
+      }
+      51372 = Marker (single only)
+      51372 {
+        navigation {
+          map < temp.route.navigation.map
+          map {
+            enabled = Map
+            marker {
+              snippets {
+                jss {
+                  dynamic {
+                    oxMapConfigModules {
+                      10 {
+                        value = {$plugin.tx_browser_pi1.map.openlayers.modules.default}
+                      }
+                      20 {
+                        value = {$plugin.tx_browser_pi1.map.openlayers.modules.debugging}
+                      }
+                    }
+                  }
+                }
+              }
+              variables {
+                system {
+                  description {
+                    20 {
+                      10 {
+                        text {
+                            // Remove link to single view
+                          30 >
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+        showUid = {$plugin.tx_browser_pi1.map.aliases.showUid.marker}
+        name    = Marker (single only)
+        select (
+          tx_awomrhein.title,
+          tx_awomrhein.short,
+          tx_awomrhein.bodytext,
+          tx_awomrhein.lat,
+          tx_awomrhein.lon,
+          tx_awomrhein.addressname,
+          tx_awomrhein.street,
+          tx_awomrhein.zip,
+          tx_awomrhein.city,
+          tx_awomrhein.country,
+          tx_awomrhein.phone,
+          tx_awomrhein.fax,
+          tx_awomrhein.email,
+          tx_awomrhein.url,
+          tx_awomrhein.image,
+          tx_awomrhein.imagecaption,
+          tx_awomrhein.imageseo,
+          tx_awomrhein.imageheight,
+          tx_awomrhein.imagewidth,
+          tx_awomrhein.imageorient,
+          tx_awomrhein.imagecaption,
+          tx_awomrhein.imagecols,
+          tx_awomrhein.imageborder,
+          tx_awomrhein.imagecaption_position,
+          tx_awomrhein.image_link,
+          tx_awomrhein.image_zoom,
+          tx_awomrhein.image_noRows,
+          tx_awomrhein.image_effects,
+          tx_awomrhein.image_compression,
+          tx_awomrhein.image_frames,
+          tx_awomrhein.uid,
+          tx_awomrhein_pathcategory.title,
+          tx_awomrhein_pathcategory.icons,
+          tx_awomrhein_pathcategory.icon_offset_x,
+          tx_awomrhein_pathcategory.icon_offset_y,
+          tx_awomrhein_pathcategory.uid,
+          tx_awomrhein_path.title,
+          tx_awomrhein_path.uid,
+        )
+        tx_awomrhein {
+            // image, title, cat image, short, bodytext, address, url
+          title = COA
+          title {
+              // image, title, cat image, short, bodytext, address, url
+            20 < temp.route.marker_image_47
+            20 {
+                // title, cat image, short, bodytext, address, url
+              text = COA
+              text {
+                  // title
+                30 = TEXT
+                30 {
+                  field = tx_awomrhein.title
+                  wrap = <h1>|</h1>
+                }
+                  // cat image, short, bodytext, address, url
+                40 = COA
+                40 {
+                    // route cat image
+                  10 < temp.route.route_cat_image_47
+                  10 {
+                    1 {
+                      imageLinkWrap >
+                    }
+                  }
+                    // short, bodytext
+                  20 = COA
+                  20 {
+                      // short
+                    10 = TEXT
+                    10 {
+                      field     = tx_awomrhein.short
+                      required  = 1
+                      stdWrap {
+                        parseFunc < lib.parseFunc_RTE
+                      }
+                    }
+                      // bodytext
+                    20 = TEXT
+                    20 {
+                      field     = tx_awomrhein.bodytext
+                      required  = 1
+                      stdWrap {
+                        parseFunc < lib.parseFunc_RTE
+                      }
+                    }
+                  }
+                    // address
+                  30 = COA
+                  30 {
+                    if {
+                      isTrue {
+                          // address
+                        cObject = COA
+                        cObject {
+                            // addressname
+                          10 = TEXT
+                          10 {
+                            field = tx_awomrhein.addressname
+                          }
+                            // street
+                          20 = TEXT
+                          20 {
+                            field = tx_awomrhein.street
+                          }
+                            // zip
+                          30 = TEXT
+                          30 {
+                            field = tx_awomrhein.zip
+                          }
+                            // city
+                          40 = TEXT
+                          40 {
+                            field = tx_awomrhein.city
+                          }
+                            // country
+                          50 = TEXT
+                          50 {
+                            field = tx_awomrhein.country
+                          }
+                        }
+                      }
+                    }
+                      // header
+                    10 = TEXT
+                    10 {
+                      value = Address
+                      lang {
+                        de = Adresse
+                        en = Address
+                      }
+                      wrap = <h2>|</h2>
+                    }
+                      // content
+                    20 = COA
+                    20 {
+                        // addressname
+                      10 = TEXT
+                      10 {
+                        required  = 1
+                        field     = tx_awomrhein.addressname
+                        wrap      = <span class="addressname">|</span><br />
+                      }
+                        // street
+                      20 = TEXT
+                      20 {
+                        required  = 1
+                        field     = tx_awomrhein.street
+                        wrap      = <span class="street">|</span><br />
+                      }
+                        // zip
+                      30 = TEXT
+                      30 {
+                        required    = 1
+                        field       = tx_awomrhein.zip
+                        noTrimWrap  = |<span class="zip">|</span> |
+                      }
+                        // city
+                      40 = TEXT
+                      40 {
+                        required  = 1
+                        field     = tx_awomrhein.city
+                        wrap      = <span class="city">|</span><br />
+                      }
+                        // country
+                      50 = TEXT
+                      50 {
+                        required  = 1
+                        field     = tx_awomrhein.country
+                        wrap      = <span class="country">|</span><br />
+                      }
+                      wrap = <p class="address">|</span>
+                    }
+                  }
+                    // contact
+                  40 = COA
+                  40 {
+                    if {
+                      isTrue {
+                          // contact
+                        cObject = COA
+                        cObject {
+                            // phone
+                          10 = TEXT
+                          10 {
+                            field = tx_awomrhein.phone
+                          }
+                            // fax
+                          20 = TEXT
+                          20 {
+                            field = tx_awomrhein.fax
+                          }
+                            // email
+                          30 = TEXT
+                          30 {
+                            field = tx_awomrhein.email
+                          }
+                            // url
+                          40 = TEXT
+                          40 {
+                            field = tx_awomrhein.url
+                          }
+                        }
+                      }
+                    }
+                      // header
+                    10 = TEXT
+                    10 {
+                      value = Contact details
+                      lang {
+                        de = Kontakt
+                        en = Contact details
+                      }
+                      wrap = <h2>|</h2>
+                    }
+                      // content
+                    20 = COA
+                    20 {
+                        // phone
+                      10 = TEXT
+                      10 {
+                        if {
+                          isTrue {
+                            field = tx_awomrhein.phone
+                          }
+                        }
+                        value       = <span class="label">phone</span>: <span class="content">{field:tx_awomrhein.phone}</span>
+                        lang {
+                          de = <span class="label">Tel.</span>: <span class="content">{field:tx_awomrhein.phone}</span>
+                          en = <span class="label">phone</span>: <span class="content">{field:tx_awomrhein.phone}</span>
+                        }
+                        insertData  = 1
+                        wrap        = <span class="phone">|</span><br />
+                      }
+                        // fax
+                      20 = TEXT
+                      20 {
+                        if {
+                          isTrue {
+                            field = tx_awomrhein.fax
+                          }
+                        }
+                        value       = <span class="label">fax</span>: <span class="content">{field:tx_awomrhein.fax}</span>
+                        lang {
+                          de = <span class="label">Fax</span>: <span class="content">{field:tx_awomrhein.fax}</span>
+                          en = <span class="label">fax</span>: <span class="content">{field:tx_awomrhein.fax}</span>
+                        }
+                        insertData  = 1
+                        wrap        = <span class="fax">|</span><br />
+                      }
+                        // email
+                      30 = TEXT
+                      30 {
+                        field     = tx_awomrhein.email
+                        required  = 1
+                        typolink {
+                          parameter {
+                            field = tx_awomrhein.email
+                          }
+                        }
+                        noTrimWrap  = |<span class="email">|</span><br />
+                      }
+                        // url
+                      40 = TEXT
+                      40 {
+                        required  = 1
+                        //field     = tx_awomrhein.url
+                        value     = Website &raquo;
+                        typolink {
+                          parameter {
+                            field = tx_awomrhein.url
+                          }
+                        }
+                        wrap = <span class="url">|</span>
+                      }
+                      wrap = <p class="contact">|</span>
+                    }
+                  }
+                  wrap = <div class="tx_route-cat-icon">|</div>
+                }
+              }
+            }
+          }
+        }
+        htmlSnippets =
+        htmlSnippets {
+          subparts {
+            singleview = TEXT
+            singleview {
+              value (
+<!-- ###AREA_FOR_AJAX_LIST_01### begin -->
+        <div id="c###TT_CONTENT.UID###-singleview-###MODE###" class="singleview singleview-###MODE###">
+          ###RECORD_BROWSER###
+          <div class="ui-widget ui-corner-all">
+            <!-- ###SINGLEBODY### begin -->
+            <div class="ui-widget-content ui-corner-bottom">
+              <!-- ###SINGLEBODYROW### begin -->
+                ###MAP###
+                <div class="sbmFloatRight">
+                  ###SOCIALMEDIA_BOOKMARKS###
+                </div>
+                ###tx_awomrhein.TITLE###
+              <!-- ###SINGLEBODYROW### end -->
+            </div>
+  <!-- ###AREA_FOR_AJAX_LIST_01### end -->
+            <!-- ###BACKBUTTON### begin -->
+            <p class="tx_route-backbutton">
+              ###MY_BACKBUTTON###
+            </p>
+            <!-- ###BACKBUTTON### end -->
+  <!-- ###AREA_FOR_AJAX_LIST_02### begin -->
+            <!-- ###SINGLEBODY### end -->
           </div>
         </div>
 <!-- ###AREA_FOR_AJAX_LIST_02### end -->
@@ -731,35 +1669,27 @@ plugin.tx_browser_pi1 {
       }
     }
   }
-  
-  XXX_LOCAL_LANG {
-    default {
-      list_mode_51370_titleTag      = European Sports Academy (ESAB): Programm
-      list_mode_51370_keywords      = European Sports Academy, ESAB, Programm
-      list_mode_51370_summary       = European Sports Academy (ESAB): Programm
-      single_mode_51370_titleTag    = European Sports Academy: ###TX_AWOMRHEIN.TITLE###
-      single_mode_51370_keywords    = European Sports Academy, ESAB, ###TX_AWOMRHEIN.KEYWORDS###
-      single_mode_51370_summary     = European Sports Academy (ESAB): ###TX_AWOMRHEIN.DESCRIPTION###
+  _CSS_DEFAULT_STYLE (
+    .tx-browser-pi1 div.azSelector,
+    .tx-browser-pi1 div.indexBrowser,
+    .tx-browser-pi1 div.modeSelector {
+      padding:.4em 0;
+      /* 111218, 3.9.6, dwildt-*/
+      /*height:1.4em;*/
     }
-    de {
-      list_mode_51370_titleTag      = AWO Mittelrhein: Einrichtungen
-      list_mode_51370_keywords      = Arbeiter Wohlfahrt, AWO, Mittelrhein, Einrichtungen
-      list_mode_51370_summary       = Einrichtungen der AWO Mittelrhein
-      single_mode_51370_titleTag    = AWO Mittelrhein: Einrichtung ###TX_AWOMRHEIN.FACILITY###
-      single_mode_51370_keywords    = AWO, Mittelrhein, Einrichtung, ###TX_AWOMRHEIN.FACILITY###, ###TX_AWOMRHEIN.KEYWORDS###
-      single_mode_51370_summary     = AWO Mittelrhein - Einrichtung ###TX_AWOMRHEIN.FACILITY###: ###TX_AWOMRHEIN.DESCRIPTION###
-    }
-  }
+)
 }
   // plugin.tx_browser_pi1
-  
+
 
 
   ////////////////////////////////////////
   //
-  // Header Comment
+  // page
 
-page.config.headerComment (
-        TYPO3-Programmierung: die-netzmacher.de
-)
-  // Header Comment
+page {
+  includeCSS {
+    route = {$plugin.tx_route.path.css}
+  }
+}
+  // page

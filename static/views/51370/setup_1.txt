@@ -731,25 +731,6 @@ plugin.tx_browser_pi1 {
       }
     }
   }
-  
-  XXX_LOCAL_LANG {
-    default {
-      list_mode_51370_titleTag      = European Sports Academy (ESAB): Programm
-      list_mode_51370_keywords      = European Sports Academy, ESAB, Programm
-      list_mode_51370_summary       = European Sports Academy (ESAB): Programm
-      single_mode_51370_titleTag    = European Sports Academy: ###TX_AWOMRHEIN.TITLE###
-      single_mode_51370_keywords    = European Sports Academy, ESAB, ###TX_AWOMRHEIN.KEYWORDS###
-      single_mode_51370_summary     = European Sports Academy (ESAB): ###TX_AWOMRHEIN.DESCRIPTION###
-    }
-    de {
-      list_mode_51370_titleTag      = AWO Mittelrhein: Einrichtungen
-      list_mode_51370_keywords      = Arbeiter Wohlfahrt, AWO, Mittelrhein, Einrichtungen
-      list_mode_51370_summary       = Einrichtungen der AWO Mittelrhein
-      single_mode_51370_titleTag    = AWO Mittelrhein: Einrichtung ###TX_AWOMRHEIN.FACILITY###
-      single_mode_51370_keywords    = AWO, Mittelrhein, Einrichtung, ###TX_AWOMRHEIN.FACILITY###, ###TX_AWOMRHEIN.KEYWORDS###
-      single_mode_51370_summary     = AWO Mittelrhein - Einrichtung ###TX_AWOMRHEIN.FACILITY###: ###TX_AWOMRHEIN.DESCRIPTION###
-    }
-  }
 }
   // plugin.tx_browser_pi1
   
