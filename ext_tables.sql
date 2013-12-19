@@ -99,7 +99,7 @@ CREATE TABLE tx_awomrhein_cat (
   deleted tinyint(4) unsigned DEFAULT '0' NOT NULL,
   hidden tinyint(4) DEFAULT '0' NOT NULL,
   title tinytext,
-  icons text,
+  icons tinyblob,
   icon_offset_x int(11) DEFAULT '0' NOT NULL,
   icon_offset_y int(11) DEFAULT '0' NOT NULL
   
@@ -258,17 +258,17 @@ CREATE TABLE tx_awomrhein_path (
   bodytext mediumtext NOT NULL,
   url tinytext,
 
-  gpxfile text,
+  gpxfile blob,
   geodata longtext,
 
-  tx_awomrhein_pathcategory tinytext,
-  icon_lat text NOT NULL,
-  icon_lon text NOT NULL,
+  tx_awomrhein_pathcategory int(11) DEFAULT '0' NOT NULL,
+  icon_lat tinytext NOT NULL,
+  icon_lon tinytext NOT NULL,
 
   color tinytext NOT NULL,
   line_width int(3) DEFAULT '2' NOT NULL,
 
-  tx_awomrhein tinytext,
+  tx_awomrhein tinyblob,
 
   list_title tinytext,
   list_short mediumtext,
@@ -278,29 +278,29 @@ CREATE TABLE tx_awomrhein_path (
   address_start mediumtext NOT NULL,
   address_end mediumtext NOT NULL,
 
-  image text,
+  image tinyblob,
   imagecaption text,
   imageseo text,
-  imageheight tinytext,
-  imagewidth tinytext,
-  imageorient tinyint(4) unsigned NOT NULL default '0',
+  imageheight varchar(10) NOT NULL default '',
+  imagewidth varchar(10) NOT NULL default '',
+  imageorient int(11) NOT NULL default '0',
   imagecaption text,
   imagecols tinyint(4) unsigned NOT NULL default '0',
-  imageborder tinyint(4) unsigned NOT NULL default '0',
-  imagecaption_position varchar(12) default '',
+  imageborder tinyint(3) unsigned NOT NULL default '0',
+  imagecaption_position varchar(6) NOT NULL default '',
   image_link text,
-  image_zoom tinyint(3) unsigned NOT NULL default '0',
+  image_zoom tinyint(3) NOT NULL default '0',
   image_noRows tinyint(3) unsigned NOT NULL default '0',
-  image_effects tinyint(3) unsigned NOT NULL default '0',
-  image_compression tinyint(3) unsigned NOT NULL default '0',
-  image_frames tinyint(3) unsigned NOT NULL default '0',
+  image_effects int(11) NOT NULL default '0',
+  image_compression int(11) NOT NULL default '0',
+  image_frames int(11) NOT NULL default '0',
 
   hidden tinyint(4) DEFAULT '0' NOT NULL,
   starttime int(11) DEFAULT '0' NOT NULL,
   endtime int(11) DEFAULT '0' NOT NULL,
-  fe_group varchar(100) DEFAULT '0' NOT NULL,
+  fe_group blob,
   
-  seo_keywords text,
+  seo_keywords tinytext,
   seo_description text,
 
   PRIMARY KEY (uid),
