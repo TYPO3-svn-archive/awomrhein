@@ -83,11 +83,6 @@ plugin.tx_browser_pi1 {
   // plugin.tx_radialsearch_pi1
 
 plugin.tx_radialsearch_pi1 {
-  css {
-    jquery {
-      path = 
-    }
-  }
   distance {
     dec_point     = ,
     thousands_sep = .
