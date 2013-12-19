@@ -310,6 +310,36 @@ CREATE TABLE tx_awomrhein_path (
 
 
 #
+# Table structure for table 'tx_awomrhein_pathcategory'
+#
+CREATE TABLE tx_awomrhein_pathcategory (
+  uid int(11) NOT NULL auto_increment,
+  pid int(11) DEFAULT '0' NOT NULL,
+  tstamp int(11) DEFAULT '0' NOT NULL,
+  crdate int(11) DEFAULT '0' NOT NULL,
+  cruser_id int(11) DEFAULT '0' NOT NULL,
+  sorting int(10) DEFAULT '0' NOT NULL,
+  deleted tinyint(4) DEFAULT '0' NOT NULL,
+  hidden tinyint(4) DEFAULT '0' NOT NULL,
+
+  title tinytext NOT NULL,
+  title_lang_ol tinytext,
+
+  icons text,
+  icon_offset_x int(11) DEFAULT '0' NOT NULL,
+  icon_offset_y int(11) DEFAULT '0' NOT NULL,
+
+  tx_awomrhein text,
+  tx_awomrhein_path text,
+
+
+  PRIMARY KEY (uid),
+  KEY parent (pid)
+);
+
+
+
+#
 # Table structure for table 'tx_awomrhein_path_mm_tx_awomrhein_pathcategory'
 # 
 CREATE TABLE tx_awomrhein_path_mm_tx_awomrhein_pathcategory (
