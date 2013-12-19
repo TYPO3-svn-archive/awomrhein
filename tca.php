@@ -1340,7 +1340,7 @@ $TCA['tx_awomrhein_path'] = array (
         'maxitems'            => 99,
         'MM'                  => 'tx_awomrhein_path_mm_tx_awomrhein',
         'foreign_table'       => 'tx_awomrhein',
-        'foreign_table_where' => 'AND tx_awomrhein.pid=###CURRENT_PID### AND tx_awomrhein.deleted = 0 AND tx_awomrhein.hidden = 0  AND tx_awomrhein.sys_language_uid=###REC_FIELD_sys_language_uid### ORDER BY tx_awomrhein.title',
+        'foreign_table_where' => 'AND tx_awomrhein.pid=###CURRENT_PID### AND tx_awomrhein.deleted = 0 AND tx_awomrhein.hidden = 0  ORDER BY tx_awomrhein.facility',
         'items' => array (
           '0' => array (
             '0' => '',
