@@ -1362,9 +1362,9 @@ $TCA['tx_awomrhein_path'] = array (
       'label'     => 'LLL:EXT:awomrhein/locallang_db.xml:tx_awomrhein_path.tx_awomrhein',
       'config'    => array (
         'type'                => 'select',
-        'size'                => 20,
+        'size'                => 100,
         'minitems'            => 0,
-        'maxitems'            => 99,
+        'maxitems'            => 999,
         'MM'                  => 'tx_awomrhein_path_mm_tx_awomrhein',
         'foreign_table'       => 'tx_awomrhein',
         'foreign_table_where' => 'AND tx_awomrhein.pid=###CURRENT_PID### AND tx_awomrhein.deleted = 0 AND tx_awomrhein.hidden = 0  ORDER BY tx_awomrhein.facility',
