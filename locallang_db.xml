@@ -209,7 +209,7 @@
 
       <label index="tx_awomrhein_cat">AWO Mittelrhein: Kategorie</label>
       <label index="tx_awomrhein_cat.div_cat">Daten</label>
-      <label index="tx_awomrhein_cat.div_control">Steuerrung</label>
+      <label index="tx_awomrhein_cat.div_control">Steuerung</label>
       <label index="tx_awomrhein_cat.title">Kategorie</label>
       <label index="tx_awomrhein_cat.icons">Piktogramm (1.: Standard. 2.: Gro<![CDATA[ß]]>es Format)</label>
       <label index="tx_awomrhein_cat.icon_offset_x">X-Offset des Piktogramms in einer Karte</label>
