@@ -1,0 +1,138 @@
+
+  ////////////////////////////////////////
+  //
+  // INDEX
+
+  // plugin.awomrhein 
+  // plugin.tx_browser_pi1
+  // plugin.tx_radialsearch_pi1
+  // plugin.tx_seodynamictag_pi1
+
+
+
+  ////////////////////////////////////////
+  //
+  // plugin.awomrhein
+
+plugin.awomrhein {
+
+  # cat=AWO Mittelrhein - pages/enable/101;             type=int+;    label= AWO Mittelrhein page uid:Uid of the page, which displays the AWO Mittelrhein data. This page contains usually the TYPO3 Browser plugin/Flexform.
+  pages.awomrhein = 
+
+  # cat=AWO Mittelrhein - typo3 browser/enable/101;     type=string;  label= Alias for show Uid:Alias for the showUid, which is used by the TYPO3 Browser.
+  typo3browser.showUid = awomrheinUid
+
+}
+  // plugin.awomrhein
+
+
+
+  ////////////////////////////////////////
+  //
+  // plugin.tx_browser_pi1
+
+plugin.tx_browser_pi1 {
+  map {
+    aliases {
+      showUid {
+        marker = awomrheinUid
+      }
+    }
+    controlling {
+      enabled = Map
+    }
+    design {
+      path {
+        categoryIcon  = uploads/tx_awomrhein/
+      }
+    }
+    icon {
+      listNum {
+        categoryIconMap       = 1
+        categoryIconMapSingle = 1
+      }
+    }
+    marker {
+      field {
+        linktoSingle    = tx_awomrhein.uid
+        latitude        = tx_awomrhein.lat
+        longitude       = tx_awomrhein.lon
+        description     = tx_awomrhein.facility
+        category        = tx_awomrhein_cat.title
+        categoryIcon    = tx_awomrhein_cat.icons
+        categoryOffsetX = tx_awomrhein_cat.icon_offset_x
+        categoryOffsetY = tx_awomrhein_cat.icon_offset_y
+      }
+    }
+    width = 700
+  }
+  navigation {
+    showUid = awomrheinUid
+  }
+  radialsearch {
+    lat = tx_awomrhein.lat
+    lon = tx_awomrhein.lon
+  }
+}
+  // plugin.tx_browser_pi1
+
+
+
+  ////////////////////////////////////////
+  //
+  // plugin.tx_radialsearch_pi1
+
+plugin.tx_radialsearch_pi1 {
+  distance {
+    dec_point     = ,
+    thousands_sep = .
+  }
+
+}
+  // plugin.tx_radialsearch_pi1
+
+
+
+  ////////////////////////////////////////
+  //
+  // plugin.tx_seodynamictag
+
+plugin.tx_seodynamictag {
+
+  canonical {
+    single {
+        // Only this parameter are allowed: 
+      additionalParams = &tx_browser_pi1[awomrheinUid]={GP:tx_browser_pi1|awomrheinUid}
+    }
+  }
+
+  condition {
+    single {
+        // Please replace xxx with the uid of the page with the news plugin for the single view
+        // Please use the Constant Editor
+      begin = globalVar = GP:tx_browser_pi1|awomrheinUid > 0] && [globalVar = TSFE:id = xxx
+    }
+  }
+
+  database {
+    table = tx_awomrhein
+    var.1 = tx_browser_pi1[awomrheinUid]
+    field {
+      author        = NULL 
+      description   = seodescription
+      keywords      = seokeywords 
+      title         = facility 
+      short         = seodescription
+    }
+  }
+
+  default {
+    description = Description is empty! Please maintain the current record of the TYPO3 Organiser News. See tab [Search Engine] field [Description] 
+  }
+
+  keywords {
+    default         = Keywords are empty! Please maintain the current record of the TYPO3 Organiser News. See tab [Search Engine] field [Keywords] 
+    moveToKeywords  = 0
+  }
+}
+  // plugin.tx_seodynamictag
