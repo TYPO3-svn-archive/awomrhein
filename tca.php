@@ -120,12 +120,34 @@ if (!defined ('TYPO3_MODE'))
     'size' => '80',
     'eval' => 'trim'
   );
+  $conf_text_30_05 = array (
+    'type' => 'text',
+    'cols' => '30', 
+    'rows' => '5',
+  );
+  
   $conf_text_50_10 = array (
     'type' => 'text',
     'cols' => '50', 
     'rows' => '10',
   );
   
+  $conf_text_rte = array (
+    'type' => 'text',
+    'cols' => '30',
+    'rows' => '5',
+    'wizards' => array (
+      '_PADDING' => 2,
+      'RTE' => array (
+        'notNewRecords' => 1,
+        'RTEonly'       => 1,
+        'type'          => 'script',
+        'title'         => 'Full screen Rich Text Editing|Formatteret redigering i hele vinduet',
+        'icon'          => 'wizard_rte2.gif',
+        'script'        => 'wizard_rte.php',
+      ),
+    ),
+  );
   $conf_hidden = array (
     'exclude' => $bool_exclude_default,
     'label'   => 'LLL:EXT:awomrhein/locallang_db.xml:tx_awomrhein.hidden',
