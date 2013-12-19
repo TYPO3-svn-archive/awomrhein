@@ -753,7 +753,6 @@ $TCA['tx_awomrhein_attendance'] = array (
   'interface' => array (
     'showRecordFieldList' => '
         title
-      , uid_parent
       , hidden',
   ),
   'columns' => array (
@@ -761,24 +760,6 @@ $TCA['tx_awomrhein_attendance'] = array (
       'exclude' => 0,
       'label'   => 'LLL:EXT:awomrhein/locallang_db.xml:tx_awomrhein_attendance.title',
       'config'  => $conf_input_30_trimRequired,
-    ),
-    'uid_parent' => array (
-      'exclude'   => 0,
-      'label'   => 'LLL:EXT:awomrhein/locallang_db.xml:tx_awomrhein_attendance.uid_parent',
-      'config'    => array (
-        'type'          => 'select',
-        'size'          => 1,
-        'minitems'      => 0,
-        'maxitems'      => 2,
-        'trueMaxItems'  => 1,
-        'form_type'     => 'user',
-        'userFunc'      => 'tx_cpstcatree->getTree',
-        'foreign_table' => 'tx_awomrhein_attendance',
-        'treeView'      => 1,
-        'expandable'    => 1,
-        'expandFirst'   => 0,
-        'expandAll'     => 0,
-      ),
     ),
     'hidden'    => $conf_hidden,
   ),
@@ -788,7 +769,6 @@ $TCA['tx_awomrhein_attendance'] = array (
     (
       'showitem' => '
           title
-        , uid_parent
         , hidden'
     ),
   ),
@@ -872,7 +852,6 @@ $TCA['tx_awomrhein_certificate'] = array (
   'interface' => array (
     'showRecordFieldList' => '
         title
-      , uid_parent
       , hidden',
   ),
   'columns' => array (
@@ -880,24 +859,6 @@ $TCA['tx_awomrhein_certificate'] = array (
       'exclude' => 0,
       'label'   => 'LLL:EXT:awomrhein/locallang_db.xml:tx_awomrhein_certificate.title',
       'config'  => $conf_input_30_trimRequired,
-    ),
-    'uid_parent' => array (
-      'exclude'   => 0,
-      'label'   => 'LLL:EXT:awomrhein/locallang_db.xml:tx_awomrhein_certificate.uid_parent',
-      'config'    => array (
-        'type'          => 'select',
-        'size'          => 1,
-        'minitems'      => 0,
-        'maxitems'      => 2,
-        'trueMaxItems'  => 1,
-        'form_type'     => 'user',
-        'userFunc'      => 'tx_cpstcatree->getTree',
-        'foreign_table' => 'tx_awomrhein_certificate',
-        'treeView'      => 1,
-        'expandable'    => 1,
-        'expandFirst'   => 0,
-        'expandAll'     => 0,
-      ),
     ),
     'hidden'    => $conf_hidden,
   ),
@@ -907,7 +868,6 @@ $TCA['tx_awomrhein_certificate'] = array (
     (
       'showitem' => '
           title
-        , uid_parent
         , hidden'
     ),
   ),
@@ -926,7 +886,6 @@ $TCA['tx_awomrhein_corporation'] = array (
   'interface' => array (
     'showRecordFieldList' => '
         title
-      , uid_parent
       , hidden',
   ),
   'columns' => array (
@@ -934,24 +893,6 @@ $TCA['tx_awomrhein_corporation'] = array (
       'exclude' => 0,
       'label'   => 'LLL:EXT:awomrhein/locallang_db.xml:tx_awomrhein_corporation.title',
       'config'  => $conf_input_30_trimRequired,
-    ),
-    'uid_parent' => array (
-      'exclude'   => 0,
-      'label'   => 'LLL:EXT:awomrhein/locallang_db.xml:tx_awomrhein_corporation.uid_parent',
-      'config'    => array (
-        'type'          => 'select',
-        'size'          => 1,
-        'minitems'      => 0,
-        'maxitems'      => 2,
-        'trueMaxItems'  => 1,
-        'form_type'     => 'user',
-        'userFunc'      => 'tx_cpstcatree->getTree',
-        'foreign_table' => 'tx_awomrhein_corporation',
-        'treeView'      => 1,
-        'expandable'    => 1,
-        'expandFirst'   => 0,
-        'expandAll'     => 0,
-      ),
     ),
     'hidden'    => $conf_hidden,
   ),
@@ -961,7 +902,6 @@ $TCA['tx_awomrhein_corporation'] = array (
     (
       'showitem' => '
           title
-        , uid_parent
         , hidden'
     ),
   ),
@@ -980,7 +920,6 @@ $TCA['tx_awomrhein_responsible'] = array (
   'interface' => array (
     'showRecordFieldList' => '
         title
-      , uid_parent
       , hidden',
   ),
   'columns' => array (
@@ -988,24 +927,6 @@ $TCA['tx_awomrhein_responsible'] = array (
       'exclude' => 0,
       'label'   => 'LLL:EXT:awomrhein/locallang_db.xml:tx_awomrhein_responsible.title',
       'config'  => $conf_input_30_trimRequired,
-    ),
-    'uid_parent' => array (
-      'exclude'   => 0,
-      'label'   => 'LLL:EXT:awomrhein/locallang_db.xml:tx_awomrhein_responsible.uid_parent',
-      'config'    => array (
-        'type'          => 'select',
-        'size'          => 1,
-        'minitems'      => 0,
-        'maxitems'      => 2,
-        'trueMaxItems'  => 1,
-        'form_type'     => 'user',
-        'userFunc'      => 'tx_cpstcatree->getTree',
-        'foreign_table' => 'tx_awomrhein_responsible',
-        'treeView'      => 1,
-        'expandable'    => 1,
-        'expandFirst'   => 0,
-        'expandAll'     => 0,
-      ),
     ),
     'hidden'    => $conf_hidden,
   ),
@@ -1015,7 +936,6 @@ $TCA['tx_awomrhein_responsible'] = array (
     (
       'showitem' => '
           title
-        , uid_parent
         , hidden'
     ),
   ),
