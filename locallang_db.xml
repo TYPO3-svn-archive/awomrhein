@@ -15,6 +15,19 @@
       <label index="filter_phrase.tx_awomrhein_corporation">All corporations</label>
       <label index="filter_phrase.tx_awomrhein_responsible">All responsibles</label>
 
+      <label index="tca_phrase.accessByFeGroup">Access depending on groups</label>
+      <label index="tca_phrase.color">Colour</label>
+      <label index="tca_phrase.files">Files</label>
+      <label index="tca_phrase.icon">Icon</label>
+      <label index="tca_phrase.icons">Icons</label>
+      <label index="tca_phrase.image">Images</label>
+      <label index="tca_phrase.imagecaption">Captions (one line per image)</label>
+      <label index="tca_phrase.imageseo">Label for Search Engines (one line per image)</label>
+      <label index="tca_phrase.image_settings">Settings</label>
+      <label index="tca_phrase.lang_ol">Translations (i.e. fr:Traduction|de:<![CDATA[Ü]]>bersetzung)</label>
+      <label index="tca_phrase.seo_description">Description for Search Engine Optimisation</label>
+      <label index="tca_phrase.seo_keywords">Keywords for Search Engine Optimisation (CSV: comma separated values)</label>
+
       <label index="tx_awomrhein">AWO Mittelrhein: Facility</label>
 
       <label index="tx_awomrhein.div_address">Address</label>
@@ -76,6 +89,49 @@
       <label index="tx_awomrhein_responsible">AWO Mittelrhein: Responsible</label>
       <label index="tx_awomrhein_responsible.title">Responsible</label>
 
+      <label index="tx_awomrhein_pathcategory">Categories</label>
+      <label index="tx_awomrhein_pathcategory.div_cat">Category</label>
+      <label index="tx_awomrhein_pathcategory.div_control">Controlling</label>
+      <label index="tx_awomrhein_pathcategory.div_icon">Icon</label>
+      <label index="tx_awomrhein_pathcategory.div_path">Paths</label>
+      <label index="tx_awomrhein_pathcategory.div_marker">Marker (POI)</label>
+      <label index="tx_awomrhein_pathcategory.title">Category label</label>
+      <label index="tx_awomrhein_pathcategory.icons">Icons: 1: legend. 2: map (list view). 3: map (single view).</label>
+      <label index="tx_awomrhein_pathcategory.icon_offset_x">Move it by x pixel to the right</label>
+      <label index="tx_awomrhein_pathcategory.icon_offset_y">Move it by x pixel to the bottom</label>
+      <label index="tx_awomrhein_pathcategory.tx_awomrhein_path">Paths</label>
+      <label index="tx_awomrhein_pathcategory.tx_awomrhein">Marker (POI)</label>
+      <label index="tx_awomrhein.div_paths">Paths</label>
+      <label index="tx_awomrhein.tx_awomrhein_path">Paths (one path maximum)</label>      
+      <label index="tx_awomrhein_path">Paths</label>                        
+      <label index="tx_awomrhein_path.div_cat">Category</label>
+      <label index="tx_awomrhein_path.div_control">Controlling</label>
+      <label index="tx_awomrhein_path.div_design">Design</label>
+      <label index="tx_awomrhein_path.div_gpx">Data</label>
+      <label index="tx_awomrhein_path.div_marker">Marker (POI)</label>
+      <label index="tx_awomrhein_path.div_address">Address</label>
+      <label index="tx_awomrhein_path.div_path">Path</label>
+      <label index="tx_awomrhein_path.div_seo">Search Engines</label>
+      <label index="tx_awomrhein_path.div_shortterms">Short Terms</label>
+      <label index="tx_awomrhein_path.address_start">Adress of the Starting Point of the Path</label>                        
+      <label index="tx_awomrhein_path.address_end">Adress of the Ending Point of the Path</label>                        
+      <label index="tx_awomrhein_path.bodytext">Bodytext</label>                        
+      <label index="tx_awomrhein_path.color">Color of the Path</label>                        
+      <label index="tx_awomrhein_path.geodata">Geodata (lat,lon linebreak lon,lat ...)</label>
+      <label index="tx_awomrhein_path.gpxfile">GPX File (an upload is overwriting the data in the field [GPX Data] below)</label>
+      <label index="tx_awomrhein_path.icon_lat">Latitude of the category icon</label>
+      <label index="tx_awomrhein_path.icon_lon">Longitude of the category icon</label>
+      <label index="tx_awomrhein_path.line_width">Line Width of the Path</label>                        
+      <label index="tx_awomrhein_path.list_title">Label in List View (leave it empty, if default value should taken)</label>
+      <label index="tx_awomrhein_path.list_short">Short in List View (leave it empty, if default value should taken)</label>
+      <label index="tx_awomrhein_path.map_title">Label in the Map (leave it empty, if value of the list view should taken)</label>
+      <label index="tx_awomrhein_path.map_short">Short in the Map (leave it empty, if value of the list view should taken)</label>
+      <label index="tx_awomrhein_path.short">Short</label>                        
+      <label index="tx_awomrhein_path.title">Path label</label>                        
+      <label index="tx_awomrhein_path.tx_awomrhein_pathcategory">Category</label>                        
+      <label index="tx_awomrhein_path.tx_awomrhein">Marker (POI)</label>      
+      <label index="tx_awomrhein_path.url">URL (with further information)</label>
+
       <label index="wizard.tx_awomrhein.add">Add a new record</label>
       <label index="wizard.tx_awomrhein.edit">Edit the selected record</label>
       <label index="wizard.tx_awomrhein.list">Display the table with records</label>
@@ -89,6 +145,19 @@
       <label index="filter_phrase.tx_awomrhein_certificate">Alle Zertifikate</label>
       <label index="filter_phrase.tx_awomrhein_corporation">Alle Unternehmensformen</label>
       <label index="filter_phrase.tx_awomrhein_responsible">Alle Träger</label>
+
+      <label index="tca_phrase.accessByFeGroup">Auf Gruppen beschränkter Zugriff</label>
+      <label index="tca_phrase.color">Farbe</label>
+      <label index="tca_phrase.files">Dateien</label>
+      <label index="tca_phrase.icon">Piktogramm</label>
+      <label index="tca_phrase.icons">Piktogramme</label>
+      <label index="tca_phrase.image">Bilder</label>
+      <label index="tca_phrase.imagecaption">Unterschriften (eine Zeile pro Datei)</label>
+      <label index="tca_phrase.imageseo">Bezeichnung f<![CDATA[&uuml;]]>r Suchmaschinen (eine Zeile pro Datei)</label>
+      <label index="tca_phrase.image_settings">Einstellungen</label>
+      <label index="tca_phrase.lang_ol"><![CDATA[Ü]]>bersetzungen (z.B. en:Translation|fr:Traduction)</label>
+      <label index="tca_phrase.seo_description">Beschreibung f<![CDATA[&uuml;]]>r Suchmaschinen (bis etwa 200 Zeichen)</label>
+      <label index="tca_phrase.seo_keywords">Stichworte f<![CDATA[&uuml;]]>r Suchmaschinen (drei bis f<![CDATA[&uuml;]]>nf, mit Komma trennen)</label>
 
       <label index="tx_awomrhein">AWO Mittelrhein: Einrichtung</label>
 
@@ -150,6 +219,49 @@
 
       <label index="tx_awomrhein_responsible">AWO Mittelrhein: Träger</label>
       <label index="tx_awomrhein_responsible.title">Träger</label>
+
+      <label index="tx_awomrhein_pathcategory">Kategorien</label>
+      <label index="tx_awomrhein_pathcategory.div_cat">Kategorie</label>
+      <label index="tx_awomrhein_pathcategory.div_control">Steuerung</label>
+      <label index="tx_awomrhein_pathcategory.div_icon">Piktogramm</label>
+      <label index="tx_awomrhein_pathcategory.div_path">Pfade</label>
+      <label index="tx_awomrhein_pathcategory.div_marker">Marken (POI)</label>
+      <label index="tx_awomrhein_pathcategory.title">Bezeichnung der Kategorie</label>
+      <label index="tx_awomrhein_pathcategory.icons">Piktogramm: 1: Legende. 2: Karte (Listenansicht). 3: Karte (Detailansicht).</label>
+      <label index="tx_awomrhein_pathcategory.icon_offset_x">Um x-Pixel nach rechts verschieben</label>
+      <label index="tx_awomrhein_pathcategory.icon_offset_y">Um x-Pixel nach unten verschieben</label>
+      <label index="tx_awomrhein_pathcategory.tx_awomrhein_path">Pfade</label>
+      <label index="tx_awomrhein_pathcategory.tx_awomrhein">Marken (POI)</label>
+      <label index="tx_awomrhein.div_paths">Pfade</label>
+      <label index="tx_awomrhein.tx_awomrhein_path">Pfade (maximal einen Pfad)</label>      
+      <label index="tx_awomrhein_path">Pfade</label>                        
+      <label index="tx_awomrhein_path.div_address">Adresse</label>
+      <label index="tx_awomrhein_path.div_cat">Kategorie</label>
+      <label index="tx_awomrhein_path.div_design">Design</label>
+      <label index="tx_awomrhein_path.div_gpx">Daten</label>
+      <label index="tx_awomrhein_path.div_marker">Marken (POI)</label>
+      <label index="tx_awomrhein_path.div_properties">Geo-Daten</label>
+      <label index="tx_awomrhein_path.div_path">Pfad</label>
+      <label index="tx_awomrhein_path.div_seo">Suchmaschinen</label>
+      <label index="tx_awomrhein_path.div_shortterms">Kurze Bezeichnungen</label>
+      <label index="tx_awomrhein_path.address_start">Adresse Pfad-Beginn</label>                        
+      <label index="tx_awomrhein_path.address_end">Adresse Pfad-Ende</label>                        
+      <label index="tx_awomrhein_path.bodytext">Beschreibung</label>                        
+      <label index="tx_awomrhein_path.color">Farbe des Pfads</label>                        
+      <label index="tx_awomrhein_path.geodata">Geo-Daten (Längengrad,Breitengrad Umbruch Längengrad,Breitengrad ...)</label>
+      <label index="tx_awomrhein_path.gpxfile">GPX-Datei (das Hochladen <![CDATA[&uuml;]]>berschreibt die Daten im Feld [GPX-Daten] unten)</label>
+      <label index="tx_awomrhein_path.icon_lat">Breitengrad des Piktogramms</label>                        
+      <label index="tx_awomrhein_path.icon_lon">Längengrad des Piktogramms</label>
+      <label index="tx_awomrhein_path.line_width">Linien-Stärke des Pfads</label>                        
+      <label index="tx_awomrhein_path.list_title">Bezeichnung in Listen-Ansichten (wenn leer: Standard-Wert wird genommen)</label>
+      <label index="tx_awomrhein_path.list_short">Kurzbeschreibung in Listen-Ansichten (wenn leer: Standard-Wert wird genommen)</label>
+      <label index="tx_awomrhein_path.map_title">Bezeichnung in Karten (wenn leer: Listen-Wert wird genommen)</label>
+      <label index="tx_awomrhein_path.map_short">Kurzbeschreibung in Karten (wenn leer: Listen-Wert wird genommen)</label>
+      <label index="tx_awomrhein_path.short">Kurzbeschreibung</label>                        
+      <label index="tx_awomrhein_path.title">Bezeichnung des Pfads</label>                        
+      <label index="tx_awomrhein_path.tx_awomrhein_pathcategory">Kategorie</label>                        
+      <label index="tx_awomrhein_path.tx_awomrhein">Marken (POI)</label>      
+      <label index="tx_awomrhein_path.url">URL (mit weiteren Informationen)</label>
 
       <label index="wizard.tx_awomrhein.add"><![CDATA[Neuen Datensatz hinzufügen]]></label>
       <label index="wizard.tx_awomrhein.edit"><![CDATA[Ausgewählten Datensatz bearbeiten]]></label>

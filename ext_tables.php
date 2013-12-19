@@ -77,6 +77,9 @@ switch( true )
 }
   // Language for labels of static templates and page tsConfig
 
+$geocodingEnabled = $confArr['geocodingEnabled'];
+  // Configuration by the extension manager
+
 
 
   ////////////////////////////////////////////////////////////////////////////
@@ -292,6 +295,61 @@ $TCA['tx_awomrhein_responsible'] = array (
     'iconfile'          => t3lib_extMgm::extRelPath($_EXTKEY).'ext_icon/awomrhein.gif',
   ),
 );
+  // Path
+$TCA['tx_awomrhein_path'] = array (
+  'ctrl' => array (
+    'title'                     => 'LLL:EXT:awomrhein/locallang_db.xml:tx_awomrhein_path',
+    'label'                     => 'title',  
+    'tstamp'                    => 'tstamp',
+    'crdate'                    => 'crdate',
+    'cruser_id'                 => 'cruser_id',
+    'languageField'             => 'sys_language_uid',
+    'transOrigPointerField'     => 'l10n_parent',
+    'transOrigDiffSourceField'  => 'l10n_diffsource',
+    'delete'                    => 'deleted',  
+    'default_sortby'            => 'ORDER BY title',  
+    'hideAtCopy'                => true,
+    'enablecolumns'             => array (
+      'disabled'  => 'hidden',
+      'starttime' => 'starttime',
+      'endtime'   => 'endtime',
+      'fe_group'  => 'fe_group',
+    ),
+    'dividers2tabs'     => true,
+    'dynamicConfigFile' => t3lib_extMgm::extPath( $_EXTKEY ) . 'tca.php',
+    'iconfile'          => t3lib_extMgm::extRelPath( $_EXTKEY ) . 'ext_icon/awomrhein.gif',
+    'tx_browser'  => array (
+        'route' => array (
+          'gpxfile' => 'gpxfile',  
+          'geodata' => 'geodata',  
+        ),
+        
+    ),
+  ),
+);
+  // Path
+
+  // Category
+$TCA['tx_awomrhein_pathcategory'] = array (
+  'ctrl' => array (
+    'title'             => 'LLL:EXT:awomrhein/locallang_db.xml:tx_awomrhein_pathcategory',
+    'label'             => 'title',  
+    'tstamp'            => 'tstamp',
+    'crdate'            => 'crdate',
+    'cruser_id'         => 'cruser_id',
+    'delete'            => 'deleted',
+    'enablecolumns'   => array (
+      'disabled'  => 'hidden',
+    ),
+    'sortby'            => 'sorting',
+    'dividers2tabs'     => true,
+    'dynamicConfigFile' => t3lib_extMgm::extPath( $_EXTKEY ) . 'tca.php',
+    'thumbnail'         => 'image',
+    'iconfile'          => t3lib_extMgm::extRelPath( $_EXTKEY ) . 'ext_icon/awomrhein.gif',
+  ),
+);
+  // Category
+
   // TCA tables //////////////////////////////////////////////////////////////
 
 ?>
