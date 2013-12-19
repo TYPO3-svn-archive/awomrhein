@@ -1172,7 +1172,7 @@ $TCA['tx_awomrhein_path'] = array (
     'showRecordFieldList' =>  
         'sys_language_uid,l10n_parent,l10n_diffsource,' 
       . 'title,short,bodytext,url,' 
-      . 'tx_awomrhein_cat,icon_lon,icon_lat,' 
+      . 'tx_awomrhein_pathcategory,icon_lon,icon_lat,' 
       . 'gpxfile, geodata,' 
       . 'color,line_width,' 
       . 'tx_awomrhein,' 
@@ -1240,19 +1240,19 @@ $TCA['tx_awomrhein_path'] = array (
       'label'     => 'LLL:EXT:awomrhein/locallang_db.xml:tx_awomrhein_path.url',
       'config'    => $arr_wizard_url,
     ),
-    'tx_awomrhein_cat' => array (
+    'tx_awomrhein_pathcategory' => array (
       'exclude'   => $bool_exclude_default,
       'l10n_mode' => 'exclude',
-      'label'     => 'LLL:EXT:awomrhein/locallang_db.xml:tx_awomrhein_path.tx_awomrhein_cat',
+      'label'     => 'LLL:EXT:awomrhein/locallang_db.xml:tx_awomrhein_path.tx_awomrhein_pathcategory',
       'config'    => array (
         'type'                => 'select',
         'size'                => 20,
         'minitems'            => 1,
         'maxitems'            => 1,
         'eval'                => 'required',
-        'MM'                  => 'tx_awomrhein_path_mm_tx_awomrhein_cat',
-        'foreign_table'       => 'tx_awomrhein_cat',
-        'foreign_table_where' => 'AND tx_awomrhein_cat.pid=###CURRENT_PID### AND tx_awomrhein_cat.deleted = 0 AND tx_awomrhein_cat.hidden = 0 ORDER BY tx_awomrhein_cat.title',
+        'MM'                  => 'tx_awomrhein_path_mm_tx_awomrhein_pathcategory',
+        'foreign_table'       => 'tx_awomrhein_pathcategory',
+        'foreign_table_where' => 'AND tx_awomrhein_pathcategory.pid=###CURRENT_PID### AND tx_awomrhein_pathcategory.deleted = 0 AND tx_awomrhein_pathcategory.hidden = 0 ORDER BY tx_awomrhein_pathcategory.title',
         'items' => array (
           '0' => array (
             '0' => '',
@@ -1268,7 +1268,7 @@ $TCA['tx_awomrhein_path'] = array (
             'title'  => 'LLL:EXT:awomrhein/locallang_db.xml:wizard.add',
             'icon'   => 'add.gif',
             'params' => array (
-              'table'    => 'tx_awomrhein_cat',
+              'table'    => 'tx_awomrhein_pathcategory',
               'pid'      => '###CURRENT_PID###',
               'setValue' => 'prepend'
             ),
@@ -1279,7 +1279,7 @@ $TCA['tx_awomrhein_path'] = array (
             'title'  => 'LLL:EXT:awomrhein/locallang_db.xml:wizard.list',
             'icon'   => 'list.gif',
             'params' => array (
-              'table' => 'tx_awomrhein_cat',
+              'table' => 'tx_awomrhein_pathcategory',
               'pid'      => '###CURRENT_PID###',
             ),
             'script' => 'wizard_list.php',
@@ -1690,7 +1690,7 @@ $TCA['tx_awomrhein_path'] = array (
         '--div--;LLL:EXT:awomrhein/locallang_db.xml:tx_awomrhein_path.div_gpx,' . 
           'gpxfile,geodata,' .
         '--div--;LLL:EXT:awomrhein/locallang_db.xml:tx_awomrhein_path.div_cat,' . 
-          'tx_awomrhein_cat,' .
+          'tx_awomrhein_pathcategory,' .
           'icon_lon,' .
           'icon_lat,' .
         '--div--;LLL:EXT:awomrhein/locallang_db.xml:tx_awomrhein_path.div_marker,' . 

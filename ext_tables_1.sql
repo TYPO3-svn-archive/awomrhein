@@ -16,7 +16,7 @@
 # tx_awomrhein_mm_tx_awomrhein_pathcategory
 # tx_awomrhein_mm_tx_awomrhein_responsible
 #
-# tx_awomrhein_path_mm_tx_awomrhein_cat
+# tx_awomrhein_path_mm_tx_awomrhein_pathcategory
 # tx_awomrhein_path_mm_tx_awomrhein
 
 
@@ -261,7 +261,7 @@ CREATE TABLE tx_awomrhein_path (
   gpxfile blob,
   geodata longtext,
 
-  tx_awomrhein_cat int(11) DEFAULT '0' NOT NULL,
+  tx_awomrhein_pathcategory int(11) DEFAULT '0' NOT NULL,
   icon_lat tinytext NOT NULL,
   icon_lon tinytext NOT NULL,
 
@@ -340,9 +340,9 @@ CREATE TABLE tx_awomrhein_pathcategory (
 
 
 #
-# Table structure for table 'tx_awomrhein_path_mm_tx_awomrhein_cat'
+# Table structure for table 'tx_awomrhein_path_mm_tx_awomrhein_pathcategory'
 # 
-CREATE TABLE tx_awomrhein_path_mm_tx_awomrhein_cat (
+CREATE TABLE tx_awomrhein_path_mm_tx_awomrhein_pathcategory (
   uid_local int(11) DEFAULT '0' NOT NULL,
   uid_foreign int(11) DEFAULT '0' NOT NULL,
   tablenames varchar(30) DEFAULT '' NOT NULL,

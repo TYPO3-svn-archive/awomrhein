@@ -114,7 +114,7 @@
       <label index="tx_awomrhein_path.map_short">Short in the Map (leave it empty, if value of the list view should taken)</label>
       <label index="tx_awomrhein_path.short">Short</label>                        
       <label index="tx_awomrhein_path.title">Border label</label>                        
-      <label index="tx_awomrhein_path.tx_awomrhein_cat">Category</label>                        
+      <label index="tx_awomrhein_path.tx_awomrhein_pathcategory">Category</label>                        
       <label index="tx_awomrhein_path.tx_awomrhein">Facility</label>      
       <label index="tx_awomrhein_path.url">URL (with further information)</label>
 
@@ -246,7 +246,7 @@
       <label index="tx_awomrhein_path.map_short">Kurzbeschreibung in Karten (wenn leer: Listen-Wert wird genommen)</label>
       <label index="tx_awomrhein_path.short">Kurzbeschreibung</label>                        
       <label index="tx_awomrhein_path.title">Bezeichnung der Grenze</label>                        
-      <label index="tx_awomrhein_path.tx_awomrhein_cat">Kategorie</label>                        
+      <label index="tx_awomrhein_path.tx_awomrhein_pathcategory">Kategorie</label>                        
       <label index="tx_awomrhein_path.tx_awomrhein">Einrichtung</label>      
       <label index="tx_awomrhein_path.url">URL (mit weiteren Informationen)</label>
 

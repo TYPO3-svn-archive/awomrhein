@@ -808,12 +808,12 @@ temp.route {
     aliases {
       tables {
         tx_awomrhein_path           = tx_awomrhein_path
-        tx_awomrhein_pathcategory       = tx_awomrhein_pathcategory
+        tx_awomrhein_pathcategory   = tx_awomrhein_pathcategory
         tx_awomrhein_path_mm_cat    = tx_awomrhein_path_mm_tx_awomrhein_pathcategory
         tx_awomrhein_path_mm_marker = tx_awomrhein_path_mm_tx_awomrhein
-        tx_awomrhein         = tx_awomrhein
-        tx_awomrhein_cat     = tx_awomrhein_cat
-        tx_awomrhein_mm_cat  = tx_awomrhein_mm_tx_awomrhein_pathcategory
+        tx_awomrhein                = tx_awomrhein
+        tx_awomrhein_cat            = tx_awomrhein_cat
+        tx_awomrhein_mm_cat         = tx_awomrhein_mm_tx_awomrhein_pathcategory
       }
       fields {
         uid = tx_awomrhein_path.uid
