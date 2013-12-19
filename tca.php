@@ -1059,7 +1059,7 @@ $TCA['tx_awomrhein_pathcategory'] = array (
         'MM'                  => 'tx_awomrhein_mm_tx_awomrhein_pathcategory',
         'MM_opposite_field'   => 'tx_awomrhein_pathcategory',
         'foreign_table'       => 'tx_awomrhein',
-        'foreign_table_where' => 'AND tx_awomrhein.pid=###CURRENT_PID### AND tx_awomrhein.deleted = 0 AND tx_awomrhein.hidden = 0 ORDER BY tx_awomrhein.title',
+        'foreign_table_where' => 'AND tx_awomrhein.pid=###CURRENT_PID### AND tx_awomrhein.deleted = 0 AND tx_awomrhein.hidden = 0 ORDER BY tx_awomrhein.facility',
         'items' => array (
           '0' => array (
             '0' => '',
