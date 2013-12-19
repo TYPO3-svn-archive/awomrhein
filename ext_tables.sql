@@ -61,7 +61,7 @@ CREATE TABLE tx_awomrhein (
   tx_awomrhein_cat tinytext,
   tx_awomrhein_certificate tinytext,
   tx_awomrhein_corporation tinytext,
-  tx_awomrhein_pathcategory tinytext,
+  tx_awomrhein_path tinytext,
   tx_awomrhein_responsible tinytext,
   url tinytext,
   zip tinytext,
