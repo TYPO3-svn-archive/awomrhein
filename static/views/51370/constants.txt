@@ -57,9 +57,9 @@ plugin.tx_browser_pi1 {
         categoryOffsetX = tx_awomrhein_cat.icon_offset_x
         categoryOffsetY = tx_awomrhein_cat.icon_offset_y
       }
-    }
-    path {
-      categoryIcon  = uploads/tx_awomrhein/
+      path {
+        categoryIcon  = uploads/tx_awomrhein/
+      }
     }
     width = 700
   }
