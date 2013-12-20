@@ -1398,11 +1398,9 @@ plugin.tx_browser_pi1 {
           tx_awomrhein_cat.icons,
           tx_awomrhein_cat.icon_offset_x,
           tx_awomrhein_cat.icon_offset_y,
-          tx_awomrhein_cat.uid,
-          tx_awomrhein_path.title,
-          tx_awomrhein_path.uid,
+          tx_awomrhein_cat.uid
         )
-        tx_awomrhein {
+        XXXtx_awomrhein {
             // image, title, cat image, short, bodytext, address, url
           facility = COA
           facility {
