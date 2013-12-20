@@ -18,7 +18,6 @@ if (!defined ('TYPO3_MODE'))
   // Wizards and config drafts
   // TCA
   //   tx_awomrhein
-  //   tx_awomrhein_pathcategory
   //   tx_awomrhein_path
 
 
@@ -935,233 +934,9 @@ $TCA['tx_awomrhein_corporation'] = array (
   'palettes' => array ( ),
 );
   // tx_awomrhein_corporation
-
-
-
-  /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-  // 
-  // tx_awomrhein_responsible
   
-$TCA['tx_awomrhein_responsible'] = array (
-  'ctrl' => $TCA['tx_awomrhein_responsible']['ctrl'],
-  'interface' => array (
-    'showRecordFieldList' => '
-        title
-      , hidden',
-  ),
-  'columns' => array (
-    'title' => array (
-      'exclude' => 0,
-      'label'   => 'LLL:EXT:awomrhein/locallang_db.xml:tx_awomrhein_responsible.title',
-      'config'  => $conf_input_30_trimRequired,
-    ),
-    'hidden'    => $conf_hidden,
-  ),
-  'types' => array
-  (
-    '0' => array 
-    (
-      'showitem' => '
-          title
-        , hidden'
-    ),
-  ),
-  'palettes' => array ( ),
-);
-  // tx_awomrhein_responsible
-
-  /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-  //
-  // tx_awomrhein_pathcategory
-
-$TCA['tx_awomrhein_pathcategory'] = array (
-  'ctrl' => $TCA['tx_awomrhein_pathcategory']['ctrl'],
-  'interface' => array (
-    'showRecordFieldList' =>  
-      'type,' . 
-      'title,' . 
-      'icons,icon_offset_x,icon_offset_y,' .
-      'tx_awomrhein,' .
-      'tx_awomrhein_path,' .
-      'hidden' ,
-  ),
-  'columns' => array (
-    'title' => array (
-      'exclude' => 0,
-      'label'   => 'LLL:EXT:awomrhein/locallang_db.xml:tx_awomrhein_pathcategory.title',
-      'config'  => $conf_input_30_trimRequired,
-    ),
-    'icons' => array (
-      'exclude'   => $bool_exclude_default,
-//      'l10n_mode' => 'exclude',
-      'label'   => 'LLL:EXT:awomrhein/locallang_db.xml:tx_awomrhein_pathcategory.icons',
-      'config'    => $conf_file_image,
-    ),
-    'icon_offset_x' => array (
-      'exclude' => 0,
-      'label'   => 'LLL:EXT:awomrhein/locallang_db.xml:tx_awomrhein_pathcategory.icon_offset_x',
-      'config'    => array (
-        'type'     => 'input',
-        'size'     => '3',
-        'max'      => '3',
-        'eval'     => 'int',
-        'default'  => '0',
-      ),
-    ),
-    'icon_offset_y' => array (
-      'exclude' => 0,
-      'label'   => 'LLL:EXT:awomrhein/locallang_db.xml:tx_awomrhein_pathcategory.icon_offset_y',
-      'config'    => array (
-        'type'     => 'input',
-        'size'     => '3',
-        'max'      => '3',
-        'eval'     => 'int',
-        'default'  => '0',
-      ),
-    ),
-    'tx_awomrhein_path' => array (
-      'exclude'   => $bool_exclude_default,
-      'l10n_mode' => 'exclude',
-      'label'     => 'LLL:EXT:awomrhein/locallang_db.xml:tx_awomrhein_pathcategory.tx_awomrhein_path',
-      'config'    => array (
-        'type'                => 'select',
-        'size'                => 20,
-        'minitems'            => 0,
-        'maxitems'            => 99,
-        'MM'                  => 'tx_awomrhein_path_mm_tx_awomrhein_pathcategory',
-        'MM_opposite_field'   => 'tx_awomrhein_pathcategory',
-        'foreign_table'       => 'tx_awomrhein_path',
-        'foreign_table_where' => 'AND tx_awomrhein_path.pid=###CURRENT_PID### AND tx_awomrhein_path.deleted = 0 AND tx_awomrhein_path.hidden = 0 ORDER BY tx_awomrhein_path.title',
-        'items' => array (
-          '0' => array (
-            '0' => '',
-            '1' => '',
-          ),
-        ),
-        'suppress_icons' => 1,
-        'wizards' => array (
-          '_PADDING'  => 2,
-          '_VERTICAL' => 0,
-          'add' => array (
-            'type'   => 'script',
-            'title'  => 'LLL:EXT:awomrhein/locallang_db.xml:wizard.add',
-            'icon'   => 'add.gif',
-            'params' => array (
-              'table'    => 'tx_awomrhein_path',
-              'pid'      => '###CURRENT_PID###',
-              'setValue' => 'prepend'
-            ),
-            'script' => 'wizard_add.php',
-          ),
-          'list' => array (
-            'type'   => 'script',
-            'title'  => 'LLL:EXT:awomrhein/locallang_db.xml:wizard.list',
-            'icon'   => 'list.gif',
-            'params' => array (
-              'table' => 'tx_awomrhein_path',
-              'pid'      => '###CURRENT_PID###',
-            ),
-            'script' => 'wizard_list.php',
-          ),
-          'edit' => array (
-            'type'                      => 'popup',
-            'title'                     => 'LLL:EXT:awomrhein/locallang_db.xml:wizard.edit',
-            'script'                    => 'wizard_edit.php',
-            'popup_onlyOpenIfSelected'  => 1,
-            'icon'                      => 'edit2.gif',
-            'JSopenParams'              => 'height=680,width=800,status=0,menubar=0,scrollbars=1',
-          ),
-        ),
-      ),
-    ),
-    'tx_awomrhein' => array (
-      'exclude'   => $bool_exclude_default,
-      'l10n_mode' => 'exclude',
-      'label'     => 'LLL:EXT:awomrhein/locallang_db.xml:tx_awomrhein_pathcategory.tx_awomrhein',
-      'config'    => array (
-        'type'                => 'select',
-        'size'                => 20,
-        'minitems'            => 0,
-        'maxitems'            => 99,
-        'MM'                  => 'tx_awomrhein_mm_tx_awomrhein_pathcategory',
-        'MM_opposite_field'   => 'tx_awomrhein_pathcategory',
-        'foreign_table'       => 'tx_awomrhein',
-        'foreign_table_where' => 'AND tx_awomrhein.pid=###CURRENT_PID### AND tx_awomrhein.deleted = 0 AND tx_awomrhein.hidden = 0 ORDER BY tx_awomrhein.facility',
-        'items' => array (
-          '0' => array (
-            '0' => '',
-            '1' => '',
-          ),
-        ),
-        'suppress_icons' => 1,
-        'wizards' => array (
-          '_PADDING'  => 2,
-          '_VERTICAL' => 0,
-          'add' => array (
-            'type'   => 'script',
-            'title'  => 'LLL:EXT:awomrhein/locallang_db.xml:wizard.add',
-            'icon'   => 'add.gif',
-            'params' => array (
-              'table'    => 'tx_awomrhein',
-              'pid'      => '###CURRENT_PID###',
-              'setValue' => 'prepend'
-            ),
-            'script' => 'wizard_add.php',
-          ),
-          'list' => array (
-            'type'   => 'script',
-            'title'  => 'LLL:EXT:awomrhein/locallang_db.xml:wizard.list',
-            'icon'   => 'list.gif',
-            'params' => array (
-              'table' => 'tx_awomrhein',
-              'pid'      => '###CURRENT_PID###',
-            ),
-            'script' => 'wizard_list.php',
-          ),
-          'edit' => array (
-            'type'                      => 'popup',
-            'title'                     => 'LLL:EXT:awomrhein/locallang_db.xml:wizard.edit',
-            'script'                    => 'wizard_edit.php',
-            'popup_onlyOpenIfSelected'  => 1,
-            'icon'                      => 'edit2.gif',
-            'JSopenParams'              => 'height=680,width=800,status=0,menubar=0,scrollbars=1',
-          ),
-        ),
-      ),
-    ),
-    'hidden'    => $conf_hidden,
-  ),
-  'types' => array (
-    '0' => array ( 'showitem' =>
-      '--div--;LLL:EXT:awomrhein/locallang_db.xml:tx_awomrhein_pathcategory.div_cat,' .
-        'type,title;;1;;1-1-1,' .
-      '--div--;LLL:EXT:awomrhein/locallang_db.xml:tx_awomrhein_pathcategory.div_icon,   ' .
-        '--palette--;LLL:EXT:awomrhein/locallang_db.xml:tx_awomrhein_pathcategory.icons;icons,' .
-      '--div--;LLL:EXT:awomrhein/locallang_db.xml:tx_awomrhein_pathcategory.div_path,   ' .
-        'tx_awomrhein_path,' .
-      '--div--;LLL:EXT:awomrhein/locallang_db.xml:tx_awomrhein_pathcategory.div_marker,   ' .
-        'tx_awomrhein,' .
-      '--div--;LLL:EXT:awomrhein/locallang_db.xml:tx_awomrhein_pathcategory.div_control,' .
-        'hidden'
-    ),
-  ),
-  'palettes' => array (
-    '1'               => array ('showitem' => ''),
-    'icons'      => array (
-      'showitem'        =>  
-          'icons;LLL:EXT:awomrhein/locallang_db.xml:tca_phrase.files,' 
-        . '--linebreak--,'
-        . 'icon_offset_x;LLL:EXT:awomrhein/locallang_db.xml:tx_awomrhein_pathcategory.icon_offset_x,' 
-        . 'icon_offset_y;LLL:EXT:awomrhein/locallang_db.xml:tx_awomrhein_pathcategory.icon_offset_y,' 
-        ,
-      'canNotCollapse'  =>  1,
-    ),
-  ),
-);
-  // tx_awomrhein_pathcategory
-
-
-
+  
+  
   ///////////////////////////////////////
   // 
   // tx_awomrhein_path
@@ -1766,3 +1541,37 @@ $TCA['tx_awomrhein_path'] = array (
   )
 );
   // tx_awomrhein_path
+
+
+
+  /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+  // 
+  // tx_awomrhein_responsible
+  
+$TCA['tx_awomrhein_responsible'] = array (
+  'ctrl' => $TCA['tx_awomrhein_responsible']['ctrl'],
+  'interface' => array (
+    'showRecordFieldList' => '
+        title
+      , hidden',
+  ),
+  'columns' => array (
+    'title' => array (
+      'exclude' => 0,
+      'label'   => 'LLL:EXT:awomrhein/locallang_db.xml:tx_awomrhein_responsible.title',
+      'config'  => $conf_input_30_trimRequired,
+    ),
+    'hidden'    => $conf_hidden,
+  ),
+  'types' => array
+  (
+    '0' => array 
+    (
+      'showitem' => '
+          title
+        , hidden'
+    ),
+  ),
+  'palettes' => array ( ),
+);
+  // tx_awomrhein_responsible

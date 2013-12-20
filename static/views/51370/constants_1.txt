@@ -39,7 +39,8 @@ plugin.tx_browser_pi1 {
       }
     }
     controlling {
-      enabled = Map
+      enabled   = Map
+      provider  = GoogleMaps
     }
     design {
       path {
@@ -48,7 +49,7 @@ plugin.tx_browser_pi1 {
     }
     icon {
       listNum {
-        categoryIconMap       = 1
+        categoryIconMap       = 0
         categoryIconMapSingle = 1
       }
     }
