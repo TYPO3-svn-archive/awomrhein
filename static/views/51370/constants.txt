@@ -46,6 +46,7 @@ plugin.tx_browser_pi1 {
       path {
         categoryIcon  = uploads/tx_awomrhein/
       }
+      width = 700
     }
     icon {
       listNum {
@@ -130,7 +131,6 @@ plugin.tx_browser_pi1 {
         }
       }
     }
-    width = 700
   }
   navigation {
     showUid = awomrheinUid

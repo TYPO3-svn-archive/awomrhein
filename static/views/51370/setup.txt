@@ -917,11 +917,11 @@ plugin.tx_browser_pi1 {
                       <input type="hidden" name="no_cache" value="1" />
                       <input type="hidden" name="tx_browser_pi1[plugin]" value="###PLUGIN###" />
                       ###RADIALSEARCH###
-                      <button id="c###TT_CONTENT.UID###-list-submit-sword-###MODE###" class="button hidesubmit" role="button">
-                        <span class="ui-button-text">###MY_SEARCH###</span>
-                      </button>
                       <button id="c###TT_CONTENT.UID###-list-submit-sword-###MODE###" type="reset" onclick="location='###MY_URL###'" class="button reset" role="button">
                         <span class="ui-button-text">###MY_RESET###</span>
+                      </button>
+                      <button id="c###TT_CONTENT.UID###-list-submit-sword-###MODE###" class="button hidesubmit" role="button">
+                        <span class="ui-button-text">###MY_SEARCH###</span>
                       </button>
                     </fieldset>
                   </form>
