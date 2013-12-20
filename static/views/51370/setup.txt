@@ -1404,15 +1404,15 @@ plugin.tx_browser_pi1 {
         )
         tx_awomrhein {
             // image, title, cat image, short, bodytext, address, url
-          title = COA
-          title {
-              // image, title, cat image, short, bodytext, address, url
+          facility = COA
+          facility {
+              // image, facility, cat image, short, bodytext, address, url
             20 < temp.route.marker_image_47
             20 {
-                // title, cat image, short, bodytext, address, url
+                // facility, cat image, short, bodytext, address, url
               text = COA
               text {
-                  // title
+                  // facility
                 30 = TEXT
                 30 {
                   field = tx_awomrhein.facility
