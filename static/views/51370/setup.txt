@@ -1386,7 +1386,6 @@ plugin.tx_browser_pi1 {
           tx_awomrhein.lon,
           tx_awomrhein.address1,
           tx_awomrhein.address2,
-          tx_awomrhein.street,
           tx_awomrhein.zip,
           tx_awomrhein.city,
           tx_awomrhein.country,
