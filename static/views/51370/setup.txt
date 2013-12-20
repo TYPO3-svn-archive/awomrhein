@@ -909,32 +909,26 @@ plugin.tx_browser_pi1 {
             searchform = TEXT
             searchform {
               value (
-        <div id="c###TT_CONTENT.UID###-list-searchbox-###MODE###" class="searchbox searchbox-list-###MODE###">
-          <form id="c###TT_CONTENT.UID###-list-searchbox-form-###MODE###" action="###ACTION###" method="post" >
-            <fieldset class="ui-corner-all">
-              <legend>###MY_SEARCH_LEGEND###</legend>
-              ###HIDDEN###
-              <input type="hidden" name="no_cache" value="1" />
-              <input type="hidden" name="tx_browser_pi1[plugin]" value="###PLUGIN###" />
-              <input class="sword" type="text" name="tx_browser_pi1[sword]" onfocus="if(this.value =='###SWORD_DEFAULT###') this.value=''" value="###SWORD###" />
-              <button id="c###TT_CONTENT.UID###-list-submit-sword-###MODE###" class="button hidesubmit ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only" role="button">
-                <span class="ui-button-text">###MY_SEARCH###</span>
-              </button>
-              <!-- ###BUTTON_CSV-EXPORT### begin -->
-                <button id="c###TT_CONTENT.UID###-list-submit-csv-export-###MODE###" class="button hidesubmit ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only" role="button">
-                  <span class="ui-button-text">###MY_CSV_EXPORT###</span>
-                </button>
-              <!-- ###BUTTON_CSV-EXPORT### end -->
-              <button id="c###TT_CONTENT.UID###-list-submit-sword-###MODE###" type="reset" onclick="location='###MY_URL###'" class="button reset ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only" role="button">
-                <span class="ui-button-text">###MY_RESET###</span>
-              </button>
-              <div class="filter">
-                ###RADIALSEARCH###
-              </div>
-            </fieldset>
-          </form>
-          ###RESULTPHRASE###
-        </div>
+                <div id="c###TT_CONTENT.UID###-list-searchbox-###MODE###" class="searchbox searchbox-list-###MODE###">
+                  <form id="c###TT_CONTENT.UID###-list-searchbox-form-###MODE###" action="###ACTION###" method="post" >
+                    <fieldset class="ui-corner-all">
+                      <legend>###MY_SEARCH_LEGEND###</legend>
+                      ###HIDDEN###
+                      <input type="hidden" name="no_cache" value="1" />
+                      <input type="hidden" name="tx_browser_pi1[plugin]" value="###PLUGIN###" />
+                      <div class="filter">
+                        ###RADIALSEARCH###
+                      </div>
+                      <button id="c###TT_CONTENT.UID###-list-submit-sword-###MODE###" class="button hidesubmit ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only" role="button">
+                        <span class="ui-button-text">###MY_SEARCH###</span>
+                      </button>
+                      <button id="c###TT_CONTENT.UID###-list-submit-sword-###MODE###" type="reset" onclick="location='###MY_URL###'" class="button reset ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only" role="button">
+                        <span class="ui-button-text">###MY_RESET###</span>
+                      </button>
+                    </fieldset>
+                  </form>
+                  ###RESULTPHRASE###
+                </div>
 )
             }
           }
