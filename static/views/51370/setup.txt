@@ -1645,8 +1645,11 @@ plugin.tx_browser_pi1 {
             }
           }
         }
+          // subparts
         htmlSnippets =
         htmlSnippets {
+            // singleview
+          subparts =
           subparts {
             singleview = TEXT
             singleview {
@@ -1658,7 +1661,7 @@ plugin.tx_browser_pi1 {
             <!-- ###SINGLEBODY### begin -->
             <div class="ui-widget-content ui-corner-bottom">
               <!-- ###SINGLEBODYROW### begin -->
-                ###MAP###
+                XY ###MAP### ZZ
                 <div class="sbmFloatRight">
                   ###SOCIALMEDIA_BOOKMARKS###
                 </div>
