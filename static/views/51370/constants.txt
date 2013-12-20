@@ -80,7 +80,7 @@ plugin.tx_browser_pi1 {
           local {
             title {
               path    = title
-              marker  = title
+              marker  = facility
             }
             lat {
               path    = icon_lat
@@ -94,7 +94,7 @@ plugin.tx_browser_pi1 {
           cat {
             title {
               path    = title
-              marker  = facility
+              marker  = title
             }
             icons {
               path    = icons
