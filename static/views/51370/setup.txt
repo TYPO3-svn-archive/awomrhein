@@ -1417,7 +1417,7 @@ plugin.tx_browser_pi1 {
 
 page {
   includeCSS {
-    route = {$plugin.tx_route.path.css}
+    tx_radialsearch_jqueryUi = {$plugin.tx_radialsearch_pi1.css.jquery.path}
   }
 }
   // page
