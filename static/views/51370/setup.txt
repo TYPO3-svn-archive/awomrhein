@@ -624,12 +624,15 @@ temp.route {
                     }
                     .tx-browser-pi1 .mapview {
                       /* margin-top:1em; */
+                      margin-top:0;
                     }
                     .tx-browser-pi1 .mapview-content {
                       /* padding: 1em 0; */
+                      padding: 0;
                     }
                     .tx-browser-pi1 .mapview-content form {
                       /* padding-bottom:1em; */
+                      padding-bottom:0;
                       text-align:center;
                     }
                     .tx-browser-pi1 .olControlAttribution {
