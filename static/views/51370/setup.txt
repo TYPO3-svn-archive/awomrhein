@@ -612,6 +612,54 @@ temp.route {
     map {
       marker {
         snippets {
+          html {
+            dynamic {
+                // CSS properties
+              map_css = TEXT
+              map_css {
+                value (
+                  <style type="text/css">
+                    .tx-browser-pi1 a.oxMap-markerLink {
+                      cursor:pointer;
+                    }
+                    .tx-browser-pi1 .mapview {
+                      /* margin-top:1em; */
+                    }
+                    .tx-browser-pi1 .mapview-content {
+                      /* padding: 1em 0; */
+                    }
+                    .tx-browser-pi1 .mapview-content form {
+                      /* padding-bottom:1em; */
+                      text-align:center;
+                    }
+                    .tx-browser-pi1 .olControlAttribution {
+                      background-color:white;
+                      bottom:0px;
+                      right:0px;
+                    }
+                    .tx-browser-pi1 .olMap {
+                      margin: auto !important;
+                    }
+                    .tx-browser-pi1 .oxMapArea {
+                      height:###CSS_MAPHEIGHT###;
+                      width:###CSS_MAPWIDTH###;
+                    }
+                    .tx-browser-pi1 .oxTextLayer {
+                      border:1px solid green;
+                      border-radius:6px;
+                      background:#fff;
+                      width:200px;
+                      overflow:hidden;
+                      position:absolute;
+                      padding:6px;
+                      box-shadow:3px 3px 3px #3d3d3d;
+                      z-index:99;
+                    }
+                  </style>
+  )
+              }
+            }
+          }
           jss {
             dynamic {
               oxMapConfigModules {
@@ -932,102 +980,11 @@ plugin.tx_browser_pi1 {
           }
         }
       }
-      51372 = AWO Mittelrhein: Einrichtung
-      51372 {
-        name    = AWO Mittelrhein: Einrichtung
-        navigation {
-          map < plugin.tx_browser_pi1.navigation.map
-          map {
-            enabled = disabled
-          }
-        }
-        showUid = {$plugin.tx_browser_pi1.map.aliases.showUid.marker}
-        select (
-          tx_awomrhein.facility
-        )
-        htmlSnippets =
-        htmlSnippets {
-          subparts {
-            listview = TEXT
-            listview {
-              value (
-            <div id="c###TT_CONTENT.UID###-listview-###MODE###" class="###VIEW###view ###VIEW###view-content ###VIEW###view-###MODE### ###VIEW###view-content-###MODE###">
-              <p>
-                Marker don't have any list view.<br />
-                Please use view.list.51370 for routes (map only).<br />
-                Please use view.list.51371 for routes (text only).
-              </p>
-              <p>
-                Markierungen haben keine Listen-Ansicht.<br />
-                Bitte benutze view.list.51370 f&uuml;r Routen (nur Karte).<br />
-                Bitte benutze view.list.51372 f&uuml;r Routen (nur Text).
-              </p>
-              <!-- ###LISTBODY### begin --><!-- ###LISTBODYITEM### begin -->
-              <div class="cleaner">&nbsp;</div><!-- ###LISTBODYITEM### end --><!-- ###LISTBODY### end -->
-            </div> <!-- /listview -->
-)
-            }
-          }
-        }
-      }
     }
     single {
-      51370 = AWO Mittelrhein: Einrichtungen mit Grenze
-      51370 {
-        name = AWO Mittelrhein: Einrichtungen mit Grenze
-        navigation {
-          map < temp.route.navigation.map
-          map {
-            enabled = disabled
-          }
-        }
-        select = tx_awomrhein_path.title 
-        tx_awomrhein_path {
-            // table.field.uid: title
-          title = TEXT
-          title {
-            value = Please don't use the view 51370 in the single view. 51370 is for the list view only!
-            lang {
-              de = Bitte verwende die Ansicht 51370 nicht in der Detailansicht. 51370 ist nur f&uuml;r die Listenansicht konfiguriert.
-              en = Please don't use the view 51370 in the single view. 51370 is for the list view only!
-            }
-            wrap = <p>|</p>
-          }
-        }
-        htmlSnippets =
-        htmlSnippets {
-          subparts {
-            singleview = TEXT
-            singleview {
-              value (
-<!-- ###AREA_FOR_AJAX_LIST_01### begin -->
-        <div id="c###TT_CONTENT.UID###-singleview-###MODE###" class="singleview singleview-###MODE###">
-          <div class="ui-widget ui-corner-all">
-            <!-- ###SINGLEBODY### begin -->
-            <!-- ###SINGLEBODYROW### begin -->
-              ###TX_AWOMRHEIN_PATH.TITLE###
-            <!-- ###SINGLEBODYROW### end -->
-  <!-- ###AREA_FOR_AJAX_LIST_01### end -->
-            <!-- ###BACKBUTTON### begin -->
-              <p class="tx_route-backbutton">
-              ###MY_BACKBUTTON###
-            </p>
-            <!-- ###BACKBUTTON### end -->
-  <!-- ###AREA_FOR_AJAX_LIST_02### begin -->
-            <!-- ###SINGLEBODY### end -->
-          </div>
-        </div>
-<!-- ###AREA_FOR_AJAX_LIST_02### end -->
-)
-            }
-          }
-        }
-      }
-      51370 >
       51370 = AWO Mittelrhein: Einrichtung
       51370 {
         name    = AWO Mittelrhein: Einrichtung
-        showUid = {$plugin.awomrhein.typo3browser.showUid}
         marker < plugin.tx_browser_pi1.marker
         marker {
           my_back_button = TEXT
@@ -1442,7 +1399,6 @@ plugin.tx_browser_pi1 {
           }
         }
       }
-      51372 < .51370
     }
   }
 }
