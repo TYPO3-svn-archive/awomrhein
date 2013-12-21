@@ -1097,6 +1097,300 @@ plugin.tx_browser_pi1 {
           }
         }
       }
+      51372 >
+      51372 = AWO Mittelrhein: Einrichtung
+      51372 {
+        name    = AWO Mittelrhein: Einrichtung
+        marker < plugin.tx_browser_pi1.marker
+        marker {
+          my_search {
+            value = Send!
+            lang {
+              de = Senden!
+              en = Send!
+            }
+          }
+        }
+        navigation {
+          map < plugin.tx_browser_pi1.navigation.map
+          map {
+            marker {
+              addToCData {
+                system {
+                  mapLinkToSingle {
+                    10 {
+                      30 {
+                        10 {
+//                          wrap = ,&tx_browser_pi1[headquartersUid]=|
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+              variables {
+                system {
+                  description >
+                  description < plugin.tx_browser_pi1.displayList.master_templates.map.descriptionWiLinkToSingle
+                  description {
+                    10 >
+                    10 = COA
+                    10 {
+                      10 = TEXT
+                      10 {
+                        required    = 1
+                          // v4.6
+                        field       = {$plugin.tx_browser_pi1.map.marker.field.description}
+                        noTrimWrap  = |<strong>|</strong><br />|
+                      }
+                      20 = COA
+                      20 {
+                        10 = TEXT
+                        10 {
+                          required    = 1
+                          field       = tx_awomrhein.zip
+                          noTrimWrap  = || |
+                        }
+                        20 = TEXT
+                        20 {
+                          required    = 1
+                          field       = tx_awomrhein.city
+                        }
+                        wrap = | <br />
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+        showUid = {$plugin.awomrhein.typo3browser.showUid}
+        select (
+            tx_awomrhein.facility
+          , tx_awomrhein.city
+          , tx_awomrhein.seodescription
+          , tx_awomrhein.seokeywords
+          , tx_awomrhein.lat
+          , tx_awomrhein.lon
+          , tx_awomrhein.zip
+          , tx_awomrhein.crdate
+          , tx_awomrhein.deleted
+          , tx_awomrhein_cat.title
+          , tx_awomrhein_cat.icons
+          , tx_awomrhein_cat.icon_offset_x
+          , tx_awomrhein_cat.icon_offset_y
+        )
+        //andWhere = tx_awomrhein.eventBegin > UNIX_TIMESTAMP() 
+        //csvLinkToSingleView = tx_awomrhein.facility
+        tx_awomrhein {
+            // placeholder: radialsearch HTML class depending on radius
+          crdate < plugin.tx_radialsearch.masterTemplates.htmlClass
+            // placeholder: radialsearch linear distance
+          deleted < plugin.tx_radialsearch.masterTemplates.linearDistanceString
+            // facility, zip, city, responsible, details
+          facility = COA
+          facility {
+              // facility
+            10 = TEXT
+            10 {
+              wrap      = <h2 class="facility">|</h2>
+              required  = 1
+              field     = tx_awomrhein.facility
+              typolink {
+                parameter = {$plugin.awomrhein.pages.awomrhein} - linktosingle
+                additionalParams {
+                    // parameter, value
+                  cObject = COA
+                  cObject {
+                      // parameter
+                    10 = TEXT
+                    10 {
+                      value = &tx_browser_pi1[{$plugin.awomrhein.typo3browser.showUid}]=
+                    }
+                      // value
+                    20 = TEXT
+                    20 {
+                      field = tx_awomrhein.uid
+                    }
+                  }
+                }
+                useCacheHash = 1
+              }
+            }
+              // zip, city, responsible, details
+            20 = COA
+            20 {
+              wrap = <p class="zip_city">|</p>
+                // zip
+              10 = TEXT
+              10 {
+                field       = tx_awomrhein.zip
+                required    = 1
+                noTrimWrap  = || |
+              }
+                // city
+              20 = TEXT
+              20 {
+                field       = tx_awomrhein.city
+                required    = 1
+                noTrimWrap  = || |
+              }
+                // responsible
+              30 = TEXT
+              30 {
+                field       = tx_awomrhein_responsible.title
+                required    = 1
+                noTrimWrap  = |(|) |
+              }
+                // details
+              40 = TEXT
+              40 {
+                value = Details &raquo;
+                typolink {
+                  parameter = {$plugin.awomrhein.pages.awomrhein} - linktosingle
+                  additionalParams {
+                      // parameter, value
+                    cObject = COA
+                    cObject {
+                        // parameter
+                      10 = TEXT
+                      10 {
+                        value = &tx_browser_pi1[{$plugin.awomrhein.typo3browser.showUid}]=
+                      }
+                        // value
+                      20 = TEXT
+                      20 {
+                        field = tx_awomrhein.uid
+                      }
+                    }
+                  }
+                  useCacheHash = 1
+                }
+              }
+            }
+          }
+        }
+        filter {
+          radialsearch < plugin.tx_browser_pi1.displayList.master_templates.radialsearch
+          tx_awomrhein {
+            XXXcity < plugin.tx_browser_pi1.displayList.master_templates.selectbox
+            XXXcity {
+              size        = 10
+              //count_hits  = 0
+              first_item {
+                cObject {
+                  20 {
+                    data = LLL:EXT:awomrhein/locallang_db.xml:filter_phrase.tx_awomrhein.city
+                  }
+                }
+              }
+              wrap = <span class="selectbox">|</span>
+            }
+            XXXzip < plugin.tx_browser_pi1.displayList.master_templates.selectbox
+            XXXzip {
+              size        = 10
+              //count_hits = 0
+              first_item {
+                cObject {
+                  20 {
+                    data = LLL:EXT:awomrhein/locallang_db.xml:filter_phrase.tx_awomrhein.zip
+                  }
+                }
+              }
+              wrap = <span class="selectbox">|</span>
+            }
+          }
+          tx_awomrhein_attendance {
+            title < plugin.tx_browser_pi1.displayList.master_templates.selectbox
+            title {
+              //count_hits = 0
+              first_item {
+                cObject {
+                  20 {
+                    data = LLL:EXT:awomrhein/locallang_db.xml:filter_phrase.tx_awomrhein_attendance
+                  }
+                }
+              }
+              wrap = <div class="selectbox">|</div>
+            }
+          }
+          tx_awomrhein_cat {
+            title < plugin.tx_browser_pi1.displayList.master_templates.selectbox
+            title {
+              //count_hits = 0
+              treeview {
+                enabled {
+                  value = 1
+                }
+              }
+              first_item {
+                cObject {
+                  20 {
+                    data = LLL:EXT:awomrhein/locallang_db.xml:filter_phrase.tx_awomrhein_cat
+                  }
+                }
+              }
+              wrap = <div class="selectbox">|</div>
+            }
+          }
+          tx_awomrhein_responsible {
+            title < plugin.tx_browser_pi1.displayList.master_templates.selectbox
+            title {
+              //count_hits = 0
+              first_item {
+                cObject {
+                  20 {
+                    data = LLL:EXT:awomrhein/locallang_db.xml:filter_phrase.tx_awomrhein_responsible
+                  }
+                }
+              }
+              wrap = <div class="selectbox">|</div>
+            }
+          }
+        }
+          // marker and subparts will replaced in the HTML template before data handling
+          // #43981, 121214, dwildt
+        htmlSnippets =
+        htmlSnippets {
+          marker {
+            filter = TEXT
+            filter {
+              value (
+              <div class="filter">
+                ###TX_AWOMRHEIN_CAT.TITLE###
+                ###RADIALSEARCH###
+                <div class="selectbox">
+                  ###TX_AWOMRHEIN.ZIP### ###TX_AWOMRHEIN.CITY###
+                </div>
+                ###TX_AWOMRHEIN_ATTENDANCE.TITLE###
+                ###TX_AWOMRHEIN_RESPONSIBLE.TITLE###
+              </div>
+)
+            }
+          }
+          subparts {
+            listview = TEXT
+            listview {
+              value (
+            <div id="c###TT_CONTENT.UID###-listview-###MODE###" class="###VIEW###view ###VIEW###view-content ###VIEW###view-###MODE### ###VIEW###view-content-###MODE###">
+              <!-- ###LISTBODY### begin --><!-- ###LISTBODYITEM### begin -->
+              <div class="record01###TX_AWOMRHEIN.CRDATE###">
+                ###TX_AWOMRHEIN.DELETED###
+                <div class="sbmFloatRight">
+                  ###SOCIALMEDIA_BOOKMARKS###
+                </div>
+                ###TX_AWOMRHEIN.FACILITY###
+              </div>
+              <div class="cleaner">&nbsp;</div><!-- ###LISTBODYITEM### end -->
+              ###MAP###
+              <!-- ###LISTBODY### end -->
+            </div> <!-- /listview -->
+)
+            }
+          }
+        }
+      }
     }
     single {
       51370 = AWO Mittelrhein: Einrichtungen mit Grenze
