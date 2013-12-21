@@ -49,6 +49,16 @@ plugin.tx_browser_pi1 {
       }
       width = 700
     }
+    html {
+      form {
+        label {
+          class {
+            marker  = tx_awomrhein_cat.formlabelcss
+            path    = tx_awomrhein_pathcat.formlabelcss
+          }
+        }
+      }
+    }
     icon {
       listNum {
         categoryIconMap       = 0

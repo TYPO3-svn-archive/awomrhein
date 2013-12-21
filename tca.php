@@ -812,7 +812,8 @@ $TCA['tx_awomrhein_cat'] = array (
   'ctrl' => $TCA['tx_awomrhein_cat']['ctrl'],
   'interface' => array (
     'showRecordFieldList' => '
-        hidden
+        formlabelcss
+      , hidden
       , icons
       , icon_offset_x
       , icon_offset_y
@@ -824,6 +825,11 @@ $TCA['tx_awomrhein_cat'] = array (
       'exclude' => 0,
       'label'   => 'LLL:EXT:awomrhein/locallang_db.xml:tx_awomrhein_cat.title',
       'config'  => $conf_input_30_trimRequired,
+    ),
+    'formlabelcss' => array (
+      'exclude' => 0,
+      'label'   => 'LLL:EXT:awomrhein/locallang_db.xml:tx_awomrhein_cat.formlabelcss',
+      'config'  => $conf_input_30,
     ),
     'icons' => array (
       'exclude'   => $bool_exclude_default,
@@ -858,7 +864,7 @@ $TCA['tx_awomrhein_cat'] = array (
   (
     '0' => array ('showitem' =>  
       '--div--;LLL:EXT:awomrhein/locallang_db.xml:tx_awomrhein_cat.div_cat,' . 
-        'title,icons,icon_offset_x,icon_offset_y,'.
+        'title,formlabelcss,icons,icon_offset_x,icon_offset_y,'.
       '--div--;LLL:EXT:awomrhein/locallang_db.xml:tx_awomrhein_cat.div_control,' . 
         'hidden'
     ),

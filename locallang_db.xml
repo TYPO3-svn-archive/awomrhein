@@ -79,6 +79,7 @@
       <label index="tx_awomrhein_cat.div_cat">Data</label>
       <label index="tx_awomrhein_cat.div_control">Controlling</label>
       <label index="tx_awomrhein_cat.title">Category</label>
+      <label index="tx_awomrhein_cat.formlabelcss">CSS class for the the label tag in the map form</label>
       <label index="tx_awomrhein_cat.icons">Icons (1st: default. 2nd: big size)</label>
       <label index="tx_awomrhein_cat.icon_offset_x">X-offset of the icon in a map</label>
       <label index="tx_awomrhein_cat.icon_offset_y">Y-offset of the icon in a map</label>
@@ -198,6 +199,7 @@
       <label index="tx_awomrhein_cat.div_cat">Daten</label>
       <label index="tx_awomrhein_cat.div_control">Steuerung</label>
       <label index="tx_awomrhein_cat.title">Kategorie</label>
+      <label index="tx_awomrhein_cat.formlabelcss">CSS Klasse f<![CDATA[&uuml;]]>r das Label-Tag im Formular der Karte</label>
       <label index="tx_awomrhein_cat.icons">Piktogramm (1.: Standard. 2.: Gro<![CDATA[ß]]>es Format)</label>
       <label index="tx_awomrhein_cat.icon_offset_x">X-Offset des Piktogramms in einer Karte</label>
       <label index="tx_awomrhein_cat.icon_offset_y">Y-Offset des Piktogramms in einer Karte</label>

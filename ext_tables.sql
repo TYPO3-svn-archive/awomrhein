@@ -97,6 +97,7 @@ CREATE TABLE tx_awomrhein_cat (
   deleted tinyint(4) unsigned DEFAULT '0' NOT NULL,
   hidden tinyint(4) DEFAULT '0' NOT NULL,
   title tinytext,
+  formlabelcss varchar(30) default '',
   icons tinyblob,
   icon_offset_x int(11) DEFAULT '0' NOT NULL,
   icon_offset_y int(11) DEFAULT '0' NOT NULL

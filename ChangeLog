@@ -1,5 +1,14 @@
 0.0.2
-  13-12-19
+  13-12-21
+  Feature
+  * #54548: CSS class for form lables
+            Effected files:
+            * ext_tables.sql
+            * locallang_db.xml
+            * tca.php
+            * static/views/51370
+              * constants.txt
+              * setup.txt
   Development
   * #i0003: Integration of Radial Search
   * #i0002: Integration of route
