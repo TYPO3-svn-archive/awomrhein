@@ -164,7 +164,9 @@ plugin.tx_radialsearch_pi1 {
     dec_point     = ,
     thousands_sep = .
   }
-
+  path {
+    css = EXT:route/files/html/css/route.css
+  }
 }
   // plugin.tx_radialsearch_pi1
 
