@@ -1062,12 +1062,12 @@ plugin.tx_browser_pi1 {
           }
         }
       }
-      51372 = Marker (single only)
+      51372 = AWO Mittelrhein: Einrichtung
       51372 {
+        name    = AWO Mittelrhein: Einrichtung
         navigation {
           map < plugin.tx_browser_pi1.navigation.map
         }
-        name    = Marker (single only)
         showUid = {$plugin.tx_browser_pi1.map.aliases.showUid.marker}
         select (
           tx_awomrhein.facility
