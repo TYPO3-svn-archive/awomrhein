@@ -932,6 +932,7 @@ plugin.tx_browser_pi1 {
           }
         }
       }
+    }
     single {
       51370 = AWO Mittelrhein
       51370 {
@@ -1355,16 +1356,3 @@ plugin.tx_browser_pi1 {
   }
 }
   // plugin.tx_browser_pi1
-
-
-
-  ////////////////////////////////////////
-  //
-  // page
-
-XXXpage {
-  includeCSS {
-    route = {$plugin.tx_route.path.css}
-  }
-}
-  // page
