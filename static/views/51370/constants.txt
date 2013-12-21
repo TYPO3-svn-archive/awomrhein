@@ -35,7 +35,8 @@ plugin.tx_browser_pi1 {
   map {
     aliases {
       showUid {
-        marker = awomrheinUid
+        marker  = awomrheinUid
+        path    = awomrheinUid
       }
     }
     controlling {
