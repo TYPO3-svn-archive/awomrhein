@@ -1408,3 +1408,16 @@ plugin.tx_browser_pi1 {
   }
 }
   // plugin.tx_browser_pi1
+
+
+
+  ////////////////////////////////////////
+  //
+  // page
+
+page {
+  includeCSS {
+    route = {$plugin.tx_route.path.css}
+  }
+}
+  // page
