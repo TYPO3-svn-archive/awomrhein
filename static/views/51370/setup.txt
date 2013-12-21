@@ -1023,8 +1023,9 @@ plugin.tx_browser_pi1 {
           }
         }
       }
-      51372 = AWO Mittelrhein: Einrichtung
-      51372 {
+      51370 >
+      51370 = AWO Mittelrhein: Einrichtung
+      51370 {
         name    = AWO Mittelrhein: Einrichtung
         showUid = {$plugin.awomrhein.typo3browser.showUid}
         marker < plugin.tx_browser_pi1.marker
