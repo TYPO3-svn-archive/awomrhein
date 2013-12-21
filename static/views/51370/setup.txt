@@ -866,8 +866,9 @@ plugin.tx_browser_pi1 {
 
   views {
     list {
-      51370 = Route (map only)
+      51370 = AWO Mittelrhein: Einrichtungen mit Grenze
       51370 {
+        name = AWO Mittelrhein: Einrichtungen mit Grenze
         navigation {
           map < temp.route.navigation.map
           map {
@@ -875,7 +876,6 @@ plugin.tx_browser_pi1 {
           }
         }
         showUid   = {$plugin.tx_browser_pi1.map.aliases.showUid.path}
-        name      = Route (map only)
         select    < temp.route.sql.select
         from      < temp.route.sql.from
         andWhere  < temp.route.sql.andWhere
@@ -1099,8 +1099,9 @@ plugin.tx_browser_pi1 {
       }
     }
     single {
-      51370 = Route (map only)
+      51370 = AWO Mittelrhein: Einrichtungen mit Grenze
       51370 {
+        name = AWO Mittelrhein: Einrichtungen mit Grenze
         navigation {
           map < temp.route.navigation.map
           map {
