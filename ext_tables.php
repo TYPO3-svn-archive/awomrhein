@@ -195,6 +195,12 @@ $TCA['tx_awomrhein'] = array (
         ),
         'update'  => true,  
       ),
+      'route' => array (
+        'marker' => array (
+          'category'  => 'tx_awomrhein_cat',  
+          'path'      => 'tx_awomrhein_path',  
+        ),
+      ),
     ),
   ),
 );
@@ -322,11 +328,14 @@ $TCA['tx_awomrhein_path'] = array (
     'dynamicConfigFile' => t3lib_extMgm::extPath( $_EXTKEY ) . 'tca.php',
     'iconfile'          => t3lib_extMgm::extRelPath( $_EXTKEY ) . 'ext_icon/awomrhein.gif',
     'tx_browser'  => array (
-        'route' => array (
-          'gpxfile' => 'gpxfile',  
-          'geodata' => 'geodata',  
+      'route' => array (
+        'gpxfile' => 'gpxfile',  
+        'geodata' => 'geodata',  
+        'path' => array (
+          'category'  => 'tx_awomrhein_cat',  
+          'marker'    => 'tx_awomrhein',  
         ),
-        
+      ),
     ),
   ),
 );
