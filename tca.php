@@ -161,7 +161,7 @@ if (!defined ('TYPO3_MODE'))
     )
   );
   $conf_starttime = array (
-    'exclude'   => 0,
+    'exclude'   => 1,
     'l10n_mode' => 'exclude',
     'label'     => 'LLL:EXT:lang/locallang_general.xml:LGL.starttime',
     'config'    => array (
@@ -174,7 +174,7 @@ if (!defined ('TYPO3_MODE'))
     ),
   );
   $conf_endtime = array (
-    'exclude'   => 0,
+    'exclude'   => 1,
     'l10n_mode' => 'exclude',
     'label'     => 'LLL:EXT:lang/locallang_general.xml:LGL.endtime',
     'config'    => array (
@@ -191,7 +191,7 @@ if (!defined ('TYPO3_MODE'))
     ),
   );
   $conf_fegroup = array (
-    'exclude'     => 0,
+    'exclude'     => 1,
     //'l10n_mode'   => 'mergeIfNotBlank',
     'label'     => 'LLL:EXT:awomrhein/locallang_db.xml:tca_phrase.accessByFeGroup',
     'config'      => array (
