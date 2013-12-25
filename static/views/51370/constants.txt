@@ -159,7 +159,7 @@ plugin.tx_browser_pi1 {
   //
   // plugin.tx_radialsearch_pi1
 
-plugin.tx_radialsearch_pi1 {
+XXXplugin.tx_radialsearch_pi1 {
   css {
     jquery {
       path = EXT:radialsearch/res/css/jQuery/smoothness/jquery-ui.css
