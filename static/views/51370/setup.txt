@@ -984,6 +984,46 @@ plugin.tx_browser_pi1 {
             }
           }
         }
+        htmlSnippets >
+        htmlSnippets =
+        htmlSnippets {
+          marker {
+            filter = TEXT
+            filter {
+              value (
+              <div class="filter">
+                ###TX_AWOMRHEIN_CAT.TITLE###
+                ###RADIALSEARCH###
+                <div class="selectbox">
+                  ###TX_AWOMRHEIN.ZIP### ###TX_AWOMRHEIN.CITY###
+                </div>
+                ###TX_AWOMRHEIN_ATTENDANCE.TITLE###
+                ###TX_AWOMRHEIN_RESPONSIBLE.TITLE###
+              </div>
+)
+            }
+          }
+          subparts {
+            listview = TEXT
+            listview {
+              value (
+            <div id="c###TT_CONTENT.UID###-listview-###MODE###" class="###VIEW###view ###VIEW###view-content ###VIEW###view-###MODE### ###VIEW###view-content-###MODE###">
+              <!-- ###LISTBODY### begin --><!-- ###LISTBODYITEM### begin -->
+              <div class="record01###TX_AWOMRHEIN.CRDATE###">
+                ###TX_AWOMRHEIN.DELETED###
+                <div class="sbmFloatRight">
+                  ###SOCIALMEDIA_BOOKMARKS###
+                </div>
+                ###TX_AWOMRHEIN.FACILITY###
+              </div>
+              <div class="cleaner">&nbsp;</div><!-- ###LISTBODYITEM### end -->
+              ###MAP###
+              <!-- ###LISTBODY### end -->
+            </div> <!-- /listview -->
+)
+            }
+          }
+        }
       }
     }
     single {
