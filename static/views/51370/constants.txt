@@ -5,7 +5,6 @@
 
   // plugin.awomrhein 
   // plugin.tx_browser_pi1
-  // plugin.tx_radialsearch_pi1
   // plugin.tx_seodynamictag_pi1
 
 
@@ -157,36 +156,15 @@ plugin.tx_browser_pi1 {
 
   ////////////////////////////////////////
   //
-  // plugin.tx_radialsearch_pi1
-
-XXXplugin.tx_radialsearch_pi1 {
-  css {
-    jquery {
-      path = EXT:radialsearch/res/css/jQuery/smoothness/jquery-ui.css
-    }
-  }
-  distance {
-    dec_point     = ,
-    thousands_sep = .
-  }
-}
-  // plugin.tx_radialsearch_pi1
-
-
-
-  ////////////////////////////////////////
-  //
   // plugin.tx_seodynamictag
 
 plugin.tx_seodynamictag {
-
   canonical {
     single {
         // Only this parameter are allowed: 
       additionalParams = &tx_browser_pi1[awomrheinUid]={GP:tx_browser_pi1|awomrheinUid}
     }
   }
-
   condition {
     single {
         // Please replace xxx with the uid of the page with the news plugin for the single view
@@ -194,21 +172,24 @@ plugin.tx_seodynamictag {
       begin = globalVar = GP:tx_browser_pi1|awomrheinUid > 0] && [globalVar = TSFE:id = xxx
     }
   }
-
   database {
     table = tx_awomrhein
     var.1 = tx_browser_pi1[awomrheinUid]
     field {
       author        = NULL 
-      description   = seodescription
+      description   = facility
       keywords      = seokeywords 
-      title         = facility 
-      short         = seodescription
+      title         = CONCAT(facility, ' (', zip, ' ', city, ')' ) 
+      short         = "AWO Einrichtung"
     }
   }
 
   default {
-    description = Description is empty! Please maintain the current record of the TYPO3 Organiser News. See tab [Search Engine] field [Description] 
+    author      = AWO Bezirksverband Mittelrhein
+    description = Description is empty! Please maintain the current record of the AWO Mittelrhein database. See tab [Facility] field [Facility] 
+    description {
+      prefix = AWO Bezirksverband Mittelrhein:
+    }
   }
 
   keywords {
@@ -217,3 +198,5 @@ plugin.tx_seodynamictag {
   }
 }
   // plugin.tx_seodynamictag
+
+//plugin.tx_seodynamictag.database.field.author = "AWO Bezirksverband Mittelrhein"
