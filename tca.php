@@ -1004,19 +1004,19 @@ $TCA['tx_awomrhein_path'] = array (
       'config'    => $conf_input_30_trimRequired,
     ),
     'short' => array (
-      'exclude'   => 0,
+      'exclude'   => 1,
       'l10n_mode' => 'prefixLangTitle',
       'label'     => 'LLL:EXT:awomrhein/locallang_db.xml:tx_awomrhein_path.short',
       'config'    => $conf_text_30_05,
     ),
     'bodytext' => array (
-      'exclude'   => 0,
+      'exclude'   => 1,
       'l10n_mode' => 'prefixLangTitle',
       'label'     => 'LLL:EXT:awomrhein/locallang_db.xml:tx_awomrhein_path.bodytext',
       'config'    => $conf_text_rte,
     ),
     'url' => array (
-      'exclude'   => 0,
+      'exclude'   => 1,
       'l10n_mode' => 'prefixLangTitle',
       'label'     => 'LLL:EXT:awomrhein/locallang_db.xml:tx_awomrhein_path.url',
       'config'    => $arr_wizard_url,
@@ -1192,55 +1192,55 @@ $TCA['tx_awomrhein_path'] = array (
       ),
     ),
     'list_title' => array (
-      'exclude'   => 0,
+      'exclude'   => 1,
       'l10n_mode' => 'prefixLangTitle',
       'label'     => 'LLL:EXT:awomrhein/locallang_db.xml:tx_awomrhein_path.list_title',
       'config'    => $conf_input_30,
     ),
     'list_short' => array (
-      'exclude'   => 0,
+      'exclude'   => 1,
       'l10n_mode' => 'prefixLangTitle',
       'label'     => 'LLL:EXT:awomrhein/locallang_db.xml:tx_awomrhein_path.list_short',
       'config'    => $conf_text_30_05,
     ),
     'map_title' => array (
-      'exclude'   => 0,
+      'exclude'   => 1,
       'l10n_mode' => 'prefixLangTitle',
       'label'     => 'LLL:EXT:awomrhein/locallang_db.xml:tx_awomrhein_path.map_title',
       'config'    => $conf_input_30,
     ),
     'map_short' => array (
-      'exclude'   => 0,
+      'exclude'   => 1,
       'l10n_mode' => 'prefixLangTitle',
       'label'     => 'LLL:EXT:awomrhein/locallang_db.xml:tx_awomrhein_path.map_short',
       'config'    => $conf_text_30_05,
     ),
     'address_start' => array (
-      'exclude'   => 0,
+      'exclude'   => 1,
       'l10n_mode' => 'prefixLangTitle',
       'label'     => 'LLL:EXT:awomrhein/locallang_db.xml:tx_awomrhein_path.address_start',
       'config'    => $conf_text_rte,
     ),
     'address_end' => array (
-      'exclude'   => 0,
+      'exclude'   => 1,
       'l10n_mode' => 'prefixLangTitle',
       'label'     => 'LLL:EXT:awomrhein/locallang_db.xml:tx_awomrhein_path.address_end',
       'config'    => $conf_text_rte,
     ),
     'image' => array (
-      'exclude'   => 0,
+      'exclude'   => 1,
 //      'l10n_mode' => 'exclude',
       'label'     => 'LLL:EXT:awomrhein/locallang_db.xml:tca_phrase.image',
       'config'    => $conf_file_image,
     ),
     'imagecaption' => array (
-      'exclude'   => 0,
+      'exclude'   => 1,
       'l10n_mode' => 'prefixLangTitle',
       'label'     => 'LLL:EXT:awomrhein/locallang_db.xml:tca_phrase.imagecaption',
       'config'    => $conf_text_30_05,
     ),
     'imagecaption_position' => array (
-      'exclude'   => $bool_exclude_none,
+      'exclude'   => 1,
 //      'l10n_mode' => 'exclude',
       'label'     => 'LLL:EXT:cms/locallang_ttc.xml:imagecaption_position',
       'config'    => array (
@@ -1255,13 +1255,13 @@ $TCA['tx_awomrhein_path'] = array (
       ),
     ),
     'imageseo' => array (
-      'exclude'   => 0,
+      'exclude'   => 1,
       'l10n_mode' => 'prefixLangTitle',
       'label'     => 'LLL:EXT:awomrhein/locallang_db.xml:tca_phrase.imageseo',
       'config'    => $conf_text_30_05,
     ),
     'imagewidth' => array (
-      'exclude'   => 0,
+      'exclude'   => 1,
 //      'l10n_mode' => 'exclude',
       'label'     => 'LLL:EXT:cms/locallang_ttc.xml:imagewidth',
       'config'    => array (
@@ -1274,7 +1274,7 @@ $TCA['tx_awomrhein_path'] = array (
       ),
     ),
     'imageheight' => array (
-      'exclude'   => 0,
+      'exclude'   => 1,
 //      'l10n_mode' => 'exclude',
       'label'     => 'LLL:EXT:cms/locallang_ttc.xml:imageheight',
       'config'    => array (
@@ -1287,7 +1287,7 @@ $TCA['tx_awomrhein_path'] = array (
       ),
     ),
     'imageorient' => array (
-      'exclude'   => 0,
+      'exclude'   => 1,
 //      'l10n_mode' => 'exclude',
       'label'     => 'LLL:EXT:cms/locallang_ttc.xml:imageorient',
       'config'    => array (
@@ -1311,7 +1311,7 @@ $TCA['tx_awomrhein_path'] = array (
       ),
     ),
     'imageborder' => array (
-      'exclude'   => $bool_exclude_none,
+      'exclude'   => 1,
 //      'l10n_mode' => 'exclude',
       'label'     => 'LLL:EXT:cms/locallang_ttc.xml:imageborder',
       'config' => array (
@@ -1319,7 +1319,7 @@ $TCA['tx_awomrhein_path'] = array (
       ),
     ),
     'image_noRows' => array (
-      'exclude'   => $bool_exclude_none,
+      'exclude'   => 1,
 //      'l10n_mode' => 'exclude',
       'label'     => 'LLL:EXT:cms/locallang_ttc.xml:image_noRows',
       'config'    => array (
@@ -1327,7 +1327,7 @@ $TCA['tx_awomrhein_path'] = array (
       ),
     ),
     'image_link' => array (
-      'exclude'   => 0,
+      'exclude'   => 1,
 //      'l10n_mode' => 'exclude',
       'label'     => 'LLL:EXT:cms/locallang_ttc.xml:image_link',
       'config'    => array (
@@ -1348,7 +1348,7 @@ $TCA['tx_awomrhein_path'] = array (
       ),
     ),
     'image_zoom' => array (
-      'exclude'   => 0,
+      'exclude'   => 1,
 //      'l10n_mode' => 'exclude',
       'label'     => 'LLL:EXT:cms/locallang_ttc.xml:image_zoom',
       'config'    => array (
@@ -1356,7 +1356,7 @@ $TCA['tx_awomrhein_path'] = array (
       ),
     ),
     'image_effects' => array (
-      'exclude'   => 0,
+      'exclude'   => 1,
 //      'l10n_mode' => 'exclude',
       'label'     => 'LLL:EXT:cms/locallang_ttc.xml:image_effects',
       'config'    => array (
@@ -1376,7 +1376,7 @@ $TCA['tx_awomrhein_path'] = array (
       ),
     ),
     'image_frames' => array (
-      'exclude'   => $bool_exclude_none,
+      'exclude'   => 1,
 //      'l10n_mode' => 'exclude',
       'label'     => 'LLL:EXT:cms/locallang_ttc.xml:image_frames',
       'config'    => array (
@@ -1395,7 +1395,7 @@ $TCA['tx_awomrhein_path'] = array (
       ),
     ),
     'image_compression' => array (
-      'exclude'   => $bool_exclude_none,
+      'exclude'   => 1,
 //      'l10n_mode' => 'exclude',
       'label'     => 'LLL:EXT:cms/locallang_ttc.xml:image_compression',
       'config'    => array (
@@ -1425,7 +1425,7 @@ $TCA['tx_awomrhein_path'] = array (
       ),
     ),
     'imagecols' => array (
-      'exclude'   => 0,
+      'exclude'   => 1,
 //      'l10n_mode' => 'exclude',
       'label'     => 'LLL:EXT:cms/locallang_ttc.xml:imagecols',
       'config'    => array (
@@ -1448,13 +1448,13 @@ $TCA['tx_awomrhein_path'] = array (
     'endtime'   => $conf_endtime,
     'fe_group'  => $conf_fegroup,
     'seo_keywords'  => array (
-      'exclude'   => 0,
+      'exclude'   => 1,
       'label'     => 'LLL:EXT:awomrhein/locallang_db.xml:tca_phrase.seo_keywords',
       'l10n_mode' => 'prefixLangTitle',
       'config'    => $conf_input_80_trim,
     ),
     'seo_description' => array (
-      'exclude'   => 0,
+      'exclude'   => 1,
       'label'     => 'LLL:EXT:awomrhein/locallang_db.xml:tca_phrase.seo_description',
       'l10n_mode' => 'prefixLangTitle',
       'config'    => $conf_text_50_10,
@@ -1497,7 +1497,8 @@ $TCA['tx_awomrhein_path'] = array (
           'hidden,' .
           '--palette--;LLL:EXT:awomrhein/locallang_db.xml:palette.time;time,' .
           'fe_group,'.
-//        '--div--;LLL:EXT:awomrhein/locallang_db.xml:tx_awomrhein_path.div_seo,         seo_keywords,seo_description'.
+        '--div--;LLL:EXT:awomrhein/locallang_db.xml:tx_awomrhein_path.div_seo,' .
+          'seo_keywords,seo_description' .
         '',
       ),
   ),
