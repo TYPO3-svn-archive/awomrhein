@@ -177,13 +177,12 @@ plugin.tx_seodynamictag {
     var.1 = tx_browser_pi1[awomrheinUid]
     field {
       author        = NULL 
-      description   = facility
-      keywords      = seokeywords 
-      title         = CONCAT(facility, ' (', zip, ' ', city, ')' ) 
+      description   = CONCAT(facility, ' (', zip, ' ', city, ')' )
+      keywords      = CONCAT(facility, ',', zip, ',', city, ",AWO,Mittelrhein" )
+      title         = CONCAT(facility, ' (', zip, ' ', city, ')' )
       short         = "AWO Einrichtung"
     }
   }
-
   default {
     author      = AWO Bezirksverband Mittelrhein
     description = Description is empty! Please maintain the current record of the AWO Mittelrhein database. See tab [Facility] field [Facility] 
@@ -191,12 +190,9 @@ plugin.tx_seodynamictag {
       prefix = AWO Bezirksverband Mittelrhein:
     }
   }
-
   keywords {
     default         = Keywords are empty! Please maintain the current record of the TYPO3 Organiser News. See tab [Search Engine] field [Keywords] 
     moveToKeywords  = 0
   }
 }
   // plugin.tx_seodynamictag
-
-//plugin.tx_seodynamictag.database.field.author = "AWO Bezirksverband Mittelrhein"
