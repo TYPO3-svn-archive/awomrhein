@@ -92,85 +92,12 @@ temp.route {
     stdWrap {
       //prefixComment >
     }
-      // #43936
-    XXX47_rendering {
-      singleNoCaption {
-        allStdWrap {
-          innerWrap {
-            cObject {
-              key {
-                field = tx_awomrhein_path.imageorient
-              }
-            }
-          }
-        }
-        fallbackRendering {
-          10 {
-            if {
-              isTrue {
-                field = tx_awomrhein_path.imagecaption
-              }
-            }
-          }
-          20 {
-            if {
-              isTrue {
-                field = tx_awomrhein_path.imagecaption
-              }
-            }
-          }
-          30 {
-            if {
-              isTrue {
-                field = tx_awomrhein_path.imagecaption
-              }
-            }
-          }
-          40 {
-            if {
-              isFalse {
-                field = tx_awomrhein_path.imagecaption
-              }
-            }
-          }
-        }
-      }
-      noCaption {
-        fallbackRendering {
-          if {
-            isTrue {
-              field = tx_awomrhein_path.imagecaption
-            }
-          }
-        }
-      }
-      singleCaption {
-        fallbackRendering {
-          if {
-            isTrue {
-              field = tx_awomrhein_path.imagecaption
-            }
-          }
-        }
-      }
-      splitCaption {
-        fallbackRendering {
-          if {
-            isTrue {
-              field = tx_awomrhein_path.imagecaption
-            }
-          }
-        }
-      }
-      globalCaption {
-        fallbackRendering {
-          if {
-            isTrue {
-              field = tx_awomrhein_path.imagecaption
-            }
-          }
-        }
-      }
+    rendering {
+      dl.fallbackRendering.10.if.isFalse.field  = tx_awomrhein_path.imagecaption
+      dl.fallbackRendering.20.if.isTrue.field   = tx_awomrhein_path.imagecaption
+      dl.fallbackRendering.30.if.isFalse.field  = tx_awomrhein_path.imagecaption
+      ul.fallbackRendering.if.isFalse.field     = tx_awomrhein_path.imagecaption
+      div.fallbackRendering.if.isFalse.field    = tx_awomrhein_path.imagecaption
     }
   }
 }
@@ -291,85 +218,12 @@ temp.route {
     stdWrap {
       //prefixComment >
     }
-      // #43936
-    XXX47_rendering {
-      singleNoCaption {
-        allStdWrap {
-          innerWrap {
-            cObject {
-              key {
-                field = tx_awomrhein.imageorient
-              }
-            }
-          }
-        }
-        fallbackRendering {
-          10 {
-            if {
-              isTrue {
-                field = tx_awomrhein.imagecaption
-              }
-            }
-          }
-          20 {
-            if {
-              isTrue {
-                field = tx_awomrhein.imagecaption
-              }
-            }
-          }
-          30 {
-            if {
-              isTrue {
-                field = tx_awomrhein.imagecaption
-              }
-            }
-          }
-          40 {
-            if {
-              isFalse {
-                field = tx_awomrhein.imagecaption
-              }
-            }
-          }
-        }
-      }
-      noCaption {
-        fallbackRendering {
-          if {
-            isTrue {
-              field = tx_awomrhein.imagecaption
-            }
-          }
-        }
-      }
-      singleCaption {
-        fallbackRendering {
-          if {
-            isTrue {
-              field = tx_awomrhein.imagecaption
-            }
-          }
-        }
-      }
-      splitCaption {
-        fallbackRendering {
-          if {
-            isTrue {
-              field = tx_awomrhein.imagecaption
-            }
-          }
-        }
-      }
-      globalCaption {
-        fallbackRendering {
-          if {
-            isTrue {
-              field = tx_awomrhein.imagecaption
-            }
-          }
-        }
-      }
+    rendering {
+      dl.fallbackRendering.10.if.isFalse.field  = tx_awomrhein_path.imagecaption
+      dl.fallbackRendering.20.if.isTrue.field   = tx_awomrhein_path.imagecaption
+      dl.fallbackRendering.30.if.isFalse.field  = tx_awomrhein_path.imagecaption
+      ul.fallbackRendering.if.isFalse.field     = tx_awomrhein_path.imagecaption
+      div.fallbackRendering.if.isFalse.field    = tx_awomrhein_path.imagecaption
     }
   }
 }
