@@ -1,0 +1,571 @@
+
+  ////////////////////////////////////////
+  //
+  // INDEX
+
+  // temp.route: route_image_45
+  // temp.route: route_image_simple_45
+  // temp.route: marker_image_45
+  // temp.route: marker_image_simple_45
+  // temp.route: navigation
+  // plugin.tx_browser_pi1
+
+
+
+  ////////////////////////////////////////
+  //
+  // temp.route: route_image_45
+
+temp.route {
+    // tt_content.image.20 version TYPO3 4.5
+  route_image_45 < tt_content.image.20.99
+  route_image_45 {
+    imgList {
+      field = tx_awomrhein_path.image
+    }
+    imgPath = {$plugin.tx_route.path.uploadfolder}
+    1 {
+      file {
+        width {
+          field = tx_awomrhein_path.imagewidth
+        }
+        height {
+          field = tx_awomrhein_path.imageheight
+        }
+      }
+      altText {
+        field             = tx_awomrhein_path.imageseo
+        htmlSpecialChars  = 1
+      }
+      titleText {
+        field             = tx_awomrhein_path.imageseo
+        htmlSpecialChars  = 1
+      }
+      47_imageLinkWrap {
+        ifEmpty {
+          typolink.parameter.field = tx_awomrhein_path.image_link
+        }
+        typolink {
+          parameter {
+            field = tx_awomrhein_path.image_link
+          }
+          additionalParams  = &tx_browser_pi1[{$plugin.tx_browser_pi1.map.aliases.showUid.path}]=###tx_awomrhein_path.UID###
+          useCacheHash      = 1
+          title             = TEXT
+          title {
+            field = tx_awomrhein_path.title
+          }
+        }
+        enable = 1
+        enable {
+          field = tx_awomrhein_path.image_zoom
+          ifEmpty {
+            typolink {
+              parameter {
+                field = tx_awomrhein_path.image_link
+              }
+            }
+          }
+        }
+      stdWrap {
+        postCObject {
+          10 {
+            field = tx_awomrhein_path.imagecaption
+          }
+        }
+        typolink >
+        typolink {
+          parameter {
+            field = tx_awomrhein_path.image_link
+          }
+          additionalParams  = &tx_browser_pi1[{$plugin.tx_browser_pi1.map.aliases.showUid.path}]=###tx_awomrhein_path.UID###
+          useCacheHash      = 1
+          title             = TEXT
+          title {
+            field = tx_awomrhein_path.title
+          }
+        }
+      }
+    }
+    textPos.field           = tx_awomrhein_path.imageorient
+    equalH.field            = tx_awomrhein_path.imageheight
+    image_compression.field = tx_awomrhein_path.image_compression
+    image_effects.field     = tx_awomrhein_path.image_effects
+    noRows.field            = tx_awomrhein_path.image_norows
+    cols.field              = tx_awomrhein_path.imagecols
+    border.field            = tx_awomrhein_path.image_frames
+    XXX47_caption.1.1.field       = tx_awomrhein_path.imagecaption
+    captionAlign.field      = tx_awomrhein_path.imagecaption_position
+    layout {
+      1 {
+        value = <div class="csc-textpic csc-textpic-right csc-textpic-above###CLASSES###">###IMAGES###<div class="csc-textpic-clear"><!-- --></div>###TEXT###</div><div class="csc-textpic-clear"><!-- --></div>
+      }
+      2 {
+        value = <div class="csc-textpic csc-textpic-left csc-textpic-above###CLASSES###">###IMAGES###<div class="csc-textpic-clear"><!-- --></div>###TEXT###</div><div class="csc-textpic-clear"><!-- --></div>
+      }
+      key {
+        field = tx_awomrhein_path.imageorient
+      }
+    }
+    stdWrap {
+      //prefixComment >
+    }
+      // #43936
+    XXX47_rendering {
+      singleNoCaption {
+        allStdWrap {
+          innerWrap {
+            cObject {
+              key {
+                field = tx_awomrhein_path.imageorient
+              }
+            }
+          }
+        }
+        fallbackRendering {
+          10 {
+            if {
+              isTrue {
+                field = tx_awomrhein_path.imagecaption
+              }
+            }
+          }
+          20 {
+            if {
+              isTrue {
+                field = tx_awomrhein_path.imagecaption
+              }
+            }
+          }
+          30 {
+            if {
+              isTrue {
+                field = tx_awomrhein_path.imagecaption
+              }
+            }
+          }
+          40 {
+            if {
+              isFalse {
+                field = tx_awomrhein_path.imagecaption
+              }
+            }
+          }
+        }
+      }
+      noCaption {
+        fallbackRendering {
+          if {
+            isTrue {
+              field = tx_awomrhein_path.imagecaption
+            }
+          }
+        }
+      }
+      singleCaption {
+        fallbackRendering {
+          if {
+            isTrue {
+              field = tx_awomrhein_path.imagecaption
+            }
+          }
+        }
+      }
+      splitCaption {
+        fallbackRendering {
+          if {
+            isTrue {
+              field = tx_awomrhein_path.imagecaption
+            }
+          }
+        }
+      }
+      globalCaption {
+        fallbackRendering {
+          if {
+            isTrue {
+              field = tx_awomrhein_path.imagecaption
+            }
+          }
+        }
+      }
+    }
+  }
+}
+  // temp.route: route_image_45
+
+
+
+  ////////////////////////////////////////
+  //
+  // temp.route: route_image_simple_45
+
+temp.route {
+    // tt_content.image.20 version TYPO3 4.5
+  route_image_simple_45 < temp.route.route_image_45
+  route_image_simple_45 {
+    1 {
+      file {
+        width   >
+        height  >
+        width   = {$plugin.tx_route.images.map.maxWidth}
+        height  = {$plugin.tx_route.images.map.maxHeight}
+      }
+      imageLinkWrap >
+    }
+    equalH >
+    caption >
+    textPos = {$plugin.tx_route.images.map.position} 
+    layout {
+      key >
+      key = {$plugin.tx_route.images.map.position} 
+    }
+    maxWInText  = {$plugin.tx_route.images.map.maxWidth}
+    imgMax      = 1
+    imgStart    = 0
+  }
+}
+  // temp.route: route_image_simple_45
+
+
+
+  ////////////////////////////////////////
+  //
+  // temp.route: marker_image_45
+
+temp.route {
+    // tt_content.image.20 version TYPO3 4.5
+  marker_image_45 < tt_content.image.20.99
+  marker_image_45 {
+    imgList {
+      field = tx_awomrhein.image
+    }
+    imgPath = {$plugin.tx_route.path.uploadfolder}
+    1 {
+      file {
+        width {
+          field = tx_awomrhein.imagewidth
+        }
+        height {
+          field = tx_awomrhein.imageheight
+        }
+      }
+      altText {
+        field             = tx_awomrhein.imageseo
+        htmlSpecialChars  = 1
+      }
+      titleText {
+        field             = tx_awomrhein.imageseo
+        htmlSpecialChars  = 1
+      }
+      imageLinkWrap {
+        ifEmpty {
+          typolink.parameter.field = tx_awomrhein.image_link
+        }
+        typolink {
+          parameter {
+            field = tx_awomrhein.image_link
+          }
+          additionalParams  = &tx_browser_pi1[{$plugin.tx_browser_pi1.map.aliases.showUid.marker}]=###tx_awomrhein_path.UID###
+          useCacheHash      = 1
+          title             = TEXT
+          title {
+            field = tx_awomrhein.facility
+          }
+        }
+        enable = 1
+        enable {
+          field = tx_awomrhein.image_zoom
+          ifEmpty {
+            typolink {
+              parameter {
+                field = tx_awomrhein.image_link
+              }
+            }
+          }
+        }
+      }
+    }
+    textPos.field           = tx_awomrhein.imageorient
+    equalH.field            = tx_awomrhein.imageheight
+    image_compression.field = tx_awomrhein.image_compression
+    image_effects.field     = tx_awomrhein.image_effects
+    noRows.field            = tx_awomrhein.image_norows
+    cols.field              = tx_awomrhein.imagecols
+    border.field            = tx_awomrhein.image_frames
+    caption.1.1.field       = tx_awomrhein.imagecaption
+    captionAlign.field      = tx_awomrhein.imagecaption_position
+    layout {
+      1 {
+        value = <div class="csc-textpic csc-textpic-right csc-textpic-above###CLASSES###">###IMAGES###<div class="csc-textpic-clear"><!-- --></div>###TEXT###</div><div class="csc-textpic-clear"><!-- --></div>
+      }
+      2 {
+        value = <div class="csc-textpic csc-textpic-left csc-textpic-above###CLASSES###">###IMAGES###<div class="csc-textpic-clear"><!-- --></div>###TEXT###</div><div class="csc-textpic-clear"><!-- --></div>
+      }
+      key {
+        field = tx_awomrhein.imageorient
+      }
+    }
+    stdWrap {
+      //prefixComment >
+    }
+      // #43936
+    rendering {
+      singleNoCaption {
+        allStdWrap {
+          innerWrap {
+            cObject {
+              key {
+                field = tx_awomrhein.imageorient
+              }
+            }
+          }
+        }
+        fallbackRendering {
+          10 {
+            if {
+              isTrue {
+                field = tx_awomrhein.imagecaption
+              }
+            }
+          }
+          20 {
+            if {
+              isTrue {
+                field = tx_awomrhein.imagecaption
+              }
+            }
+          }
+          30 {
+            if {
+              isTrue {
+                field = tx_awomrhein.imagecaption
+              }
+            }
+          }
+          40 {
+            if {
+              isFalse {
+                field = tx_awomrhein.imagecaption
+              }
+            }
+          }
+        }
+      }
+      noCaption {
+        fallbackRendering {
+          if {
+            isTrue {
+              field = tx_awomrhein.imagecaption
+            }
+          }
+        }
+      }
+      singleCaption {
+        fallbackRendering {
+          if {
+            isTrue {
+              field = tx_awomrhein.imagecaption
+            }
+          }
+        }
+      }
+      splitCaption {
+        fallbackRendering {
+          if {
+            isTrue {
+              field = tx_awomrhein.imagecaption
+            }
+          }
+        }
+      }
+      globalCaption {
+        fallbackRendering {
+          if {
+            isTrue {
+              field = tx_awomrhein.imagecaption
+            }
+          }
+        }
+      }
+    }
+  }
+}
+  // temp.route: marker_image_45
+
+
+
+  ////////////////////////////////////////
+  //
+  // temp.route: marker_image_simple_45
+
+temp.route {
+    // tt_content.image.20 version TYPO3 4.5
+  marker_image_simple_45 < temp.route.marker_image_45
+  marker_image_simple_45 {
+    1 {
+      file {
+        width   >
+        height  >
+        width   = {$plugin.tx_route.images.map.maxWidth}
+        height  = {$plugin.tx_route.images.map.maxHeight}
+      }
+      imageLinkWrap >
+    }
+    equalH >
+    caption >
+    textPos = {$plugin.tx_route.images.map.position} 
+    layout {
+      key >
+      key = {$plugin.tx_route.images.map.position} 
+    }
+    maxWInText  = {$plugin.tx_route.images.map.maxWidth}
+    imgMax      = 1
+    imgStart    = 0
+  }
+}
+  // temp.route: marker_image_simple_45
+
+
+
+  ////////////////////////////////////////
+  //
+  // temp.route: navigation
+
+temp.route {
+  navigation {
+    map < plugin.tx_browser_pi1.navigation.map
+    map {
+      marker {
+        snippets {
+          html {
+            dynamic {
+                // CSS properties
+              map_css = TEXT
+              map_css {
+                value (
+                  <style type="text/css">
+                    .tx-browser-pi1 a.oxMap-markerLink {
+                      cursor:pointer;
+                    }
+                    .tx-browser-pi1 .mapview {
+                      /* margin-top:1em; */
+                      margin-top:0;
+                    }
+                    .tx-browser-pi1 .mapview-content {
+                      /* padding: 1em 0; */
+                      padding: 0;
+                    }
+                    .tx-browser-pi1 .mapview-content form {
+                      /* padding-bottom:1em; */
+                      padding-bottom:0;
+                      text-align:center;
+                    }
+                    .tx-browser-pi1 .olControlAttribution {
+                      background-color:white;
+                      bottom:0px;
+                      right:0px;
+                    }
+                    .tx-browser-pi1 .olMap {
+                      margin: auto !important;
+                    }
+                    .tx-browser-pi1 .oxMapArea {
+                      height:###CSS_MAPHEIGHT###;
+                      width:###CSS_MAPWIDTH###;
+                    }
+                    .tx-browser-pi1 .oxTextLayer {
+                      border:1px solid green;
+                      border-radius:6px;
+                      background:#fff;
+                      width:200px;
+                      overflow:hidden;
+                      position:absolute;
+                      padding:6px;
+                      box-shadow:3px 3px 3px #3d3d3d;
+                      z-index:99;
+                    }
+                  </style>
+  )
+              }
+            }
+          }
+          jss {
+            dynamic {
+              oxMapConfigModules {
+                10 {
+                  value = {$plugin.tx_browser_pi1.map.openlayers.modules.routes.default}
+                }
+                20 {
+                  value = {$plugin.tx_browser_pi1.map.openlayers.modules.routes.debugging}
+                }
+              }
+            }
+          }
+        }
+        variables {
+          system {
+            description >
+              // type == route, type != route
+            description = COA
+            description {
+                // type == route
+              10 = COA
+              10 {
+                  // if type == route
+                if =
+                if {
+                  value = route
+                  equals {
+                    field = type
+                  }
+                }
+                10 < temp.route.route_image_simple_45
+                10 {
+                  text < plugin.tx_browser_pi1.displayList.master_templates.map.descriptionWiLinkToSingle
+                }
+              }
+                // type != route
+              20 = COA
+              20 {
+                  // if type != route
+                if =
+                if {
+                  value = route
+                  equals {
+                    field = type
+                  }
+                  negate = 1
+                }
+                10 < temp.route.marker_image_simple_45
+                10 {
+                  text < plugin.tx_browser_pi1.displayList.master_templates.map.descriptionWiLinkToSingle
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+  // temp.route: navigation
+
+
+
+  ////////////////////////////////////////////////////////////////////////////////
+  //
+  // plugin.tx_browser_pi1
+
+plugin.tx_browser_pi1 {
+
+  views {
+    list {
+      51370 {
+        navigation {
+          map < temp.route.navigation.map
+        }
+      }
+    }
+  }
+}
+  // plugin.tx_browser_pi1

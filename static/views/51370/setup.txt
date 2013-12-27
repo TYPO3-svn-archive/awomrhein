@@ -3,88 +3,15 @@
   //
   // INDEX
 
-  // temp.route: route linkToSingle
   // temp.route: route_image_47
   // temp.route: route_image_simple_47
-  // temp.route: route_cat_image_47
   // temp.route: marker_image_47
   // temp.route: marker_image_simple_47
-  // temp.route: marker_cat_image_47
   // temp.route: navigation
   // temp.route: sql
   // config
   // plugin.tx_browser_pi1
   // page
-
-
-
-  ////////////////////////////////////////
-  //
-  // temp.route: route linkToSingle
-
-temp.route {
-    // link to the single view of a route
-  route_linkToSingle = COA
-  route_linkToSingle {
-      // URL: page id, page type, parameters
-    10 = COA
-    10 {
-        // Page uid
-      10 = TEXT
-      10 {
-        data = page:uid
-      }
-        // Page type
-      20 = TEXT
-      20 {
-        value = 0
-        wrap  = ,|
-      }
-        // Parameter
-      30 = COA
-      30 {
-          // ,&tx_browser_pi1[showuid]=
-        10 = TEXT
-        10 {
-          if {
-            isTrue {
-              field = {$plugin.tx_browser_pi1.map.path.mapper.tables.local.path}.uid
-            }
-          }
-          field = {$plugin.tx_browser_pi1.map.path.mapper.tables.local.path}.uid
-          wrap  = ,&tx_browser_pi1[{$plugin.tx_browser_pi1.map.aliases.showUid.path}]=|
-        }
-      }
-    }
-      // target
-    20 = TEXT
-    20 {
-        // [STRING] - (default). Examples: -, _self, _blank, _top
-      value = -
-      noTrimWrap = | | |
-    }
-      // class
-    30 = TEXT
-    30 {
-        // [STRING] - (default)
-      value = -
-      noTrimWrap = | | |
-    }
-      // title
-    40 = TEXT
-    40 {
-      if {
-        isTrue {
-          field =
-        }
-      }
-        // [STRING]
-      field =
-      wrap  = "|"
-    }
-  }
-}
-  // temp.route: route linkToSingle
 
 
 
@@ -289,64 +216,6 @@ temp.route {
 
   ////////////////////////////////////////
   //
-  // temp.route: route_cat_image_47
-
-temp.route {
-    // tt_content.image.20 version TYPO3 4.7
-  route_cat_image_47 < tt_content.image.20
-  route_cat_image_47 {
-      // Display one image only
-    imgMax    = 1
-    imgStart  = {$plugin.tx_browser_pi1.map.icon.listNum.categoryIconText}
-    layout {
-      key >
-      key = default
-      default {
-        value = ###IMAGES###
-      }
-    }
-    imgList {
-      field = tx_awomrhein_pathcat.icons
-    }
-    imgPath = {$plugin.tx_route.path.uploadfolder}
-    1 {
-      file {
-        width   >
-        width   = {$plugin.tx_route.images.list.maxWidth} 
-        height  >
-        height  = {$plugin.tx_route.images.list.maxHeight} 
-        width   >
-        height  >
-      }
-      altText {
-        field             = tx_awomrhein_path.title
-        htmlSpecialChars  = 1
-      }
-      titleText {
-        field             = tx_awomrhein_path.title
-        htmlSpecialChars  = 1
-      }
-      imageLinkWrap >
-      imageLinkWrap = 1
-      imageLinkWrap {
-        enable = 1
-        typolink {
-          parameter {
-              // URL: page id, page type, parameters
-            cObject < temp.route.route_linkToSingle
-          }
-          useCacheHash  = 1
-        }
-      }
-    }
-  }
-}
-  // temp.route: route_cat_image_47
-
-
-
-  ////////////////////////////////////////
-  //
   // temp.route: marker_image_47
 
 temp.route {
@@ -540,65 +409,7 @@ temp.route {
     imgStart    = 0
   }
 }
-  // temp.route: marker_cat_image_47
-
-
-
-  ////////////////////////////////////////
-  //
-  // temp.route: marker_cat_image_47
-
-temp.route {
-    // tt_content.image.20 version TYPO3 4.7
-  marker_cat_image_47 < tt_content.image.20
-  marker_cat_image_47 {
-      // Display one image only
-    imgMax    = 1
-    imgStart  = {$plugin.tx_browser_pi1.map.icon.listNum.categoryIconText}
-    layout {
-      key >
-      key = default
-      default {
-        value = ###IMAGES###
-      }
-    }
-    imgList {
-      field = tx_awomrhein_cat.icons
-    }
-    imgPath = {$plugin.tx_route.path.uploadfolder}
-    1 {
-      file {
-        width   >
-        width   = {$plugin.tx_route.images.list.maxWidth} 
-        height  >
-        height  = {$plugin.tx_route.images.list.maxHeight} 
-        width   >
-        height  >
-      }
-      altText {
-        field             = tx_awomrhein.facility
-        htmlSpecialChars  = 1
-      }
-      titleText {
-        field             = tx_awomrhein.facility
-        htmlSpecialChars  = 1
-      }
-      imageLinkWrap >
-      imageLinkWrap = 1
-      imageLinkWrap {
-        enable = 1
-        typolink {
-          parameter {
-              // URL: page id, page type, parameters
-            cObject < temp.route.route_linkToSingle
-          }
-          useCacheHash  = 1
-        }
-      }
-    }
-  }
-}
-  // temp.route: marker_cat_image_47
+  // temp.route: marker_image_simple_47
 
 
 

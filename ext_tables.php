@@ -90,31 +90,29 @@ $geocodingEnabled = $confArr['geocodingEnabled'];
 switch(true) {
   case($llStatic == 'de'):
       // German
-    t3lib_extMgm::addStaticFile($_EXTKEY,'static/views/51370/',                 'AWO Mittelrhein' );
-    t3lib_extMgm::addStaticFile($_EXTKEY,'static/views/51370/downgrade/4.5.4/', 'AWO Mittelrhein: +Browser v4.5' );
-//    switch( true )
-//    {
-//      case( $typo3Version < 4007000 ):
-//        t3lib_extMgm::addStaticFile($_EXTKEY,'static/base/typo3/4.6/',    'AWO Mittelrhein: +Basis fuer TYPO3 < 4.7 (einbinden!)');
-//        break;
-//      default:
-//        t3lib_extMgm::addStaticFile($_EXTKEY,'static/base/typo3/4.6/',    'AWO Mittelrhein: +Basis fuer TYPO3 < 4.7 (NICHT einbinden!)');
-//        break;
-//    }
+    t3lib_extMgm::addStaticFile($_EXTKEY,'static/views/51370/', 'AWO Mittelrhein (1)' );
+    switch( true )
+    {
+      case( $typo3Version < 4006000 ):
+        t3lib_extMgm::addStaticFile($_EXTKEY,'static/views/51370/typo3/4.5/', 'AWO Mittelrhein (2+): TYPO3 4.5 (einbinden!)' );
+        break;
+      default:
+        t3lib_extMgm::addStaticFile($_EXTKEY,'static/views/51370/typo3/4.5/', 'AWO Mittelrhein (2+): TYPO3 4.5 (nicht einbinden!)' );
+        break;
+    }
     break;
   default:
       // English
-    t3lib_extMgm::addStaticFile($_EXTKEY,'static/views/51370/',                 'AWO Mittelrhein' );
-    t3lib_extMgm::addStaticFile($_EXTKEY,'static/views/51370/downgrade/4.5.4/', 'AWO Mittelrhein: +Browser v4.5' );
-//    switch( true )
-//    {
-//      case( $typo3Version < 4007000 ):
-//        t3lib_extMgm::addStaticFile($_EXTKEY,'static/base/typo3/4.6/',    'AWO Mittelrhein: +Basis for TYPO3 < 4.7 (obligate!)');
-//        break;
-//      default:
-//        t3lib_extMgm::addStaticFile($_EXTKEY,'static/base/typo3/4.6/',    'AWO Mittelrhein: +Basis for TYPO3 < 4.7 (don\'t use it!)');
-//        break;
-//    }
+    t3lib_extMgm::addStaticFile($_EXTKEY,'static/views/51370/',           'AWO Mittelrhein (1)' );
+    switch( true )
+    {
+      case( $typo3Version < 4006000 ):
+        t3lib_extMgm::addStaticFile($_EXTKEY,'static/views/51370/typo3/4.5/', 'AWO Mittelrhein (2+): TYPO3 4.5 (obligate!)' );
+        break;
+      default:
+        t3lib_extMgm::addStaticFile($_EXTKEY,'static/views/51370/typo3/4.5/', 'AWO Mittelrhein (2+): TYPO3 4.5 (don\'t use it!)' );
+        break;
+    }
 }
   // Case $llStatic
   // Enables the Include Static Templates
