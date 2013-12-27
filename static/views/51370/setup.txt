@@ -790,7 +790,7 @@ plugin.tx_browser_pi1 {
                                   0: 'fileadmin/user_upload/browser/test_osm_awo/empty_1px.png'
                               }
                               , startLevel      : 8
-                              , numZoomLevels   : 18
+                              , numZoomLevels   : 8
                               , startVisibility : true
                             } 
 )
