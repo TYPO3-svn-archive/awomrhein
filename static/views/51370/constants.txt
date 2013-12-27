@@ -32,7 +32,7 @@ plugin.awomrhein {
 
 plugin.tx_browser_pi1 {
   advanced {
-    recursionGuard = 30000
+    //recursionGuard = 30000
   }
   map {
     aliases {
