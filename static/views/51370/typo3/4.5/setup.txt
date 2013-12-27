@@ -18,7 +18,7 @@
 
 temp.route {
     // tt_content.image.20 version TYPO3 4.5
-  route_image_45 < tt_content.image.20.99
+  route_image_45 < tt_content.image.20.default
   route_image_45 {
     imgList {
       field = tx_awomrhein_path.image
@@ -41,7 +41,7 @@ temp.route {
         field             = tx_awomrhein_path.imageseo
         htmlSpecialChars  = 1
       }
-      47_imageLinkWrap {
+      imageLinkWrap {
         ifEmpty {
           typolink.parameter.field = tx_awomrhein_path.image_link
         }
@@ -68,25 +68,6 @@ temp.route {
           }
         }
       }
-      stdWrap {
-        postCObject {
-          10 {
-            field = tx_awomrhein_path.imagecaption
-          }
-        }
-        typolink >
-        typolink {
-          parameter {
-            field = tx_awomrhein_path.image_link
-          }
-          additionalParams  = &tx_browser_pi1[{$plugin.tx_browser_pi1.map.aliases.showUid.path}]=###tx_awomrhein_path.UID###
-          useCacheHash      = 1
-          title             = TEXT
-          title {
-            field = tx_awomrhein_path.title
-          }
-        }
-      }
     }
     textPos.field           = tx_awomrhein_path.imageorient
     equalH.field            = tx_awomrhein_path.imageheight
@@ -95,7 +76,7 @@ temp.route {
     noRows.field            = tx_awomrhein_path.image_norows
     cols.field              = tx_awomrhein_path.imagecols
     border.field            = tx_awomrhein_path.image_frames
-    XXX47_caption.1.1.field       = tx_awomrhein_path.imagecaption
+    caption.1.field       = tx_awomrhein_path.imagecaption
     captionAlign.field      = tx_awomrhein_path.imagecaption_position
     layout {
       1 {
@@ -236,7 +217,7 @@ temp.route {
 
 temp.route {
     // tt_content.image.20 version TYPO3 4.5
-  marker_image_45 < tt_content.image.20.99
+  marker_image_45 < tt_content.image.20.default
   marker_image_45 {
     imgList {
       field = tx_awomrhein.image
@@ -259,7 +240,7 @@ temp.route {
         field             = tx_awomrhein.imageseo
         htmlSpecialChars  = 1
       }
-      47_imageLinkWrap {
+      imageLinkWrap {
         ifEmpty {
           typolink.parameter.field = tx_awomrhein.image_link
         }
@@ -286,25 +267,6 @@ temp.route {
           }
         }
       }
-      stdWrap {
-        postCObject {
-          10 {
-            field = tx_awomrhein.imagecaption
-          }
-        }
-        typolink >
-        typolink {
-          parameter {
-            field = tx_awomrhein.image_link
-          }
-          additionalParams  = &tx_browser_pi1[{$plugin.tx_browser_pi1.map.aliases.showUid.path}]=###tx_awomrhein.UID###
-          useCacheHash      = 1
-          title             = TEXT
-          title {
-            field = tx_awomrhein.title
-          }
-        }
-      }
     }
     textPos.field           = tx_awomrhein.imageorient
     equalH.field            = tx_awomrhein.imageheight
@@ -313,7 +275,7 @@ temp.route {
     noRows.field            = tx_awomrhein.image_norows
     cols.field              = tx_awomrhein.imagecols
     border.field            = tx_awomrhein.image_frames
-    XXX47_caption.1.1.field       = tx_awomrhein.imagecaption
+    caption.1.field       = tx_awomrhein.imagecaption
     captionAlign.field      = tx_awomrhein.imagecaption_position
     layout {
       1 {
