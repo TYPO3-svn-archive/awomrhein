@@ -763,7 +763,7 @@ plugin.tx_browser_pi1 {
                                                 }
                             , center          : { lon : 6.70193, lat : 50.81508 }
                             , startLevel      : 8
-                            , numZoomLevels   : 18
+                            , numZoomLevels   : 8
                             , mapMarkerEvent  : '###OXMAPCONFIGMAPMARKEREVENT###'   // click | hover | on (for drawing one point only)
                             , route           : {
                                                     data : routes
@@ -789,8 +789,8 @@ plugin.tx_browser_pi1 {
                               , png             : {
                                   0: 'fileadmin/user_upload/browser/test_osm_awo/empty_1px.png'
                               }
-                              , startLevel      : 14
-                              , numZoomLevels   : 3
+                              , startLevel      : 8
+                              , numZoomLevels   : 8
                               , startVisibility : true
                             } 
 )
