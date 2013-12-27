@@ -282,11 +282,17 @@ plugin.tx_browser_pi1 {
                     10 {
                       10 >
                       10 < temp.route.route_image_simple_45
+                      10 {
+                        text < plugin.tx_browser_pi1.displayList.master_templates.map.descriptionWiLinkToSingle
+                      }
                     }
                       // type != route
                     20 {
                       10 >
                       10 < temp.route.marker_image_simple_45
+                      10 {
+                        text < plugin.tx_browser_pi1.displayList.master_templates.map.descriptionWiLinkToSingle
+                      }
                     }
                   }
                 }
