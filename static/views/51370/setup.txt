@@ -791,7 +791,7 @@ plugin.tx_browser_pi1 {
                               }
                               , startLevel      : 8
                               , numZoomLevels   : 8
-                              , startVisibility : true
+                              , startVisibility : false
                             } 
 )
                         }
