@@ -714,6 +714,9 @@ config {
 
 plugin.tx_browser_pi1 {
 
+  advanced {
+    recursionGuard = 30000
+  }
   general_stdWrap >
 
   marker {
@@ -737,6 +740,67 @@ plugin.tx_browser_pi1 {
           map < temp.route.navigation.map
           map {
             enabled = Map +Routes
+            marker {
+              snippets {
+                html {
+                  dynamic {
+                    map_jss {
+                      30 {
+                        20 {
+                          value (
+                              language        : '###OXMAPCONFIGLANGUAGE###'         //  default | en | de
+                            , wms             : '###OXMAPCONFIGWMS###'              //  OSM
+                            , type            : '###OXMAPCONFIGTYPE###'             //  Mapnik | ROADMAP
+                            //, modules         : '###OXMAPCONFIGMODULES###'          //  Error, OSM, OSM.CDmap, OSM.Filter
+                            , modules         : 'OSM.Route,OSM.CDmap,OSM.Base,OSM.Filter'          //  Error, OSM, OSM.CDmap, OSM.Filter
+                            , imagePath       : '###OPENLAYERSIMGPATH###'
+                            , cssPath         : '###OPENLAYERSCSS###'
+                            , mapId           : '{$plugin.tx_browser_pi1.map.html.id}'
+                            , mapControls     : '###OXMAPCONFIGMAPCONTROLS###'
+                            , zoomWheelEnable : '###OXMAPCONFIGZOOMWHEELENABLE###'
+                            , filter          : {
+                                                  wrapper : '{$plugin.tx_browser_pi1.map.html.form.id}'
+                                                }
+                            , center          : { lon : 6.70193, lat : 50.81508 }
+                            , startLevel      : 8
+                            , numZoomLevels   : 18
+                            , mapMarkerEvent  : '###OXMAPCONFIGMAPMARKEREVENT###'   // click | hover | on (for drawing one point only)
+                            , route           : {
+                                                    data : routes
+                                                  , defaultStyle : {
+                                                                        strokeWidth     : 1
+                                                                      , strokeColor     : '#000'
+                                                                      //, strokeDashstyle : 'solid'     // Default is “solid”.  [dot | dash | dashdot | longdash | longdashdot | solid]
+                                                                    }
+                                                }
+                            , customMap       : {
+                                type: 'Image'
+                              , size: {
+                                  w: 1
+                                , h: 1
+                              }
+                              , bounds          : {                                                                //  define bounds for pan inside a smaller area
+                                  w: 5.711966
+                                , s: 50.30124
+                                , e: 7.856901
+                                , n: 51.25138
+                              }
+                              , imageType       : 'png'                                                            //  SVG is in progress
+                              , png             : {
+                                  0: 'fileadmin/user_upload/browser/test_osm_awo/empty_1px.png'
+                              }
+                              , numZoomLevels   : 8
+                              , startLevel      : 18
+                              , startVisibility : true
+                            } 
+)
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
           }
         }
         showUid   = {$plugin.tx_browser_pi1.map.aliases.showUid.path}

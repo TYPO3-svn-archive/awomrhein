@@ -31,6 +31,9 @@ plugin.awomrhein {
   // plugin.tx_browser_pi1
 
 plugin.tx_browser_pi1 {
+  advanced {
+    recursionGuard = 30000
+  }
   map {
     aliases {
       showUid {
