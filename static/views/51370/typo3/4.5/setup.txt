@@ -228,7 +228,6 @@ temp.route {
   }
 }
   // temp.route: marker_image_45
-  // temp.route: marker_image_45
 
 
 
@@ -265,130 +264,6 @@ temp.route {
 
 
 
-  ////////////////////////////////////////
-  //
-  // temp.route: navigation
-
-temp.route {
-  navigation {
-    map < plugin.tx_browser_pi1.navigation.map
-    map {
-      marker {
-        snippets {
-          html {
-            dynamic {
-                // CSS properties
-              map_css = TEXT
-              map_css {
-                value (
-                  <style type="text/css">
-                    .tx-browser-pi1 a.oxMap-markerLink {
-                      cursor:pointer;
-                    }
-                    .tx-browser-pi1 .mapview {
-                      /* margin-top:1em; */
-                      margin-top:0;
-                    }
-                    .tx-browser-pi1 .mapview-content {
-                      /* padding: 1em 0; */
-                      padding: 0;
-                    }
-                    .tx-browser-pi1 .mapview-content form {
-                      /* padding-bottom:1em; */
-                      padding-bottom:0;
-                      text-align:center;
-                    }
-                    .tx-browser-pi1 .olControlAttribution {
-                      background-color:white;
-                      bottom:0px;
-                      right:0px;
-                    }
-                    .tx-browser-pi1 .olMap {
-                      margin: auto !important;
-                    }
-                    .tx-browser-pi1 .oxMapArea {
-                      height:###CSS_MAPHEIGHT###;
-                      width:###CSS_MAPWIDTH###;
-                    }
-                    .tx-browser-pi1 .oxTextLayer {
-                      border:1px solid green;
-                      border-radius:6px;
-                      background:#fff;
-                      width:200px;
-                      overflow:hidden;
-                      position:absolute;
-                      padding:6px;
-                      box-shadow:3px 3px 3px #3d3d3d;
-                      z-index:99;
-                    }
-                  </style>
-  )
-              }
-            }
-          }
-          jss {
-            dynamic {
-              oxMapConfigModules {
-                10 {
-                  value = {$plugin.tx_browser_pi1.map.openlayers.modules.routes.default}
-                }
-                20 {
-                  value = {$plugin.tx_browser_pi1.map.openlayers.modules.routes.debugging}
-                }
-              }
-            }
-          }
-        }
-        variables {
-          system {
-            description >
-              // type == route, type != route
-            description = COA
-            description {
-                // type == route
-              10 = COA
-              10 {
-                  // if type == route
-                if =
-                if {
-                  value = route
-                  equals {
-                    field = type
-                  }
-                }
-                10 < temp.route.route_image_simple_45
-                10 {
-                  text < plugin.tx_browser_pi1.displayList.master_templates.map.descriptionWiLinkToSingle
-                }
-              }
-                // type != route
-              20 = COA
-              20 {
-                  // if type != route
-                if =
-                if {
-                  value = route
-                  equals {
-                    field = type
-                  }
-                  negate = 1
-                }
-                10 < temp.route.marker_image_simple_45
-                10 {
-                  text < plugin.tx_browser_pi1.displayList.master_templates.map.descriptionWiLinkToSingle
-                }
-              }
-            }
-          }
-        }
-      }
-    }
-  }
-}
-  // temp.route: navigation
-
-
-
   ////////////////////////////////////////////////////////////////////////////////
   //
   // plugin.tx_browser_pi1
@@ -399,7 +274,25 @@ plugin.tx_browser_pi1 {
     list {
       51370 {
         navigation {
-          map < temp.route.navigation.map
+          map {
+            marker {
+              variables {
+                system {
+                  description {
+                    10 {
+                      10 >
+                      10 < temp.route.route_image_simple_45
+                    }
+                      // type != route
+                    20 {
+                      10 >
+                      10 < temp.route.marker_image_simple_45
+                    }
+                  }
+                }
+              }
+            }
+          }
         }
       }
     }
