@@ -67,6 +67,7 @@ temp.route {
             }
           }
         }
+      }
       stdWrap {
         postCObject {
           10 {
@@ -258,7 +259,7 @@ temp.route {
         field             = tx_awomrhein.imageseo
         htmlSpecialChars  = 1
       }
-      imageLinkWrap {
+      47_imageLinkWrap {
         ifEmpty {
           typolink.parameter.field = tx_awomrhein.image_link
         }
@@ -266,11 +267,11 @@ temp.route {
           parameter {
             field = tx_awomrhein.image_link
           }
-          additionalParams  = &tx_browser_pi1[{$plugin.tx_browser_pi1.map.aliases.showUid.marker}]=###tx_awomrhein_path.UID###
+          additionalParams  = &tx_browser_pi1[{$plugin.tx_browser_pi1.map.aliases.showUid.path}]=###tx_awomrhein.UID###
           useCacheHash      = 1
           title             = TEXT
           title {
-            field = tx_awomrhein.facility
+            field = tx_awomrhein.title
           }
         }
         enable = 1
@@ -285,6 +286,25 @@ temp.route {
           }
         }
       }
+      stdWrap {
+        postCObject {
+          10 {
+            field = tx_awomrhein.imagecaption
+          }
+        }
+        typolink >
+        typolink {
+          parameter {
+            field = tx_awomrhein.image_link
+          }
+          additionalParams  = &tx_browser_pi1[{$plugin.tx_browser_pi1.map.aliases.showUid.path}]=###tx_awomrhein.UID###
+          useCacheHash      = 1
+          title             = TEXT
+          title {
+            field = tx_awomrhein.title
+          }
+        }
+      }
     }
     textPos.field           = tx_awomrhein.imageorient
     equalH.field            = tx_awomrhein.imageheight
@@ -293,7 +313,7 @@ temp.route {
     noRows.field            = tx_awomrhein.image_norows
     cols.field              = tx_awomrhein.imagecols
     border.field            = tx_awomrhein.image_frames
-    caption.1.1.field       = tx_awomrhein.imagecaption
+    XXX47_caption.1.1.field       = tx_awomrhein.imagecaption
     captionAlign.field      = tx_awomrhein.imagecaption_position
     layout {
       1 {
@@ -310,7 +330,7 @@ temp.route {
       //prefixComment >
     }
       // #43936
-    rendering {
+    XXX47_rendering {
       singleNoCaption {
         allStdWrap {
           innerWrap {
@@ -391,6 +411,7 @@ temp.route {
     }
   }
 }
+  // temp.route: marker_image_45
   // temp.route: marker_image_45
 
 
