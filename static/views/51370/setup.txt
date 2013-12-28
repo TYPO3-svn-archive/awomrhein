@@ -787,7 +787,7 @@ plugin.tx_browser_pi1 {
                               }
                               , imageType       : 'png'                                                            //  SVG is in progress
                               , png             : {
-                                  0: 'fileadmin/user_upload/browser/test_osm_awo/empty_1px.png'
+                                  0: 'typo3conf/ext/awomrhein/icons/empty_1px.png'
                               }
                               , startLevel      : 1
                               , numZoomLevels   : 1
