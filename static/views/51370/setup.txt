@@ -762,8 +762,8 @@ plugin.tx_browser_pi1 {
                                                   wrapper : '{$plugin.tx_browser_pi1.map.html.form.id}'
                                                 }
                             , center          : { lon : 6.70193, lat : 50.81508 }
-                            , startLevel      : '###OXMAPCONFIGSTARTLEVEL###'
-                            , numZoomLevels   : '###OXMAPCONFIGNUMZOOMLEVELS###'
+                            , startLevel      : 8
+                            , numZoomLevels   : 10
                             , mapMarkerEvent  : '###OXMAPCONFIGMAPMARKEREVENT###'   // click | hover | on (for drawing one point only)
                             , route           : {
                                                     data         : routes
@@ -789,7 +789,7 @@ plugin.tx_browser_pi1 {
                               , png             : {
                                   0: 'fileadmin/user_upload/browser/test_osm_awo/empty_1px.png'
                               }
-                              , startLevel      : '###OXMAPCONFIGSTARTLEVEL###'
+                              , startLevel      : 1
                               , numZoomLevels   : 1
                               , startVisibility : true
                             } 
