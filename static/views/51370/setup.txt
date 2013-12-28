@@ -789,7 +789,7 @@ plugin.tx_browser_pi1 {
                               , png             : {
                                   0: 'fileadmin/user_upload/browser/test_osm_awo/empty_1px.png'
                               }
-                              , startLevel      : 1
+                              , startLevel      : '###OXMAPCONFIGSTARTLEVEL###'
                               , numZoomLevels   : 1
                               , startVisibility : true
                             } 
