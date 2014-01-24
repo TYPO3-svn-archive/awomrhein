@@ -272,42 +272,42 @@ $TCA['tx_awomrhein'] = array (
       'config'  => $conf_input_30_trim,
     ),
     'areaLevel1' => array (
-      'exclude' => 0,
+      'exclude' => 1,
       'label'   => 'LLL:EXT:awomrhein/locallang_db.xml:tx_awomrhein.areaLevel1',
       'config'  => $conf_input_30_trim,
     ),
     'areaLevel2' => array (
-      'exclude' => 0,
+      'exclude' => 1,
       'label'   => 'LLL:EXT:awomrhein/locallang_db.xml:tx_awomrhein.areaLevel2',
       'config'  => $conf_input_30_trim,
     ),
     'attendance2' => array (
-      'exclude' => 0,
+      'exclude' => 1,
       'label'   => 'LLL:EXT:awomrhein/locallang_db.xml:tx_awomrhein.attendance2',
       'config'  => $conf_input_30_trim,
     ),
     'attendance3' => array (
-      'exclude' => 0,
+      'exclude' => 1,
       'label'   => 'LLL:EXT:awomrhein/locallang_db.xml:tx_awomrhein.attendance3',
       'config'  => $conf_input_30_trim,
     ),
     'attendance4' => array (
-      'exclude' => 0,
+      'exclude' => 1,
       'label'   => 'LLL:EXT:awomrhein/locallang_db.xml:tx_awomrhein.attendance4',
       'config'  => $conf_input_30_trim,
     ),
     'attendance5' => array (
-      'exclude' => 0,
+      'exclude' => 1,
       'label'   => 'LLL:EXT:awomrhein/locallang_db.xml:tx_awomrhein.attendance5',
       'config'  => $conf_input_30_trim,
     ),
     'attendance6' => array (
-      'exclude' => 0,
+      'exclude' => 1,
       'label'   => 'LLL:EXT:awomrhein/locallang_db.xml:tx_awomrhein.attendance6',
       'config'  => $conf_input_30_trim,
     ),
     'attendance7' => array (
-      'exclude' => 0,
+      'exclude' => 1,
       'label'   => 'LLL:EXT:awomrhein/locallang_db.xml:tx_awomrhein.attendance7',
       'config'  => $conf_input_30_trim,
     ),
@@ -317,7 +317,7 @@ $TCA['tx_awomrhein'] = array (
       'config'  => $conf_input_30_trim,
     ),
     'country' => array (
-      'exclude' => 0,
+      'exclude' => 1,
       'label'   => 'LLL:EXT:awomrhein/locallang_db.xml:tx_awomrhein.country',
       'config'  => $conf_input_30_trim,
     ),
@@ -393,7 +393,7 @@ $TCA['tx_awomrhein'] = array (
       'config'    => $conf_input_80_trim,
     ),
     'status' => array (
-      'exclude' => 0,
+      'exclude' => 1,
       'label'   => 'LLL:EXT:awomrhein/locallang_db.xml:tx_awomrhein.status',
       'config'  => $conf_datetime,
     ),

@@ -789,9 +789,9 @@ plugin.tx_browser_pi1 {
                               , png             : {
                                   0: 'typo3conf/ext/awomrhein/icons/empty_1px.png'
                               }
-                              , startLevel      : 1
-                              , numZoomLevels   : 1
-                              , startVisibility : true
+                              , startLevel    : 1
+                              , numZoomLevels : 1
+                              , wmsVisibility : true
                             } 
 )
                         }
