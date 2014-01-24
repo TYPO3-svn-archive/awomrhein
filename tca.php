@@ -267,7 +267,7 @@ $TCA['tx_awomrhein'] = array (
       'config'  => $conf_input_30_trim,
     ),
     'address2' => array (
-      'exclude' => 0,
+      'exclude' => 1,
       'label'   => 'LLL:EXT:awomrhein/locallang_db.xml:tx_awomrhein.address2',
       'config'  => $conf_input_30_trim,
     ),
